@@ -15,6 +15,7 @@
 		491576851BFBCAFC00EE641D /* MenuDeslizanteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491576841BFBCAFC00EE641D /* MenuDeslizanteTests.swift */; };
 		49C3D3611BFBF6DA003B2344 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3D3601BFBF6DA003B2344 /* SWRevealViewController.m */; };
 		49C3D3631BFBF9AF003B2344 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3D3621BFBF9AF003B2344 /* NewsTableViewController.swift */; };
+		49C3D3651BFC0542003B2344 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3D3641BFC0542003B2344 /* NewsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		49C3D35F1BFBF6DA003B2344 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		49C3D3601BFBF6DA003B2344 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		49C3D3621BFBF9AF003B2344 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		49C3D3641BFC0542003B2344 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				491576771BFBCAFC00EE641D /* LaunchScreen.xib */,
 				4915766C1BFBCAFB00EE641D /* Supporting Files */,
 				49C3D3621BFBF9AF003B2344 /* NewsTableViewController.swift */,
+				49C3D3641BFC0542003B2344 /* NewsTableViewCell.swift */,
 			);
 			path = MenuDeslizante;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			files = (
 				49C3D3631BFBF9AF003B2344 /* NewsTableViewController.swift in Sources */,
 				491576711BFBCAFB00EE641D /* MenuController.swift in Sources */,
+				49C3D3651BFC0542003B2344 /* NewsTableViewCell.swift in Sources */,
 				4915766F1BFBCAFB00EE641D /* AppDelegate.swift in Sources */,
 				49C3D3611BFBF6DA003B2344 /* SWRevealViewController.m in Sources */,
 			);
