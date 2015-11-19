@@ -10,14 +10,23 @@ import UIKit
 
 class NewsTableViewController: UITableViewController {
     
-    @IBOutlet weak var menuButton:UIBarButtonItem!;
+    @IBOutlet weak var menuButton:UIBarButtonItem!
+    @IBOutlet var extraButton:UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
+        if revealViewController() != nil {
+            //            revealViewController().rearViewRevealWidth = 62
+            menuButton.target = revealViewController()
             menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+            revealViewController().rightViewRevealWidth = 150
+        //    extraButton.target = revealViewController()
+        //    extraButton.action = "rightRevealToggle:"
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+            
         }
     }
     
@@ -35,7 +44,7 @@ class NewsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return 3
+        return 1
     }
     
     
