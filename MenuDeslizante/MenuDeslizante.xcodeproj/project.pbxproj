@@ -87,11 +87,11 @@
 			children = (
 				49C3D35D1BFBF6BE003B2344 /* SWRevealViewController */,
 				4915766E1BFBCAFB00EE641D /* AppDelegate.swift */,
-				491576701BFBCAFB00EE641D /* MenuController.swift */,
 				491576721BFBCAFB00EE641D /* Main.storyboard */,
 				491576751BFBCAFC00EE641D /* Images.xcassets */,
 				491576771BFBCAFC00EE641D /* LaunchScreen.xib */,
 				4915766C1BFBCAFB00EE641D /* Supporting Files */,
+				491576701BFBCAFB00EE641D /* MenuController.swift */,
 				49C3D3621BFBF9AF003B2344 /* NewsTableViewController.swift */,
 				49C3D3641BFC0542003B2344 /* NewsTableViewCell.swift */,
 			);
