@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import Parse
+import Bolts
+import ParseTwitterUtils
+import FBSDKCoreKit
+import ParseFacebookUtilsV4
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +21,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // [Optional] Power your app with Local Datastore. For more info, go to
+        // https://parse.com/docs/ios_guide#localdatastore/iOS
+        Parse.enableLocalDatastore()
+        
+        // Initialize Parse.
+        Parse.setApplicationId("Rv2InCwEE4RJowtNJVaYqlLw0VpjPLEePcfpHMsw",
+            clientKey: "oYALR4CrZhDOYlrOk7zCLszZXixJEXsDtOV4e0zt")
+        
+        //saber si es la primera vez o no
+        //let defaults = NSUserDefaults.standardUserDefaults()
+        //defaults.setObject("Coding Explorer", forKey: "userNameKey")
+        //if ... let name = defaults.stringForKey("userNameKey")
+        
+        // print("defaults.name "+name!)
+        
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc : UIViewController
+        
+        //if PFUser.currentUser() == nil {
+        //    vc = storyboard.instantiateViewControllerWithIdentifier("Login")
+        //} else {
+        vc = storyboard.instantiateViewControllerWithIdentifier("Login")
+        //}in
+        
+        self.window?.rootViewController = vc
+        
+        PFTwitterUtils.initializeWithConsumerKey("MMWC6DUWHTHQHoa10u4ZU0tRh",  consumerSecret:"teJtkCAvVvcLQoba6JTMdzTG53YuuWyTolBJ0CDFxaLO8vmdMa")
+        
+        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        
+        // [Optional] Track statistics around application opens.
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
         return true
+    }
+
+    func application(application: UIApplication,
+        openURL url: NSURL,
+        sourceApplication: String?,
+        annotation: AnyObject) -> Bool {
+            return FBSDKApplicationDelegate.sharedInstance().application(application,
+                openURL: url,
+                sourceApplication: sourceApplication,
+                annotation: annotation)
     }
 
     func applicationWillResignActive(application: UIApplication) {
