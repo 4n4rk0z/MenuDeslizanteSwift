@@ -24,7 +24,7 @@ class NewsTableViewController: UITableViewController {
         //    extraButton.action = "rightRevealToggle:"
             
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
             
         }
     }
