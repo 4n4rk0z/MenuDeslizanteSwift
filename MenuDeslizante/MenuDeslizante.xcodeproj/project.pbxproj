@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4905926E1C00E3A1006DDDD0 /* MenuPlatillos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905926D1C00E3A1006DDDD0 /* MenuPlatillos.swift */; };
+		490592701C00E431006DDDD0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905926F1C00E431006DDDD0 /* TableViewCell.swift */; };
 		4915766F1BFBCAFB00EE641D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4915766E1BFBCAFB00EE641D /* AppDelegate.swift */; };
 		491576711BFBCAFB00EE641D /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491576701BFBCAFB00EE641D /* MenuController.swift */; };
 		491576741BFBCAFB00EE641D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 491576721BFBCAFB00EE641D /* Main.storyboard */; };
@@ -31,8 +33,8 @@
 		49BB51A41BFFD65E004E002A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BB51A31BFFD65E004E002A /* CFNetwork.framework */; };
 		49BB51A61BFFD664004E002A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BB51A51BFFD664004E002A /* AudioToolbox.framework */; };
 		49C3D3611BFBF6DA003B2344 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3D3601BFBF6DA003B2344 /* SWRevealViewController.m */; };
-		49C3D3631BFBF9AF003B2344 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3D3621BFBF9AF003B2344 /* NewsTableViewController.swift */; };
-		49C3D3651BFC0542003B2344 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3D3641BFC0542003B2344 /* NewsTableViewCell.swift */; };
+		49C3D3631BFBF9AF003B2344 /* PrincipalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3D3621BFBF9AF003B2344 /* PrincipalTableViewController.swift */; };
+		49C3D3651BFC0542003B2344 /* PrincipalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3D3641BFC0542003B2344 /* PrincipalTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4905926D1C00E3A1006DDDD0 /* MenuPlatillos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPlatillos.swift; sourceTree = "<group>"; };
+		4905926F1C00E431006DDDD0 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		491576691BFBCAFB00EE641D /* MenuDeslizante.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuDeslizante.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4915766D1BFBCAFB00EE641D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4915766E1BFBCAFB00EE641D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,8 +80,8 @@
 		49C3D35E1BFBF6D9003B2344 /* MenuDeslizante-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MenuDeslizante-Bridging-Header.h"; sourceTree = "<group>"; };
 		49C3D35F1BFBF6DA003B2344 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		49C3D3601BFBF6DA003B2344 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		49C3D3621BFBF9AF003B2344 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
-		49C3D3641BFC0542003B2344 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		49C3D3621BFBF9AF003B2344 /* PrincipalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipalTableViewController.swift; sourceTree = "<group>"; };
+		49C3D3641BFC0542003B2344 /* PrincipalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipalTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4905926B1C00DFBC006DDDD0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				49C3D3621BFBF9AF003B2344 /* PrincipalTableViewController.swift */,
+				49C3D3641BFC0542003B2344 /* PrincipalTableViewCell.swift */,
+				4905926D1C00E3A1006DDDD0 /* MenuPlatillos.swift */,
+				4905926F1C00E431006DDDD0 /* TableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4905926C1C00DFE1006DDDD0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4915766E1BFBCAFB00EE641D /* AppDelegate.swift */,
+				491576701BFBCAFB00EE641D /* MenuController.swift */,
+				49BB51781BFFD4E9004E002A /* ViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 		491576601BFBCAFB00EE641D = {
 			isa = PBXGroup;
 			children = (
@@ -136,16 +161,13 @@
 		4915766B1BFBCAFB00EE641D /* MenuDeslizante */ = {
 			isa = PBXGroup;
 			children = (
-				49BB51781BFFD4E9004E002A /* ViewController.swift */,
+				4905926C1C00DFE1006DDDD0 /* Main */,
+				4905926B1C00DFBC006DDDD0 /* Views */,
 				49C3D35D1BFBF6BE003B2344 /* SWRevealViewController */,
-				4915766E1BFBCAFB00EE641D /* AppDelegate.swift */,
 				491576721BFBCAFB00EE641D /* Main.storyboard */,
 				491576751BFBCAFC00EE641D /* Images.xcassets */,
 				491576771BFBCAFC00EE641D /* LaunchScreen.xib */,
 				4915766C1BFBCAFB00EE641D /* Supporting Files */,
-				491576701BFBCAFB00EE641D /* MenuController.swift */,
-				49C3D3621BFBF9AF003B2344 /* NewsTableViewController.swift */,
-				49C3D3641BFC0542003B2344 /* NewsTableViewCell.swift */,
 			);
 			path = MenuDeslizante;
 			sourceTree = "<group>";
@@ -311,9 +333,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				49BB51791BFFD4E9004E002A /* ViewController.swift in Sources */,
-				49C3D3631BFBF9AF003B2344 /* NewsTableViewController.swift in Sources */,
+				490592701C00E431006DDDD0 /* TableViewCell.swift in Sources */,
+				49C3D3631BFBF9AF003B2344 /* PrincipalTableViewController.swift in Sources */,
+				4905926E1C00E3A1006DDDD0 /* MenuPlatillos.swift in Sources */,
 				491576711BFBCAFB00EE641D /* MenuController.swift in Sources */,
-				49C3D3651BFC0542003B2344 /* NewsTableViewCell.swift in Sources */,
+				49C3D3651BFC0542003B2344 /* PrincipalTableViewCell.swift in Sources */,
 				4915766F1BFBCAFB00EE641D /* AppDelegate.swift in Sources */,
 				49C3D3611BFBF6DA003B2344 /* SWRevealViewController.m in Sources */,
 			);

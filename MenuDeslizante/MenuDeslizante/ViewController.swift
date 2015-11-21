@@ -18,9 +18,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        textfMail.delegate = self
-        textfPassword.delegate = self
+
+        let user = PFUser.currentUser()
+
+        if user != nil{
+            self.performSegueWithIdentifier("Home", sender: nil)  
+        }
+        else
+        {
+            // Do any additional setup after loading the view, typically from a nib.
+            textfMail.delegate = self
+            textfPassword.delegate = self
+        }
     }
 
     @IBAction func loginMail(sender: AnyObject) {

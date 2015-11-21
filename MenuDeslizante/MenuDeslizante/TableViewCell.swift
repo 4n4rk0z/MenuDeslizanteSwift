@@ -1,20 +1,17 @@
 //
-//  NewsTableViewCell.swift
+//  TableViewCell.swift
 //  MenuDeslizante
 //
-//  Created by sergio ivan lopez monzon on 17/11/15.
+//  Created by sergio ivan lopez monzon on 21/11/15.
 //  Copyright © 2015 sergio ivan lopez monzon. All rights reserved.
 //
 
 
 import UIKit
 
-class NewsTableViewCell: UITableViewCell {
+class TableViewCell: UITableViewCell {
     
-    @IBOutlet weak var postImageView:UIImageView!
-    @IBOutlet weak var authorImageView:UIImageView!
-    @IBOutlet weak var postTitleLabel:UILabel!
-    @IBOutlet weak var authorLabel:UILabel!
+    @IBOutlet weak var imagePropia: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,5 +23,6 @@ class NewsTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
+    
     
 }

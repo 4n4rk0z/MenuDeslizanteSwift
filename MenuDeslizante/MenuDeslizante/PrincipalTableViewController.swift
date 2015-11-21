@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsTableViewController: UITableViewController {
+class PrincipalTableViewController: UITableViewController {
     
     @IBOutlet weak var menuButton:UIBarButtonItem!
     
@@ -48,7 +48,7 @@ class NewsTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! NewsTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PrincipalTableViewCell
         
         // Configure the cell...
 //        if indexPath.row == 0 {
@@ -73,11 +73,15 @@ class NewsTableViewController: UITableViewController {
         
         if indexPath.row == 0 {
             cell.postImageView.image = UIImage(named: "comida")
+            cell.numeroImageView.image = UIImage(named: "diez")
+            
         } else if indexPath.row == 1{
             cell.postImageView.image = UIImage(named: "comida")
+            cell.numeroImageView.image = UIImage(named: "diez")
             
         }else{
             cell.postImageView.image = UIImage(named: "comida")
+            cell.numeroImageView.image = UIImage(named: "diez")
         }
         
         return cell
@@ -119,15 +123,17 @@ class NewsTableViewController: UITableViewController {
     }
     */
     
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+        
+      
     }
-    */
+    
 
 }
 
