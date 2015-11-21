@@ -11,7 +11,6 @@ import UIKit
 class NewsTableViewController: UITableViewController {
     
     @IBOutlet weak var menuButton:UIBarButtonItem!
-    @IBOutlet var extraButton:UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,13 +51,13 @@ class NewsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! NewsTableViewCell
         
         // Configure the cell...
-        if indexPath.row == 0 {
-            cell.postImageView.image = UIImage(named: "watchkit-intro")
-            cell.postTitleLabel.text = "WatchKit Introduction: Building a Simple Guess Game"
-            cell.authorLabel.text = "Simon Ng"
-            cell.authorImageView.image = UIImage(named: "author")
+//        if indexPath.row == 0 {
+  //          cell.postImageView.image = UIImage(named: "comida")
+            //cell.postTitleLabel.text = "WatchKit Introduction: Building a Simple Guess Game"
+            //cell.authorLabel.text = "Simon Ng"
+            //cell.authorImageView.image = UIImage(named: "author")
             
-        } else if indexPath.row == 1 {
+       /* } else if indexPath.row == 1 {
             cell.postImageView.image = UIImage(named: "custom-segue-featured-1024")
             cell.postTitleLabel.text = "Building a Chat App in Swift Using Multipeer Connectivity Framework"
             cell.authorLabel.text = "Gabriel Theodoropoulos"
@@ -69,7 +68,16 @@ class NewsTableViewController: UITableViewController {
             cell.postTitleLabel.text = "A Beginner’s Guide to Animated Custom Segues in iOS 8"
             cell.authorLabel.text = "Gabriel Theodoropoulos"
             cell.authorImageView.image = UIImage(named: "appcoda-300")
+         */
+        //}
+        
+        if indexPath.row == 0 {
+            cell.postImageView.image = UIImage(named: "comida")
+        } else if indexPath.row == 1{
+            cell.postImageView.image = UIImage(named: "comida")
             
+        }else{
+            cell.postImageView.image = UIImage(named: "comida")
         }
         
         return cell
