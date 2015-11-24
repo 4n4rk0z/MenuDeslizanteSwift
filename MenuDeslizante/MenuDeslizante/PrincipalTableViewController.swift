@@ -73,7 +73,10 @@ class PrincipalTableViewController: UITableViewController {
         
         if indexPath.row == 0 {
             cell.postImageView.image = UIImage(named: "comida")
+            
             cell.numeroImageView.image = UIImage(named: "diez")
+            
+            
             
         } else if indexPath.row == 1{
             cell.postImageView.image = UIImage(named: "comida")
