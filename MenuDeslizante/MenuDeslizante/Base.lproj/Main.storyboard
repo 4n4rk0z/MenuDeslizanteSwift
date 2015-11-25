@@ -253,27 +253,25 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncr-Hy-hi8">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncr-Hy-hi8">
                                             <rect key="frame" x="8" y="8" width="584" height="128"/>
                                             <animations/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="diez" translatesAutoresizingMaskIntoConstraints="NO" id="m6l-4r-eQ0" userLabel="numero image View">
-                                            <rect key="frame" x="549" y="8" width="43" height="41"/>
+                                            <rect key="frame" x="495" y="35" width="43" height="41"/>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="43" id="4aZ-k8-4X3"/>
-                                                <constraint firstAttribute="height" constant="41" id="Esr-GG-ggV"/>
+                                                <constraint firstAttribute="width" constant="43" id="SgD-5Y-AeY"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="ncr-Hy-hi8" firstAttribute="leading" secondItem="L98-rM-vr4" secondAttribute="leadingMargin" id="N5G-lf-VSe"/>
-                                        <constraint firstItem="m6l-4r-eQ0" firstAttribute="top" secondItem="ncr-Hy-hi8" secondAttribute="top" id="Nvp-Vc-aQq"/>
-                                        <constraint firstItem="ncr-Hy-hi8" firstAttribute="width" secondItem="L98-rM-vr4" secondAttribute="width" id="TKy-mC-sC7"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="ncr-Hy-hi8" secondAttribute="bottom" constant="5" id="UKr-a4-S7M"/>
-                                        <constraint firstItem="ncr-Hy-hi8" firstAttribute="top" secondItem="L98-rM-vr4" secondAttribute="topMargin" id="clJ-Ih-5vP"/>
-                                        <constraint firstAttribute="trailing" secondItem="m6l-4r-eQ0" secondAttribute="trailing" id="te0-rU-kIk"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="m6l-4r-eQ0" secondAttribute="trailing" id="ath-3F-jdw"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="ncr-Hy-hi8" secondAttribute="leading" id="ia6-XL-KYv"/>
+                                        <constraint firstAttribute="topMargin" secondItem="m6l-4r-eQ0" secondAttribute="top" id="vcf-qh-KKn"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ncr-Hy-hi8" secondAttribute="trailing" id="yMb-NU-qqC"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="m6l-4r-eQ0" secondAttribute="bottom" constant="92" id="ymt-8j-ib8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
@@ -1207,11 +1205,11 @@
         <image name="viralizacion" width="693" height="440"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="edY-XV-IE3"/>
+        <segue reference="1Ic-gd-X6X"/>
+        <segue reference="xf7-3G-PbC"/>
         <segue reference="mrh-qH-ct8"/>
-        <segue reference="9R8-As-rwx"/>
-        <segue reference="5V6-UQ-NDg"/>
-        <segue reference="uxO-T8-OFS"/>
+        <segue reference="kSD-zr-Oi7"/>
+        <segue reference="LXj-nS-J3B"/>
         <segue reference="fai-Ni-VIV"/>
     </inferredMetricsTieBreakers>
 </document>
