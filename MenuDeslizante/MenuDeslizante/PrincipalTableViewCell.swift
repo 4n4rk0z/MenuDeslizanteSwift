@@ -13,6 +13,7 @@ class PrincipalTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postImageView:UIImageView!
     @IBOutlet weak var numeroImageView: UIImageView!
+    var tipoCelda = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +26,7 @@ class PrincipalTableViewCell: UITableViewCell {
         // Configure the view for the selected state
       
     }
+    
+
     
 }

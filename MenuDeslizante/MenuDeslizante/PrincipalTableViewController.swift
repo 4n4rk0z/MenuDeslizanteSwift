@@ -13,7 +13,7 @@ class PrincipalTableViewController: UITableViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+     super.viewDidLoad()
         if revealViewController() != nil {
             //            revealViewController().rearViewRevealWidth = 62
             menuButton.target = revealViewController()
@@ -43,8 +43,9 @@ class PrincipalTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return 3
+        return 5
     }
+    
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -72,18 +73,28 @@ class PrincipalTableViewController: UITableViewController {
         //}
         
         if indexPath.row == 0 {
-            cell.postImageView.image = UIImage(named: "comida")
-            
+            cell.postImageView.image = UIImage(named: "comidag")
+            cell.tipoCelda="gratis"
             cell.numeroImageView.image = UIImage(named: "diez")
             
             
             
         } else if indexPath.row == 1{
-            cell.postImageView.image = UIImage(named: "comida")
+            cell.postImageView.image = UIImage(named: "comidar")
+            cell.tipoCelda="recetario"
             cell.numeroImageView.image = UIImage(named: "diez")
-            
+        }else if indexPath.row == 2{
+                cell.postImageView.image = UIImage(named: "comidar")
+                cell.tipoCelda="recetario"
+                cell.numeroImageView.image = UIImage(named: "diez")
+        }else if indexPath.row == 3{
+            cell.postImageView.image = UIImage(named: "comidav")
+            cell.tipoCelda="viralizacion"
+            cell.numeroImageView.image = UIImage(named: "diez")
+        
         }else{
-            cell.postImageView.image = UIImage(named: "comida")
+            cell.postImageView.image = UIImage(named: "comidar")
+            cell.tipoCelda="recetario"
             cell.numeroImageView.image = UIImage(named: "diez")
         }
         
@@ -131,10 +142,9 @@ class PrincipalTableViewController: UITableViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
         
-      
+
     }
     
 
