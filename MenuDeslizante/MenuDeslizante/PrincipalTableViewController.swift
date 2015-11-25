@@ -88,7 +88,7 @@ class PrincipalTableViewController: UITableViewController {
             cell.numeroImageView.image = UIImage(named: "diez")
         }else if indexPath.row == 2{
             cell.postImageView.image = UIImage(named: "comidar")
-            menu.append("gratis")
+            menu.append("pago");
             cell.numeroImageView.image = UIImage(named: "diez")
         }else if indexPath.row == 3{
             cell.postImageView.image = UIImage(named: "comidav")

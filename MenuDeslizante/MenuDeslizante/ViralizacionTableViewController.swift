@@ -10,23 +10,10 @@ import UIKit
 
 class ViralizacionTableViewController: UITableViewController {
     
-    @IBOutlet weak var menuButton:UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if revealViewController() != nil {
-            //            revealViewController().rearViewRevealWidth = 62
-            menuButton.target = revealViewController()
-            menuButton.action = "revealToggle:"
-            
-            revealViewController().rightViewRevealWidth = 150
-            //    extraButton.target = revealViewController()
-            //    extraButton.action = "rightRevealToggle:"
-            
-            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-            
-        }
+        
     }
     
     override func didReceiveMemoryWarning() {
