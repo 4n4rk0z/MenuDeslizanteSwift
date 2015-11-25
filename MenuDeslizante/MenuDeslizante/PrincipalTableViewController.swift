@@ -12,8 +12,15 @@ class PrincipalTableViewController: UITableViewController {
     
     @IBOutlet weak var menuButton:UIBarButtonItem!
     
+    //Para decirnos cual es la opcion que corresponde a cada posicion del menu, es un pseudo tag
+    var menu = [String]();
+    
     override func viewDidLoad() {
      super.viewDidLoad()
+     self.tableView.delegate = self
+     
+        self.tableView.dataSource = self
+        
         if revealViewController() != nil {
             //            revealViewController().rearViewRevealWidth = 62
             menuButton.target = revealViewController()
@@ -46,55 +53,51 @@ class PrincipalTableViewController: UITableViewController {
         return 5
     }
     
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        let goto=menu[indexPath.row]
+
+        if goto=="gratis"
+        {
+            self.performSegueWithIdentifier("gratis", sender: nil)
+
+        }
+        else if goto=="pago"
+        {
+            self.performSegueWithIdentifier("pago", sender: nil)
+        }
+        else if goto=="viralizacion"
+        {
+            self.performSegueWithIdentifier("viralizacion", sender: nil)
+        }
+
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PrincipalTableViewCell
         
-        // Configure the cell...
-//        if indexPath.row == 0 {
-  //          cell.postImageView.image = UIImage(named: "comida")
-            //cell.postTitleLabel.text = "WatchKit Introduction: Building a Simple Guess Game"
-            //cell.authorLabel.text = "Simon Ng"
-            //cell.authorImageView.image = UIImage(named: "author")
-            
-       /* } else if indexPath.row == 1 {
-            cell.postImageView.image = UIImage(named: "custom-segue-featured-1024")
-            cell.postTitleLabel.text = "Building a Chat App in Swift Using Multipeer Connectivity Framework"
-            cell.authorLabel.text = "Gabriel Theodoropoulos"
-            cell.authorImageView.image = UIImage(named: "appcoda-300")
-            
-        } else {
-            cell.postImageView.image = UIImage(named: "webkit-featured")
-            cell.postTitleLabel.text = "A Beginner’s Guide to Animated Custom Segues in iOS 8"
-            cell.authorLabel.text = "Gabriel Theodoropoulos"
-            cell.authorImageView.image = UIImage(named: "appcoda-300")
-         */
-        //}
         
         if indexPath.row == 0 {
             cell.postImageView.image = UIImage(named: "comidag")
-            cell.tipoCelda="gratis"
+            menu.append("gratis")
             cell.numeroImageView.image = UIImage(named: "diez")
-            
-            
-            
         } else if indexPath.row == 1{
             cell.postImageView.image = UIImage(named: "comidar")
-            cell.tipoCelda="recetario"
+            menu.append("pago");
             cell.numeroImageView.image = UIImage(named: "diez")
         }else if indexPath.row == 2{
-                cell.postImageView.image = UIImage(named: "comidar")
-                cell.tipoCelda="recetario"
-                cell.numeroImageView.image = UIImage(named: "diez")
+            cell.postImageView.image = UIImage(named: "comidar")
+            menu.append("gratis")
+            cell.numeroImageView.image = UIImage(named: "diez")
         }else if indexPath.row == 3{
             cell.postImageView.image = UIImage(named: "comidav")
-            cell.tipoCelda="viralizacion"
+            menu.append("viralizacion")
             cell.numeroImageView.image = UIImage(named: "diez")
         
         }else{
             cell.postImageView.image = UIImage(named: "comidar")
-            cell.tipoCelda="recetario"
+            menu.append("pago")
             cell.numeroImageView.image = UIImage(named: "diez")
         }
         
