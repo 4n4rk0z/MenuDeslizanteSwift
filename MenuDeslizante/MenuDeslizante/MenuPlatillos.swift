@@ -21,7 +21,7 @@ class MenuPlatillos: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 4
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -29,7 +29,17 @@ class MenuPlatillos: UIViewController, UITableViewDelegate, UITableViewDataSourc
         //let cell = tableView.dequeueReusableCellWithIdentifier("PlatilloCell") as UITableViewCell!
         let cell = tableView.dequeueReusableCellWithIdentifier("PlatilloCell", forIndexPath: indexPath) as! TableViewCell
         
-        cell.imagePropia.image = UIImage(named: "images")
+        
+        if indexPath.row == 0 {
+            cell.imagePropia.image = UIImage(named: "arabe")
+        } else if indexPath.row == 1{
+            cell.imagePropia.image = UIImage(named: "images")
+        }else if indexPath.row == 2{
+            cell.imagePropia.image = UIImage(named: "arabe")
+        }else {
+            cell.imagePropia.image = UIImage(named: "arabe")
+        }
+
         
         return cell
         
