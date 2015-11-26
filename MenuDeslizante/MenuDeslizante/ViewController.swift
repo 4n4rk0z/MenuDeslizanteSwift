@@ -13,6 +13,8 @@ import ParseFacebookUtilsV4
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
+    
+    
     @IBOutlet weak var textfMail: UITextField!
     @IBOutlet weak var textfPassword: UITextField!
     
@@ -33,14 +35,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func loginMail(sender: AnyObject) {
-        
-        
+        PFUser.logInWithUsernameInBackground(textfMail.text!, password:textfPassword.text!) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                // Do stuff after successful login.
+            } else {
+                // The login failed. Check error to see why.
+            }
+        }
+       
     }
     
-    @IBAction func registrarse(sender: AnyObject) {
-        
-        
-    }
+   
     
     @IBAction func loginFacebook(sender: AnyObject) {
         
@@ -99,6 +105,31 @@ print("User now has read and publish permissions!")
     @IBAction func saltarLogin(sender: AnyObject) {
         self.performSegueWithIdentifier("Home", sender: nil)
     }
+    
+    
+    @IBAction func registrarse(sender: AnyObject) {
+        let user = PFUser()
+        
+        user.password = textfPassword.text
+        user.email = textfMail.text
+        user.username = textfMail.text
+        user.signUpInBackgroundWithBlock {
+            (succeeded: Bool, error: NSError?) -> Void in
+            if let error = error {
+                let errorString = error.userInfo["error"] as? NSString
+                print(errorString)
+                // Show the errorString somewhere and let the user try again.
+            } else {
+                // Hooray! Let them use the app now.
+            }
+        }
+
+    }
+    
+    @IBAction func restablecer(sender: AnyObject) {
+        PFUser.requestPasswordResetForEmailInBackground(textfMail.text!)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

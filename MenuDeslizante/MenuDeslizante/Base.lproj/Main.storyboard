@@ -349,17 +349,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMD-vu-iLp">
-                                <rect key="frame" x="174" y="278" width="85" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="qMD-vu-iLp" secondAttribute="height" multiplier="17:6" id="bzz-M6-Uhk"/>
-                                </constraints>
-                                <state key="normal" title="Registrarse"/>
-                                <connections>
-                                    <action selector="registrarse:" destination="ios-mF-Phh" eventType="touchUpInside" id="wT4-Y5-dN8"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2HF-jV-cXs">
                                 <rect key="frame" x="288" y="278" width="137" height="30"/>
                                 <animations/>
@@ -369,6 +358,7 @@
                                 <state key="normal" title="Restablecer usuario"/>
                                 <connections>
                                     <action selector="registrarse:" destination="ios-mF-Phh" eventType="touchUpInside" id="qhJ-Yk-K0x"/>
+                                    <action selector="restablecer:" destination="ios-mF-Phh" eventType="touchUpInside" id="ODW-vq-gv7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3O5-49-o7e">
@@ -450,6 +440,17 @@
                                 </state>
                                 <connections>
                                     <action selector="loginMail:" destination="ios-mF-Phh" eventType="touchUpInside" id="vQ4-V5-FKa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMD-vu-iLp">
+                                <rect key="frame" x="174" y="278" width="85" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qMD-vu-iLp" secondAttribute="height" multiplier="17:6" id="bzz-M6-Uhk"/>
+                                </constraints>
+                                <state key="normal" title="Registrarse"/>
+                                <connections>
+                                    <action selector="registrarse:" destination="ios-mF-Phh" eventType="touchUpInside" id="0Tw-8z-4gD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1176,7 +1177,7 @@
                                 <rect key="frame" x="32" y="412" width="193" height="68"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wx1-iz-vX3">
@@ -1223,15 +1224,14 @@
         <!--Page View Controller-->
         <scene sceneID="J4N-KF-J8t">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4rC-3k-SYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pageViewController storyboardIdentifier="PageController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="uFu-j4-8Vb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4rC-3k-SYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2796" y="-3088"/>
         </scene>
         <!--Page Item Controller-->
         <scene sceneID="5pW-mM-dvd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6QK-mZ-JT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="PagoController" id="KLY-19-zPl" customClass="PageItemController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BIN-qA-ER8"/>
@@ -1266,7 +1266,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Paga 7 dlls y recibe este recetario por un mes gratis">
                                         <attributes>
-                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="13" name="HelveticaNeue"/>
                                         </attributes>
                                     </fragment>
@@ -1292,6 +1292,7 @@
                         <outlet property="view" destination="Rbf-oO-jPi" id="6jC-SN-Cmx"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6QK-mZ-JT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2128" y="-3100"/>
         </scene>
@@ -1312,11 +1313,11 @@
         <image name="viralizacion" width="693" height="440"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="edY-XV-IE3"/>
         <segue reference="LXj-nS-J3B"/>
-        <segue reference="fai-Ni-VIV"/>
         <segue reference="9R8-As-rwx"/>
+        <segue reference="edY-XV-IE3"/>
         <segue reference="uxO-T8-OFS"/>
         <segue reference="Q24-sr-Zc6"/>
+        <segue reference="cXi-LM-M6b"/>
     </inferredMetricsTieBreakers>
 </document>
