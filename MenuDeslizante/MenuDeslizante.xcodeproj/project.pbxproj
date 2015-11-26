@@ -23,6 +23,8 @@
 		491576761BFBCAFC00EE641D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 491576751BFBCAFC00EE641D /* Images.xcassets */; };
 		491576791BFBCAFC00EE641D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491576771BFBCAFC00EE641D /* LaunchScreen.xib */; };
 		491576851BFBCAFC00EE641D /* MenuDeslizanteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491576841BFBCAFC00EE641D /* MenuDeslizanteTests.swift */; };
+		495947B71C06A7DA0025AE1F /* PagoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495947B61C06A7DA0025AE1F /* PagoViewController.swift */; };
+		495947B91C06A7FB0025AE1F /* PageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495947B81C06A7FB0025AE1F /* PageItemController.swift */; };
 		49BB51791BFFD4E9004E002A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BB51781BFFD4E9004E002A /* ViewController.swift */; };
 		49BB51801BFFD529004E002A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BB517A1BFFD529004E002A /* Bolts.framework */; };
 		49BB51811BFFD529004E002A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BB517B1BFFD529004E002A /* FBSDKCoreKit.framework */; };
@@ -76,6 +78,8 @@
 		4915767E1BFBCAFC00EE641D /* MenuDeslizanteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuDeslizanteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		491576831BFBCAFC00EE641D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		491576841BFBCAFC00EE641D /* MenuDeslizanteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDeslizanteTests.swift; sourceTree = "<group>"; };
+		495947B61C06A7DA0025AE1F /* PagoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagoViewController.swift; sourceTree = "<group>"; };
+		495947B81C06A7FB0025AE1F /* PageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItemController.swift; sourceTree = "<group>"; };
 		49BB51781BFFD4E9004E002A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		49BB517A1BFFD529004E002A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../Prueba_Swift/Bolts.framework; sourceTree = "<group>"; };
 		49BB517B1BFFD529004E002A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Prueba_Swift/FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 		4905926B1C00DFBC006DDDD0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				495947B61C06A7DA0025AE1F /* PagoViewController.swift */,
+				495947B81C06A7FB0025AE1F /* PageItemController.swift */,
 				49C3D3621BFBF9AF003B2344 /* PrincipalTableViewController.swift */,
 				49C3D3641BFC0542003B2344 /* PrincipalTableViewCell.swift */,
 				4905926D1C00E3A1006DDDD0 /* MenuPlatillos.swift */,
@@ -365,10 +371,12 @@
 				4905927A1C00F74E006DDDD0 /* CreditosViewController.swift in Sources */,
 				4905926E1C00E3A1006DDDD0 /* MenuPlatillos.swift in Sources */,
 				491576711BFBCAFB00EE641D /* MenuController.swift in Sources */,
+				495947B91C06A7FB0025AE1F /* PageItemController.swift in Sources */,
 				490592801C0131EE006DDDD0 /* ViralizacionTableCell.swift in Sources */,
 				49C3D3651BFC0542003B2344 /* PrincipalTableViewCell.swift in Sources */,
 				4905927E1C0131E0006DDDD0 /* ViralizacionTableViewController.swift in Sources */,
 				4915766F1BFBCAFB00EE641D /* AppDelegate.swift in Sources */,
+				495947B71C06A7DA0025AE1F /* PagoViewController.swift in Sources */,
 				49C3D3611BFBF6DA003B2344 /* SWRevealViewController.m in Sources */,
 				4905927C1C00FE50006DDDD0 /* PerfilViewController.swift in Sources */,
 				490592721C00F70D006DDDD0 /* FavoritosTableViewController.swift in Sources */,

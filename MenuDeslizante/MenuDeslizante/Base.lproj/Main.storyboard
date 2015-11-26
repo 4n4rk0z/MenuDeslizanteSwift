@@ -1152,7 +1152,7 @@
         <!--Pago-->
         <scene sceneID="nd3-8K-aTZ">
             <objects>
-                <viewController id="koz-IQ-IwY" sceneMemberID="viewController">
+                <viewController id="koz-IQ-IwY" customClass="PagoViewController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hDP-Zj-rcf"/>
                         <viewControllerLayoutGuide type="bottom" id="fom-DE-GxE"/>
@@ -1160,24 +1160,6 @@
                     <view key="view" contentMode="scaleToFill" id="v0N-ZU-MNZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jlo-cs-5op">
-                                <rect key="frame" x="146" y="130" width="318" height="199"/>
-                                <animations/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFC-md-Rhp">
-                                <rect key="frame" x="462" y="392" width="90" height="88"/>
-                                <animations/>
-                                <state key="normal" backgroundImage="dinero"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Paga 7 dlls y recibe este recetario por un mes gratis" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZS-ad-aNu">
-                                <rect key="frame" x="38" y="412" width="173" height="68"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1187,7 +1169,82 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V2t-0c-It4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2152" y="-2321"/>
+            <point key="canvasLocation" x="2128" y="-2333"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="J4N-KF-J8t">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4rC-3k-SYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController storyboardIdentifier="PageController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="uFu-j4-8Vb" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="2796" y="-3088"/>
+        </scene>
+        <!--Page Item Controller-->
+        <scene sceneID="5pW-mM-dvd">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6QK-mZ-JT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="PagoController" id="KLY-19-zPl" customClass="PageItemController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BIN-qA-ER8"/>
+                        <viewControllerLayoutGuide type="bottom" id="mAB-sz-UdR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="PagoController" id="Rbf-oO-jPi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lqR-Ec-C4s">
+                                <rect key="frame" x="140" y="28" width="320" height="320"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="8zl-u0-yBR"/>
+                                    <constraint firstAttribute="height" constant="320" id="Sc7-EO-3kK"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txE-a0-K0D">
+                                <rect key="frame" x="467" y="406" width="90" height="88"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="hZ0-Hj-zoS"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="dinero"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m49-N8-3fl">
+                                <rect key="frame" x="43" y="426" width="173" height="68"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="173" id="hYo-he-Qpp"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Paga 7 dlls y recibe este recetario por un mes gratis">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.89512310610000001" green="0.89512310610000001" blue="0.89512310610000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="lqR-Ec-C4s" firstAttribute="top" secondItem="BIN-qA-ER8" secondAttribute="bottom" constant="8" symbolic="YES" id="2RF-nM-0iU"/>
+                            <constraint firstItem="m49-N8-3fl" firstAttribute="leading" secondItem="Rbf-oO-jPi" secondAttribute="leadingMargin" constant="23" id="I3j-KQ-W1W"/>
+                            <constraint firstItem="lqR-Ec-C4s" firstAttribute="centerX" secondItem="Rbf-oO-jPi" secondAttribute="centerX" id="Pgq-ze-MHH"/>
+                            <constraint firstItem="txE-a0-K0D" firstAttribute="top" secondItem="BIN-qA-ER8" secondAttribute="bottom" constant="386" id="d5K-mh-Hhg"/>
+                            <constraint firstItem="mAB-sz-UdR" firstAttribute="top" secondItem="m49-N8-3fl" secondAttribute="bottom" constant="106" id="jtE-2w-kY2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="txE-a0-K0D" secondAttribute="trailing" constant="23" id="myZ-QB-336"/>
+                            <constraint firstItem="m49-N8-3fl" firstAttribute="top" secondItem="lqR-Ec-C4s" secondAttribute="bottom" constant="78" id="pWi-2F-vba"/>
+                            <constraint firstItem="m49-N8-3fl" firstAttribute="bottom" secondItem="txE-a0-K0D" secondAttribute="bottom" id="rN9-dK-Ijk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentImageView" destination="lqR-Ec-C4s" id="KLN-Sp-am6"/>
+                        <outlet property="view" destination="Rbf-oO-jPi" id="6jC-SN-Cmx"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2128" y="-3100"/>
         </scene>
     </scenes>
     <resources>
@@ -1206,11 +1263,11 @@
         <image name="viralizacion" width="693" height="440"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1Ic-gd-X6X"/>
-        <segue reference="xf7-3G-PbC"/>
-        <segue reference="mrh-qH-ct8"/>
-        <segue reference="kSD-zr-Oi7"/>
+        <segue reference="edY-XV-IE3"/>
         <segue reference="LXj-nS-J3B"/>
         <segue reference="fai-Ni-VIV"/>
+        <segue reference="9R8-As-rwx"/>
+        <segue reference="uxO-T8-OFS"/>
+        <segue reference="Q24-sr-Zc6"/>
     </inferredMetricsTieBreakers>
 </document>
