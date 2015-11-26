@@ -47,11 +47,40 @@ class TuCuentaView: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginMail(sender: AnyObject) {
         
-        
+        let mail = textfMail.text
+        let pass = textfPassword.text
+        PFUser.logInWithUsernameInBackground(mail!, password:pass!) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                // Do stuff after successful login.
+                self.performSegueWithIdentifier("cerrarsesion", sender: nil)
+            } else {
+                // The login failed. Check error to see why.
+            }
+        }
+    }
+    @IBAction func restablecer(sender: AnyObject) {
+        PFUser.requestPasswordResetForEmailInBackground(textfMail.text!)
     }
     
     @IBAction func registrarse(sender: AnyObject) {
+        let user = PFUser()
         
+        user.password = textfPassword.text
+        user.email = textfMail.text
+        user.username = textfMail.text
+        user.signUpInBackgroundWithBlock {
+            (succeeded: Bool, error: NSError?) -> Void in
+            if let error = error {
+                let errorString = error.userInfo["error"] as? NSString
+                print(errorString)
+                // Show the errorString somewhere and let the user try again.
+            } else {
+                // Hooray! Let them use the app now.
+                self.performSegueWithIdentifier("cerrarsesion", sender: nil)
+            }
+        }
+
         
     }
     
@@ -76,14 +105,7 @@ class TuCuentaView: UIViewController, UITextFieldDelegate {
             }
         })
         
-        /*// Request new Publish Permissions
-        PFFacebookUtils.linkUserInBackground(user, withPublishPermissions: ["publish_actions"], {
-        (succeeded: Bool?, error: NSError?) -> Void in
-        if succeeded {
-        print("User now has read and publish permissions!")
-        }
-        })*/
-        
+              
     }
     
     @IBAction func loginTwitter(sender: AnyObject) {

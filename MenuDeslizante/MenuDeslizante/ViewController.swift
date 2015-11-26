@@ -35,10 +35,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func loginMail(sender: AnyObject) {
-        PFUser.logInWithUsernameInBackground(textfMail.text!, password:textfPassword.text!) {
+        let mail = textfMail.text
+        let pass = textfPassword.text
+        PFUser.logInWithUsernameInBackground(mail!, password:pass!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 // Do stuff after successful login.
+                 self.performSegueWithIdentifier("Home", sender: nil)
             } else {
                 // The login failed. Check error to see why.
             }
@@ -121,6 +124,7 @@ print("User now has read and publish permissions!")
                 // Show the errorString somewhere and let the user try again.
             } else {
                 // Hooray! Let them use the app now.
+                 self.performSegueWithIdentifier("Home", sender: nil)
             }
         }
 
