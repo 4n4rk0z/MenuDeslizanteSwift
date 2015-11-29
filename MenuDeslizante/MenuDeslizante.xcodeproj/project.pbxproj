@@ -23,6 +23,7 @@
 		491576761BFBCAFC00EE641D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 491576751BFBCAFC00EE641D /* Images.xcassets */; };
 		491576791BFBCAFC00EE641D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491576771BFBCAFC00EE641D /* LaunchScreen.xib */; };
 		491576851BFBCAFC00EE641D /* MenuDeslizanteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491576841BFBCAFC00EE641D /* MenuDeslizanteTests.swift */; };
+		492BDAF41C0A99A400E22833 /* PageItemViralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BDAF31C0A99A400E22833 /* PageItemViralController.swift */; };
 		495947B71C06A7DA0025AE1F /* PagoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495947B61C06A7DA0025AE1F /* PagoViewController.swift */; };
 		495947B91C06A7FB0025AE1F /* PageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495947B81C06A7FB0025AE1F /* PageItemController.swift */; };
 		49BB51791BFFD4E9004E002A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BB51781BFFD4E9004E002A /* ViewController.swift */; };
@@ -78,6 +79,7 @@
 		4915767E1BFBCAFC00EE641D /* MenuDeslizanteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuDeslizanteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		491576831BFBCAFC00EE641D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		491576841BFBCAFC00EE641D /* MenuDeslizanteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDeslizanteTests.swift; sourceTree = "<group>"; };
+		492BDAF31C0A99A400E22833 /* PageItemViralController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItemViralController.swift; sourceTree = "<group>"; };
 		495947B61C06A7DA0025AE1F /* PagoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagoViewController.swift; sourceTree = "<group>"; };
 		495947B81C06A7FB0025AE1F /* PageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItemController.swift; sourceTree = "<group>"; };
 		49BB51781BFFD4E9004E002A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				495947B61C06A7DA0025AE1F /* PagoViewController.swift */,
 				495947B81C06A7FB0025AE1F /* PageItemController.swift */,
+				492BDAF31C0A99A400E22833 /* PageItemViralController.swift */,
 				49C3D3621BFBF9AF003B2344 /* PrincipalTableViewController.swift */,
 				49C3D3641BFC0542003B2344 /* PrincipalTableViewCell.swift */,
 				4905926D1C00E3A1006DDDD0 /* MenuPlatillos.swift */,
@@ -374,6 +377,7 @@
 				495947B91C06A7FB0025AE1F /* PageItemController.swift in Sources */,
 				490592801C0131EE006DDDD0 /* ViralizacionTableCell.swift in Sources */,
 				49C3D3651BFC0542003B2344 /* PrincipalTableViewCell.swift in Sources */,
+				492BDAF41C0A99A400E22833 /* PageItemViralController.swift in Sources */,
 				4905927E1C0131E0006DDDD0 /* ViralizacionTableViewController.swift in Sources */,
 				4915766F1BFBCAFB00EE641D /* AppDelegate.swift in Sources */,
 				495947B71C06A7DA0025AE1F /* PagoViewController.swift in Sources */,
