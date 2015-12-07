@@ -13,7 +13,7 @@ class ViralizacionTableCell: UITableViewCell {
     
     @IBOutlet weak var viralizacionImageView1:UIImageView!
     
-    @IBOutlet weak var viralizacionImageView2:UIImageView!
+  
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -12,6 +12,9 @@ import Bolts
 import ParseTwitterUtils
 import FBSDKCoreKit
 import ParseFacebookUtilsV4
+import Fabric
+import TwitterKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -56,6 +59,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
+        
+        Fabric.with([Twitter.self])
         return true
     }
 

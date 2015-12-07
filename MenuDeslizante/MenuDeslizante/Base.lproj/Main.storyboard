@@ -521,7 +521,7 @@
         <!--Receta-->
         <scene sceneID="R4r-Ha-jeD">
             <objects>
-                <viewController storyboardIdentifier="Platillo" title="Receta" id="TqI-jn-NKe" customClass="Platillo" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Platillo" title="Receta" id="TqI-jn-NKe" customClass="PlatillosViewController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XW1-a6-3hO"/>
                         <viewControllerLayoutGuide type="bottom" id="OFF-cE-ORO"/>
@@ -530,13 +530,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RpQ-Oq-RFH">
-                                <rect key="frame" x="34" y="255" width="532" height="297"/>
-                                <animations/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea   holacommodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui to factor tum poen legum odioque civiuda. hola Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea   holacommodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. hola              Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea   holacommodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. FIN</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arabe" translatesAutoresizingMaskIntoConstraints="NO" id="yhr-IS-QV9">
                                 <rect key="frame" x="41" y="64" width="518" height="129"/>
                                 <animations/>
@@ -551,6 +544,9 @@
                                     <constraint firstAttribute="width" constant="38" id="6n2-Oc-f6z"/>
                                 </constraints>
                                 <state key="normal" title="Favoritos" image="like"/>
+                                <connections>
+                                    <action selector="bLike:" destination="TqI-jn-NKe" eventType="touchUpInside" id="Qa2-5C-XNC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7s4-rl-xdj">
                                 <rect key="frame" x="244" y="558" width="31" height="32"/>
@@ -559,7 +555,17 @@
                                     <constraint firstAttribute="width" constant="31" id="tXM-Qh-ZEF"/>
                                 </constraints>
                                 <state key="normal" title="Compartir" image="share"/>
+                                <connections>
+                                    <action selector="bCompartir:" destination="TqI-jn-NKe" eventType="touchUpInside" id="2ir-L7-3c8"/>
+                                </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RpQ-Oq-RFH">
+                                <rect key="frame" x="34" y="253" width="532" height="297"/>
+                                <animations/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea   holacommodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui to factor tum poen legum odioque civiuda. hola Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea   holacommodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. hola              Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea   holacommodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. FIN</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -581,10 +587,13 @@
                             <constraint firstItem="OFF-cE-ORO" firstAttribute="top" secondItem="7s4-rl-xdj" secondAttribute="bottom" constant="10" id="xCp-zp-mxP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="sBL-Hz-WAH" kind="show" identifier="viralizarUno" id="Sco-K9-Ijq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7t0-GJ-q0K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2969" y="-123"/>
+            <point key="canvasLocation" x="3048" y="-129"/>
         </scene>
         <!--Menu Platillos-->
         <scene sceneID="EMx-vN-hTm">
@@ -888,21 +897,23 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="153"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BzC-tg-KqY">
-                                            <rect key="frame" x="9" y="13" width="173" height="128"/>
-                                            <animations/>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qKd-mu-IAt">
-                                            <rect key="frame" x="188" y="13" width="163" height="128"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carne" translatesAutoresizingMaskIntoConstraints="NO" id="BzC-tg-KqY">
+                                            <rect key="frame" x="9" y="13" width="583" height="128"/>
                                             <animations/>
                                         </imageView>
                                     </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="BzC-tg-KqY" firstAttribute="top" secondItem="5wz-33-5Kw" secondAttribute="topMargin" constant="5" id="6Oy-Ge-TN6"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="BzC-tg-KqY" secondAttribute="bottom" constant="4" id="IPI-jj-Mby"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="BzC-tg-KqY" secondAttribute="trailing" id="LeL-Wv-jsw"/>
+                                        <constraint firstItem="BzC-tg-KqY" firstAttribute="leading" secondItem="5wz-33-5Kw" secondAttribute="leadingMargin" constant="1" id="OAU-Om-cZZ"/>
+                                        <constraint firstItem="BzC-tg-KqY" firstAttribute="centerX" secondItem="5wz-33-5Kw" secondAttribute="centerX" id="qnl-4B-6fo"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
                                     <outlet property="viralizacionImageView1" destination="BzC-tg-KqY" id="Nyj-SQ-bSB"/>
-                                    <outlet property="viralizacionImageView2" destination="qKd-mu-IAt" id="t5X-GF-TmG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1239,12 +1250,12 @@
                 <pageViewController storyboardIdentifier="CompartirPageController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="1dA-ls-0va" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZ3-iu-bD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4692" y="-1431"/>
+            <point key="canvasLocation" x="5404" y="-1399"/>
         </scene>
-        <!--Page Item Controller-->
+        <!--Compartir Page Item Controller-->
         <scene sceneID="0MD-i9-gB9">
             <objects>
-                <viewController storyboardIdentifier="CompartirController" id="R0g-dP-eNm" customClass="PageItemController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CompartirController" id="R0g-dP-eNm" customClass="CompartirPageItemController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6fb-65-mlG"/>
                         <viewControllerLayoutGuide type="bottom" id="jyq-bI-QbE"/>
@@ -1253,46 +1264,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dv0-Tg-nZX">
-                                <rect key="frame" x="470" y="411" width="85" height="83"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="Yat-BP-Utz"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="pinterest"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGR-Q0-5SZ">
-                                <rect key="frame" x="369" y="397" width="99" height="97"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="nu9-iB-DLX"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="fb"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQo-G8-Hbg">
-                                <rect key="frame" x="43" y="426" width="173" height="68"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="173" id="22q-zK-sCw"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="Paga 7 dlls y recibe este recetario por un mes gratis">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdw-Qi-FQo">
-                                <rect key="frame" x="285" y="411" width="85" height="83"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="vBH-aW-yO6"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="tw"/>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oks-lx-44Q">
                                 <rect key="frame" x="140" y="28" width="320" height="320"/>
                                 <animations/>
@@ -1301,33 +1272,65 @@
                                     <constraint firstAttribute="width" constant="320" id="vks-Lj-mle"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dv0-Tg-nZX">
+                                <rect key="frame" x="227" y="407" width="90" height="88"/>
+                                <animations/>
+                                <state key="normal" backgroundImage="pinterest"/>
+                                <connections>
+                                    <action selector="bPrinteres:" destination="R0g-dP-eNm" eventType="touchUpInside" id="xTl-Ho-4R4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGR-Q0-5SZ">
+                                <rect key="frame" x="135" y="398" width="90" height="97"/>
+                                <animations/>
+                                <state key="normal" backgroundImage="fb"/>
+                                <connections>
+                                    <action selector="bFaceBook:" destination="R0g-dP-eNm" eventType="touchUpInside" id="Sxg-RJ-EL2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdw-Qi-FQo">
+                                <rect key="frame" x="45" y="407" width="90" height="88"/>
+                                <animations/>
+                                <state key="normal" backgroundImage="tw"/>
+                                <connections>
+                                    <action selector="bTwitter:" destination="R0g-dP-eNm" eventType="touchUpInside" id="vUt-Ig-Rof"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQo-G8-Hbg">
+                                <rect key="frame" x="20" y="512" width="322" height="68"/>
+                                <animations/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Comparte a 5 amigos y gana este paquete">
+                                        <attributes>
+                                            <color key="NSColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="clipping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.89512310610000001" green="0.89512310610000001" blue="0.89512310610000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="WQo-G8-Hbg" firstAttribute="leading" secondItem="e7Z-Qu-NRY" secondAttribute="leadingMargin" constant="23" id="3AD-Kj-0Cb"/>
                             <constraint firstItem="Oks-lx-44Q" firstAttribute="centerX" secondItem="e7Z-Qu-NRY" secondAttribute="centerX" id="FAl-2u-Tui"/>
                             <constraint firstItem="Oks-lx-44Q" firstAttribute="top" secondItem="6fb-65-mlG" secondAttribute="bottom" constant="8" symbolic="YES" id="IwO-hi-kZA"/>
-                            <constraint firstItem="jyq-bI-QbE" firstAttribute="top" secondItem="WQo-G8-Hbg" secondAttribute="bottom" constant="106" id="NcL-l6-Lup"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dv0-Tg-nZX" secondAttribute="trailing" constant="23" id="S7F-B1-nZZ"/>
-                            <constraint firstItem="WQo-G8-Hbg" firstAttribute="bottom" secondItem="dv0-Tg-nZX" secondAttribute="bottom" id="bDe-E2-Ujq"/>
-                            <constraint firstItem="WQo-G8-Hbg" firstAttribute="top" secondItem="Oks-lx-44Q" secondAttribute="bottom" constant="78" id="vnS-Jh-2Km"/>
-                            <constraint firstItem="dv0-Tg-nZX" firstAttribute="top" secondItem="6fb-65-mlG" secondAttribute="bottom" constant="386" id="xg1-1Q-86i"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="contentImageView" destination="Oks-lx-44Q" id="OGS-8n-V4f"/>
+                        <outlet property="contentImageView" destination="Oks-lx-44Q" id="z0R-lc-Dgf"/>
                         <outlet property="view" destination="e7Z-Qu-NRY" id="7om-IP-bdm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0K-Fh-dfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4024" y="-1443"/>
+            <point key="canvasLocation" x="4678" y="-1411"/>
         </scene>
         <!--Viralizacion-->
         <scene sceneID="g3j-vA-0ai">
             <objects>
-                <viewController id="sBL-Hz-WAH" customClass="PagoViewController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sBL-Hz-WAH" customClass="ViralizacionViewController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GJI-ck-DIy"/>
                         <viewControllerLayoutGuide type="bottom" id="umQ-NK-cJL"/>
@@ -1344,12 +1347,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rs4-5J-WOt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3080" y="-1431"/>
+            <point key="canvasLocation" x="3760" y="-1405"/>
         </scene>
     </scenes>
     <resources>
         <image name="arabe" width="1685" height="1123"/>
         <image name="avion" width="66" height="62"/>
+        <image name="carne" width="500" height="400"/>
         <image name="copa" width="66" height="62"/>
         <image name="diez" width="121" height="121"/>
         <image name="dinero" width="220" height="220"/>
@@ -1365,12 +1369,13 @@
         <image name="viralizacion" width="693" height="440"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="LXj-nS-J3B"/>
+        <segue reference="sf2-P7-QVW"/>
+        <segue reference="1Ic-gd-X6X"/>
+        <segue reference="mrh-qH-ct8"/>
+        <segue reference="xf7-3G-PbC"/>
+        <segue reference="fai-Ni-VIV"/>
+        <segue reference="BYM-AS-4lU"/>
         <segue reference="NZW-hL-axY"/>
-        <segue reference="5V6-UQ-NDg"/>
-        <segue reference="Tm9-C3-w7I"/>
-        <segue reference="edY-XV-IE3"/>
-        <segue reference="uxO-T8-OFS"/>
-        <segue reference="Q24-sr-Zc6"/>
-        <segue reference="cXi-LM-M6b"/>
     </inferredMetricsTieBreakers>
 </document>

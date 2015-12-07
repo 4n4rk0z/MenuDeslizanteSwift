@@ -10,6 +10,8 @@ import UIKit
 import Parse
 import ParseTwitterUtils
 import ParseFacebookUtilsV4
+import TwitterKit
+
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
@@ -20,7 +22,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+ 
         let user = PFUser.currentUser()
 
         if user != nil{
@@ -49,6 +51,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
        
     }
     
+    
+    func ligarFb(user: PFUser)
+    {
+        if !PFFacebookUtils.isLinkedWithUser(user) {
+            PFFacebookUtils.linkUserInBackground(user, withReadPermissions: nil, block: {
+                (succeeded: Bool?, error: NSError?) -> Void in
+                if (succeeded != nil) {
+                    print("Woohoo, the user is linked with Facebook!")
+                }
+            })
+        }
+    }
+
    
     
     @IBAction func loginFacebook(sender: AnyObject) {
@@ -65,13 +80,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     print("User logged in through Facebook!")
                 }
                 
+                self.ligarFb(user)
                 self.performSegueWithIdentifier("Home", sender: nil)
                 
             } else {
                 print("Uh oh. The user cancelled the Facebook login.")
             }
         })
-       
+        
 /*// Request new Publish Permissions
 PFFacebookUtils.linkUserInBackground(user, withPublishPermissions: ["publish_actions"], {
 (succeeded: Bool?, error: NSError?) -> Void in

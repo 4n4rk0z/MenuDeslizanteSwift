@@ -26,6 +26,10 @@
 		492BDAF41C0A99A400E22833 /* PageItemViralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BDAF31C0A99A400E22833 /* PageItemViralController.swift */; };
 		495947B71C06A7DA0025AE1F /* PagoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495947B61C06A7DA0025AE1F /* PagoViewController.swift */; };
 		495947B91C06A7FB0025AE1F /* PageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495947B81C06A7FB0025AE1F /* PageItemController.swift */; };
+		49BB0E1F1C1517920079E96D /* PlatillosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BB0E1E1C1517920079E96D /* PlatillosViewController.swift */; };
+		49BB0E211C1518A90079E96D /* ViralizacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BB0E201C1518A90079E96D /* ViralizacionViewController.swift */; };
+		49BB0E251C151A580079E96D /* CompartirPageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BB0E241C151A580079E96D /* CompartirPageItemController.swift */; };
+		49BB0E291C152B000079E96D /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BB0E281C152B000079E96D /* FBSDKShareKit.framework */; };
 		49BB51791BFFD4E9004E002A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BB51781BFFD4E9004E002A /* ViewController.swift */; };
 		49BB51801BFFD529004E002A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BB517A1BFFD529004E002A /* Bolts.framework */; };
 		49BB51811BFFD529004E002A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BB517B1BFFD529004E002A /* FBSDKCoreKit.framework */; };
@@ -46,6 +50,10 @@
 		49C3D3611BFBF6DA003B2344 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3D3601BFBF6DA003B2344 /* SWRevealViewController.m */; };
 		49C3D3631BFBF9AF003B2344 /* PrincipalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3D3621BFBF9AF003B2344 /* PrincipalTableViewController.swift */; };
 		49C3D3651BFC0542003B2344 /* PrincipalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3D3641BFC0542003B2344 /* PrincipalTableViewCell.swift */; };
+		49ED44AC1C15382C00BF4D77 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49ED44A81C15382C00BF4D77 /* Fabric.framework */; };
+		49ED44AD1C15382C00BF4D77 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49ED44A91C15382C00BF4D77 /* TwitterKit.framework */; };
+		49ED44AE1C15382C00BF4D77 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49ED44AA1C15382C00BF4D77 /* TwitterKitResources.bundle */; };
+		49ED44AF1C15382C00BF4D77 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49ED44AB1C15382C00BF4D77 /* TwitterCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +90,10 @@
 		492BDAF31C0A99A400E22833 /* PageItemViralController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItemViralController.swift; sourceTree = "<group>"; };
 		495947B61C06A7DA0025AE1F /* PagoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagoViewController.swift; sourceTree = "<group>"; };
 		495947B81C06A7FB0025AE1F /* PageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItemController.swift; sourceTree = "<group>"; };
+		49BB0E1E1C1517920079E96D /* PlatillosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatillosViewController.swift; sourceTree = "<group>"; };
+		49BB0E201C1518A90079E96D /* ViralizacionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViralizacionViewController.swift; sourceTree = "<group>"; };
+		49BB0E241C151A580079E96D /* CompartirPageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompartirPageItemController.swift; sourceTree = "<group>"; };
+		49BB0E281C152B000079E96D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		49BB51781BFFD4E9004E002A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		49BB517A1BFFD529004E002A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../Prueba_Swift/Bolts.framework; sourceTree = "<group>"; };
 		49BB517B1BFFD529004E002A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Prueba_Swift/FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -104,6 +116,10 @@
 		49C3D3601BFBF6DA003B2344 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		49C3D3621BFBF9AF003B2344 /* PrincipalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipalTableViewController.swift; sourceTree = "<group>"; };
 		49C3D3641BFC0542003B2344 /* PrincipalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipalTableViewCell.swift; sourceTree = "<group>"; };
+		49ED44A81C15382C00BF4D77 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		49ED44A91C15382C00BF4D77 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		49ED44AA1C15382C00BF4D77 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		49ED44AB1C15382C00BF4D77 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +129,12 @@
 			files = (
 				49BB51A61BFFD664004E002A /* AudioToolbox.framework in Frameworks */,
 				49BB51A41BFFD65E004E002A /* CFNetwork.framework in Frameworks */,
+				49BB0E291C152B000079E96D /* FBSDKShareKit.framework in Frameworks */,
 				49BB51A21BFFD657004E002A /* CoreGraphics.framework in Frameworks */,
 				49BB519C1BFFD625004E002A /* CoreLocation.framework in Frameworks */,
+				49ED44AF1C15382C00BF4D77 /* TwitterCore.framework in Frameworks */,
+				49ED44AD1C15382C00BF4D77 /* TwitterKit.framework in Frameworks */,
+				49ED44AC1C15382C00BF4D77 /* Fabric.framework in Frameworks */,
 				49BB51A01BFFD643004E002A /* Security.framework in Frameworks */,
 				49BB519E1BFFD62D004E002A /* QuartzCore.framework in Frameworks */,
 				49BB519A1BFFD61C004E002A /* StoreKit.framework in Frameworks */,
@@ -158,6 +178,9 @@
 				4905927B1C00FE50006DDDD0 /* PerfilViewController.swift */,
 				4905927D1C0131E0006DDDD0 /* ViralizacionTableViewController.swift */,
 				4905927F1C0131EE006DDDD0 /* ViralizacionTableCell.swift */,
+				49BB0E1E1C1517920079E96D /* PlatillosViewController.swift */,
+				49BB0E201C1518A90079E96D /* ViralizacionViewController.swift */,
+				49BB0E241C151A580079E96D /* CompartirPageItemController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -233,6 +256,11 @@
 		49BB51861BFFD535004E002A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49ED44A81C15382C00BF4D77 /* Fabric.framework */,
+				49ED44A91C15382C00BF4D77 /* TwitterKit.framework */,
+				49ED44AA1C15382C00BF4D77 /* TwitterKitResources.bundle */,
+				49ED44AB1C15382C00BF4D77 /* TwitterCore.framework */,
+				49BB0E281C152B000079E96D /* FBSDKShareKit.framework */,
 				49BB51A51BFFD664004E002A /* AudioToolbox.framework */,
 				49BB51A31BFFD65E004E002A /* CFNetwork.framework */,
 				49BB51A11BFFD657004E002A /* CoreGraphics.framework */,
@@ -273,6 +301,7 @@
 				491576651BFBCAFB00EE641D /* Sources */,
 				491576661BFBCAFB00EE641D /* Frameworks */,
 				491576671BFBCAFB00EE641D /* Resources */,
+				49ED44A71C15377B00BF4D77 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -345,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49ED44AE1C15382C00BF4D77 /* TwitterKitResources.bundle in Resources */,
 				491576741BFBCAFB00EE641D /* Main.storyboard in Resources */,
 				491576791BFBCAFC00EE641D /* LaunchScreen.xib in Resources */,
 				491576761BFBCAFC00EE641D /* Images.xcassets in Resources */,
@@ -360,6 +390,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		49ED44A71C15377B00BF4D77 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 61e0d9761208fae8cf2b241b23eb83a6ef7d1528 9571d3ac0b1b75bbe58cbed8fe1f7f67d5fc81b7b51eb03abe1060af9c9165c4";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		491576651BFBCAFB00EE641D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -368,10 +414,12 @@
 				490592761C00F72D006DDDD0 /* ConsejosViewController.swift in Sources */,
 				490592781C00F742006DDDD0 /* TuCuentaViewController.swift in Sources */,
 				49BB51791BFFD4E9004E002A /* ViewController.swift in Sources */,
+				49BB0E1F1C1517920079E96D /* PlatillosViewController.swift in Sources */,
 				490592701C00E431006DDDD0 /* TableViewCell.swift in Sources */,
 				49C3D3631BFBF9AF003B2344 /* PrincipalTableViewController.swift in Sources */,
 				490592741C00F71C006DDDD0 /* FavoritosTableViewCell.swift in Sources */,
 				4905927A1C00F74E006DDDD0 /* CreditosViewController.swift in Sources */,
+				49BB0E211C1518A90079E96D /* ViralizacionViewController.swift in Sources */,
 				4905926E1C00E3A1006DDDD0 /* MenuPlatillos.swift in Sources */,
 				491576711BFBCAFB00EE641D /* MenuController.swift in Sources */,
 				495947B91C06A7FB0025AE1F /* PageItemController.swift in Sources */,
@@ -380,6 +428,7 @@
 				492BDAF41C0A99A400E22833 /* PageItemViralController.swift in Sources */,
 				4905927E1C0131E0006DDDD0 /* ViralizacionTableViewController.swift in Sources */,
 				4915766F1BFBCAFB00EE641D /* AppDelegate.swift in Sources */,
+				49BB0E251C151A580079E96D /* CompartirPageItemController.swift in Sources */,
 				495947B71C06A7DA0025AE1F /* PagoViewController.swift in Sources */,
 				49C3D3611BFBF6DA003B2344 /* SWRevealViewController.m in Sources */,
 				4905927C1C00FE50006DDDD0 /* PerfilViewController.swift in Sources */,

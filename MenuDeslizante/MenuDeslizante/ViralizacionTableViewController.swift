@@ -30,25 +30,37 @@ class ViralizacionTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return 3
+        return 6
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("viralizar", sender: nil)
+        
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ViralizacionTableCell
         
         if indexPath.row == 0 {
             cell.viralizacionImageView1.image = UIImage(named: "chatarra")
-            cell.viralizacionImageView2.image = UIImage(named: "arabe")
             
         } else if indexPath.row == 1{
             cell.viralizacionImageView1.image = UIImage(named: "arabe")
-            cell.viralizacionImageView2.image = UIImage(named: "chatarra")
             
+        }else if indexPath.row == 2{
+            cell.viralizacionImageView1.image = UIImage(named: "chatarra")
+            
+        }else if indexPath.row == 3{
+            cell.viralizacionImageView1.image = UIImage(named: "salchichas")
+            
+        }else if indexPath.row == 4{
+            cell.viralizacionImageView1.image = UIImage(named: "carne")
+            
+        }else if indexPath.row == 5{
+            cell.viralizacionImageView1.image = UIImage(named: "chatarra")
             
         }else{
-            cell.viralizacionImageView1.image = UIImage(named: "chatarra")
-            cell.viralizacionImageView2.image = UIImage(named: "arabe")
+            cell.viralizacionImageView1.image = UIImage(named: "arabe")
             
         }
         
