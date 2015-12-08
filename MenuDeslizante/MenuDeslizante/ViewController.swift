@@ -88,14 +88,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         })
         
-/*// Request new Publish Permissions
-PFFacebookUtils.linkUserInBackground(user, withPublishPermissions: ["publish_actions"], {
-(succeeded: Bool?, error: NSError?) -> Void in
-if succeeded {
-print("User now has read and publish permissions!")
-}
-})*/
-
     }
     
     @IBAction func loginTwitter(sender: AnyObject) {
@@ -124,10 +116,6 @@ print("User now has read and publish permissions!")
     @IBAction func saltarLogin(sender: AnyObject) {
         self.performSegueWithIdentifier("Home", sender: nil)
 
-//        let push = PFPush()
-//        push.setChannel("Giants")
-//        push.setMessage("The Giants just scored!")
-//        push.sendPushInBackground()
     }
     
     
