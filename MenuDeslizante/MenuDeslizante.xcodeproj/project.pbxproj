@@ -342,7 +342,7 @@
 				TargetAttributes = {
 					491576681BFBCAFB00EE641D = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = K5R9Q25YX2;
+						DevelopmentTeam = LP65999SC2;
 					};
 					4915767D1BFBCAFC00EE641D = {
 						CreatedOnToolsVersion = 6.3;
@@ -576,7 +576,7 @@
 					"-lz",
 					"-lsqlite3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ejemplo.DevWorms.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DevWorms.MenuDeslizante;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MenuDeslizante/MenuDeslizante-Bridging-Header.h";
@@ -604,7 +604,7 @@
 					"-lz",
 					"-lsqlite3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ejemplo.DevWorms.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DevWorms.MenuDeslizante;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MenuDeslizante/MenuDeslizante-Bridging-Header.h";

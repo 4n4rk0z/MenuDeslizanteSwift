@@ -61,6 +61,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         Fabric.with([Twitter.self])
+        
+        // Store the deviceToken in the current Installation and save it to Parse
+        /*        */
+      
+    
+        
+        let types:UIUserNotificationType = [UIUserNotificationType.Alert , UIUserNotificationType.Badge , UIUserNotificationType.Sound]
+        
+        let settings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
+        
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications();
+        
+        
+        
+        
         return true
     }
 
@@ -73,6 +89,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 sourceApplication: sourceApplication,
                 annotation: annotation)
     }
+
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        
+        let installation = PFInstallation.currentInstallation()
+        installation.addUniqueObject("Giants", forKey: "channels")
+        installation.setDeviceTokenFromData(deviceToken)
+        installation.saveInBackground()
+
+        
+        
+    
+     }    // Store the deviceToken in the current installation and save it to Parse.
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc : UIViewController
+        vc = storyboard.instantiateViewControllerWithIdentifier("ViralizacionControlerID")
+        self.window?.rootViewController = vc
+        
+    }
+
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
