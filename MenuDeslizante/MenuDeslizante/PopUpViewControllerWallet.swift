@@ -14,13 +14,13 @@ import Parse
 
     var popViewController : PopUpViewControllerFormasPago!
     var popViewControllerPagoTienda : PopUpViewControllerPagoTienda!
+    var ventanaMenuPlatillos : MenuPlatillos!
     var tipoSuscripcion : Bool = false
     var mainViewController :UIView!
     var clientID:String!
     var tarjetaSeleccionadaId:String!
     var planId:String?
     var precioProducto:Double!
-    var mainView : UIView!
     
     @IBOutlet weak var lEmail: UILabel!
     @IBOutlet weak var popUpView: UIView!
@@ -69,7 +69,6 @@ import Parse
         if animated{
             self.showAnimate()
         }
-        self.mainView = aView
 
         self.precioProducto = precio
         self.planId = planID
@@ -350,8 +349,9 @@ import Parse
         if self.btnPagar.titleLabel?.text == "Aceptar"{
             removeAnimate()
             
-            //Hacer lo corresopndiente con
-            self.performSegueWithIdentifier("gratis", sender: nil)
+            
+          
+            
         }
         else
         {

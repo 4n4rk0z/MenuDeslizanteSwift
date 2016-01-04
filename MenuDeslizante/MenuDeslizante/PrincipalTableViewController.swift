@@ -66,7 +66,7 @@ class PrincipalTableViewController: UITableViewController {
         else if goto=="pago"
         {
             self.abrirVentanaPop(5.0,suscripcion:  true, planId:  "prhhst3k5uucmunpl9fr")
-//            self.performSegueWithIdentifier("pago", sender: nil)
+            //self.performSegueWithIdentifier("gratis", sender: nil)
         }
         else if goto=="viralizacion"
         {
@@ -117,6 +117,7 @@ class PrincipalTableViewController: UITableViewController {
         let bundle = NSBundle(forClass: PopUpViewControllerSwift.self)
         
         let strPantalla = pantallaSize()
+        
         
         self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController"+strPantalla, bundle: bundle)
         self.popViewController.showInView(self.view, animated: true, precioProducto: precio,suscripcion:  suscripcion, planId: planId)
