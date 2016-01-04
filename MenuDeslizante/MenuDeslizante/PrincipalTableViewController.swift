@@ -9,7 +9,7 @@
 import UIKit
 
 class PrincipalTableViewController: UITableViewController {
-    
+    var popViewController : PopUpViewControllerSwift!
     @IBOutlet weak var menuButton:UIBarButtonItem!
     
     //Para decirnos cual es la opcion que corresponde a cada posicion del menu, es un pseudo tag
@@ -65,7 +65,8 @@ class PrincipalTableViewController: UITableViewController {
         }
         else if goto=="pago"
         {
-            self.performSegueWithIdentifier("pago", sender: nil)
+            self.abrirVentanaPop(5.0,suscripcion:  true, planId:  "prhhst3k5uucmunpl9fr")
+//            self.performSegueWithIdentifier("pago", sender: nil)
         }
         else if goto=="viralizacion"
         {
@@ -104,51 +105,47 @@ class PrincipalTableViewController: UITableViewController {
         return cell
     }
     
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the specified item to be editable.
-    return true
-    }
-    */
-    
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }
-    }
-    */
-    
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
-    }
-    */
-    
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the item to be re-orderable.
-    return true
-    }
-    */
-    
-    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    
-        
-
     }
+    
+    
+    func abrirVentanaPop(precio:Double, suscripcion:Bool!, planId:String!){
+        let precio = precio
+        let bundle = NSBundle(forClass: PopUpViewControllerSwift.self)
+        
+        let strPantalla = pantallaSize()
+        
+        self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController"+strPantalla, bundle: bundle)
+        self.popViewController.showInView(self.view, animated: true, precioProducto: precio,suscripcion:  suscripcion, planId: planId)
+        
+    }
+    
+    
+    func pantallaSize()->String!
+    {
+        var strPantalla = ""
+        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
+        {
+            strPantalla = "_iPad"
+        }
+        else
+        {
+            
+            if UIScreen.mainScreen().bounds.size.width > 320 {
+                if UIScreen.mainScreen().scale == 3 {
+                    strPantalla = "_iPhone6Plus"
+                }
+                else{
+                    strPantalla = "_iPhone6"
+                }
+            }
+        }
+        return strPantalla
+    }
+
     
 
 }

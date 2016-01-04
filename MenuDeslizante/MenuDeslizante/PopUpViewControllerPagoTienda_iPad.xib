@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpViewControllerPagoTienda" customModule="MenuDeslizante" customModuleProvider="target">
+            <connections>
+                <outlet property="btnPagar" destination="VOL-hb-TYK" id="YSV-9S-xhD"/>
+                <outlet property="btnRegresar" destination="0y2-wc-p4R" id="dBl-FP-tkY"/>
+                <outlet property="gActivity" destination="1Pw-vf-zcd" id="8H0-H6-I3I"/>
+                <outlet property="ivBarras" destination="jaZ-9q-Bly" id="N42-Qt-kP6"/>
+                <outlet property="labelTexto" destination="nXc-ju-qCS" id="TPf-eb-vEK"/>
+                <outlet property="popUpView" destination="R2Y-as-6QP" id="p4e-Ja-5bf"/>
+                <outlet property="txtEmail" destination="kdy-Rg-CMe" id="VxL-FX-i0G"/>
+                <outlet property="txtNombre" destination="pZb-b8-ITN" id="gqS-qn-X5e"/>
+                <outlet property="txtNumero" destination="TFl-CO-34V" id="F79-dh-tiK"/>
+                <outlet property="view" destination="R2Y-as-6QP" id="eKh-vb-cdE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="R2Y-as-6QP">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b23-rx-77l">
+                    <rect key="frame" x="158" y="245" width="451" height="535"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Introducir datos del cliente" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zE-Qw-uSB">
+                            <rect key="frame" x="24" y="8" width="403" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="seven" translatesAutoresizingMaskIntoConstraints="NO" id="Qn8-58-cwW">
+                            <rect key="frame" x="29" y="60" width="87" height="59"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FA" translatesAutoresizingMaskIntoConstraints="NO" id="wMf-S8-Cfb">
+                            <rect key="frame" x="108" y="60" width="87" height="59"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="extra" translatesAutoresizingMaskIntoConstraints="NO" id="ALb-Pt-jfJ">
+                            <rect key="frame" x="196" y="60" width="87" height="59"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="waldos" translatesAutoresizingMaskIntoConstraints="NO" id="ITQ-T2-Ddv">
+                            <rect key="frame" x="283" y="60" width="87" height="59"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="k" translatesAutoresizingMaskIntoConstraints="NO" id="E3m-Jb-Blv">
+                            <rect key="frame" x="356" y="60" width="87" height="59"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pZb-b8-ITN">
+                            <rect key="frame" x="22" y="121" width="406" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kdy-Rg-CMe">
+                            <rect key="frame" x="22" y="159" width="406" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefóno" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFl-CO-34V">
+                            <rect key="frame" x="22" y="197" width="406" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                        </textField>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jaZ-9q-Bly">
+                            <rect key="frame" x="22" y="242" width="406" height="128"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXc-ju-qCS">
+                            <rect key="frame" x="82" y="378" width="315" height="79"/>
+                            <attributedString key="attributedText">
+                                <fragment>
+                                    <string key="content">Presente este código de barras
+en cualquiera las tiendas afiliadas
+Este código puede ser consultado en la sección "Tu cuenta"</string>
+                                    <attributes>
+                                        <color key="NSColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <font key="NSFont" size="14" name="HelveticaNeue-Italic"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1Pw-vf-zcd">
+                            <rect key="frame" x="215" y="369" width="20" height="20"/>
+                        </activityIndicatorView>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOL-hb-TYK">
+                            <rect key="frame" x="374" y="482" width="53" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="UXd-hf-h11"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Pagar">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnSiguiente:" destination="-1" eventType="touchUpInside" id="xLt-79-w4o"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0y2-wc-p4R">
+                            <rect key="frame" x="283" y="482" width="67" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="isg-1d-7Cu"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Regresar">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnCancelar:" destination="-1" eventType="touchUpInside" id="rBh-Zk-jUc"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="b23-rx-77l" secondAttribute="trailing" constant="159" id="4xl-LO-vzS"/>
+                <constraint firstAttribute="bottom" secondItem="b23-rx-77l" secondAttribute="bottom" constant="244" id="N2p-bx-haP"/>
+                <constraint firstItem="b23-rx-77l" firstAttribute="leading" secondItem="R2Y-as-6QP" secondAttribute="leading" constant="158" id="dza-yU-So2"/>
+                <constraint firstItem="b23-rx-77l" firstAttribute="top" secondItem="R2Y-as-6QP" secondAttribute="top" constant="245" id="lgl-J3-RmZ"/>
+            </constraints>
+            <point key="canvasLocation" x="257" y="223"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="FA" width="210" height="136"/>
+        <image name="extra" width="210" height="136"/>
+        <image name="k" width="210" height="136"/>
+        <image name="seven" width="210" height="136"/>
+        <image name="waldos" width="210" height="136"/>
+    </resources>
+</document>

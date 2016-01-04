@@ -3,3 +3,8 @@
 //
 
 #import "SWRevealViewController.h"
+#import "OpenPay.h"
+#import "OPToken.h"
+#import "OPCard.h"
+#import "OPAddress.h"
+#import "DeviceCollectorSDK.h"

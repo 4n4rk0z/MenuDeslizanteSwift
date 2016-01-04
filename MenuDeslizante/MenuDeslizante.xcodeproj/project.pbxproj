@@ -26,6 +26,37 @@
 		492BDAF41C0A99A400E22833 /* PageItemViralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BDAF31C0A99A400E22833 /* PageItemViralController.swift */; };
 		495947B71C06A7DA0025AE1F /* PagoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495947B61C06A7DA0025AE1F /* PagoViewController.swift */; };
 		495947B91C06A7FB0025AE1F /* PageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495947B81C06A7FB0025AE1F /* PageItemController.swift */; };
+		49A708A41C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7088B1C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPad.xib */; };
+		49A708A51C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7088C1C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6.xib */; };
+		49A708A61C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7088D1C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6Plus.xib */; };
+		49A708A71C3AF25200483CF0 /* PopUpViewControllerDescripcion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7088E1C3AF25200483CF0 /* PopUpViewControllerDescripcion.xib */; };
+		49A708A81C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7088F1C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPad.xib */; };
+		49A708A91C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A708901C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPhone6.xib */; };
+		49A708AA1C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A708911C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPhone6Plus.xib */; };
+		49A708AB1C3AF25200483CF0 /* PopUpViewControllerFormasPago.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A708921C3AF25200483CF0 /* PopUpViewControllerFormasPago.xib */; };
+		49A708AC1C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A708931C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPad.xib */; };
+		49A708AD1C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A708941C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPhone6.xib */; };
+		49A708AE1C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A708951C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPhone6Plus.xib */; };
+		49A708AF1C3AF25200483CF0 /* PopUpViewControllerPagoTienda.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A708961C3AF25200483CF0 /* PopUpViewControllerPagoTienda.xib */; };
+		49A708B01C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A708971C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPad.xib */; };
+		49A708B11C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A708981C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPhone6.xib */; };
+		49A708B21C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A708991C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPhone6Plus.xib */; };
+		49A708B31C3AF25200483CF0 /* PopUpViewControllerTarjetas.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7089A1C3AF25200483CF0 /* PopUpViewControllerTarjetas.xib */; };
+		49A708B41C3AF25200483CF0 /* PopUpViewControllerWallet_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7089B1C3AF25200483CF0 /* PopUpViewControllerWallet_iPad.xib */; };
+		49A708B51C3AF25200483CF0 /* PopUpViewControllerWallet_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7089C1C3AF25200483CF0 /* PopUpViewControllerWallet_iPhone6.xib */; };
+		49A708B61C3AF25200483CF0 /* PopUpViewControllerWallet_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7089D1C3AF25200483CF0 /* PopUpViewControllerWallet_iPhone6Plus.xib */; };
+		49A708B71C3AF25200483CF0 /* PopUpViewControllerWallet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7089E1C3AF25200483CF0 /* PopUpViewControllerWallet.xib */; };
+		49A708B81C3AF25200483CF0 /* PopUpViewControllerDescripcion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7089F1C3AF25200483CF0 /* PopUpViewControllerDescripcion.swift */; };
+		49A708B91C3AF25200483CF0 /* PopUpViewControllerFormasPago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A708A01C3AF25200483CF0 /* PopUpViewControllerFormasPago.swift */; };
+		49A708BA1C3AF25200483CF0 /* PopUpViewControllerPagoTienda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A708A11C3AF25200483CF0 /* PopUpViewControllerPagoTienda.swift */; };
+		49A708BB1C3AF25200483CF0 /* PopUpViewControllerTarjetas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A708A21C3AF25200483CF0 /* PopUpViewControllerTarjetas.swift */; };
+		49A708BC1C3AF25200483CF0 /* PopUpViewControllerWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A708A31C3AF25200483CF0 /* PopUpViewControllerWallet.swift */; };
+		49A708C41C3AF26B00483CF0 /* PopUpViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A708BE1C3AF26B00483CF0 /* PopUpViewController_iPad.xib */; };
+		49A708C51C3AF26B00483CF0 /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A708BF1C3AF26B00483CF0 /* PopUpViewController_iPhone6.xib */; };
+		49A708C61C3AF26B00483CF0 /* PopUpViewController_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A708C01C3AF26B00483CF0 /* PopUpViewController_iPhone6Plus.xib */; };
+		49A708C71C3AF26B00483CF0 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A708C11C3AF26B00483CF0 /* PopUpViewController.xib */; };
+		49A708C81C3AF26B00483CF0 /* PopUpViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A708C21C3AF26B00483CF0 /* PopUpViewControllerSwift.swift */; };
+		49A708D11C3AF44F00483CF0 /* openpay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A708D01C3AF44F00483CF0 /* openpay.a */; };
 		49BB0E1F1C1517920079E96D /* PlatillosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BB0E1E1C1517920079E96D /* PlatillosViewController.swift */; };
 		49BB0E211C1518A90079E96D /* ViralizacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BB0E201C1518A90079E96D /* ViralizacionViewController.swift */; };
 		49BB0E251C151A580079E96D /* CompartirPageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BB0E241C151A580079E96D /* CompartirPageItemController.swift */; };
@@ -90,6 +121,42 @@
 		492BDAF31C0A99A400E22833 /* PageItemViralController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItemViralController.swift; sourceTree = "<group>"; };
 		495947B61C06A7DA0025AE1F /* PagoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagoViewController.swift; sourceTree = "<group>"; };
 		495947B81C06A7FB0025AE1F /* PageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItemController.swift; sourceTree = "<group>"; };
+		49A7088B1C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerDescripcion_iPad.xib; sourceTree = "<group>"; };
+		49A7088C1C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerDescripcion_iPhone6.xib; sourceTree = "<group>"; };
+		49A7088D1C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerDescripcion_iPhone6Plus.xib; sourceTree = "<group>"; };
+		49A7088E1C3AF25200483CF0 /* PopUpViewControllerDescripcion.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerDescripcion.xib; sourceTree = "<group>"; };
+		49A7088F1C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerFormasPago_iPad.xib; sourceTree = "<group>"; };
+		49A708901C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerFormasPago_iPhone6.xib; sourceTree = "<group>"; };
+		49A708911C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPhone6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerFormasPago_iPhone6Plus.xib; sourceTree = "<group>"; };
+		49A708921C3AF25200483CF0 /* PopUpViewControllerFormasPago.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerFormasPago.xib; sourceTree = "<group>"; };
+		49A708931C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerPagoTienda_iPad.xib; sourceTree = "<group>"; };
+		49A708941C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerPagoTienda_iPhone6.xib; sourceTree = "<group>"; };
+		49A708951C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPhone6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerPagoTienda_iPhone6Plus.xib; sourceTree = "<group>"; };
+		49A708961C3AF25200483CF0 /* PopUpViewControllerPagoTienda.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerPagoTienda.xib; sourceTree = "<group>"; };
+		49A708971C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerTarjetas_iPad.xib; sourceTree = "<group>"; };
+		49A708981C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerTarjetas_iPhone6.xib; sourceTree = "<group>"; };
+		49A708991C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPhone6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerTarjetas_iPhone6Plus.xib; sourceTree = "<group>"; };
+		49A7089A1C3AF25200483CF0 /* PopUpViewControllerTarjetas.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerTarjetas.xib; sourceTree = "<group>"; };
+		49A7089B1C3AF25200483CF0 /* PopUpViewControllerWallet_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerWallet_iPad.xib; sourceTree = "<group>"; };
+		49A7089C1C3AF25200483CF0 /* PopUpViewControllerWallet_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerWallet_iPhone6.xib; sourceTree = "<group>"; };
+		49A7089D1C3AF25200483CF0 /* PopUpViewControllerWallet_iPhone6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerWallet_iPhone6Plus.xib; sourceTree = "<group>"; };
+		49A7089E1C3AF25200483CF0 /* PopUpViewControllerWallet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerWallet.xib; sourceTree = "<group>"; };
+		49A7089F1C3AF25200483CF0 /* PopUpViewControllerDescripcion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewControllerDescripcion.swift; sourceTree = "<group>"; };
+		49A708A01C3AF25200483CF0 /* PopUpViewControllerFormasPago.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewControllerFormasPago.swift; sourceTree = "<group>"; };
+		49A708A11C3AF25200483CF0 /* PopUpViewControllerPagoTienda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewControllerPagoTienda.swift; sourceTree = "<group>"; };
+		49A708A21C3AF25200483CF0 /* PopUpViewControllerTarjetas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewControllerTarjetas.swift; sourceTree = "<group>"; };
+		49A708A31C3AF25200483CF0 /* PopUpViewControllerWallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewControllerWallet.swift; sourceTree = "<group>"; };
+		49A708BE1C3AF26B00483CF0 /* PopUpViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController_iPad.xib; sourceTree = "<group>"; };
+		49A708BF1C3AF26B00483CF0 /* PopUpViewController_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController_iPhone6.xib; sourceTree = "<group>"; };
+		49A708C01C3AF26B00483CF0 /* PopUpViewController_iPhone6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController_iPhone6Plus.xib; sourceTree = "<group>"; };
+		49A708C11C3AF26B00483CF0 /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
+		49A708C21C3AF26B00483CF0 /* PopUpViewControllerSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewControllerSwift.swift; sourceTree = "<group>"; };
+		49A708C91C3AF31400483CF0 /* DeviceCollectorSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceCollectorSDK.h; sourceTree = "<group>"; };
+		49A708CA1C3AF31400483CF0 /* OPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPAddress.h; sourceTree = "<group>"; };
+		49A708CB1C3AF31400483CF0 /* OPCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPCard.h; sourceTree = "<group>"; };
+		49A708CC1C3AF31400483CF0 /* Openpay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Openpay.h; sourceTree = "<group>"; };
+		49A708CD1C3AF31400483CF0 /* OPToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPToken.h; sourceTree = "<group>"; };
+		49A708D01C3AF44F00483CF0 /* openpay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = openpay.a; sourceTree = "<group>"; };
 		49BB0E1E1C1517920079E96D /* PlatillosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatillosViewController.swift; sourceTree = "<group>"; };
 		49BB0E201C1518A90079E96D /* ViralizacionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViralizacionViewController.swift; sourceTree = "<group>"; };
 		49BB0E241C151A580079E96D /* CompartirPageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompartirPageItemController.swift; sourceTree = "<group>"; };
@@ -127,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A708D11C3AF44F00483CF0 /* openpay.a in Frameworks */,
 				49BB51A61BFFD664004E002A /* AudioToolbox.framework in Frameworks */,
 				49BB51A41BFFD65E004E002A /* CFNetwork.framework in Frameworks */,
 				49BB0E291C152B000079E96D /* FBSDKShareKit.framework in Frameworks */,
@@ -217,9 +285,10 @@
 		4915766B1BFBCAFB00EE641D /* MenuDeslizante */ = {
 			isa = PBXGroup;
 			children = (
+				49A7088A1C3AF21200483CF0 /* PopUp */,
 				4905926C1C00DFE1006DDDD0 /* Main */,
 				4905926B1C00DFBC006DDDD0 /* Views */,
-				49C3D35D1BFBF6BE003B2344 /* SWRevealViewController */,
+				49C3D35D1BFBF6BE003B2344 /* bibliotecas */,
 				491576721BFBCAFB00EE641D /* Main.storyboard */,
 				491576751BFBCAFC00EE641D /* Images.xcassets */,
 				491576771BFBCAFC00EE641D /* LaunchScreen.xib */,
@@ -253,9 +322,103 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		49A7088A1C3AF21200483CF0 /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				49A708D81C3AF94300483CF0 /* PopUpPrincipal */,
+				49A708D71C3AF93300483CF0 /* DescripcionDelProductoCuandoNoSeEncuentraRegistroDelCliente */,
+				49A708D61C3AF90D00483CF0 /* PopUpViewControllerFormasDePago */,
+				49A708D31C3AF86F00483CF0 /* PopUpViewControllerTarjetas */,
+				49A708D21C3AF7FC00483CF0 /* PopUpViewControllerPagoTiendas */,
+			);
+			name = PopUp;
+			sourceTree = "<group>";
+		};
+		49A708D21C3AF7FC00483CF0 /* PopUpViewControllerPagoTiendas */ = {
+			isa = PBXGroup;
+			children = (
+				49A708931C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPad.xib */,
+				49A708941C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPhone6.xib */,
+				49A708951C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPhone6Plus.xib */,
+				49A708961C3AF25200483CF0 /* PopUpViewControllerPagoTienda.xib */,
+				49A708A11C3AF25200483CF0 /* PopUpViewControllerPagoTienda.swift */,
+			);
+			name = PopUpViewControllerPagoTiendas;
+			sourceTree = "<group>";
+		};
+		49A708D31C3AF86F00483CF0 /* PopUpViewControllerTarjetas */ = {
+			isa = PBXGroup;
+			children = (
+				49A708D51C3AF8CF00483CF0 /* Tarjeta */,
+				49A708D41C3AF8BD00483CF0 /* Wallet */,
+			);
+			name = PopUpViewControllerTarjetas;
+			sourceTree = "<group>";
+		};
+		49A708D41C3AF8BD00483CF0 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				49A7089B1C3AF25200483CF0 /* PopUpViewControllerWallet_iPad.xib */,
+				49A7089C1C3AF25200483CF0 /* PopUpViewControllerWallet_iPhone6.xib */,
+				49A7089D1C3AF25200483CF0 /* PopUpViewControllerWallet_iPhone6Plus.xib */,
+				49A7089E1C3AF25200483CF0 /* PopUpViewControllerWallet.xib */,
+				49A708A31C3AF25200483CF0 /* PopUpViewControllerWallet.swift */,
+			);
+			name = Wallet;
+			sourceTree = "<group>";
+		};
+		49A708D51C3AF8CF00483CF0 /* Tarjeta */ = {
+			isa = PBXGroup;
+			children = (
+				49A708971C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPad.xib */,
+				49A708981C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPhone6.xib */,
+				49A708991C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPhone6Plus.xib */,
+				49A7089A1C3AF25200483CF0 /* PopUpViewControllerTarjetas.xib */,
+				49A708A21C3AF25200483CF0 /* PopUpViewControllerTarjetas.swift */,
+			);
+			name = Tarjeta;
+			sourceTree = "<group>";
+		};
+		49A708D61C3AF90D00483CF0 /* PopUpViewControllerFormasDePago */ = {
+			isa = PBXGroup;
+			children = (
+				49A7088F1C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPad.xib */,
+				49A708901C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPhone6.xib */,
+				49A708911C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPhone6Plus.xib */,
+				49A708921C3AF25200483CF0 /* PopUpViewControllerFormasPago.xib */,
+				49A708A01C3AF25200483CF0 /* PopUpViewControllerFormasPago.swift */,
+			);
+			name = PopUpViewControllerFormasDePago;
+			sourceTree = "<group>";
+		};
+		49A708D71C3AF93300483CF0 /* DescripcionDelProductoCuandoNoSeEncuentraRegistroDelCliente */ = {
+			isa = PBXGroup;
+			children = (
+				49A7088B1C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPad.xib */,
+				49A7088C1C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6.xib */,
+				49A7088D1C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6Plus.xib */,
+				49A7088E1C3AF25200483CF0 /* PopUpViewControllerDescripcion.xib */,
+				49A7089F1C3AF25200483CF0 /* PopUpViewControllerDescripcion.swift */,
+			);
+			name = DescripcionDelProductoCuandoNoSeEncuentraRegistroDelCliente;
+			sourceTree = "<group>";
+		};
+		49A708D81C3AF94300483CF0 /* PopUpPrincipal */ = {
+			isa = PBXGroup;
+			children = (
+				49A708BE1C3AF26B00483CF0 /* PopUpViewController_iPad.xib */,
+				49A708BF1C3AF26B00483CF0 /* PopUpViewController_iPhone6.xib */,
+				49A708C01C3AF26B00483CF0 /* PopUpViewController_iPhone6Plus.xib */,
+				49A708C11C3AF26B00483CF0 /* PopUpViewController.xib */,
+				49A708C21C3AF26B00483CF0 /* PopUpViewControllerSwift.swift */,
+			);
+			name = PopUpPrincipal;
+			sourceTree = "<group>";
+		};
 		49BB51861BFFD535004E002A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49A708D01C3AF44F00483CF0 /* openpay.a */,
 				49ED44A81C15382C00BF4D77 /* Fabric.framework */,
 				49ED44A91C15382C00BF4D77 /* TwitterKit.framework */,
 				49ED44AA1C15382C00BF4D77 /* TwitterKitResources.bundle */,
@@ -281,14 +444,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		49C3D35D1BFBF6BE003B2344 /* SWRevealViewController */ = {
+		49C3D35D1BFBF6BE003B2344 /* bibliotecas */ = {
 			isa = PBXGroup;
 			children = (
+				49A708C91C3AF31400483CF0 /* DeviceCollectorSDK.h */,
+				49A708CA1C3AF31400483CF0 /* OPAddress.h */,
+				49A708CB1C3AF31400483CF0 /* OPCard.h */,
+				49A708CC1C3AF31400483CF0 /* Openpay.h */,
+				49A708CD1C3AF31400483CF0 /* OPToken.h */,
 				49C3D35F1BFBF6DA003B2344 /* SWRevealViewController.h */,
 				49C3D3601BFBF6DA003B2344 /* SWRevealViewController.m */,
 				49C3D35E1BFBF6D9003B2344 /* MenuDeslizante-Bridging-Header.h */,
 			);
-			name = SWRevealViewController;
+			name = bibliotecas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,10 +542,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A708AB1C3AF25200483CF0 /* PopUpViewControllerFormasPago.xib in Resources */,
+				49A708B31C3AF25200483CF0 /* PopUpViewControllerTarjetas.xib in Resources */,
 				49ED44AE1C15382C00BF4D77 /* TwitterKitResources.bundle in Resources */,
+				49A708C61C3AF26B00483CF0 /* PopUpViewController_iPhone6Plus.xib in Resources */,
 				491576741BFBCAFB00EE641D /* Main.storyboard in Resources */,
+				49A708B51C3AF25200483CF0 /* PopUpViewControllerWallet_iPhone6.xib in Resources */,
+				49A708AF1C3AF25200483CF0 /* PopUpViewControllerPagoTienda.xib in Resources */,
+				49A708B01C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPad.xib in Resources */,
+				49A708A61C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6Plus.xib in Resources */,
+				49A708C71C3AF26B00483CF0 /* PopUpViewController.xib in Resources */,
+				49A708AA1C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPhone6Plus.xib in Resources */,
+				49A708B11C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPhone6.xib in Resources */,
 				491576791BFBCAFC00EE641D /* LaunchScreen.xib in Resources */,
+				49A708B21C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPhone6Plus.xib in Resources */,
 				491576761BFBCAFC00EE641D /* Images.xcassets in Resources */,
+				49A708AC1C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPad.xib in Resources */,
+				49A708AE1C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPhone6Plus.xib in Resources */,
+				49A708A71C3AF25200483CF0 /* PopUpViewControllerDescripcion.xib in Resources */,
+				49A708C51C3AF26B00483CF0 /* PopUpViewController_iPhone6.xib in Resources */,
+				49A708A81C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPad.xib in Resources */,
+				49A708B41C3AF25200483CF0 /* PopUpViewControllerWallet_iPad.xib in Resources */,
+				49A708B71C3AF25200483CF0 /* PopUpViewControllerWallet.xib in Resources */,
+				49A708A41C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPad.xib in Resources */,
+				49A708C41C3AF26B00483CF0 /* PopUpViewController_iPad.xib in Resources */,
+				49A708B61C3AF25200483CF0 /* PopUpViewControllerWallet_iPhone6Plus.xib in Resources */,
+				49A708A91C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPhone6.xib in Resources */,
+				49A708A51C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6.xib in Resources */,
+				49A708AD1C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPhone6.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A708BA1C3AF25200483CF0 /* PopUpViewControllerPagoTienda.swift in Sources */,
 				490592761C00F72D006DDDD0 /* ConsejosViewController.swift in Sources */,
 				490592781C00F742006DDDD0 /* TuCuentaViewController.swift in Sources */,
 				49BB51791BFFD4E9004E002A /* ViewController.swift in Sources */,
@@ -419,12 +612,17 @@
 				49C3D3631BFBF9AF003B2344 /* PrincipalTableViewController.swift in Sources */,
 				490592741C00F71C006DDDD0 /* FavoritosTableViewCell.swift in Sources */,
 				4905927A1C00F74E006DDDD0 /* CreditosViewController.swift in Sources */,
+				49A708B91C3AF25200483CF0 /* PopUpViewControllerFormasPago.swift in Sources */,
 				49BB0E211C1518A90079E96D /* ViralizacionViewController.swift in Sources */,
 				4905926E1C00E3A1006DDDD0 /* MenuPlatillos.swift in Sources */,
 				491576711BFBCAFB00EE641D /* MenuController.swift in Sources */,
+				49A708B81C3AF25200483CF0 /* PopUpViewControllerDescripcion.swift in Sources */,
 				495947B91C06A7FB0025AE1F /* PageItemController.swift in Sources */,
+				49A708BC1C3AF25200483CF0 /* PopUpViewControllerWallet.swift in Sources */,
 				490592801C0131EE006DDDD0 /* ViralizacionTableCell.swift in Sources */,
+				49A708C81C3AF26B00483CF0 /* PopUpViewControllerSwift.swift in Sources */,
 				49C3D3651BFC0542003B2344 /* PrincipalTableViewCell.swift in Sources */,
+				49A708BB1C3AF25200483CF0 /* PopUpViewControllerTarjetas.swift in Sources */,
 				492BDAF41C0A99A400E22833 /* PageItemViralController.swift in Sources */,
 				4905927E1C0131E0006DDDD0 /* ViralizacionTableViewController.swift in Sources */,
 				4915766F1BFBCAFB00EE641D /* AppDelegate.swift in Sources */,
@@ -564,6 +762,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -571,6 +770,10 @@
 				INFOPLIST_FILE = MenuDeslizante/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -599,6 +802,10 @@
 				INFOPLIST_FILE = MenuDeslizante/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_LDFLAGS = (
 					"-lz",
