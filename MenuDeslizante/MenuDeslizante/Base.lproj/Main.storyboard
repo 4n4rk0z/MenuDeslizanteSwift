@@ -215,39 +215,39 @@
         <scene sceneID="hJp-th-m0J">
             <objects>
                 <tableViewController storyboardIdentifier="ViralizacionControlerID" id="N7q-0M-nBh" customClass="PrincipalTableViewController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="183" sectionHeaderHeight="28" sectionFooterHeight="28" id="dqs-0e-yto">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="164" sectionHeaderHeight="28" sectionFooterHeight="28" id="dqs-0e-yto">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="183" id="Daj-Hh-cCT" customClass="PrincipalTableViewCell" customModule="MenuDeslizante" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="183"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="164" id="Daj-Hh-cCT" customClass="PrincipalTableViewCell" customModule="MenuDeslizante" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="164"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalCompressionResistancePriority="749" tableViewCell="Daj-Hh-cCT" id="L98-rM-vr4">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="182"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ncr-Hy-hi8">
-                                            <rect key="frame" x="8" y="32" width="584" height="118"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="ncr-Hy-hi8" secondAttribute="height" multiplier="292:59" id="wGY-xE-aio"/>
-                                            </constraints>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncr-Hy-hi8">
+                                            <rect key="frame" x="8" y="8" width="584" height="141"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="diez" translatesAutoresizingMaskIntoConstraints="NO" id="m6l-4r-eQ0" userLabel="numero image View">
-                                            <rect key="frame" x="542" y="15" width="43" height="41"/>
+                                            <rect key="frame" x="549" y="8" width="43" height="41"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="43" id="SgD-5Y-AeY"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="m6l-4r-eQ0" firstAttribute="top" secondItem="L98-rM-vr4" secondAttribute="topMargin" constant="7" id="YuT-mZ-IU3"/>
-                                        <constraint firstItem="ncr-Hy-hi8" firstAttribute="top" secondItem="m6l-4r-eQ0" secondAttribute="bottom" constant="-24" id="d1K-vG-yP4"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ncr-Hy-hi8" secondAttribute="bottom" constant="5" id="ABO-Pf-Eny"/>
+                                        <constraint firstItem="ncr-Hy-hi8" firstAttribute="top" secondItem="L98-rM-vr4" secondAttribute="topMargin" id="QiI-Nt-L5l"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="m6l-4r-eQ0" secondAttribute="trailing" id="ath-3F-jdw"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="ncr-Hy-hi8" secondAttribute="leading" id="ia6-XL-KYv"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="ncr-Hy-hi8" secondAttribute="bottom" constant="24" id="rpM-zN-HeG"/>
-                                        <constraint firstItem="m6l-4r-eQ0" firstAttribute="leading" secondItem="ncr-Hy-hi8" secondAttribute="trailing" constant="-35" id="xwY-fO-jbf"/>
+                                        <constraint firstAttribute="topMargin" secondItem="m6l-4r-eQ0" secondAttribute="top" id="vcf-qh-KKn"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ncr-Hy-hi8" secondAttribute="trailing" id="yMb-NU-qqC"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="m6l-4r-eQ0" secondAttribute="bottom" constant="92" id="ymt-8j-ib8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="accessoryView" destination="dqs-0e-yto" id="tPP-so-vVb"/>
                                     <outlet property="numeroImageView" destination="m6l-4r-eQ0" id="wIG-wb-8iR"/>
                                     <outlet property="postImageView" destination="ncr-Hy-hi8" id="MCc-xM-yPk"/>
                                 </connections>
