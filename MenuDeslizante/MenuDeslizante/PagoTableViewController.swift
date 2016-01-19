@@ -1,23 +1,25 @@
 //
-//  NewsTableViewController.swift
+//  PagoTableViewController.swift
 //  MenuDeslizante
 //
-//  Created by sergio ivan lopez monzon on 17/11/15.
-//  Copyright © 2015 sergio ivan lopez monzon. All rights reserved.
+//  Created by sergio ivan lopez monzon on 12/01/16.
+//  Copyright © 2016 sergio ivan lopez monzon. All rights reserved.
 //
+
 
 import UIKit
 
-class PrincipalTableViewController: UITableViewController {
+class PagoTableViewController: UITableViewController {
+    var popViewController : PopUpViewControllerSwift!
     @IBOutlet weak var menuButton:UIBarButtonItem!
     
     //Para decirnos cual es la opcion que corresponde a cada posicion del menu, es un pseudo tag
     var menu = [String]();
-    var isMenuCompra:Bool = false
+    
     override func viewDidLoad() {
-     super.viewDidLoad()
-     self.tableView.delegate = self
-     
+        super.viewDidLoad()
+        self.tableView.delegate = self
+        
         self.tableView.dataSource = self
         
         if revealViewController() != nil {
@@ -26,8 +28,8 @@ class PrincipalTableViewController: UITableViewController {
             menuButton.action = "revealToggle:"
             
             revealViewController().rightViewRevealWidth = 150
-        //    extraButton.target = revealViewController()
-        //    extraButton.action = "rightRevealToggle:"
+            //    extraButton.target = revealViewController()
+            //    extraButton.action = "rightRevealToggle:"
             
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
@@ -56,24 +58,22 @@ class PrincipalTableViewController: UITableViewController {
         
         
         let goto=menu[indexPath.row]
-
+        
         if goto=="gratis"
         {
-            isMenuCompra = false
-            self.performSegueWithIdentifier("recetarios", sender: nil)
-
+            self.performSegueWithIdentifier("gratis", sender: nil)
+            
         }
         else if goto=="pago"
         {
-            
-            isMenuCompra = true
-            self.performSegueWithIdentifier("recetarios", sender: nil)
+            self.abrirVentanaPop(5.0,suscripcion:  true, planId:  "prhhst3k5uucmunpl9fr")
+            //self.performSegueWithIdentifier("gratis", sender: nil)
         }
         else if goto=="viralizacion"
         {
             self.performSegueWithIdentifier("viralizacion", sender: nil)
         }
-
+        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -92,15 +92,12 @@ class PrincipalTableViewController: UITableViewController {
             cell.postImageView.image = UIImage(named: "comidar")
             menu.append("pago");
             cell.numeroImageView.image = UIImage(named: "diez")
-        }else if indexPath.row == 3{
-            cell.postImageView.image = UIImage(named: "comidav")
-            menu.append("viralizacion")
-            cell.numeroImageView.image = UIImage(named: "diez")
-        
         }else{
-            cell.postImageView.image = UIImage(named: "comidar")
-            menu.append("pago")
+            
+            cell.postImageView.image = UIImage(named: "comidag")
+            menu.append("gratis")
             cell.numeroImageView.image = UIImage(named: "diez")
+            
         }
         
         return cell
@@ -110,14 +107,45 @@ class PrincipalTableViewController: UITableViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "recetarios"{
-            let menu = segue.destinationViewController as!  MenuPlatillos
-            menu.isMenuDeCompra = self.isMenuCompra
-        }
     }
     
     
+    func abrirVentanaPop(precio:Double, suscripcion:Bool!, planId:String!){
+        let precio = precio
+        let bundle = NSBundle(forClass: PopUpViewControllerSwift.self)
         
-
+        let strPantalla = pantallaSize()
+        
+        
+        self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController"+strPantalla, bundle: bundle)
+        self.popViewController.showInView(self.view, animated: true, precioProducto: precio,suscripcion:  suscripcion, planId: planId)
+        
+    }
+    
+    
+    func pantallaSize()->String!
+    {
+        var strPantalla = ""
+        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
+        {
+            strPantalla = "_iPad"
+        }
+        else
+        {
+            
+            if UIScreen.mainScreen().bounds.size.width > 320 {
+                if UIScreen.mainScreen().scale == 3 {
+                    strPantalla = "_iPhone6Plus"
+                }
+                else{
+                    strPantalla = "_iPhone6"
+                }
+            }
+        }
+        return strPantalla
+    }
+    
+    
+    
 }
 

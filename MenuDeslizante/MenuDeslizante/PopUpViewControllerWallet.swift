@@ -347,7 +347,7 @@ import Parse
     
     @IBAction func btnPagar(sender: AnyObject) {
         if self.btnPagar.titleLabel?.text == "Aceptar"{
-            removeAnimate()
+            
             
             
           

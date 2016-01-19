@@ -11,7 +11,7 @@
 		490592701C00E431006DDDD0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905926F1C00E431006DDDD0 /* TableViewCell.swift */; };
 		490592721C00F70D006DDDD0 /* FavoritosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490592711C00F70D006DDDD0 /* FavoritosTableViewController.swift */; };
 		490592741C00F71C006DDDD0 /* FavoritosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490592731C00F71C006DDDD0 /* FavoritosTableViewCell.swift */; };
-		490592761C00F72D006DDDD0 /* ConsejosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490592751C00F72D006DDDD0 /* ConsejosViewController.swift */; };
+		490592761C00F72D006DDDD0 /* ConsejosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490592751C00F72D006DDDD0 /* ConsejosTableViewController.swift */; };
 		490592781C00F742006DDDD0 /* TuCuentaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490592771C00F742006DDDD0 /* TuCuentaViewController.swift */; };
 		4905927A1C00F74E006DDDD0 /* CreditosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490592791C00F74E006DDDD0 /* CreditosViewController.swift */; };
 		4905927C1C00FE50006DDDD0 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905927B1C00FE50006DDDD0 /* PerfilViewController.swift */; };
@@ -26,6 +26,10 @@
 		492BDAF41C0A99A400E22833 /* PageItemViralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BDAF31C0A99A400E22833 /* PageItemViralController.swift */; };
 		495947B71C06A7DA0025AE1F /* PagoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495947B61C06A7DA0025AE1F /* PagoViewController.swift */; };
 		495947B91C06A7FB0025AE1F /* PageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495947B81C06A7FB0025AE1F /* PageItemController.swift */; };
+		498299491C4603A7003F293C /* PagoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498299481C4603A7003F293C /* PagoTableViewController.swift */; };
+		4982994B1C4603B4003F293C /* PagoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982994A1C4603B4003F293C /* PagoTableViewCell.swift */; };
+		4982994D1C462BB9003F293C /* ConsejosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982994C1C462BB9003F293C /* ConsejosTableViewCell.swift */; };
+		4982994F1C465584003F293C /* PasosConsejosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982994E1C465584003F293C /* PasosConsejosViewController.swift */; };
 		49A708A41C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7088B1C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPad.xib */; };
 		49A708A51C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7088C1C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6.xib */; };
 		49A708A61C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7088D1C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6Plus.xib */; };
@@ -102,7 +106,7 @@
 		4905926F1C00E431006DDDD0 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		490592711C00F70D006DDDD0 /* FavoritosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritosTableViewController.swift; sourceTree = "<group>"; };
 		490592731C00F71C006DDDD0 /* FavoritosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritosTableViewCell.swift; sourceTree = "<group>"; };
-		490592751C00F72D006DDDD0 /* ConsejosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsejosViewController.swift; sourceTree = "<group>"; };
+		490592751C00F72D006DDDD0 /* ConsejosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsejosTableViewController.swift; sourceTree = "<group>"; };
 		490592771C00F742006DDDD0 /* TuCuentaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuCuentaViewController.swift; sourceTree = "<group>"; };
 		490592791C00F74E006DDDD0 /* CreditosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditosViewController.swift; sourceTree = "<group>"; };
 		4905927B1C00FE50006DDDD0 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +125,10 @@
 		492BDAF31C0A99A400E22833 /* PageItemViralController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItemViralController.swift; sourceTree = "<group>"; };
 		495947B61C06A7DA0025AE1F /* PagoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagoViewController.swift; sourceTree = "<group>"; };
 		495947B81C06A7FB0025AE1F /* PageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItemController.swift; sourceTree = "<group>"; };
+		498299481C4603A7003F293C /* PagoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagoTableViewController.swift; sourceTree = "<group>"; };
+		4982994A1C4603B4003F293C /* PagoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagoTableViewCell.swift; sourceTree = "<group>"; };
+		4982994C1C462BB9003F293C /* ConsejosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsejosTableViewCell.swift; sourceTree = "<group>"; };
+		4982994E1C465584003F293C /* PasosConsejosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasosConsejosViewController.swift; sourceTree = "<group>"; };
 		49A7088B1C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerDescripcion_iPad.xib; sourceTree = "<group>"; };
 		49A7088C1C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerDescripcion_iPhone6.xib; sourceTree = "<group>"; };
 		49A7088D1C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerDescripcion_iPhone6Plus.xib; sourceTree = "<group>"; };
@@ -240,7 +248,8 @@
 				4905926F1C00E431006DDDD0 /* TableViewCell.swift */,
 				490592711C00F70D006DDDD0 /* FavoritosTableViewController.swift */,
 				490592731C00F71C006DDDD0 /* FavoritosTableViewCell.swift */,
-				490592751C00F72D006DDDD0 /* ConsejosViewController.swift */,
+				490592751C00F72D006DDDD0 /* ConsejosTableViewController.swift */,
+				4982994C1C462BB9003F293C /* ConsejosTableViewCell.swift */,
 				490592771C00F742006DDDD0 /* TuCuentaViewController.swift */,
 				490592791C00F74E006DDDD0 /* CreditosViewController.swift */,
 				4905927B1C00FE50006DDDD0 /* PerfilViewController.swift */,
@@ -249,6 +258,9 @@
 				49BB0E1E1C1517920079E96D /* PlatillosViewController.swift */,
 				49BB0E201C1518A90079E96D /* ViralizacionViewController.swift */,
 				49BB0E241C151A580079E96D /* CompartirPageItemController.swift */,
+				498299481C4603A7003F293C /* PagoTableViewController.swift */,
+				4982994A1C4603B4003F293C /* PagoTableViewCell.swift */,
+				4982994E1C465584003F293C /* PasosConsejosViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -510,7 +522,7 @@
 				TargetAttributes = {
 					491576681BFBCAFB00EE641D = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = LP65999SC2;
+						DevelopmentTeam = XRTTW343DL;
 					};
 					4915767D1BFBCAFC00EE641D = {
 						CreatedOnToolsVersion = 6.3;
@@ -604,16 +616,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				49A708BA1C3AF25200483CF0 /* PopUpViewControllerPagoTienda.swift in Sources */,
-				490592761C00F72D006DDDD0 /* ConsejosViewController.swift in Sources */,
+				490592761C00F72D006DDDD0 /* ConsejosTableViewController.swift in Sources */,
+				4982994B1C4603B4003F293C /* PagoTableViewCell.swift in Sources */,
 				490592781C00F742006DDDD0 /* TuCuentaViewController.swift in Sources */,
 				49BB51791BFFD4E9004E002A /* ViewController.swift in Sources */,
 				49BB0E1F1C1517920079E96D /* PlatillosViewController.swift in Sources */,
 				490592701C00E431006DDDD0 /* TableViewCell.swift in Sources */,
 				49C3D3631BFBF9AF003B2344 /* PrincipalTableViewController.swift in Sources */,
 				490592741C00F71C006DDDD0 /* FavoritosTableViewCell.swift in Sources */,
+				4982994D1C462BB9003F293C /* ConsejosTableViewCell.swift in Sources */,
 				4905927A1C00F74E006DDDD0 /* CreditosViewController.swift in Sources */,
 				49A708B91C3AF25200483CF0 /* PopUpViewControllerFormasPago.swift in Sources */,
 				49BB0E211C1518A90079E96D /* ViralizacionViewController.swift in Sources */,
+				498299491C4603A7003F293C /* PagoTableViewController.swift in Sources */,
 				4905926E1C00E3A1006DDDD0 /* MenuPlatillos.swift in Sources */,
 				491576711BFBCAFB00EE641D /* MenuController.swift in Sources */,
 				49A708B81C3AF25200483CF0 /* PopUpViewControllerDescripcion.swift in Sources */,
@@ -624,6 +639,7 @@
 				49C3D3651BFC0542003B2344 /* PrincipalTableViewCell.swift in Sources */,
 				49A708BB1C3AF25200483CF0 /* PopUpViewControllerTarjetas.swift in Sources */,
 				492BDAF41C0A99A400E22833 /* PageItemViralController.swift in Sources */,
+				4982994F1C465584003F293C /* PasosConsejosViewController.swift in Sources */,
 				4905927E1C0131E0006DDDD0 /* ViralizacionTableViewController.swift in Sources */,
 				4915766F1BFBCAFB00EE641D /* AppDelegate.swift in Sources */,
 				49BB0E251C151A580079E96D /* CompartirPageItemController.swift in Sources */,
@@ -779,7 +795,7 @@
 					"-lz",
 					"-lsqlite3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.DevWorms.MenuDeslizante;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DevWorms.tukanmango;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MenuDeslizante/MenuDeslizante-Bridging-Header.h";
@@ -811,7 +827,7 @@
 					"-lz",
 					"-lsqlite3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.DevWorms.MenuDeslizante;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DevWorms.tukanmango;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MenuDeslizante/MenuDeslizante-Bridging-Header.h";

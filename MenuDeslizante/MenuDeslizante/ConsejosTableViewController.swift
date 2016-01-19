@@ -1,24 +1,34 @@
 //
-//  PlatillosView.swift
+//  ConsejosView.swift
 //  MenuDeslizante
 //
 //  Created by sergio ivan lopez monzon on 21/11/15.
 //  Copyright © 2015 sergio ivan lopez monzon. All rights reserved.
 //
+
+
 import UIKit
 
-class MenuPlatillos: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+class ConsejosView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //Esta variable viene desde menu principal y hace referencia a los menus que deben de comprarse
-    var isMenuDeCompra: Bool = false
-   
-    var popViewController : PopUpViewControllerSwift!
+    @IBOutlet weak var menuButton:UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        if revealViewController() != nil {
+            //            revealViewController().rearViewRevealWidth = 62
+            menuButton.target = revealViewController()
+            menuButton.action = "revealToggle:"
+            
+            revealViewController().rightViewRevealWidth = 150
+            //    extraButton.target = revealViewController()
+            //    extraButton.action = "rightRevealToggle:"
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -44,7 +54,7 @@ class MenuPlatillos: UIViewController, UITableViewDelegate, UITableViewDataSourc
         }else {
             cell.imagePropia.image = UIImage(named: "arabe")
         }
-
+        
         
         return cell
         
@@ -55,17 +65,7 @@ class MenuPlatillos: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if self.isMenuDeCompra == true{
-            self.abrirVentanaPop(5.0,suscripcion:  true, planId:  "prhhst3k5uucmunpl9fr")
-            
-            self.isMenuDeCompra = false
-
-        }
-        else
-        {
-            self.performSegueWithIdentifier("PlatilloSegue", sender: nil)
-        }
+        self.performSegueWithIdentifier("pasos", sender: nil)
     }
     
     /*
@@ -78,40 +78,4 @@ class MenuPlatillos: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     */
     
-    func abrirVentanaPop(precio:Double, suscripcion:Bool!, planId:String!){
-        let precio = precio
-        let bundle = NSBundle(forClass: PopUpViewControllerSwift.self)
-        
-        let strPantalla = pantallaSize()
-        
-        
-        self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController"+strPantalla, bundle: bundle)
-        self.popViewController.showInView(self.view, animated: true, precioProducto: precio,suscripcion:  suscripcion, planId: planId)
-        
-    }
-    
-
-    
-    func pantallaSize()->String!
-    {
-        var strPantalla = ""
-        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
-        {
-            strPantalla = "_iPad"
-        }
-        else
-        {
-            
-            if UIScreen.mainScreen().bounds.size.width > 320 {
-                if UIScreen.mainScreen().scale == 3 {
-                    strPantalla = "_iPhone6Plus"
-                }
-                else{
-                    strPantalla = "_iPhone6"
-                }
-            }
-        }
-        return strPantalla
-    }
-
 }
