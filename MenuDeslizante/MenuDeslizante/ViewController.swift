@@ -16,7 +16,8 @@ import TwitterKit
 class ViewController: UIViewController, UITextFieldDelegate {
 
     
-    
+    var popViewController:PopUpViewControllerRegistro!
+    var popViewControllerRecuperar:PopUpViewControllerRecuperar!
     @IBOutlet weak var textfMail: UITextField!
     @IBOutlet weak var textfPassword: UITextField!
     
@@ -37,18 +38,48 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func loginMail(sender: AnyObject) {
-        let mail = textfMail.text
+        let mail = textfMail.text?.lowercaseString
         let pass = textfPassword.text
         PFUser.logInWithUsernameInBackground(mail!, password:pass!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
-                // Do stuff after successful login.
-                 self.performSegueWithIdentifier("Home", sender: nil)
+                
+                if user!["emailVerified"] as! Bool == true {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        // Do stuff after successful login.
+                        self.performSegueWithIdentifier("Home", sender: nil)
+                    }
+                } else {
+                    // User needs to verify email address before continuing
+                    let alertController = UIAlertController(
+                        title: "Verificación de correo electrónico",
+                        message: "Hemos mandado un correo que contiene un enlace - debes de precionarlo para poder iniciar sesión.",
+                        preferredStyle: UIAlertControllerStyle.Alert
+                    )
+                    alertController.addAction(UIAlertAction(title: "Ok",
+                        style: UIAlertActionStyle.Default,
+                        handler: { alertController in self.processSignOut()})
+                    )
+                    // Display alert
+                    self.presentViewController(
+                        alertController,
+                        animated: true,
+                        completion: nil
+                    )
+                }
+                
             } else {
                 // The login failed. Check error to see why.
             }
         }
        
+    }
+    
+    func processSignOut() {
+        
+        // // Sign out
+        PFUser.logOut()
+      
     }
     
     
@@ -120,27 +151,51 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func registrarse(sender: AnyObject) {
-        let user = PFUser()
-        
-        user.password = textfPassword.text
-        user.email = textfMail.text
-        user.username = textfMail.text
-        user.signUpInBackgroundWithBlock {
-            (succeeded: Bool, error: NSError?) -> Void in
-            if let error = error {
-                let errorString = error.userInfo["error"] as? NSString
-                print(errorString)
-                // Show the errorString somewhere and let the user try again.
-            } else {
-                // Hooray! Let them use the app now.
-                 self.performSegueWithIdentifier("Home", sender: nil)
-            }
-        }
-
+       self.abrirVentanaPopRegistro()
     }
     
+    func abrirVentanaPopRegistro(){
+
+        let bundle = NSBundle(forClass: PopUpViewControllerRegistro.self)
+        self.popViewController = PopUpViewControllerRegistro(nibName: "PopUpViewControllerRegistro"+pantallaSize(), bundle: bundle)
+        self.popViewController.showInView(self.view, animated: true)
+        
+    }
+
+    func pantallaSize()->String!
+    {
+        var strPantalla = ""
+        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
+        {
+            strPantalla = "_iPad"
+        }
+        else
+        {
+            
+            if UIScreen.mainScreen().bounds.size.width > 320 {
+                if UIScreen.mainScreen().scale == 3 {
+                    strPantalla = "_iPhone6Plus"
+                }
+                else{
+                    strPantalla = "_iPhone6"
+                }
+            }
+        }
+        return strPantalla
+    }
+
+    func abrirVentanaPopRecupera(){
+        
+        let bundle = NSBundle(forClass: PopUpViewControllerRecuperar.self)
+        self.popViewControllerRecuperar = PopUpViewControllerRecuperar(nibName: "PopUpViewControllerRecuperar"+pantallaSize(), bundle: bundle)
+        self.popViewControllerRecuperar.showInView(self.view, animated: true)
+        
+    }
+
+    
     @IBAction func restablecer(sender: AnyObject) {
-        PFUser.requestPasswordResetForEmailInBackground(textfMail.text!)
+        self.abrirVentanaPopRecupera()
+
     }
     
     

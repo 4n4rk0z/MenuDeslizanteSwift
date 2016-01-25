@@ -61,11 +61,9 @@ class PrincipalTableViewController: UITableViewController {
         {
             isMenuCompra = false
             self.performSegueWithIdentifier("recetarios", sender: nil)
-
         }
         else if goto=="pago"
         {
-            
             isMenuCompra = true
             self.performSegueWithIdentifier("recetarios", sender: nil)
         }

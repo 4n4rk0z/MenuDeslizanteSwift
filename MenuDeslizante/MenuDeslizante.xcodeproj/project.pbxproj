@@ -26,6 +26,16 @@
 		492BDAF41C0A99A400E22833 /* PageItemViralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BDAF31C0A99A400E22833 /* PageItemViralController.swift */; };
 		495947B71C06A7DA0025AE1F /* PagoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495947B61C06A7DA0025AE1F /* PagoViewController.swift */; };
 		495947B91C06A7FB0025AE1F /* PageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495947B81C06A7FB0025AE1F /* PageItemController.swift */; };
+		497B73B61C5597810009E15C /* PopUpViewControllerRegistro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B73B51C5597810009E15C /* PopUpViewControllerRegistro.swift */; };
+		497B73B81C5597D30009E15C /* PopUpViewControllerRegistro_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497B73B71C5597D30009E15C /* PopUpViewControllerRegistro_iPhone6.xib */; };
+		497B73C01C55A8530009E15C /* PopUpViewControllerRegistro_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497B73BF1C55A8530009E15C /* PopUpViewControllerRegistro_iPad.xib */; };
+		497B73C21C55A90A0009E15C /* PopUpViewControllerRegistro_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497B73C11C55A90A0009E15C /* PopUpViewControllerRegistro_iPhone6Plus.xib */; };
+		497B73C81C55AD7A0009E15C /* PopUpViewControllerRecuperar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497B73C71C55AD7A0009E15C /* PopUpViewControllerRecuperar.xib */; };
+		497B73CA1C55AE5B0009E15C /* PopUpViewControllerRegistro.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497B73C91C55AE5B0009E15C /* PopUpViewControllerRegistro.xib */; };
+		497B73CC1C55AEAC0009E15C /* PopUpViewControllerRecuperar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B73CB1C55AEAC0009E15C /* PopUpViewControllerRecuperar.swift */; };
+		497B73CE1C55AF430009E15C /* PopUpViewControllerRecuperar_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497B73CD1C55AF430009E15C /* PopUpViewControllerRecuperar_iPad.xib */; };
+		497B73D01C55AFFE0009E15C /* PopUpViewControllerRecuperar_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497B73CF1C55AFFE0009E15C /* PopUpViewControllerRecuperar_iPhone6.xib */; };
+		497B73D21C55B0510009E15C /* PopUpViewControllerRecuperar_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497B73D11C55B0510009E15C /* PopUpViewControllerRecuperar_iPhone6Plus.xib */; };
 		498299491C4603A7003F293C /* PagoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498299481C4603A7003F293C /* PagoTableViewController.swift */; };
 		4982994B1C4603B4003F293C /* PagoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982994A1C4603B4003F293C /* PagoTableViewCell.swift */; };
 		4982994D1C462BB9003F293C /* ConsejosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982994C1C462BB9003F293C /* ConsejosTableViewCell.swift */; };
@@ -125,6 +135,16 @@
 		492BDAF31C0A99A400E22833 /* PageItemViralController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItemViralController.swift; sourceTree = "<group>"; };
 		495947B61C06A7DA0025AE1F /* PagoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagoViewController.swift; sourceTree = "<group>"; };
 		495947B81C06A7FB0025AE1F /* PageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItemController.swift; sourceTree = "<group>"; };
+		497B73B51C5597810009E15C /* PopUpViewControllerRegistro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewControllerRegistro.swift; sourceTree = "<group>"; };
+		497B73B71C5597D30009E15C /* PopUpViewControllerRegistro_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerRegistro_iPhone6.xib; sourceTree = "<group>"; };
+		497B73BF1C55A8530009E15C /* PopUpViewControllerRegistro_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerRegistro_iPad.xib; sourceTree = "<group>"; };
+		497B73C11C55A90A0009E15C /* PopUpViewControllerRegistro_iPhone6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerRegistro_iPhone6Plus.xib; sourceTree = "<group>"; };
+		497B73C71C55AD7A0009E15C /* PopUpViewControllerRecuperar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerRecuperar.xib; sourceTree = "<group>"; };
+		497B73C91C55AE5B0009E15C /* PopUpViewControllerRegistro.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerRegistro.xib; sourceTree = "<group>"; };
+		497B73CB1C55AEAC0009E15C /* PopUpViewControllerRecuperar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewControllerRecuperar.swift; sourceTree = "<group>"; };
+		497B73CD1C55AF430009E15C /* PopUpViewControllerRecuperar_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerRecuperar_iPad.xib; sourceTree = "<group>"; };
+		497B73CF1C55AFFE0009E15C /* PopUpViewControllerRecuperar_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerRecuperar_iPhone6.xib; sourceTree = "<group>"; };
+		497B73D11C55B0510009E15C /* PopUpViewControllerRecuperar_iPhone6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerRecuperar_iPhone6Plus.xib; sourceTree = "<group>"; };
 		498299481C4603A7003F293C /* PagoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagoTableViewController.swift; sourceTree = "<group>"; };
 		4982994A1C4603B4003F293C /* PagoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagoTableViewCell.swift; sourceTree = "<group>"; };
 		4982994C1C462BB9003F293C /* ConsejosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsejosTableViewCell.swift; sourceTree = "<group>"; };
@@ -334,9 +354,43 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		497B73B41C55974B0009E15C /* NuevoUsuario */ = {
+			isa = PBXGroup;
+			children = (
+				497B73C61C55AD5C0009E15C /* Recuperar password */,
+				497B73B91C5599B20009E15C /* Registro */,
+			);
+			name = NuevoUsuario;
+			sourceTree = "<group>";
+		};
+		497B73B91C5599B20009E15C /* Registro */ = {
+			isa = PBXGroup;
+			children = (
+				497B73B71C5597D30009E15C /* PopUpViewControllerRegistro_iPhone6.xib */,
+				497B73BF1C55A8530009E15C /* PopUpViewControllerRegistro_iPad.xib */,
+				497B73C11C55A90A0009E15C /* PopUpViewControllerRegistro_iPhone6Plus.xib */,
+				497B73C91C55AE5B0009E15C /* PopUpViewControllerRegistro.xib */,
+				497B73B51C5597810009E15C /* PopUpViewControllerRegistro.swift */,
+			);
+			name = Registro;
+			sourceTree = "<group>";
+		};
+		497B73C61C55AD5C0009E15C /* Recuperar password */ = {
+			isa = PBXGroup;
+			children = (
+				497B73C71C55AD7A0009E15C /* PopUpViewControllerRecuperar.xib */,
+				497B73CD1C55AF430009E15C /* PopUpViewControllerRecuperar_iPad.xib */,
+				497B73CF1C55AFFE0009E15C /* PopUpViewControllerRecuperar_iPhone6.xib */,
+				497B73D11C55B0510009E15C /* PopUpViewControllerRecuperar_iPhone6Plus.xib */,
+				497B73CB1C55AEAC0009E15C /* PopUpViewControllerRecuperar.swift */,
+			);
+			name = "Recuperar password";
+			sourceTree = "<group>";
+		};
 		49A7088A1C3AF21200483CF0 /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
+				497B73B41C55974B0009E15C /* NuevoUsuario */,
 				49A708D81C3AF94300483CF0 /* PopUpPrincipal */,
 				49A708D71C3AF93300483CF0 /* DescripcionDelProductoCuandoNoSeEncuentraRegistroDelCliente */,
 				49A708D61C3AF90D00483CF0 /* PopUpViewControllerFormasDePago */,
@@ -562,21 +616,29 @@
 				49A708B51C3AF25200483CF0 /* PopUpViewControllerWallet_iPhone6.xib in Resources */,
 				49A708AF1C3AF25200483CF0 /* PopUpViewControllerPagoTienda.xib in Resources */,
 				49A708B01C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPad.xib in Resources */,
+				497B73C01C55A8530009E15C /* PopUpViewControllerRegistro_iPad.xib in Resources */,
 				49A708A61C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6Plus.xib in Resources */,
 				49A708C71C3AF26B00483CF0 /* PopUpViewController.xib in Resources */,
 				49A708AA1C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPhone6Plus.xib in Resources */,
 				49A708B11C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPhone6.xib in Resources */,
 				491576791BFBCAFC00EE641D /* LaunchScreen.xib in Resources */,
+				497B73B81C5597D30009E15C /* PopUpViewControllerRegistro_iPhone6.xib in Resources */,
 				49A708B21C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPhone6Plus.xib in Resources */,
 				491576761BFBCAFC00EE641D /* Images.xcassets in Resources */,
+				497B73D21C55B0510009E15C /* PopUpViewControllerRecuperar_iPhone6Plus.xib in Resources */,
 				49A708AC1C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPad.xib in Resources */,
 				49A708AE1C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPhone6Plus.xib in Resources */,
 				49A708A71C3AF25200483CF0 /* PopUpViewControllerDescripcion.xib in Resources */,
 				49A708C51C3AF26B00483CF0 /* PopUpViewController_iPhone6.xib in Resources */,
+				497B73CE1C55AF430009E15C /* PopUpViewControllerRecuperar_iPad.xib in Resources */,
+				497B73C81C55AD7A0009E15C /* PopUpViewControllerRecuperar.xib in Resources */,
+				497B73D01C55AFFE0009E15C /* PopUpViewControllerRecuperar_iPhone6.xib in Resources */,
 				49A708A81C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPad.xib in Resources */,
 				49A708B41C3AF25200483CF0 /* PopUpViewControllerWallet_iPad.xib in Resources */,
 				49A708B71C3AF25200483CF0 /* PopUpViewControllerWallet.xib in Resources */,
 				49A708A41C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPad.xib in Resources */,
+				497B73C21C55A90A0009E15C /* PopUpViewControllerRegistro_iPhone6Plus.xib in Resources */,
+				497B73CA1C55AE5B0009E15C /* PopUpViewControllerRegistro.xib in Resources */,
 				49A708C41C3AF26B00483CF0 /* PopUpViewController_iPad.xib in Resources */,
 				49A708B61C3AF25200483CF0 /* PopUpViewControllerWallet_iPhone6Plus.xib in Resources */,
 				49A708A91C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPhone6.xib in Resources */,
@@ -632,9 +694,11 @@
 				4905926E1C00E3A1006DDDD0 /* MenuPlatillos.swift in Sources */,
 				491576711BFBCAFB00EE641D /* MenuController.swift in Sources */,
 				49A708B81C3AF25200483CF0 /* PopUpViewControllerDescripcion.swift in Sources */,
+				497B73B61C5597810009E15C /* PopUpViewControllerRegistro.swift in Sources */,
 				495947B91C06A7FB0025AE1F /* PageItemController.swift in Sources */,
 				49A708BC1C3AF25200483CF0 /* PopUpViewControllerWallet.swift in Sources */,
 				490592801C0131EE006DDDD0 /* ViralizacionTableCell.swift in Sources */,
+				497B73CC1C55AEAC0009E15C /* PopUpViewControllerRecuperar.swift in Sources */,
 				49A708C81C3AF26B00483CF0 /* PopUpViewControllerSwift.swift in Sources */,
 				49C3D3651BFC0542003B2344 /* PrincipalTableViewCell.swift in Sources */,
 				49A708BB1C3AF25200483CF0 /* PopUpViewControllerTarjetas.swift in Sources */,
