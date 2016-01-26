@@ -259,28 +259,12 @@
 		4905926B1C00DFBC006DDDD0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				495947B61C06A7DA0025AE1F /* PagoViewController.swift */,
+				497B73D51C55E7A20009E15C /* TableViewCell */,
+				497B73D41C55E7960009E15C /* ViewControllers */,
+				497B73D31C55E78A0009E15C /* TableViews */,
 				495947B81C06A7FB0025AE1F /* PageItemController.swift */,
 				492BDAF31C0A99A400E22833 /* PageItemViralController.swift */,
-				49C3D3621BFBF9AF003B2344 /* PrincipalTableViewController.swift */,
-				49C3D3641BFC0542003B2344 /* PrincipalTableViewCell.swift */,
-				4905926D1C00E3A1006DDDD0 /* MenuPlatillos.swift */,
-				4905926F1C00E431006DDDD0 /* TableViewCell.swift */,
-				490592711C00F70D006DDDD0 /* FavoritosTableViewController.swift */,
-				490592731C00F71C006DDDD0 /* FavoritosTableViewCell.swift */,
-				490592751C00F72D006DDDD0 /* ConsejosTableViewController.swift */,
-				4982994C1C462BB9003F293C /* ConsejosTableViewCell.swift */,
-				490592771C00F742006DDDD0 /* TuCuentaViewController.swift */,
-				490592791C00F74E006DDDD0 /* CreditosViewController.swift */,
-				4905927B1C00FE50006DDDD0 /* PerfilViewController.swift */,
-				4905927D1C0131E0006DDDD0 /* ViralizacionTableViewController.swift */,
-				4905927F1C0131EE006DDDD0 /* ViralizacionTableCell.swift */,
-				49BB0E1E1C1517920079E96D /* PlatillosViewController.swift */,
-				49BB0E201C1518A90079E96D /* ViralizacionViewController.swift */,
 				49BB0E241C151A580079E96D /* CompartirPageItemController.swift */,
-				498299481C4603A7003F293C /* PagoTableViewController.swift */,
-				4982994A1C4603B4003F293C /* PagoTableViewCell.swift */,
-				4982994E1C465584003F293C /* PasosConsejosViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -385,6 +369,46 @@
 				497B73CB1C55AEAC0009E15C /* PopUpViewControllerRecuperar.swift */,
 			);
 			name = "Recuperar password";
+			sourceTree = "<group>";
+		};
+		497B73D31C55E78A0009E15C /* TableViews */ = {
+			isa = PBXGroup;
+			children = (
+				4905926D1C00E3A1006DDDD0 /* MenuPlatillos.swift */,
+				49C3D3621BFBF9AF003B2344 /* PrincipalTableViewController.swift */,
+				490592711C00F70D006DDDD0 /* FavoritosTableViewController.swift */,
+				490592751C00F72D006DDDD0 /* ConsejosTableViewController.swift */,
+				498299481C4603A7003F293C /* PagoTableViewController.swift */,
+				4905927D1C0131E0006DDDD0 /* ViralizacionTableViewController.swift */,
+			);
+			name = TableViews;
+			sourceTree = "<group>";
+		};
+		497B73D41C55E7960009E15C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				495947B61C06A7DA0025AE1F /* PagoViewController.swift */,
+				490592791C00F74E006DDDD0 /* CreditosViewController.swift */,
+				490592771C00F742006DDDD0 /* TuCuentaViewController.swift */,
+				4905927B1C00FE50006DDDD0 /* PerfilViewController.swift */,
+				49BB0E201C1518A90079E96D /* ViralizacionViewController.swift */,
+				49BB0E1E1C1517920079E96D /* PlatillosViewController.swift */,
+				4982994E1C465584003F293C /* PasosConsejosViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		497B73D51C55E7A20009E15C /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				49C3D3641BFC0542003B2344 /* PrincipalTableViewCell.swift */,
+				4905926F1C00E431006DDDD0 /* TableViewCell.swift */,
+				490592731C00F71C006DDDD0 /* FavoritosTableViewCell.swift */,
+				4982994C1C462BB9003F293C /* ConsejosTableViewCell.swift */,
+				4905927F1C0131EE006DDDD0 /* ViralizacionTableCell.swift */,
+				4982994A1C4603B4003F293C /* PagoTableViewCell.swift */,
+			);
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 		49A7088A1C3AF21200483CF0 /* PopUp */ = {
@@ -848,7 +872,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MenuDeslizante/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -880,7 +904,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MenuDeslizante/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

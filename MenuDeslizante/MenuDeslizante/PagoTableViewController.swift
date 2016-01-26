@@ -83,20 +83,20 @@ class PagoTableViewController: UITableViewController {
         if indexPath.row == 0 {
             cell.postImageView.image = UIImage(named: "comidag")
             menu.append("gratis")
-            cell.numeroImageView.image = UIImage(named: "diez")
+          //  cell.numeroImageView.image = UIImage(named: "diez")
         } else if indexPath.row == 1{
             cell.postImageView.image = UIImage(named: "comidar")
             menu.append("pago");
-            cell.numeroImageView.image = UIImage(named: "diez")
+         //   cell.numeroImageView.image = UIImage(named: "diez")
         }else if indexPath.row == 2{
             cell.postImageView.image = UIImage(named: "comidar")
             menu.append("pago");
-            cell.numeroImageView.image = UIImage(named: "diez")
+           // cell.numeroImageView.image = UIImage(named: "diez")
         }else{
             
             cell.postImageView.image = UIImage(named: "comidag")
             menu.append("gratis")
-            cell.numeroImageView.image = UIImage(named: "diez")
+            //cell.numeroImageView.image = UIImage(named: "diez")
             
         }
         

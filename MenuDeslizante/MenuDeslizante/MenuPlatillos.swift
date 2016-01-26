@@ -6,18 +6,22 @@
 //  Copyright © 2015 sergio ivan lopez monzon. All rights reserved.
 //
 import UIKit
+import Parse
 
 class MenuPlatillos: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //Esta variable viene desde menu principal y hace referencia a los menus que deben de comprarse
-    var isMenuDeCompra: Bool = false
-   
+    
+    var menuSeleccionado:PFObject!
+    
+    @IBOutlet weak var imagenViewMenuSeleccionado: UIImageView!
+    
+    @IBOutlet weak var labelMenuSeleccionado: UILabel!
     var popViewController : PopUpViewControllerSwift!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        self.loadCellInformation(imagenViewMenuSeleccionado, urlString: menuSeleccionado["Url_Imagen"] as! String, tipoMenuLabel: labelMenuSeleccionado, nombreMenu: menuSeleccionado["NombreMenu"] as! String)
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,6 +31,10 @@ class MenuPlatillos: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 4
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 5
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -56,11 +64,9 @@ class MenuPlatillos: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        if self.isMenuDeCompra == true{
-            self.abrirVentanaPop(5.0,suscripcion:  true, planId:  "prhhst3k5uucmunpl9fr")
+        if self.menuSeleccionado["TipoMenu"].lowercaseString == "pago"{
             
-            self.isMenuDeCompra = false
-
+            self.abrirVentanaPop(5.0,suscripcion:  true, planId:  "prhhst3k5uucmunpl9fr")
         }
         else
         {
@@ -68,6 +74,35 @@ class MenuPlatillos: UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
     }
     
+    
+    func loadCellInformation(imagenCell:UIImageView, urlString:String, tipoMenuLabel:UILabel, nombreMenu:String)
+    {
+        
+        
+        let imgURL: NSURL = NSURL(string: urlString)!
+        let request: NSURLRequest = NSURLRequest(URL: imgURL)
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request){
+            (data, response, error) -> Void in
+            
+            if (error == nil && data != nil)
+            {
+                func display_image()
+                {
+                    imagenCell.image = UIImage(data: data!)
+                    tipoMenuLabel.text = nombreMenu
+                    
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), display_image)
+            }
+            
+        }
+        
+        task.resume()
+    }
+
     /*
     // MARK: - Navigation
     
@@ -113,5 +148,8 @@ class MenuPlatillos: UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
         return strPantalla
     }
+    
+    
+    
 
 }

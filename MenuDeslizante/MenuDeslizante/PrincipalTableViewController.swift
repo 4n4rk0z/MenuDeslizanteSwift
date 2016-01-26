@@ -7,13 +7,65 @@
 //
 
 import UIKit
+import Parse
 
 class PrincipalTableViewController: UITableViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
     
-    //Para decirnos cual es la opcion que corresponde a cada posicion del menu, es un pseudo tag
-    var menu = [String]();
-    var isMenuCompra:Bool = false
+    //Para decirnos cual es la opcion que corresponde a cada posicion del menu
+    var itemsMenu = [PFObject]()
+    var menuSeleccionado:PFObject!
+    //Para almacenar el numero de recetas de ese menú
+    var numeroDeRecetasPorMenu = [Int]()
+    
+    
+    
+    
+    override func viewWillAppear(animated: Bool) {
+       
+        // cargamos las imagenes
+            let query = PFQuery(className: "Menus")
+            query.orderByAscending("Orden")
+            query.findObjectsInBackgroundWithBlock {
+                (items: [PFObject]?, error: NSError?) -> Void in
+                // comments now contains the comments for myPost
+                
+                if error == nil {
+                    //Si hay un cliente recupera su clientID y sale del metodo
+                    if let _ = items as [PFObject]? {
+                        self.itemsMenu = items!
+                        for item in items! {
+                            //Contar elementos de recetas en el menu principal
+                            let queryReceta = PFQuery(className:"Recetas")
+                            queryReceta.whereKey("Menu", equalTo: item)
+                            queryReceta.countObjectsInBackgroundWithBlock {
+                                (count: Int32, error: NSError?) -> Void in
+                                if error == nil {
+                                    self.numeroDeRecetasPorMenu.append(Int(count))
+                                    if self.numeroDeRecetasPorMenu.count == self.itemsMenu.count{
+                                        dispatch_async(dispatch_get_main_queue()) {
+                                            self.tableView.reloadData()
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                        }
+                        
+                    }
+                    else{
+                        
+                        
+                    }
+                }
+                else
+                {
+                    print(error)
+                }
+            }
+        
+    }
+    
     override func viewDidLoad() {
      super.viewDidLoad()
      self.tableView.delegate = self
@@ -49,58 +101,34 @@ class PrincipalTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return 5
+        return self.itemsMenu.count
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        
-        let goto=menu[indexPath.row]
 
-        if goto=="gratis"
+        self.menuSeleccionado = itemsMenu[indexPath.row]
+        
+        let goto=self.menuSeleccionado["TipoMenu"].lowercaseString
+
+        if goto=="gratis" || goto=="pago"
         {
-            isMenuCompra = false
             self.performSegueWithIdentifier("recetarios", sender: nil)
         }
-        else if goto=="pago"
-        {
-            isMenuCompra = true
-            self.performSegueWithIdentifier("recetarios", sender: nil)
-        }
-        else if goto=="viralizacion"
+       
+       /* else if goto=="viralizacion"
         {
             self.performSegueWithIdentifier("viralizacion", sender: nil)
-        }
+        }*/
 
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PrincipalTableViewCell
+
         
+        self.loadCellInformation(cell.postImageView!, numeroBtnView: cell.numeroBtnView, urlString: (self.itemsMenu[indexPath.row]["Url_Imagen"] as? String)!, numeroRedecetas:  self.numeroDeRecetasPorMenu[indexPath.row], tipoMenuLabel: cell.nombreLabelMenu, nombreMenu: (self.itemsMenu[indexPath.row]["NombreMenu"] as? String)!)
         
-        if indexPath.row == 0 {
-            cell.postImageView.image = UIImage(named: "comidag")
-            menu.append("gratis")
-            cell.numeroImageView.image = UIImage(named: "diez")
-        } else if indexPath.row == 1{
-            cell.postImageView.image = UIImage(named: "comidar")
-            menu.append("pago");
-            cell.numeroImageView.image = UIImage(named: "diez")
-        }else if indexPath.row == 2{
-            cell.postImageView.image = UIImage(named: "comidar")
-            menu.append("pago");
-            cell.numeroImageView.image = UIImage(named: "diez")
-        }else if indexPath.row == 3{
-            cell.postImageView.image = UIImage(named: "comidav")
-            menu.append("viralizacion")
-            cell.numeroImageView.image = UIImage(named: "diez")
-        
-        }else{
-            cell.postImageView.image = UIImage(named: "comidar")
-            menu.append("pago")
-            cell.numeroImageView.image = UIImage(named: "diez")
-        }
-        
+      
         return cell
     }
     
@@ -110,10 +138,40 @@ class PrincipalTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "recetarios"{
             let menu = segue.destinationViewController as!  MenuPlatillos
-            menu.isMenuDeCompra = self.isMenuCompra
+            menu.menuSeleccionado = self.menuSeleccionado
+        
         }
     }
     
+    
+    func loadCellInformation(imagenCell:UIImageView, numeroBtnView:UIButton, urlString:String, numeroRedecetas:Int, tipoMenuLabel:UILabel, nombreMenu:String)
+    {
+        
+        
+        let imgURL: NSURL = NSURL(string: urlString)!
+        let request: NSURLRequest = NSURLRequest(URL: imgURL)
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request){
+            (data, response, error) -> Void in
+            
+            if (error == nil && data != nil)
+            {
+                func display_image()
+                {
+                    imagenCell.image = UIImage(data: data!)
+                    numeroBtnView.setTitle(String(numeroRedecetas), forState: UIControlState.Normal)
+                    tipoMenuLabel.text = nombreMenu
+
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), display_image)
+            }
+            
+        }
+        
+        task.resume()
+    }
     
         
 

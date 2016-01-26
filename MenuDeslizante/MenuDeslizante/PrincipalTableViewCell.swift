@@ -12,7 +12,8 @@ import UIKit
 class PrincipalTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postImageView:UIImageView!
-    @IBOutlet weak var numeroImageView: UIImageView!
+    @IBOutlet weak var numeroBtnView: UIButton!
+    @IBOutlet weak var nombreLabelMenu: UILabel!
 
     
     override func awakeFromNib() {
