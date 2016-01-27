@@ -8,7 +8,7 @@
 import UIKit
 import Parse
 
-class MenuPlatillos: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MenuPlatillos: UITableViewController {
     
     //Esta variable viene desde menu principal y hace referencia a los menus que deben de comprarse
     
@@ -21,7 +21,30 @@ class MenuPlatillos: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadCellInformation(imagenViewMenuSeleccionado, urlString: menuSeleccionado["Url_Imagen"] as! String, tipoMenuLabel: labelMenuSeleccionado, nombreMenu: menuSeleccionado["NombreMenu"] as! String)
+        //self.loadCellInformation(imagenViewMenuSeleccionado, urlString: menuSeleccionado["Url_Imagen"] as! String, tipoMenuLabel: labelMenuSeleccionado, nombreMenu: menuSeleccionado["NombreMenu"] as! String)
+    }
+    
+    func consultarRecetasDeMenu()
+    {
+        let query = PFQuery(className:"Recetas")
+        query.whereKey("Menu", equalTo:self.menuSeleccionado)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) scores.")
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        print(object.objectId)
+                    }
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,19 +52,19 @@ class MenuPlatillos: UIViewController, UITableViewDelegate, UITableViewDataSourc
         // Dispose of any resources that can be recreated.
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 4
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 5
     }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         //let cell = tableView.dequeueReusableCellWithIdentifier("PlatilloCell") as UITableViewCell!
-        let cell = tableView.dequeueReusableCellWithIdentifier("PlatilloCell", forIndexPath: indexPath) as! TableViewCell
-        
+   let cell = tableView.dequeueReusableCellWithIdentifier("PlatilloCell", forIndexPath: indexPath) as! MenuPlatillosTableViewCell
+   /*
         
         if indexPath.row == 0 {
             cell.imagePropia.image = UIImage(named: "arabe")
@@ -52,17 +75,17 @@ class MenuPlatillos: UIViewController, UITableViewDelegate, UITableViewDataSourc
         }else {
             cell.imagePropia.image = UIImage(named: "arabe")
         }
-
+*/
         
         return cell
         
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         if self.menuSeleccionado["TipoMenu"].lowercaseString == "pago"{
             

@@ -17,6 +17,7 @@
 		4905927C1C00FE50006DDDD0 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905927B1C00FE50006DDDD0 /* PerfilViewController.swift */; };
 		4905927E1C0131E0006DDDD0 /* ViralizacionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905927D1C0131E0006DDDD0 /* ViralizacionTableViewController.swift */; };
 		490592801C0131EE006DDDD0 /* ViralizacionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905927F1C0131EE006DDDD0 /* ViralizacionTableCell.swift */; };
+		4910CA8F1C586F3000EB32C5 /* MenuPlatillosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910CA8E1C586F3000EB32C5 /* MenuPlatillosTableViewCell.swift */; };
 		4915766F1BFBCAFB00EE641D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4915766E1BFBCAFB00EE641D /* AppDelegate.swift */; };
 		491576711BFBCAFB00EE641D /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491576701BFBCAFB00EE641D /* MenuController.swift */; };
 		491576741BFBCAFB00EE641D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 491576721BFBCAFB00EE641D /* Main.storyboard */; };
@@ -122,6 +123,7 @@
 		4905927B1C00FE50006DDDD0 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		4905927D1C0131E0006DDDD0 /* ViralizacionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViralizacionTableViewController.swift; sourceTree = "<group>"; };
 		4905927F1C0131EE006DDDD0 /* ViralizacionTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViralizacionTableCell.swift; sourceTree = "<group>"; };
+		4910CA8E1C586F3000EB32C5 /* MenuPlatillosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPlatillosTableViewCell.swift; sourceTree = "<group>"; };
 		491576691BFBCAFB00EE641D /* MenuDeslizante.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuDeslizante.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4915766D1BFBCAFB00EE641D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4915766E1BFBCAFB00EE641D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 				4982994C1C462BB9003F293C /* ConsejosTableViewCell.swift */,
 				4905927F1C0131EE006DDDD0 /* ViralizacionTableCell.swift */,
 				4982994A1C4603B4003F293C /* PagoTableViewCell.swift */,
+				4910CA8E1C586F3000EB32C5 /* MenuPlatillosTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -731,6 +734,7 @@
 				4905927E1C0131E0006DDDD0 /* ViralizacionTableViewController.swift in Sources */,
 				4915766F1BFBCAFB00EE641D /* AppDelegate.swift in Sources */,
 				49BB0E251C151A580079E96D /* CompartirPageItemController.swift in Sources */,
+				4910CA8F1C586F3000EB32C5 /* MenuPlatillosTableViewCell.swift in Sources */,
 				495947B71C06A7DA0025AE1F /* PagoViewController.swift in Sources */,
 				49C3D3611BFBF6DA003B2344 /* SWRevealViewController.m in Sources */,
 				4905927C1C00FE50006DDDD0 /* PerfilViewController.swift in Sources */,

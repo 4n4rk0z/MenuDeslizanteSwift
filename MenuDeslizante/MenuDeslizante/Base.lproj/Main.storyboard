@@ -283,8 +283,8 @@
                     <connections>
                         <outlet property="menuButton" destination="Hao-8k-QeB" id="tC9-7V-ado"/>
                         <outlet property="view" destination="dqs-0e-yto" id="Icu-Ou-auW"/>
-                        <segue destination="suF-NM-3zd" kind="show" identifier="recetarios" id="fai-Ni-VIV"/>
                         <segue destination="dpj-0A-Gen" kind="show" identifier="viralizacion" id="lib-Gk-biC"/>
+                        <segue destination="x4J-z2-Zet" kind="show" identifier="recetarios" id="ReD-sJ-kvu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8b3-cr-Ghh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -546,98 +546,147 @@
             </objects>
             <point key="canvasLocation" x="3048" y="-129"/>
         </scene>
-        <!--Menu Platillos-->
-        <scene sceneID="EMx-vN-hTm">
+        <!--Recetas-->
+        <scene sceneID="Ydc-ip-8o2">
             <objects>
-                <viewController storyboardIdentifier="MenuPlatillos" title="Menu Platillos" id="suF-NM-3zd" customClass="MenuPlatillos" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hXT-Gv-jZl"/>
-                        <viewControllerLayoutGuide type="bottom" id="A5e-TK-eMv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="WA9-e0-U4Q">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                <tableViewController id="x4J-z2-Zet" customClass="MenuPlatillos" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="201" sectionHeaderHeight="28" sectionFooterHeight="28" id="yqM-U3-eak">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lKt-X2-FAn">
-                                <rect key="frame" x="0.0" y="8" width="600" height="141"/>
-                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVb-ou-drm">
-                                <rect key="frame" x="451" y="116" width="137" height="21"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Nombre del menu">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="176" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G2X-MC-7FI">
-                                <rect key="frame" x="13" y="181" width="567" height="325"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexTrackingBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlatilloCell" rowHeight="164" id="cNV-z6-Q3P" customClass="TableViewCell" customModule="MenuDeslizante" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="567" height="164"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cNV-z6-Q3P" id="N6P-mS-8E9">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="163"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="imagen700x300" translatesAutoresizingMaskIntoConstraints="NO" id="gPl-OW-k7Y">
-                                                    <rect key="frame" x="8" y="8" width="584" height="141"/>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="gPl-OW-k7Y" secondAttribute="trailing" id="kRk-Ko-5oY"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="gPl-OW-k7Y" secondAttribute="bottom" constant="6" id="oVd-Qu-Hkp"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="gPl-OW-k7Y" secondAttribute="trailing" id="obu-Xs-7tD"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="gPl-OW-k7Y" secondAttribute="leading" id="oig-w1-5YP"/>
-                                                <constraint firstAttribute="topMargin" secondItem="gPl-OW-k7Y" secondAttribute="top" id="rlU-Os-DHL"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="imagePropia" destination="gPl-OW-k7Y" id="SoH-lG-0Fa"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="suF-NM-3zd" id="3yt-VC-p9v"/>
-                                    <outlet property="delegate" destination="suF-NM-3zd" id="sW1-98-LFu"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="yVb-ou-drm" firstAttribute="top" secondItem="lKt-X2-FAn" secondAttribute="bottom" constant="-33" id="GH0-rj-HdC"/>
-                            <constraint firstItem="lKt-X2-FAn" firstAttribute="leading" secondItem="WA9-e0-U4Q" secondAttribute="leadingMargin" constant="-20" id="JfS-qm-LXf"/>
-                            <constraint firstItem="G2X-MC-7FI" firstAttribute="leading" secondItem="WA9-e0-U4Q" secondAttribute="leadingMargin" constant="-7" id="NvX-eA-ZsG"/>
-                            <constraint firstItem="A5e-TK-eMv" firstAttribute="top" secondItem="G2X-MC-7FI" secondAttribute="bottom" constant="30" id="X3c-r3-kkI"/>
-                            <constraint firstItem="yVb-ou-drm" firstAttribute="leading" secondItem="lKt-X2-FAn" secondAttribute="trailing" constant="-149" id="a1C-jQ-k4E"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="G2X-MC-7FI" secondAttribute="trailing" id="cjD-a4-F1P"/>
-                            <constraint firstItem="G2X-MC-7FI" firstAttribute="top" secondItem="lKt-X2-FAn" secondAttribute="bottom" constant="32" id="euR-iC-ccM"/>
-                            <constraint firstItem="lKt-X2-FAn" firstAttribute="top" secondItem="hXT-Gv-jZl" secondAttribute="bottom" constant="8" id="ffW-bO-EbX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lKt-X2-FAn" secondAttribute="trailing" constant="-20" id="j12-FY-LbD"/>
-                            <constraint firstItem="G2X-MC-7FI" firstAttribute="top" secondItem="hXT-Gv-jZl" secondAttribute="bottom" constant="181" id="umu-Q1-6lF"/>
-                        </constraints>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="SZs-6k-cNx">
+                            <rect key="frame" x="0.0" y="64" width="600" height="169"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen700x300" translatesAutoresizingMaskIntoConstraints="NO" id="ypR-7U-Mhf">
+                                    <rect key="frame" x="8" y="8" width="584" height="141"/>
+                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGX-wb-yGO">
+                                    <rect key="frame" x="404" y="122" width="180" height="21"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Nombre del menu">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="ypR-7U-Mhf" secondAttribute="bottom" constant="20" id="NeT-hB-f1i"/>
+                                <constraint firstItem="ypR-7U-Mhf" firstAttribute="top" secondItem="SZs-6k-cNx" secondAttribute="top" constant="8" id="V2w-kf-faw"/>
+                                <constraint firstItem="ypR-7U-Mhf" firstAttribute="leading" secondItem="SZs-6k-cNx" secondAttribute="leading" constant="8" id="bLG-3h-a0V"/>
+                                <constraint firstAttribute="bottom" secondItem="eGX-wb-yGO" secondAttribute="bottom" constant="26" id="eXu-ws-UN2"/>
+                                <constraint firstAttribute="trailing" secondItem="ypR-7U-Mhf" secondAttribute="trailing" constant="8" id="yPW-UI-glh"/>
+                                <constraint firstAttribute="trailing" secondItem="eGX-wb-yGO" secondAttribute="trailing" constant="16" id="zzX-Dc-Ozy"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlatilloCell" rowHeight="201" id="enf-hW-tdW" customClass="MenuPlatillosTableViewCell" customModule="MenuDeslizante" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="261" width="600" height="201"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="enf-hW-tdW" id="rhj-tQ-ZOQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen700x300" translatesAutoresizingMaskIntoConstraints="NO" id="a6y-cQ-INm">
+                                            <rect key="frame" x="8" y="8" width="584" height="172"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPq-xx-kQo">
+                                            <rect key="frame" x="407" y="28" width="167" height="22"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Nombre receta">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0U-11-n8d">
+                                            <rect key="frame" x="407" y="98" width="167" height="22"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Porciones">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ut6-vY-vRi">
+                                            <rect key="frame" x="407" y="138" width="167" height="22"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Tiempo">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bx7-iU-dJL">
+                                            <rect key="frame" x="407" y="63" width="167" height="22"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Nivel">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="bx7-iU-dJL" secondAttribute="trailing" constant="18" id="0lR-6d-RcN"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="G0U-11-n8d" secondAttribute="bottom" constant="72" id="13w-hX-yUh"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ut6-vY-vRi" secondAttribute="bottom" constant="32" id="DuR-s9-yBC"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="a6y-cQ-INm" secondAttribute="leading" id="Mx4-wa-NXZ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="wPq-xx-kQo" secondAttribute="trailing" constant="18" id="Org-B9-VHr"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="G0U-11-n8d" secondAttribute="trailing" constant="18" id="SF7-o1-0EW"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="a6y-cQ-INm" secondAttribute="bottom" constant="12" id="UK2-bq-jaA"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ut6-vY-vRi" secondAttribute="trailing" constant="18" id="inp-Hb-6ot"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="wPq-xx-kQo" secondAttribute="bottom" constant="142" id="jj6-Ez-aHZ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="a6y-cQ-INm" secondAttribute="trailing" id="q9b-c9-vex"/>
+                                        <constraint firstAttribute="topMargin" secondItem="a6y-cQ-INm" secondAttribute="top" id="sNY-JU-ngt"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bx7-iU-dJL" secondAttribute="bottom" constant="107" id="wWp-08-qKf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="x4J-z2-Zet" id="Sr7-tA-MCP"/>
+                            <outlet property="delegate" destination="x4J-z2-Zet" id="kFN-Uq-m07"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Recetas" id="LZG-jK-Bdu"/>
                     <connections>
-                        <outlet property="imagenViewMenuSeleccionado" destination="lKt-X2-FAn" id="9Dt-pD-Hqz"/>
-                        <outlet property="labelMenuSeleccionado" destination="yVb-ou-drm" id="raS-eX-e0A"/>
-                        <segue destination="TqI-jn-NKe" kind="show" identifier="PlatilloSegue" id="1bo-dF-bA8">
-                            <nil key="action"/>
-                        </segue>
+                        <outlet property="imagenViewMenuSeleccionado" destination="ypR-7U-Mhf" id="sVu-KZ-p64"/>
+                        <outlet property="labelMenuSeleccionado" destination="eGX-wb-yGO" id="h58-kY-GOw"/>
+                        <segue destination="TqI-jn-NKe" kind="show" identifier="PlatilloSegue" id="e4b-gO-dZb"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cN9-t6-grK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LOC-jp-9n6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2152" y="-129"/>
+            <point key="canvasLocation" x="2142" y="-129"/>
         </scene>
         <!--Favoritos-->
         <scene sceneID="8NB-Ki-2h1">
@@ -672,7 +721,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="postImageView" destination="7eN-oj-b7f" id="RfK-GP-EDf"/>
-                                    <segue destination="suF-NM-3zd" kind="show" identifier="platillos" id="cXi-LM-M6b"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -686,6 +734,7 @@
                     <connections>
                         <outlet property="menuButton" destination="fdC-L9-fpe" id="dNr-1t-4eY"/>
                         <outlet property="view" destination="TNN-aB-4ZW" id="787-M4-vYK"/>
+                        <segue destination="x4J-z2-Zet" kind="show" identifier="Platillo" id="AiV-z6-npl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhk-12-smZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1411,13 +1460,13 @@
         <image name="viralizacion" width="693" height="440"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tm9-C3-w7I"/>
         <segue reference="5V6-UQ-NDg"/>
-        <segue reference="LJk-td-MH3"/>
         <segue reference="DW0-ra-R3Q"/>
+        <segue reference="LJk-td-MH3"/>
+        <segue reference="Tm9-C3-w7I"/>
         <segue reference="edY-XV-IE3"/>
-        <segue reference="fai-Ni-VIV"/>
-        <segue reference="BYM-AS-4lU"/>
+        <segue reference="ReD-sJ-kvu"/>
+        <segue reference="Sco-K9-Ijq"/>
         <segue reference="NZW-hL-axY"/>
     </inferredMetricsTieBreakers>
 </document>
