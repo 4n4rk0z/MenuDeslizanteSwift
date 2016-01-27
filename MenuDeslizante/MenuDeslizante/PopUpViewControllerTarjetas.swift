@@ -128,7 +128,8 @@ import Parse
         request.HTTPMethod = "POST"
         request.allHTTPHeaderFields = headers
         request.HTTPBody = postData
-        self.txtMensajes.text = "Guardando tarjeta"
+        
+
         let session = NSURLSession.sharedSession()
         let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
             self.setActivityIndicatorEnabled(false)
@@ -334,6 +335,7 @@ import Parse
                     clientes["nombre"] = self.txtNombre.text!
                     clientes["email"] = self.txtEmail.text!
                     clientes["numero"] = self.txtTelefono.text!
+                    clientes["Suscrito"] = false
                     
                     clientes.saveInBackgroundWithBlock {
                         (success: Bool, error: NSError?) -> Void in
@@ -365,12 +367,16 @@ import Parse
             btnRegresar.hidden = true
             loadingIndicator.startAnimating()
             loadingIndicator.hidden = false
+            txtMensajes.hidden = false
+            self.txtMensajes.text = "Guardando tarjeta"
         }
         else {
             btnAction.hidden = false
             btnRegresar.hidden = false
             loadingIndicator.stopAnimating()
             loadingIndicator.hidden = true
+            txtMensajes.hidden = true
+            self.txtMensajes.text = "Guardando tarjeta"
         }
         
     }
@@ -416,7 +422,6 @@ import Parse
     @IBAction func btnGuardar(sender: AnyObject) {
         
         self.setActivityIndicatorEnabled(true)
-        self.txtMensajes.text = ""
         if (boolBanderaExisteClienteAsociado){
             
             self.submitCardInfo()

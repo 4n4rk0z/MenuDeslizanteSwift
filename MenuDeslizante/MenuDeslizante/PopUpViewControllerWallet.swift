@@ -21,6 +21,7 @@ import Parse
     var tarjetaSeleccionadaId:String!
     var planId:String?
     var precioProducto:Double!
+    var objCliente:PFObject!
     
     @IBOutlet weak var lEmail: UILabel!
     @IBOutlet weak var popUpView: UIView!
@@ -147,6 +148,7 @@ import Parse
                     let httpResponse = response as? NSHTTPURLResponse
                     print(httpResponse)
                     
+                    
                     func actualizarPantalla()
                     {
                         self.btnPagar.setTitle("Aceptar", forState: UIControlState.Normal)
@@ -157,6 +159,7 @@ import Parse
                         self.lmensaje.text = "¡Felicidades por su compra!"
                     }//Actualiza mas rapido los elementos
                     dispatch_async(dispatch_get_main_queue(), actualizarPantalla)
+
                     
                 }
             })
@@ -203,18 +206,29 @@ import Parse
                     let httpResponse = response as? NSHTTPURLResponse
                     print(httpResponse)
                     
+                    let query = PFQuery(className:"Clientes")
+                    query.getObjectInBackgroundWithId(self.objCliente.objectId!) {
+                        (clienteUpdate: PFObject?, error: NSError?) -> Void in
+                        if error != nil {
+                            print(error)
+                        } else if let clientUpdate = clienteUpdate {
+                            clientUpdate["Suscrito"] = true
+                            clientUpdate.saveInBackground()
+                            
+
+                            func actualizarPantalla()
+                            {
                     
-                    func actualizarPantalla()
-                    {
-                    
-                        self.btnPagar.setTitle("Aceptar", forState: UIControlState.Normal)
-                        self.btnCancelar.hidden = true
-                        self.loadingAction.hidden = true
-                        self.loadingAction.stopAnimating()
-                        self.btnPagar.hidden = false
-                        self.lmensaje.text = "¡Te has suscrito!"
-                    }//Actualiza mas rapido los elementos
-                    dispatch_async(dispatch_get_main_queue(), actualizarPantalla)
+                                self.btnPagar.setTitle("Aceptar", forState: UIControlState.Normal)
+                                self.btnCancelar.hidden = true
+                                self.loadingAction.hidden = true
+                                self.loadingAction.stopAnimating()
+                                self.btnPagar.hidden = false
+                                self.lmensaje.text = "¡Te has suscrito!"
+                            }//Actualiza mas rapido los elementos
+                            dispatch_async(dispatch_get_main_queue(), actualizarPantalla)
+                        }
+                    }
                 }
             })
             
@@ -264,6 +278,7 @@ import Parse
                         self.lEmail.text = (cliente["email"] as? String)!
                         //Se recuperan las tarjetas del cliente
                         self.consultarWallet(cliente)
+                        self.objCliente = cliente
                         break
                     }
                 }
@@ -348,10 +363,7 @@ import Parse
     @IBAction func btnPagar(sender: AnyObject) {
         if self.btnPagar.titleLabel?.text == "Aceptar"{
             
-            
-            
-          
-            
+            self.removeAnimate()
         }
         else
         {

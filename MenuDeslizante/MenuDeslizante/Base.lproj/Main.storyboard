@@ -595,7 +595,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen700x300" translatesAutoresizingMaskIntoConstraints="NO" id="a6y-cQ-INm">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a6y-cQ-INm">
                                             <rect key="frame" x="8" y="8" width="584" height="172"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPq-xx-kQo">
@@ -670,6 +670,13 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="bx7-iU-dJL" secondAttribute="bottom" constant="107" id="wWp-08-qKf"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imagenRecetaView" destination="a6y-cQ-INm" id="VO1-eK-cZp"/>
+                                    <outlet property="nivelRecetaLabel" destination="bx7-iU-dJL" id="hYL-DE-nqT"/>
+                                    <outlet property="nombreRecetaLabel" destination="wPq-xx-kQo" id="95y-fG-qVU"/>
+                                    <outlet property="porcionesRecetaLabel" destination="G0U-11-n8d" id="sJT-5P-k3p"/>
+                                    <outlet property="tiempoRecetaLabel" destination="ut6-vY-vRi" id="NXj-5Z-akO"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -30,10 +31,7 @@
                     <rect key="frame" x="37" y="123" width="300" height="422"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCt-8v-e3A">
-                            <rect key="frame" x="133" y="384" width="66" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="FiM-pF-kAE"/>
-                            </constraints>
+                            <rect key="frame" x="104" y="384" width="66" height="30"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" title="Cancelar">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -110,20 +108,6 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgE-ia-OGi">
-                            <rect key="frame" x="238" y="384" width="57" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="57" id="66W-Zp-Abb"/>
-                                <constraint firstAttribute="height" constant="30" id="qSo-Cs-bdY"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Pagar">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnPagar:" destination="-1" eventType="touchUpInside" id="gdy-mO-DaA"/>
-                            </connections>
-                        </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tienda" translatesAutoresizingMaskIntoConstraints="NO" id="T3h-q1-ocC">
                             <rect key="frame" x="3" y="209" width="120" height="79"/>
                             <constraints>
@@ -158,6 +142,19 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tarjeta" translatesAutoresizingMaskIntoConstraints="NO" id="QpR-mR-KFP">
                             <rect key="frame" x="8" y="286" width="120" height="79"/>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgE-ia-OGi">
+                            <rect key="frame" x="204" y="384" width="91" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="qSo-Cs-bdY"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Pagar">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnPagar:" destination="-1" eventType="touchUpInside" id="gdy-mO-DaA"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -175,7 +172,6 @@
                         <constraint firstItem="yAL-QF-aAB" firstAttribute="top" secondItem="MmE-Ln-VDa" secondAttribute="bottom" constant="42" id="ILX-PM-SMx"/>
                         <constraint firstItem="jJj-6I-o0B" firstAttribute="centerX" secondItem="71E-tD-Yz8" secondAttribute="centerX" id="IaD-Yc-acj"/>
                         <constraint firstItem="MDe-BR-BOP" firstAttribute="leading" secondItem="9h9-iY-Tjg" secondAttribute="leading" id="Jcv-p0-wAO"/>
-                        <constraint firstItem="LgE-ia-OGi" firstAttribute="leading" secondItem="aCt-8v-e3A" secondAttribute="trailing" constant="39" id="KBZ-Lb-UY1"/>
                         <constraint firstItem="MDe-BR-BOP" firstAttribute="trailing" secondItem="dWo-Jc-d2R" secondAttribute="trailing" id="NIW-MP-P1H"/>
                         <constraint firstItem="LgE-ia-OGi" firstAttribute="bottom" secondItem="71E-tD-Yz8" secondAttribute="bottomMargin" id="Pcc-HF-Qwr"/>
                         <constraint firstAttribute="trailing" secondItem="jJj-6I-o0B" secondAttribute="trailing" constant="41" id="RpA-iO-9T2"/>
@@ -185,15 +181,18 @@
                         <constraint firstItem="9h9-iY-Tjg" firstAttribute="top" secondItem="dWo-Jc-d2R" secondAttribute="bottom" constant="3" id="XWS-xs-XAO"/>
                         <constraint firstItem="dWo-Jc-d2R" firstAttribute="top" secondItem="rc9-Na-BLj" secondAttribute="bottom" constant="14" id="aae-6w-src"/>
                         <constraint firstItem="T3h-q1-ocC" firstAttribute="top" secondItem="ki2-4D-xsP" secondAttribute="bottom" constant="8" symbolic="YES" id="b09-CO-gFx"/>
+                        <constraint firstItem="LgE-ia-OGi" firstAttribute="leading" secondItem="71E-tD-Yz8" secondAttribute="leading" constant="204" id="bcU-vo-ae2"/>
                         <constraint firstAttribute="trailing" secondItem="LgE-ia-OGi" secondAttribute="trailing" constant="5" id="dth-Kl-hT2"/>
                         <constraint firstAttribute="trailing" secondItem="ki2-4D-xsP" secondAttribute="trailing" constant="42" id="e0B-Z6-9OD"/>
                         <constraint firstItem="MDe-BR-BOP" firstAttribute="leading" secondItem="dWo-Jc-d2R" secondAttribute="leading" id="fsp-ua-8vf"/>
                         <constraint firstItem="MDe-BR-BOP" firstAttribute="trailing" secondItem="9h9-iY-Tjg" secondAttribute="trailing" id="iG9-5H-KMn"/>
                         <constraint firstAttribute="trailing" secondItem="MDe-BR-BOP" secondAttribute="trailing" id="jtF-Zt-Hzs"/>
-                        <constraint firstItem="LgE-ia-OGi" firstAttribute="baseline" secondItem="aCt-8v-e3A" secondAttribute="baseline" id="k7w-YP-Hl2"/>
                         <constraint firstItem="cJu-cl-5a7" firstAttribute="leading" secondItem="yAL-QF-aAB" secondAttribute="leading" id="l0l-I1-Lbp"/>
                         <constraint firstAttribute="trailing" secondItem="MmE-Ln-VDa" secondAttribute="trailing" constant="47" id="l1x-lJ-M31"/>
+                        <constraint firstAttribute="bottom" secondItem="aCt-8v-e3A" secondAttribute="bottom" constant="8" id="pVT-zl-2Ye"/>
+                        <constraint firstAttribute="trailing" secondItem="aCt-8v-e3A" secondAttribute="trailing" constant="130" id="pZB-Ho-KgY"/>
                         <constraint firstItem="jJj-6I-o0B" firstAttribute="top" secondItem="T3h-q1-ocC" secondAttribute="bottom" constant="78" id="rAi-nY-keW"/>
+                        <constraint firstItem="aCt-8v-e3A" firstAttribute="leading" secondItem="71E-tD-Yz8" secondAttribute="leading" constant="104" id="t1e-tj-Mw2"/>
                         <constraint firstItem="MmE-Ln-VDa" firstAttribute="leading" secondItem="71E-tD-Yz8" secondAttribute="leading" constant="81" id="vkc-Kp-wWv"/>
                         <constraint firstItem="jJj-6I-o0B" firstAttribute="bottom" secondItem="rNL-NI-TyR" secondAttribute="bottom" id="wzY-gn-p12"/>
                     </constraints>

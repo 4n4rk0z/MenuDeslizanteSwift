@@ -16,7 +16,7 @@ class PrincipalTableViewController: UITableViewController {
     var itemsMenu = [PFObject]()
     var menuSeleccionado:PFObject!
     //Para almacenar el numero de recetas de ese menú
-    var numeroDeRecetasPorMenu = [Int]()
+    var numeroDeRecetasPorMenu = [PFObject:Int]()
     
     
     
@@ -41,7 +41,7 @@ class PrincipalTableViewController: UITableViewController {
                             queryReceta.countObjectsInBackgroundWithBlock {
                                 (count: Int32, error: NSError?) -> Void in
                                 if error == nil {
-                                    self.numeroDeRecetasPorMenu.append(Int(count))
+                                    self.numeroDeRecetasPorMenu[item]=Int(count)
                                     if self.numeroDeRecetasPorMenu.count == self.itemsMenu.count{
                                         dispatch_async(dispatch_get_main_queue()) {
                                             self.tableView.reloadData()
@@ -130,8 +130,8 @@ class PrincipalTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PrincipalTableViewCell
 
-        
-        self.loadCellInformation(cell.postImageView!, numeroBtnView: cell.numeroBtnView, urlString: (self.itemsMenu[indexPath.row]["Url_Imagen"] as? String)!, numeroRedecetas:  self.numeroDeRecetasPorMenu[indexPath.row], tipoMenuLabel: cell.nombreLabelMenu, nombreMenu: (self.itemsMenu[indexPath.row]["NombreMenu"] as? String)!)
+        let item = self.itemsMenu[indexPath.row]
+        self.loadCellInformation(cell.postImageView!, numeroBtnView: cell.numeroBtnView, urlString: (item["Url_Imagen"] as? String)!, numeroRedecetas:  self.numeroDeRecetasPorMenu[item]!, tipoMenuLabel: cell.nombreLabelMenu, nombreMenu: (item["NombreMenu"] as? String)!)
         
       
         return cell

@@ -13,21 +13,28 @@ class MenuPlatillos: UITableViewController {
     //Esta variable viene desde menu principal y hace referencia a los menus que deben de comprarse
     
     var menuSeleccionado:PFObject!
-    
+    var recetas = [PFObject]()
+    var planId = "prhhst3k5uucmunpl9fr"
+    var precioPlan = 5.0
     @IBOutlet weak var imagenViewMenuSeleccionado: UIImageView!
     
     @IBOutlet weak var labelMenuSeleccionado: UILabel!
     var popViewController : PopUpViewControllerSwift!
     
+    override func viewWillAppear(animated: Bool) {
+        consultarRecetasDeMenu()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.loadCellInformation(imagenViewMenuSeleccionado, urlString: menuSeleccionado["Url_Imagen"] as! String, tipoMenuLabel: labelMenuSeleccionado, nombreMenu: menuSeleccionado["NombreMenu"] as! String)
+        
+        self.loadMenuInformation(imagenViewMenuSeleccionado, urlString: menuSeleccionado["Url_Imagen"] as! String, tipoMenuLabel: labelMenuSeleccionado, nombreMenu: menuSeleccionado["NombreMenu"] as! String)
     }
     
     func consultarRecetasDeMenu()
     {
         let query = PFQuery(className:"Recetas")
         query.whereKey("Menu", equalTo:self.menuSeleccionado)
+        query.whereKey("Activada", equalTo:true)
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
@@ -36,9 +43,13 @@ class MenuPlatillos: UITableViewController {
                 print("Successfully retrieved \(objects!.count) scores.")
                 // Do something with the found objects
                 if let objects = objects {
-                    for object in objects {
-                        print(object.objectId)
+                    
+                    self.recetas = objects
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.tableView.reloadData()
                     }
+
                 }
             } else {
                 // Log details of the failure
@@ -53,7 +64,7 @@ class MenuPlatillos: UITableViewController {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 4
+        return 1
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -62,34 +73,29 @@ class MenuPlatillos: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        //let cell = tableView.dequeueReusableCellWithIdentifier("PlatilloCell") as UITableViewCell!
-   let cell = tableView.dequeueReusableCellWithIdentifier("PlatilloCell", forIndexPath: indexPath) as! MenuPlatillosTableViewCell
-   /*
+        let cell = tableView.dequeueReusableCellWithIdentifier("PlatilloCell", forIndexPath: indexPath) as! MenuPlatillosTableViewCell
         
-        if indexPath.row == 0 {
-            cell.imagePropia.image = UIImage(named: "arabe")
-        } else if indexPath.row == 1{
-            cell.imagePropia.image = UIImage(named: "images")
-        }else if indexPath.row == 2{
-            cell.imagePropia.image = UIImage(named: "arabe")
-        }else {
-            cell.imagePropia.image = UIImage(named: "arabe")
-        }
-*/
         
+        self.loadCellInformation(cell.imagenRecetaView, urlString: self.recetas[indexPath.row]["url_imagen"] as! String, nombreRecetaLabel: cell.nombreRecetaLabel, nombreRecetaStr: self.recetas[indexPath.row]["Nombre"] as! String, nivelRecetaLabel: cell.nivelRecetaLabel, nivelRecetaStr:  self.recetas[indexPath.row]["Nivel"] as! String, porcionesRecetaLabel: cell.porcionesRecetaLabel, porcionesRecetaStr:  self.recetas[indexPath.row]["Porciones"] as! String, tiempoRecetaLabel: cell.tiempoRecetaLabel, tiempoRecetaStr:  self.recetas[indexPath.row]["Tiempo"] as! String)
+        
+
         return cell
         
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.recetas.count
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        consultarSuscripcion()
+    }
+    
+    func abrirReceta(){
         
         if self.menuSeleccionado["TipoMenu"].lowercaseString == "pago"{
             
-            self.abrirVentanaPop(5.0,suscripcion:  true, planId:  "prhhst3k5uucmunpl9fr")
+            consultarSuscripcion()
         }
         else
         {
@@ -97,8 +103,81 @@ class MenuPlatillos: UITableViewController {
         }
     }
     
+    func consultarSuscripcion(){
+        let query = PFQuery(className: "Clientes")
+        query.whereKey("username", equalTo: PFUser.currentUser()!)
+        query.findObjectsInBackgroundWithBlock {
+            (clientes: [PFObject]?, error: NSError?) -> Void in
+            // comments now contains the comments for myPost
+            
+            if error == nil {
+                
+                //Si hay un cliente recupera su clientID y sale del metodo
+                if let _ = clientes as [PFObject]? {
+                    for cliente in clientes! {
+                        // This does not require a network access.
+                        if ((cliente["Suscrito"] as? Bool) != nil && (cliente["Suscrito"] as? Bool)==true){
+                            self.performSegueWithIdentifier("PlatilloSegue", sender: nil)
+                        }
+                        else{
+                            self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
+                        }
+                       
+                        break
+                    }
+                    
+                    if (clientes?.count==0)
+                    {
+                        //Si no se fue a la ventana que sigue quiere decir o que no esta suscrito
+                        self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
+                    }
+                }
+                else{
+                   
+                }
+            }
+            else
+            {
+                print(error)
+            }
+        }
+
+    }
     
-    func loadCellInformation(imagenCell:UIImageView, urlString:String, tipoMenuLabel:UILabel, nombreMenu:String)
+    
+    func loadCellInformation(imagenCell:UIImageView, urlString:String, nombreRecetaLabel:UILabel, nombreRecetaStr:String,  nivelRecetaLabel:UILabel, nivelRecetaStr:String,  porcionesRecetaLabel:UILabel, porcionesRecetaStr:String,  tiempoRecetaLabel:UILabel, tiempoRecetaStr:String)
+    {
+        
+        
+        let imgURL: NSURL = NSURL(string: urlString)!
+        let request: NSURLRequest = NSURLRequest(URL: imgURL)
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request){
+            (data, response, error) -> Void in
+            
+            if (error == nil && data != nil)
+            {
+                func display_image()
+                {
+                    imagenCell.image = UIImage(data: data!)
+                    nombreRecetaLabel.text = nombreRecetaStr
+                    nivelRecetaLabel.text = nivelRecetaStr
+                    porcionesRecetaLabel.text = porcionesRecetaStr
+                    tiempoRecetaLabel.text = tiempoRecetaStr
+                    
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), display_image)
+            }
+            
+        }
+        
+        task.resume()
+    }
+
+    
+    func loadMenuInformation(imagenCell:UIImageView, urlString:String, tipoMenuLabel:UILabel, nombreMenu:String)
     {
         
         

@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpViewControllerTarjetas" customModule="MenuDeslizante" customModuleProvider="target">
             <connections>
+                <outlet property="btnAction" destination="UGH-YO-sMd" id="fvQ-pF-8sf"/>
+                <outlet property="btnRegresar" destination="LFv-9O-Cg1" id="REU-yF-VxQ"/>
+                <outlet property="loadingIndicator" destination="lY4-Q2-irD" id="TvA-ah-MaD"/>
+                <outlet property="popUpView" destination="2IW-UW-h3x" id="QsB-ay-t40"/>
+                <outlet property="txtAnio" destination="Maw-x6-Hnl" id="3xj-ID-hZ5"/>
+                <outlet property="txtCvc" destination="wCq-zQ-cME" id="dL3-Uj-vs7"/>
+                <outlet property="txtEmail" destination="U42-Yd-yte" id="NJ7-Em-L09"/>
+                <outlet property="txtMensajes" destination="Okq-Xq-pGy" id="7wt-g1-9Pm"/>
+                <outlet property="txtMes" destination="IfG-L0-AoQ" id="gsv-LG-WHD"/>
+                <outlet property="txtNombre" destination="va7-el-rfM" id="aBS-NI-GM3"/>
+                <outlet property="txtNumeroTarjeta" destination="6Yq-Id-xlY" id="4nr-94-TeV"/>
+                <outlet property="txtTelefono" destination="wUo-wf-9Yv" id="SPS-ED-poa"/>
                 <outlet property="view" destination="2IW-UW-h3x" id="lQa-l5-pve"/>
             </connections>
         </placeholder>
@@ -58,25 +71,16 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGH-YO-sMd">
-                            <rect key="frame" x="183" y="308" width="60" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="hpp-GE-pqs"/>
-                            </constraints>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGH-YO-sMd">
+                            <rect key="frame" x="184" y="319" width="60" height="30"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" title="Guardar">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnGuardar:" destination="-1" eventType="touchUpInside" id="G8w-h2-cUd"/>
+                            </connections>
                         </button>
-                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pUb-fi-m3d">
-                            <rect key="frame" x="-76" y="351" width="20" height="20"/>
-                        </activityIndicatorView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okq-Xq-pGy">
-                            <rect key="frame" x="-41" y="350" width="182" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IfG-L0-AoQ">
                             <rect key="frame" x="7" y="156" width="46" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -93,16 +97,25 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFv-9O-Cg1">
-                            <rect key="frame" x="102" y="308" width="67" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="KRI-yw-uih"/>
-                            </constraints>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFv-9O-Cg1">
+                            <rect key="frame" x="103" y="319" width="67" height="30"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" title="Regresar">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnCancelar:" destination="-1" eventType="touchUpInside" id="q2n-sQ-za6"/>
+                            </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okq-Xq-pGy">
+                            <rect key="frame" x="37" y="302" width="182" height="19"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lY4-Q2-irD">
+                            <rect key="frame" x="7" y="324" width="20" height="20"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
@@ -115,7 +128,7 @@
                 <constraint firstAttribute="bottom" secondItem="ogv-Rp-vNf" secondAttribute="bottom" constant="159" id="riq-QL-lqD"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="265.5" y="260.5"/>
+            <point key="canvasLocation" x="182.5" y="210.5"/>
         </view>
     </objects>
     <resources>
