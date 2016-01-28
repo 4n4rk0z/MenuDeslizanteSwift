@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Parse
 
 class ViralizacionViewController: UIViewController, UIPageViewControllerDataSource {
     
     // MARK: - Variables
     private var pageViewController: UIPageViewController?
+    private var objReceta : PFObject!
     
     // Initialize it right away here
     private let contentImages = ["arabe.png",

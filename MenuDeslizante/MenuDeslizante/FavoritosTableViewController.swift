@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import Parse
 
 class FavoritosTableViewController: UITableViewController {
     
     @IBOutlet weak var menuButton:UIBarButtonItem!
+    var favoritos = [PFObject]()
+    var recetaSeleccionada:PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+       // self.tableView.editing = true
+
         if revealViewController() != nil {
             //            revealViewController().rearViewRevealWidth = 62
             menuButton.target = revealViewController()
@@ -25,8 +32,39 @@ class FavoritosTableViewController: UITableViewController {
             
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+            consultarFavoritos()
             
         }
+    }
+    
+    func consultarFavoritos(){
+        let query = PFQuery(className: "Favoritos")
+        query.whereKey("username", equalTo: PFUser.currentUser()!)
+        query.includeKey("Receta")
+        query.findObjectsInBackgroundWithBlock {
+            (favoritos: [PFObject]?, error: NSError?) -> Void in
+            // comments now contains the comments for myPost
+            
+            if error == nil {
+                
+                //Si hay un cliente recupera su clientID y sale del metodo
+                if let _ = favoritos as [PFObject]? {
+                    self.favoritos = favoritos!
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.tableView.reloadData()
+                    }
+                }
+                else{
+                    
+                    
+                }
+            }
+            else
+            {
+                print(error)
+            }
+        }
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,27 +79,92 @@ class FavoritosTableViewController: UITableViewController {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Return the number of rows in the section.
-        return 3
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 5
     }
     
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete{
+            self.favoritos[indexPath.row].deleteInBackground()
+            consultarFavoritos()
+            // The object has been saved.
+            let alertController = UIAlertController(title: "Receta Borrada",
+                message: "¡Esta receta ya no forma parte de tus favoritos!",
+                preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alertController.addAction(UIAlertAction(title: "OK",
+                style: UIAlertActionStyle.Default,
+                handler: nil))
+        }
+    }
+    
+    override func tableView(tableView: UITableView, canPerformAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
+        return true
+    }
+    
+    
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Return the number of rows in the section.
+        return self.favoritos.count
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.recetaSeleccionada = (self.favoritos[indexPath.row].objectForKey("Receta") as? NSArray)![0] as! PFObject
+        self.performSegueWithIdentifier("PlatilloSegueFavoritos", sender: nil)
+        
+    }
+    
+    func loadCellInformation(imagenCell:UIImageView, urlString:String, nombreRecetaLabel:UILabel, nombreRecetaStr:String,  nivelRecetaLabel:UILabel, nivelRecetaStr:String,  porcionesRecetaLabel:UILabel, porcionesRecetaStr:String,  tiempoRecetaLabel:UILabel, tiempoRecetaStr:String)
+    {
+        
+        
+        let imgURL: NSURL = NSURL(string: urlString)!
+        let request: NSURLRequest = NSURLRequest(URL: imgURL)
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request){
+            (data, response, error) -> Void in
+            
+            if (error == nil && data != nil)
+            {
+                func display_image()
+                {
+                    imagenCell.image = UIImage(data: data!)
+                    nombreRecetaLabel.text = nombreRecetaStr
+                    nivelRecetaLabel.text = nivelRecetaStr
+                    porcionesRecetaLabel.text = porcionesRecetaStr
+                    tiempoRecetaLabel.text = tiempoRecetaStr
+                    
+                    UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                        
+                        imagenCell.alpha = 100
+                        nombreRecetaLabel.alpha = 100
+                        nivelRecetaLabel.alpha = 100
+                        porcionesRecetaLabel.alpha = 100
+                        tiempoRecetaLabel.alpha = 100
+                        
+                        
+                        }, completion: nil)
+                    
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), display_image)
+            }
+            
+        }
+        
+        task.resume()
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! FavoritosTableViewCell
         
-        if indexPath.row == 0 {
-            cell.postImageView.image = UIImage(named: "watchkit-intro")
-
-            
-        } else if indexPath.row == 1{
-            cell.postImageView.image = UIImage(named: "watchkit-intro")
-
-            
-        }else{
-            cell.postImageView.image = UIImage(named: "watchkit-intro")
-
-        }
+        let receta =  self.favoritos[indexPath.row].objectForKey("Receta") as? NSArray
+        
+        self.loadCellInformation(cell.imageViewFavoritos, urlString: receta![0]["Url_Imagen"] as! String, nombreRecetaLabel: cell.labelNombre, nombreRecetaStr: receta![0]["Nombre"] as! String, nivelRecetaLabel: cell.labelNivel, nivelRecetaStr:  receta![0]["Nivel"] as! String, porcionesRecetaLabel: cell.labelPorciones, porcionesRecetaStr: receta![0]["Porciones"] as! String, tiempoRecetaLabel: cell.labelTiempo, tiempoRecetaStr:receta![0]["Tiempo"] as! String)
+        
         
         return cell
     }
@@ -73,7 +176,11 @@ class FavoritosTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        
+        if segue.identifier == "PlatilloSegueFavoritos"{
+            let receta = segue.destinationViewController as!  PlatillosViewController
+            receta.objReceta = self.recetaSeleccionada
+        }
+
         
     }
     

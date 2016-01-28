@@ -728,41 +728,140 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOC-jp-9n6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2142" y="-129"/>
+            <point key="canvasLocation" x="2128" y="-689"/>
         </scene>
         <!--Favoritos-->
         <scene sceneID="8NB-Ki-2h1">
             <objects>
                 <tableViewController id="Dcd-l9-ZlZ" customClass="FavoritosTableViewController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="TNN-aB-4ZW">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="209" sectionHeaderHeight="28" sectionFooterHeight="28" id="TNN-aB-4ZW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="lOV-w1-SXZ">
+                            <rect key="frame" x="0.0" y="64" width="600" height="169"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen700x300" translatesAutoresizingMaskIntoConstraints="NO" id="b5J-po-PXo">
+                                    <rect key="frame" x="8" y="8" width="584" height="141"/>
+                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBz-8e-OQF">
+                                    <rect key="frame" x="404" y="122" width="180" height="22"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Favoritos">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="IBz-8e-OQF" secondAttribute="trailing" constant="16" id="MCg-7O-WFa"/>
+                                <constraint firstItem="b5J-po-PXo" firstAttribute="leading" secondItem="lOV-w1-SXZ" secondAttribute="leading" constant="8" id="P8d-n3-zGC"/>
+                                <constraint firstAttribute="trailing" secondItem="b5J-po-PXo" secondAttribute="trailing" constant="8" id="UGk-jo-i4S"/>
+                                <constraint firstItem="b5J-po-PXo" firstAttribute="top" secondItem="lOV-w1-SXZ" secondAttribute="top" constant="8" id="Yml-f0-OZS"/>
+                                <constraint firstAttribute="bottom" secondItem="IBz-8e-OQF" secondAttribute="bottom" constant="26" id="wIw-8G-iDG"/>
+                                <constraint firstAttribute="bottom" secondItem="b5J-po-PXo" secondAttribute="bottom" constant="20" id="yLX-Pm-lec"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="150" id="vfO-MA-mkb" customClass="FavoritosTableViewCell" customModule="MenuDeslizante" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="150"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="209" id="vfO-MA-mkb" customClass="FavoritosTableViewCell" customModule="MenuDeslizante" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="261" width="600" height="209"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalCompressionResistancePriority="749" tableViewCell="vfO-MA-mkb" id="Pk6-lg-BGi">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="208"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7eN-oj-b7f">
-                                            <rect key="frame" x="8" y="8" width="584" height="128"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="7eN-oj-b7f" secondAttribute="height" multiplier="73:16" id="RRC-F1-Is3"/>
-                                            </constraints>
+                                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hk9-iC-k7z">
+                                            <rect key="frame" x="8" y="14" width="584" height="172"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqb-iQ-7ZP">
+                                            <rect key="frame" x="416" y="146" width="167" height="22"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Tiempo">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcU-lk-zKa">
+                                            <rect key="frame" x="416" y="110" width="167" height="22"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Nivel">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xl9-o1-kML">
+                                            <rect key="frame" x="416" y="67" width="167" height="22"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Porciones">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Twl-yk-TdN">
+                                            <rect key="frame" x="416" y="36" width="167" height="22"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Nombre receta">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="7eN-oj-b7f" firstAttribute="centerX" secondItem="Pk6-lg-BGi" secondAttribute="centerX" id="3da-Al-t7A"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="7eN-oj-b7f" secondAttribute="leading" id="5mQ-pz-H6z"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="7eN-oj-b7f" secondAttribute="bottom" constant="5" id="Eid-GP-0ep"/>
-                                        <constraint firstAttribute="topMargin" secondItem="7eN-oj-b7f" secondAttribute="top" id="G8h-UQ-6QC"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="7eN-oj-b7f" secondAttribute="trailing" id="LRS-yS-gTz"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Xl9-o1-kML" secondAttribute="trailing" constant="9" id="6De-eC-QXj"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="hk9-iC-k7z" secondAttribute="trailing" id="7Ph-8W-kWl"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="cqb-iQ-7ZP" secondAttribute="trailing" constant="9" id="B3Y-Cz-SJh"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="hk9-iC-k7z" secondAttribute="leading" id="RaX-H1-EQm"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Twl-yk-TdN" secondAttribute="trailing" constant="9" id="Tk6-rP-9uy"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="hk9-iC-k7z" secondAttribute="bottom" constant="14" id="ZLe-5i-t9c"/>
+                                        <constraint firstItem="hk9-iC-k7z" firstAttribute="top" secondItem="Pk6-lg-BGi" secondAttribute="topMargin" constant="6" id="lAb-Sg-EKN"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="tcU-lk-zKa" secondAttribute="trailing" constant="9" id="t4Y-cn-3a0"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="tcU-lk-zKa" secondAttribute="bottom" constant="60" id="tai-S7-cbo"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Twl-yk-TdN" secondAttribute="bottom" constant="142" id="u8W-7j-QVJ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="cqb-iQ-7ZP" secondAttribute="bottom" constant="24" id="vhi-3i-hLU"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Xl9-o1-kML" secondAttribute="bottom" constant="112" id="K8O-Wh-9Yb"/>
+                                </constraints>
                                 <connections>
-                                    <outlet property="postImageView" destination="7eN-oj-b7f" id="RfK-GP-EDf"/>
+                                    <outlet property="imageViewFavoritos" destination="hk9-iC-k7z" id="71t-hH-vhg"/>
+                                    <outlet property="labelNivel" destination="tcU-lk-zKa" id="RtK-oM-YlA"/>
+                                    <outlet property="labelNombre" destination="Twl-yk-TdN" id="Kw7-RY-tYE"/>
+                                    <outlet property="labelPorciones" destination="Xl9-o1-kML" id="qL8-3r-kix"/>
+                                    <outlet property="labelTiempo" destination="cqb-iQ-7ZP" id="Ie0-cv-81F"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -776,12 +875,12 @@
                     <connections>
                         <outlet property="menuButton" destination="fdC-L9-fpe" id="dNr-1t-4eY"/>
                         <outlet property="view" destination="TNN-aB-4ZW" id="787-M4-vYK"/>
-                        <segue destination="x4J-z2-Zet" kind="show" identifier="Platillo" id="AiV-z6-npl"/>
+                        <segue destination="TqI-jn-NKe" kind="show" identifier="PlatilloSegueFavoritos" id="k4D-lb-d9j"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhk-12-smZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1424" y="318"/>
+            <point key="canvasLocation" x="2128" y="318"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AGq-Yy-FWC">
@@ -1502,11 +1601,11 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5V6-UQ-NDg"/>
-        <segue reference="DW0-ra-R3Q"/>
+        <segue reference="edY-XV-IE3"/>
         <segue reference="LJk-td-MH3"/>
         <segue reference="Tm9-C3-w7I"/>
-        <segue reference="edY-XV-IE3"/>
-        <segue reference="ReD-sJ-kvu"/>
+        <segue reference="DW0-ra-R3Q"/>
+        <segue reference="k4D-lb-d9j"/>
         <segue reference="Sco-K9-Ijq"/>
         <segue reference="NZW-hL-axY"/>
     </inferredMetricsTieBreakers>

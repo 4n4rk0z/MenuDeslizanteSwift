@@ -11,7 +11,16 @@ import UIKit
 
 class FavoritosTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var postImageView:UIImageView!
+    @IBOutlet weak var imageViewFavoritos:UIImageView!
+    
+    @IBOutlet weak var labelTiempo: UILabel!
+    
+    @IBOutlet weak var labelNivel: UILabel!
+    
+    @IBOutlet weak var labelPorciones: UILabel!
+    
+    @IBOutlet weak var labelNombre: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

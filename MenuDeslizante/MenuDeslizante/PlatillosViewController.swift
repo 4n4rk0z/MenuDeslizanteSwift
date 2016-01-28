@@ -36,13 +36,9 @@ class PlatillosViewController: UIViewController{
                 self.labelPorciones.text = ""
                 self.labelTiempo.text = ""
                 self.textAreaReceta.text = ""
-                
                 self.textAreaReceta.text = ""
-                
                 self.imageViewReceta.image = nil
                 self.imageViewReceta.alpha = 0.0
-                
-
             
         }
         
@@ -104,8 +100,6 @@ class PlatillosViewController: UIViewController{
     
     @IBAction func bLike(sender: AnyObject) {
         
-        
-        
         let query = PFQuery(className: "Favoritos")
         query.whereKey("username", equalTo: PFUser.currentUser()!)
         query.whereKey("Receta", equalTo: self.objReceta)
@@ -146,7 +140,8 @@ class PlatillosViewController: UIViewController{
                     favorito["Anio"] = year
                     favorito["Mes"] = month
                     favorito["Trimestre"] = trimestre
-                    favorito["Receta"] = self.objReceta
+                    favorito.relationForKey("authors")
+                    favorito.addObject(self.objReceta, forKey: "Receta")
                     
                     favorito.saveInBackgroundWithBlock {
                         (success: Bool, error: NSError?) -> Void in
@@ -175,6 +170,19 @@ class PlatillosViewController: UIViewController{
 
 
     }
+    
+    /*
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "viralizarUno"{
+            
+        }
+        
+    }
+*/
+
     
     
     
