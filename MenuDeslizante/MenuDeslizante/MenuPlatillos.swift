@@ -13,6 +13,8 @@ class MenuPlatillos: UITableViewController {
     //Esta variable viene desde menu principal y hace referencia a los menus que deben de comprarse
     
     var menuSeleccionado:PFObject!
+    var recetaSeleccionada:PFObject!
+
     var recetas = [PFObject]()
     var planId = "prhhst3k5uucmunpl9fr"
     var precioPlan = 5.0
@@ -70,13 +72,14 @@ class MenuPlatillos: UITableViewController {
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 5
     }
+    
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("PlatilloCell", forIndexPath: indexPath) as! MenuPlatillosTableViewCell
         
-        
-        self.loadCellInformation(cell.imagenRecetaView, urlString: self.recetas[indexPath.row]["url_imagen"] as! String, nombreRecetaLabel: cell.nombreRecetaLabel, nombreRecetaStr: self.recetas[indexPath.row]["Nombre"] as! String, nivelRecetaLabel: cell.nivelRecetaLabel, nivelRecetaStr:  self.recetas[indexPath.row]["Nivel"] as! String, porcionesRecetaLabel: cell.porcionesRecetaLabel, porcionesRecetaStr:  self.recetas[indexPath.row]["Porciones"] as! String, tiempoRecetaLabel: cell.tiempoRecetaLabel, tiempoRecetaStr:  self.recetas[indexPath.row]["Tiempo"] as! String)
+        let receta = self.recetas[indexPath.row]
+        self.loadCellInformation(cell.imagenRecetaView, urlString: receta["Url_Imagen"] as! String, nombreRecetaLabel: cell.nombreRecetaLabel, nombreRecetaStr: receta["Nombre"] as! String, nivelRecetaLabel: cell.nivelRecetaLabel, nivelRecetaStr:  receta["Nivel"] as! String, porcionesRecetaLabel: cell.porcionesRecetaLabel, porcionesRecetaStr: receta["Porciones"] as! String, tiempoRecetaLabel: cell.tiempoRecetaLabel, tiempoRecetaStr:receta["Tiempo"] as! String)
         
 
         return cell
@@ -88,6 +91,7 @@ class MenuPlatillos: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.recetaSeleccionada = self.recetas[indexPath.row]
         consultarSuscripcion()
     }
     
@@ -166,6 +170,17 @@ class MenuPlatillos: UITableViewController {
                     porcionesRecetaLabel.text = porcionesRecetaStr
                     tiempoRecetaLabel.text = tiempoRecetaStr
                     
+                    UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                        
+                        imagenCell.alpha = 100
+                        nombreRecetaLabel.alpha = 100
+                        nivelRecetaLabel.alpha = 100
+                        porcionesRecetaLabel.alpha = 100
+                        tiempoRecetaLabel.alpha = 100
+                        
+                        
+                        }, completion: nil)
+
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), display_image)
@@ -195,6 +210,14 @@ class MenuPlatillos: UITableViewController {
                     imagenCell.image = UIImage(data: data!)
                     tipoMenuLabel.text = nombreMenu
                     
+                    UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                        
+                        imagenCell.alpha = 100
+                        
+                        
+                        }, completion: nil)
+
+                    
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), display_image)
@@ -205,15 +228,21 @@ class MenuPlatillos: UITableViewController {
         task.resume()
     }
 
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
+        if segue.identifier == "PlatilloSegue"{
+            let receta = segue.destinationViewController as!  PlatillosViewController
+          
+            receta.objReceta = self.recetaSeleccionada
+        }
+        
     }
-    */
+    
     
     func abrirVentanaPop(precio:Double, suscripcion:Bool!, planId:String!){
         let precio = precio

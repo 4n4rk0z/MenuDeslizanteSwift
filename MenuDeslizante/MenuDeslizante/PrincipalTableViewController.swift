@@ -38,6 +38,7 @@ class PrincipalTableViewController: UITableViewController {
                             //Contar elementos de recetas en el menu principal
                             let queryReceta = PFQuery(className:"Recetas")
                             queryReceta.whereKey("Menu", equalTo: item)
+                            queryReceta.whereKey("Activada", equalTo: true)
                             queryReceta.countObjectsInBackgroundWithBlock {
                                 (count: Int32, error: NSError?) -> Void in
                                 if error == nil {
@@ -144,7 +145,6 @@ class PrincipalTableViewController: UITableViewController {
         if segue.identifier == "recetarios"{
             let menu = segue.destinationViewController as!  MenuPlatillos
             menu.menuSeleccionado = self.menuSeleccionado
-        
         }
     }
     
@@ -167,6 +167,14 @@ class PrincipalTableViewController: UITableViewController {
                     imagenCell.image = UIImage(data: data!)
                     numeroBtnView.setTitle(String(numeroRedecetas), forState: UIControlState.Normal)
                     tipoMenuLabel.text = nombreMenu
+                    
+                    UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                        
+                            imagenCell.alpha = 100
+                        
+                        
+                        }, completion: nil)
+
 
                 }
                 
