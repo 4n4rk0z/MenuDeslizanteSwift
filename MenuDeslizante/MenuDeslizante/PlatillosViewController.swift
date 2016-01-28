@@ -20,6 +20,8 @@ class PlatillosViewController: UIViewController{
     @IBOutlet weak var labelPorciones: UILabel!
     @IBOutlet weak var labelTiempo: UILabel!
     var objReceta:PFObject!
+    
+    var popViewController: PopUpViewControllerCompartir!
 
     
     override func viewDidLoad() {
@@ -94,7 +96,7 @@ class PlatillosViewController: UIViewController{
     }
     
     @IBAction func bCompartir(sender: AnyObject) {
-        self.performSegueWithIdentifier("viralizarUno", sender: nil)
+        abrirVentanaPop()
         
     }
     
@@ -171,7 +173,42 @@ class PlatillosViewController: UIViewController{
 
     }
     
-    /*
+    func abrirVentanaPop(){
+
+        let bundle = NSBundle(forClass: PopUpViewControllerSwift.self)
+        
+        let strPantalla = pantallaSize()
+        
+        
+        self.popViewController = PopUpViewControllerCompartir(nibName: "PopUpViewControllerCompartir"+strPantalla, bundle: bundle)
+        self.popViewController.showInView(self.view, animated: true, receta: self.objReceta, imagenReceta: self.imageViewReceta.image!)
+        
+    }
+    
+    
+    
+    func pantallaSize()->String!
+    {
+        var strPantalla = ""
+        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
+        {
+            strPantalla = "_iPad"
+        }
+        else
+        {
+            
+            if UIScreen.mainScreen().bounds.size.width > 320 {
+                if UIScreen.mainScreen().scale == 3 {
+                    strPantalla = "_iPhone6Plus"
+                }
+                else{
+                    strPantalla = "_iPhone6"
+                }
+            }
+        }
+        return strPantalla
+    }
+/*
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.

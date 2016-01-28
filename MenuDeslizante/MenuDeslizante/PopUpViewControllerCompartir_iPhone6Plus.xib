@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpViewControllerCompartir" customModule="MenuDeslizante" customModuleProvider="target">
+            <connections>
+                <outlet property="imageViewReceta" destination="oNa-cr-qIW" id="Yfg-Te-ziw"/>
+                <outlet property="labelTitulo" destination="XDC-NE-5tC" id="Q3W-PF-n7h"/>
+                <outlet property="popUpView" destination="H01-Mp-R7z" id="IOa-Nj-8YF"/>
+                <outlet property="view" destination="H01-Mp-R7z" id="4fu-BQ-idG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="H01-Mp-R7z">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2i-uo-L2I">
+                    <rect key="frame" x="64" y="158" width="286" height="420"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okE-Kv-iCK">
+                            <rect key="frame" x="196" y="300" width="90" height="88"/>
+                            <state key="normal" backgroundImage="pinterest"/>
+                            <connections>
+                                <action selector="btnPinteres:" destination="-1" eventType="touchUpInside" id="Pf4-tM-sIe"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUf-Cd-U8e">
+                            <rect key="frame" x="-7" y="285" width="97" height="103"/>
+                            <state key="normal" backgroundImage="fb"/>
+                            <connections>
+                                <action selector="btnFacebook:" destination="-1" eventType="touchUpInside" id="HbY-Vd-vHe"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMg-8g-hDs">
+                            <rect key="frame" x="98" y="300" width="90" height="88"/>
+                            <state key="normal" backgroundImage="tw"/>
+                            <connections>
+                                <action selector="btnTwitter:" destination="-1" eventType="touchUpInside" id="mFM-nM-BUZ"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imagen700x300" translatesAutoresizingMaskIntoConstraints="NO" id="oNa-cr-qIW">
+                            <rect key="frame" x="8" y="51" width="270" height="130"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¡Me encanta esta receta!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4w-XJ-IvS">
+                            <rect key="frame" x="8" y="189" width="270" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Toukanmango" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxZ-gd-0Nj">
+                            <rect key="frame" x="8" y="223" width="270" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Titulo de la receta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDC-NE-5tC">
+                            <rect key="frame" x="8" y="16" width="270" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="v2i-uo-L2I" firstAttribute="leading" secondItem="H01-Mp-R7z" secondAttribute="leading" constant="64" id="EaN-1g-IzM"/>
+                <constraint firstItem="v2i-uo-L2I" firstAttribute="top" secondItem="H01-Mp-R7z" secondAttribute="top" constant="158" id="V5O-AO-4mQ"/>
+                <constraint firstAttribute="bottom" secondItem="v2i-uo-L2I" secondAttribute="bottom" constant="158" id="hfe-wB-F2J"/>
+                <constraint firstAttribute="trailing" secondItem="v2i-uo-L2I" secondAttribute="trailing" constant="64" id="y2q-Gb-n7m"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="nfr-Iz-5yT" appends="YES" id="V6z-Vf-D0X"/>
+            </connections>
+            <point key="canvasLocation" x="349" y="380"/>
+        </view>
+        <tapGestureRecognizer id="nfr-Iz-5yT">
+            <connections>
+                <action selector="tapView:" destination="-1" id="aTW-8u-xXY"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="fb" width="1024" height="1024"/>
+        <image name="imagen700x300" width="700" height="300"/>
+        <image name="pinterest" width="300" height="300"/>
+        <image name="tw" width="512" height="512"/>
+    </resources>
+</document>

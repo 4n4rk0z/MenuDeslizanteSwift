@@ -518,25 +518,25 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foG-qv-JPQ">
                                 <rect key="frame" x="320" y="252" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFP-0f-1rV">
                                 <rect key="frame" x="66" y="264" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHF-i5-V7w">
                                 <rect key="frame" x="104" y="288" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5b9-hC-G32">
                                 <rect key="frame" x="86" y="317" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -574,7 +574,6 @@
                         <outlet property="labelTiempo" destination="5b9-hC-G32" id="gy8-9v-iLU"/>
                         <outlet property="labelTitulo" destination="foG-qv-JPQ" id="yU8-Sb-DRa"/>
                         <outlet property="textAreaReceta" destination="RpQ-Oq-RFH" id="kEk-Mb-cZe"/>
-                        <segue destination="sBL-Hz-WAH" kind="show" identifier="viralizarUno" id="Sco-K9-Ijq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7t0-GJ-q0K" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1000,98 +999,6 @@
             </objects>
             <point key="canvasLocation" x="2152" y="-1437"/>
         </scene>
-        <!--Pago-->
-        <scene sceneID="nd3-8K-aTZ">
-            <objects>
-                <viewController id="koz-IQ-IwY" customClass="PagoViewController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hDP-Zj-rcf"/>
-                        <viewControllerLayoutGuide type="bottom" id="fom-DE-GxE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="v0N-ZU-MNZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Pago" id="qqx-6z-2vt"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V2t-0c-It4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3136" y="-2327"/>
-        </scene>
-        <!--Page View Controller-->
-        <scene sceneID="J4N-KF-J8t">
-            <objects>
-                <pageViewController storyboardIdentifier="PageController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="uFu-j4-8Vb" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4rC-3k-SYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2796" y="-3088"/>
-        </scene>
-        <!--Page Item Controller-->
-        <scene sceneID="5pW-mM-dvd">
-            <objects>
-                <viewController storyboardIdentifier="PagoController" id="KLY-19-zPl" customClass="PageItemController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="BIN-qA-ER8"/>
-                        <viewControllerLayoutGuide type="bottom" id="mAB-sz-UdR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="PagoController" id="Rbf-oO-jPi">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lqR-Ec-C4s">
-                                <rect key="frame" x="140" y="28" width="320" height="320"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="8zl-u0-yBR"/>
-                                    <constraint firstAttribute="height" constant="320" id="Sc7-EO-3kK"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txE-a0-K0D">
-                                <rect key="frame" x="467" y="406" width="90" height="88"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="hZ0-Hj-zoS"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="dinero"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m49-N8-3fl">
-                                <rect key="frame" x="43" y="426" width="173" height="68"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="173" id="hYo-he-Qpp"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="Paga 7 dlls y recibe este recetario por un mes gratis">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.89512310610000001" green="0.89512310610000001" blue="0.89512310610000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="lqR-Ec-C4s" firstAttribute="top" secondItem="BIN-qA-ER8" secondAttribute="bottom" constant="8" symbolic="YES" id="2RF-nM-0iU"/>
-                            <constraint firstItem="m49-N8-3fl" firstAttribute="leading" secondItem="Rbf-oO-jPi" secondAttribute="leadingMargin" constant="23" id="I3j-KQ-W1W"/>
-                            <constraint firstItem="lqR-Ec-C4s" firstAttribute="centerX" secondItem="Rbf-oO-jPi" secondAttribute="centerX" id="Pgq-ze-MHH"/>
-                            <constraint firstItem="txE-a0-K0D" firstAttribute="top" secondItem="BIN-qA-ER8" secondAttribute="bottom" constant="386" id="d5K-mh-Hhg"/>
-                            <constraint firstItem="mAB-sz-UdR" firstAttribute="top" secondItem="m49-N8-3fl" secondAttribute="bottom" constant="106" id="jtE-2w-kY2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="txE-a0-K0D" secondAttribute="trailing" constant="23" id="myZ-QB-336"/>
-                            <constraint firstItem="m49-N8-3fl" firstAttribute="top" secondItem="lqR-Ec-C4s" secondAttribute="bottom" constant="78" id="pWi-2F-vba"/>
-                            <constraint firstItem="m49-N8-3fl" firstAttribute="bottom" secondItem="txE-a0-K0D" secondAttribute="bottom" id="rN9-dK-Ijk"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="contentImageView" destination="lqR-Ec-C4s" id="KLN-Sp-am6"/>
-                        <outlet property="view" destination="Rbf-oO-jPi" id="6jC-SN-Cmx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6QK-mZ-JT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2128" y="-3100"/>
-        </scene>
         <!--Iniciar sesión-->
         <scene sceneID="XLv-nB-JEY">
             <objects>
@@ -1373,7 +1280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0K-Fh-dfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4678" y="-1411"/>
+            <point key="canvasLocation" x="4390" y="-1483"/>
         </scene>
         <!--Viralizacion-->
         <scene sceneID="g3j-vA-0ai">
@@ -1585,7 +1492,6 @@
         <image name="avion" width="66" height="62"/>
         <image name="carne" width="500" height="400"/>
         <image name="copa" width="66" height="62"/>
-        <image name="dinero" width="220" height="220"/>
         <image name="fb" width="1024" height="1024"/>
         <image name="hot_dog" width="479" height="254"/>
         <image name="imagen700x300" width="700" height="300"/>
@@ -1600,13 +1506,12 @@
         <image name="viralizacion" width="693" height="440"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5V6-UQ-NDg"/>
-        <segue reference="edY-XV-IE3"/>
         <segue reference="LJk-td-MH3"/>
         <segue reference="Tm9-C3-w7I"/>
         <segue reference="DW0-ra-R3Q"/>
+        <segue reference="edY-XV-IE3"/>
+        <segue reference="5V6-UQ-NDg"/>
         <segue reference="k4D-lb-d9j"/>
-        <segue reference="Sco-K9-Ijq"/>
         <segue reference="NZW-hL-axY"/>
     </inferredMetricsTieBreakers>
 </document>
