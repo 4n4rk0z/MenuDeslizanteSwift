@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7DE45D69D8B159D10AE0BB17E36E6F6DBF3424D0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7DE45D69D8B159D10AE0BB17E36E6F6DBF3424D0" : 0,
+    "172F3684CC0AF8DEA0175E58B7837B34B0B424FD" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4809BD30-592A-4967-8182-A3D1D2BB984A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7DE45D69D8B159D10AE0BB17E36E6F6DBF3424D0" : "MenuDeslizanteSwift\/",
+    "172F3684CC0AF8DEA0175E58B7837B34B0B424FD" : "Prueba_Swift\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MenuDeslizante",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MenuDeslizante\/MenuDeslizante.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/DevWorms\/Prueba_Swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "172F3684CC0AF8DEA0175E58B7837B34B0B424FD"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/DevWorms\/MenuDeslizanteSwift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7DE45D69D8B159D10AE0BB17E36E6F6DBF3424D0"
+    }
+  ]
+}

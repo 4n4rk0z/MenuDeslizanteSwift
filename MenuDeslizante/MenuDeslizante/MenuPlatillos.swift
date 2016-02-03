@@ -37,6 +37,7 @@ class MenuPlatillos: UITableViewController {
         let query = PFQuery(className:"Recetas")
         query.whereKey("Menu", equalTo:self.menuSeleccionado)
         query.whereKey("Activada", equalTo:true)
+        query.cachePolicy = .CacheElseNetwork
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
@@ -110,6 +111,7 @@ class MenuPlatillos: UITableViewController {
     func consultarSuscripcion(){
         let query = PFQuery(className: "Clientes")
         query.whereKey("username", equalTo: PFUser.currentUser()!)
+        query.cachePolicy = .CacheElseNetwork
         query.findObjectsInBackgroundWithBlock {
             (clientes: [PFObject]?, error: NSError?) -> Void in
             // comments now contains the comments for myPost

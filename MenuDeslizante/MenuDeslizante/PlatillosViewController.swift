@@ -103,6 +103,7 @@ class PlatillosViewController: UIViewController{
     @IBAction func bLike(sender: AnyObject) {
         
         let query = PFQuery(className: "Favoritos")
+        query.cachePolicy = .CacheElseNetwork
         query.whereKey("username", equalTo: PFUser.currentUser()!)
         query.whereKey("Receta", equalTo: self.objReceta)
         query.findObjectsInBackgroundWithBlock {
@@ -169,8 +170,6 @@ class PlatillosViewController: UIViewController{
                 print(error)
             }
         }
-
-
     }
     
     func abrirVentanaPop(){

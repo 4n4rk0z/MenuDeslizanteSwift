@@ -10,11 +10,11 @@ import UIKit
 import Parse
 import Bolts
 import ParseTwitterUtils
-import FBSDKCoreKit
 import ParseFacebookUtilsV4
+import FBSDKCoreKit
 import Fabric
 import TwitterKit
-
+import PinterestSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // [Optional] Power your app with Local Datastore. For more info, go to
         // https://parse.com/docs/ios_guide#localdatastore/iOS
-        Parse.enableLocalDatastore()
+       // Parse.enableLocalDatastore()
         
         // Initialize Parse.
         Parse.setApplicationId("Rv2InCwEE4RJowtNJVaYqlLw0VpjPLEePcfpHMsw",
@@ -97,7 +97,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         
-        
+        //Pinterest
+        PDKClient.configureSharedInstanceWithAppId("f95644039222a683e01cca72063f4154ab71b16683f5b8046f52d33847fb997d")
+
         
         return true
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		025DE2001FEB546CD483091B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A93F7BF429B4DC18AEBC9B /* Pods.framework */; };
 		49000FA51C59DEF40075F6B1 /* PopUpViewControllerCompartir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49000FA41C59DEF40075F6B1 /* PopUpViewControllerCompartir.swift */; };
 		49000FA71C59DF9C0075F6B1 /* PopUpViewControllerCompartir_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49000FA61C59DF9C0075F6B1 /* PopUpViewControllerCompartir_iPhone6.xib */; };
 		49000FA91C59E0EB0075F6B1 /* PopUpViewControllerCompartir_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49000FA81C59E0EB0075F6B1 /* PopUpViewControllerCompartir_iPhone6Plus.xib */; };
@@ -221,6 +222,9 @@
 		49ED44A91C15382C00BF4D77 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		49ED44AA1C15382C00BF4D77 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		49ED44AB1C15382C00BF4D77 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		5BEA89E15BD88CC6203F403D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		64A93F7BF429B4DC18AEBC9B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CE5C88EDA204E6217BFF680 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +253,7 @@
 				49BB51831BFFD529004E002A /* Parse.framework in Frameworks */,
 				49BB51841BFFD529004E002A /* ParseFacebookUtilsV4.framework in Frameworks */,
 				49BB51851BFFD529004E002A /* ParseTwitterUtils.framework in Frameworks */,
+				025DE2001FEB546CD483091B /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +297,7 @@
 				491576811BFBCAFC00EE641D /* MenuDeslizanteTests */,
 				4915766A1BFBCAFB00EE641D /* Products */,
 				49BB51861BFFD535004E002A /* Frameworks */,
+				98EFDBAA1DEB32A689999890 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -547,6 +553,7 @@
 				49BB517D1BFFD529004E002A /* Parse.framework */,
 				49BB517E1BFFD529004E002A /* ParseFacebookUtilsV4.framework */,
 				49BB517F1BFFD529004E002A /* ParseTwitterUtils.framework */,
+				64A93F7BF429B4DC18AEBC9B /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -566,6 +573,15 @@
 			name = bibliotecas;
 			sourceTree = "<group>";
 		};
+		98EFDBAA1DEB32A689999890 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C88EDA204E6217BFF680 /* Pods.debug.xcconfig */,
+				5BEA89E15BD88CC6203F403D /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -573,10 +589,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 491576881BFBCAFC00EE641D /* Build configuration list for PBXNativeTarget "MenuDeslizante" */;
 			buildPhases = (
+				6256B5C055FC524CC6DD7B44 /* Check Pods Manifest.lock */,
 				491576651BFBCAFB00EE641D /* Sources */,
 				491576661BFBCAFB00EE641D /* Frameworks */,
 				491576671BFBCAFB00EE641D /* Resources */,
 				49ED44A71C15377B00BF4D77 /* ShellScript */,
+				4C444DC6A65E12C796FBD8CA /* Embed Pods Frameworks */,
+				74C5E8B54517B2509464B34E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -617,7 +636,7 @@
 				TargetAttributes = {
 					491576681BFBCAFB00EE641D = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = XRTTW343DL;
+						DevelopmentTeam = FN75477QMR;
 					};
 					4915767D1BFBCAFC00EE641D = {
 						CreatedOnToolsVersion = 6.3;
@@ -714,6 +733,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run 61e0d9761208fae8cf2b241b23eb83a6ef7d1528 9571d3ac0b1b75bbe58cbed8fe1f7f67d5fc81b7b51eb03abe1060af9c9165c4";
+		};
+		4C444DC6A65E12C796FBD8CA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6256B5C055FC524CC6DD7B44 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		74C5E8B54517B2509464B34E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -880,6 +944,7 @@
 		};
 		491576891BFBCAFC00EE641D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CE5C88EDA204E6217BFF680 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -892,7 +957,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MenuDeslizante/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -903,7 +968,7 @@
 					"-lz",
 					"-lsqlite3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.DevWorms.tukanmango;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devworms.toukanmango;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MenuDeslizante/MenuDeslizante-Bridging-Header.h";
@@ -914,6 +979,7 @@
 		};
 		4915768A1BFBCAFC00EE641D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BEA89E15BD88CC6203F403D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -924,7 +990,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MenuDeslizante/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -935,7 +1001,7 @@
 					"-lz",
 					"-lsqlite3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.DevWorms.tukanmango;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devworms.toukanmango;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MenuDeslizante/MenuDeslizante-Bridging-Header.h";

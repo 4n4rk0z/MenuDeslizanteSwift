@@ -32,13 +32,16 @@ class FavoritosTableViewController: UITableViewController {
             
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-            consultarFavoritos()
+            if PFUser.currentUser() != nil{
+                consultarFavoritos()
+            }
             
         }
     }
     
     func consultarFavoritos(){
         let query = PFQuery(className: "Favoritos")
+        query.cachePolicy = .CacheElseNetwork
         query.whereKey("username", equalTo: PFUser.currentUser()!)
         query.includeKey("Receta")
         query.findObjectsInBackgroundWithBlock {

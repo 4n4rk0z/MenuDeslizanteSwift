@@ -26,7 +26,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
  
         let user = PFUser.currentUser()
 
-        if user != nil{
+        let sesion = Twitter.sharedInstance().sessionStore
+        
+        if user != nil || sesion.session() != nil {
             self.performSegueWithIdentifier("Home", sender: nil)  
         }
         else
@@ -34,6 +36,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             // Do any additional setup after loading the view, typically from a nib.
             textfMail.delegate = self
             textfPassword.delegate = self
+            
         }
     }
 
@@ -122,26 +125,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginTwitter(sender: AnyObject) {
-        
-        PFTwitterUtils.logInWithBlock {
-            (user: PFUser?, error: NSError?) -> Void in
-            
-            let user = user
-            
-            if (user != nil) {
-                if user!.isNew {
-                    print("User signed up and logged in with Twitter!")
-                } else {
-                    print("User logged in with Twitter! " )
-                }
+       
+        Twitter.sharedInstance().logInWithCompletion { session, error in
+            if (session != nil) {
+                print("signed in as \(session!.userName)");
                 
+                // Swift
+                let store = Twitter.sharedInstance().sessionStore
                 self.performSegueWithIdentifier("Home", sender: nil)
-                
+
             } else {
-                print("Uh oh. The user cancelled the Twitter login.")
+                print("error: \(error!.localizedDescription)");
             }
         }
-
+       
+        
     }
     
     @IBAction func saltarLogin(sender: AnyObject) {

@@ -18,8 +18,12 @@ import UIKit
 import Parse
 import ParseTwitterUtils
 import ParseFacebookUtilsV4
+import TwitterKit
 
 class TuCuentaView: UIViewController, UITextFieldDelegate {
+    
+    var popViewController:PopUpViewControllerRegistro!
+    var popViewControllerRecuperar:PopUpViewControllerRecuperar!
     
     @IBOutlet weak var textfMail: UITextField!
     @IBOutlet weak var textfPassword: UITextField!
@@ -45,44 +49,66 @@ class TuCuentaView: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
     @IBAction func loginMail(sender: AnyObject) {
-        
-        let mail = textfMail.text
+        let mail = textfMail.text?.lowercaseString
         let pass = textfPassword.text
         PFUser.logInWithUsernameInBackground(mail!, password:pass!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
-                // Do stuff after successful login.
-                self.performSegueWithIdentifier("cerrarsesion", sender: nil)
+                
+                if user!["emailVerified"] as! Bool == true {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        // Do stuff after successful login.
+                        self.performSegueWithIdentifier("cerrarsesion", sender: nil)
+                    }
+                } else {
+                    // User needs to verify email address before continuing
+                    let alertController = UIAlertController(
+                        title: "Verificación de correo electrónico",
+                        message: "Hemos mandado un correo que contiene un enlace - debes de precionarlo para poder iniciar sesión.",
+                        preferredStyle: UIAlertControllerStyle.Alert
+                    )
+                    alertController.addAction(UIAlertAction(title: "Ok",
+                        style: UIAlertActionStyle.Default,
+                        handler: { alertController in self.processSignOut()})
+                    )
+                    // Display alert
+                    self.presentViewController(
+                        alertController,
+                        animated: true,
+                        completion: nil
+                    )
+                }
+                
             } else {
                 // The login failed. Check error to see why.
             }
         }
-    }
-    @IBAction func restablecer(sender: AnyObject) {
-        PFUser.requestPasswordResetForEmailInBackground(textfMail.text!)
+        
     }
     
-    @IBAction func registrarse(sender: AnyObject) {
-        let user = PFUser()
+    func processSignOut() {
         
-        user.password = textfPassword.text
-        user.email = textfMail.text
-        user.username = textfMail.text
-        user.signUpInBackgroundWithBlock {
-            (succeeded: Bool, error: NSError?) -> Void in
-            if let error = error {
-                let errorString = error.userInfo["error"] as? NSString
-                print(errorString)
-                // Show the errorString somewhere and let the user try again.
-            } else {
-                // Hooray! Let them use the app now.
-                self.performSegueWithIdentifier("cerrarsesion", sender: nil)
-            }
-        }
-
+        // // Sign out
+        PFUser.logOut()
         
     }
+    
+    
+    func ligarFb(user: PFUser)
+    {
+        if !PFFacebookUtils.isLinkedWithUser(user) {
+            PFFacebookUtils.linkUserInBackground(user, withReadPermissions: nil, block: {
+                (succeeded: Bool?, error: NSError?) -> Void in
+                if (succeeded != nil) {
+                    print("Woohoo, the user is linked with Facebook!")
+                }
+            })
+        }
+    }
+    
+    
     
     @IBAction func loginFacebook(sender: AnyObject) {
         
@@ -98,6 +124,7 @@ class TuCuentaView: UIViewController, UITextFieldDelegate {
                     print("User logged in through Facebook!")
                 }
                 
+                self.ligarFb(user)
                 self.performSegueWithIdentifier("cerrarsesion", sender: nil)
                 
             } else {
@@ -105,31 +132,76 @@ class TuCuentaView: UIViewController, UITextFieldDelegate {
             }
         })
         
-              
     }
     
     @IBAction func loginTwitter(sender: AnyObject) {
         
-        PFTwitterUtils.logInWithBlock {
-            (user: PFUser?, error: NSError?) -> Void in
-            
-            let user = user
-            
-            if (user != nil) {
-                if user!.isNew {
-                    print("User signed up and logged in with Twitter!")
-                } else {
-                    print("User logged in with Twitter! " )
-                }
+        Twitter.sharedInstance().logInWithCompletion { session, error in
+            if (session != nil) {
+                print("signed in as \(session!.userName)");
                 
+                // Swift
+                let store = Twitter.sharedInstance().sessionStore
                 self.performSegueWithIdentifier("cerrarsesion", sender: nil)
                 
             } else {
-                print("Uh oh. The user cancelled the Twitter login.")
+                print("error: \(error!.localizedDescription)");
             }
         }
         
+        
     }
+    
+    
+    
+    @IBAction func registrarse(sender: AnyObject) {
+        self.abrirVentanaPopRegistro()
+    }
+    
+    func abrirVentanaPopRegistro(){
+        
+        let bundle = NSBundle(forClass: PopUpViewControllerRegistro.self)
+        self.popViewController = PopUpViewControllerRegistro(nibName: "PopUpViewControllerRegistro"+pantallaSize(), bundle: bundle)
+        self.popViewController.showInView(self.view, animated: true)
+        
+    }
+    
+    func pantallaSize()->String!
+    {
+        var strPantalla = ""
+        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
+        {
+            strPantalla = "_iPad"
+        }
+        else
+        {
+            
+            if UIScreen.mainScreen().bounds.size.width > 320 {
+                if UIScreen.mainScreen().scale == 3 {
+                    strPantalla = "_iPhone6Plus"
+                }
+                else{
+                    strPantalla = "_iPhone6"
+                }
+            }
+        }
+        return strPantalla
+    }
+    
+    func abrirVentanaPopRecupera(){
+        
+        let bundle = NSBundle(forClass: PopUpViewControllerRecuperar.self)
+        self.popViewControllerRecuperar = PopUpViewControllerRecuperar(nibName: "PopUpViewControllerRecuperar"+pantallaSize(), bundle: bundle)
+        self.popViewControllerRecuperar.showInView(self.view, animated: true)
+        
+    }
+    
+    
+    @IBAction func restablecer(sender: AnyObject) {
+        self.abrirVentanaPopRecupera()
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -150,6 +222,9 @@ class TuCuentaView: UIViewController, UITextFieldDelegate {
         //make something with the letters that being typed
     }
     
+    
+    
+
     
     
 }
