@@ -41,7 +41,7 @@ class FavoritosTableViewController: UITableViewController {
     
     func consultarFavoritos(){
         let query = PFQuery(className: "Favoritos")
-        query.cachePolicy = .CacheElseNetwork
+    //    query.cachePolicy = .CacheElseNetwork
         query.whereKey("username", equalTo: PFUser.currentUser()!)
         query.includeKey("Receta")
         query.findObjectsInBackgroundWithBlock {

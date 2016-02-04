@@ -335,6 +335,9 @@ import Parse
                     clientes["nombre"] = self.txtNombre.text!
                     clientes["email"] = self.txtEmail.text!
                     clientes["numero"] = self.txtTelefono.text!
+                    clientes["codigobarras"] = ""
+                    clientes["referenciaentienda"] = ""
+                    
                     clientes["Suscrito"] = false
                     
                     clientes.saveInBackgroundWithBlock {

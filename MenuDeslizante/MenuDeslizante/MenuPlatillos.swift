@@ -30,6 +30,7 @@ class MenuPlatillos: UITableViewController {
         super.viewDidLoad()
         
         self.loadMenuInformation(imagenViewMenuSeleccionado, urlString: menuSeleccionado["Url_Imagen"] as! String, tipoMenuLabel: labelMenuSeleccionado, nombreMenu: menuSeleccionado["NombreMenu"] as! String)
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
     func consultarRecetasDeMenu()
@@ -110,8 +111,8 @@ class MenuPlatillos: UITableViewController {
     
     func consultarSuscripcion(){
         let query = PFQuery(className: "Clientes")
+        //query.cachePolicy = .CacheElseNetwork
         query.whereKey("username", equalTo: PFUser.currentUser()!)
-        query.cachePolicy = .CacheElseNetwork
         query.findObjectsInBackgroundWithBlock {
             (clientes: [PFObject]?, error: NSError?) -> Void in
             // comments now contains the comments for myPost
@@ -123,10 +124,21 @@ class MenuPlatillos: UITableViewController {
                     for cliente in clientes! {
                         // This does not require a network access.
                         if ((cliente["Suscrito"] as? Bool) != nil && (cliente["Suscrito"] as? Bool)==true){
+                            
+                           /* cliente["codigobarras"] = ""
+                            cliente["referenciaentienda"] = ""
+                            cliente.saveInBackground()
+                            */
+                            
                             self.performSegueWithIdentifier("PlatilloSegue", sender: nil)
                         }
                         else{
-                            self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
+                            
+                            //let sepagoEnTienda = cliente["codigobarras"] as? String
+                            //if sepagoEnTienda != ""{
+                                
+                                self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
+                            //}
                         }
                        
                         break
@@ -150,6 +162,10 @@ class MenuPlatillos: UITableViewController {
 
     }
     
+    func consultarLaTienda()
+    {
+        
+    }
     
     func loadCellInformation(imagenCell:UIImageView, urlString:String, nombreRecetaLabel:UILabel, nombreRecetaStr:String,  nivelRecetaLabel:UILabel, nivelRecetaStr:String,  porcionesRecetaLabel:UILabel, porcionesRecetaStr:String,  tiempoRecetaLabel:UILabel, tiempoRecetaStr:String)
     {

@@ -296,8 +296,9 @@ import Parse
                             let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as? [String:AnyObject]
                             let pago = json!["payment_method"]
                             let barcode = pago!["barcode_url"] as? String!
+                            let referencia = pago!["reference"] as? String!
                             let transaction_id = json!["id"] as? String!
-                            self.load_image(barcode!, transaction_id_tienda: transaction_id!)
+                            self.load_image(barcode!, transaction_id_tienda: transaction_id!, numeroReferencia: referencia!)
                         }
                         catch{
                         
@@ -315,7 +316,7 @@ import Parse
         }
     }
     
-    func load_image(urlString:String, transaction_id_tienda:String)
+    func load_image(urlString:String, transaction_id_tienda:String, numeroReferencia: String)
     {
         let imgURL: NSURL = NSURL(string: urlString)!
         let request: NSURLRequest = NSURLRequest(URL: imgURL)
@@ -353,7 +354,9 @@ import Parse
                                             print(error)
                                         } else if let clientUpdate = clienteUpdate {
                                             clientUpdate["codigobarras"] = urlString
+                                            clientUpdate["referenciaentienda"] = numeroReferencia
                                             clientUpdate["transaction_id_tienda"] = transaction_id_tienda
+                                            
                                             clientUpdate.saveInBackground()
                                             self.btnRegresar.hidden=true
                                             self.btnPagar.setTitle("Aceptar", forState: UIControlState.Normal)
