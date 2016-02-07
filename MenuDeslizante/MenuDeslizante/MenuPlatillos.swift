@@ -38,7 +38,7 @@ class MenuPlatillos: UITableViewController {
         let query = PFQuery(className:"Recetas")
         query.whereKey("Menu", equalTo:self.menuSeleccionado)
         query.whereKey("Activada", equalTo:true)
-        query.cachePolicy = .CacheElseNetwork
+        //query.cachePolicy = .CacheElseNetwork
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
@@ -94,7 +94,7 @@ class MenuPlatillos: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.recetaSeleccionada = self.recetas[indexPath.row]
-        consultarSuscripcion()
+        abrirReceta()
     }
     
     func abrirReceta(){

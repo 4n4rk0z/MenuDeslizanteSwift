@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpViewControllerTarjetas" customModule="MenuDeslizante" customModuleProvider="target">
             <connections>
+                <outlet property="btnAction" destination="hbI-Pl-2Z9" id="UF0-fu-6jf"/>
+                <outlet property="btnRegresar" destination="9Pf-jm-NAq" id="5kq-dM-1FG"/>
                 <outlet property="popUpView" destination="fnl-uK-rHB" id="Ne3-l7-ULl"/>
+                <outlet property="txtAnio" destination="VyB-aE-2cG" id="YlZ-OD-bOr"/>
+                <outlet property="txtCvc" destination="naZ-EQ-zuv" id="cQ5-Jz-6eK"/>
+                <outlet property="txtEmail" destination="Yeb-zP-oEW" id="tSI-Ej-t9n"/>
+                <outlet property="txtMensajes" destination="fpJ-iq-Bst" id="psq-DD-Abp"/>
+                <outlet property="txtMes" destination="csj-Gd-T3h" id="VfH-0W-w3N"/>
+                <outlet property="txtNombre" destination="J06-Sk-nOM" id="bSb-UO-7Bd"/>
+                <outlet property="txtNumeroTarjeta" destination="Dmi-r8-Aku" id="ce3-0N-Em0"/>
+                <outlet property="txtTelefono" destination="EEk-8h-3UN" id="g1b-E2-hYr"/>
                 <outlet property="view" destination="fnl-uK-rHB" id="08d-Q9-SsO"/>
             </connections>
         </placeholder>
@@ -69,11 +78,11 @@
                             <state key="normal" title="Guardar">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnGuardar:" destination="-1" eventType="touchUpInside" id="H5L-fw-b3B"/>
+                            </connections>
                         </button>
-                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Wbc-fS-ntu">
-                            <rect key="frame" x="-68" y="351" width="20" height="20"/>
-                        </activityIndicatorView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgH-ZC-acw">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgH-ZC-acw">
                             <rect key="frame" x="-33" y="350" width="182" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -104,9 +113,26 @@
                             <state key="normal" title="Regresar">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnCancelar:" destination="-1" eventType="touchUpInside" id="zMG-1w-LvL"/>
+                            </connections>
                         </button>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="U0F-qa-NLv">
+                            <rect key="frame" x="15" y="313" width="20" height="20"/>
+                        </activityIndicatorView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpJ-iq-Bst">
+                            <rect key="frame" x="42" y="312" width="182" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="BgH-ZC-acw"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

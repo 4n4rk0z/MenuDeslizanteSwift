@@ -25,7 +25,7 @@ class PrincipalTableViewController: UITableViewController {
        
         // cargamos las imagenes
             let query = PFQuery(className: "Menus")
-            query.cachePolicy = .CacheElseNetwork
+            //query.cachePolicy = .CacheElseNetwork
             query.orderByAscending("Orden")
             query.findObjectsInBackgroundWithBlock {
                 (items: [PFObject]?, error: NSError?) -> Void in
@@ -38,7 +38,7 @@ class PrincipalTableViewController: UITableViewController {
                         for item in items! {
                             //Contar elementos de recetas en el menu principal
                             let queryReceta = PFQuery(className:"Recetas")
-                            queryReceta.cachePolicy = .CacheElseNetwork
+                            //queryReceta.cachePolicy = .CacheElseNetwork
                             queryReceta.whereKey("Menu", equalTo: item)
                             queryReceta.whereKey("Activada", equalTo: true)
                             queryReceta.countObjectsInBackgroundWithBlock {

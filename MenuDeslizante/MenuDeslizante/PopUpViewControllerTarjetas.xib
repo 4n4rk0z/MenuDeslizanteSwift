@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpViewControllerTarjetas" customModule="MenuDeslizante" customModuleProvider="target">
             <connections>
+                <outlet property="btnAction" destination="Dn2-bO-ebw" id="Unw-CU-LGk"/>
+                <outlet property="btnRegresar" destination="bfP-m2-a7a" id="22i-7d-TCM"/>
+                <outlet property="loadingIndicator" destination="WJw-xt-kn0" id="cts-wy-fZH"/>
                 <outlet property="popUpView" destination="yjw-tY-7Nk" id="tmj-ZP-4yJ"/>
+                <outlet property="txtAnio" destination="sDq-3t-hPZ" id="q8D-YS-weL"/>
+                <outlet property="txtCvc" destination="d7O-yN-ghi" id="6jQ-QD-vat"/>
+                <outlet property="txtEmail" destination="sce-xk-ivO" id="fW1-Dl-1V7"/>
+                <outlet property="txtMensajes" destination="RZg-3t-8Wu" id="O4S-06-FSJ"/>
+                <outlet property="txtMes" destination="VzG-bl-tEv" id="JZp-2s-8d7"/>
+                <outlet property="txtNombre" destination="vMm-rQ-2r3" id="MeK-tG-t0E"/>
+                <outlet property="txtNumeroTarjeta" destination="ydJ-Bt-8Eq" id="Mg4-1m-tDX"/>
+                <outlet property="txtTelefono" destination="dOR-tK-rUs" id="s46-hl-vvp"/>
                 <outlet property="view" destination="yjw-tY-7Nk" id="Xdy-fV-F1J"/>
             </connections>
         </placeholder>
@@ -16,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEe-oq-7bO">
-                    <rect key="frame" x="31" y="110" width="257" height="349"/>
+                    <rect key="frame" x="31" y="110" width="257" height="384"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Introducir datos de la tarjeta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKu-qU-4AM">
                             <rect key="frame" x="7" y="8" width="237" height="21"/>
@@ -60,7 +71,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dn2-bO-ebw">
-                            <rect key="frame" x="183" y="308" width="60" height="30"/>
+                            <rect key="frame" x="189" y="354" width="60" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="hvu-Ac-crS"/>
                             </constraints>
@@ -68,16 +79,10 @@
                             <state key="normal" title="Guardar">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnGuardar:" destination="-1" eventType="touchUpInside" id="xc5-zB-0tB"/>
+                            </connections>
                         </button>
-                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="msU-GJ-Bxk">
-                            <rect key="frame" x="-76" y="351" width="20" height="20"/>
-                        </activityIndicatorView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4c-gS-i4N">
-                            <rect key="frame" x="-41" y="350" width="182" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VzG-bl-tEv">
                             <rect key="frame" x="7" y="156" width="46" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -95,7 +100,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfP-m2-a7a">
-                            <rect key="frame" x="102" y="308" width="67" height="30"/>
+                            <rect key="frame" x="114" y="354" width="67" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="xzi-92-dbk"/>
                             </constraints>
@@ -103,7 +108,19 @@
                             <state key="normal" title="Regresar">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnCancelar:" destination="-1" eventType="touchUpInside" id="pTg-Gg-Han"/>
+                            </connections>
                         </button>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WJw-xt-kn0">
+                            <rect key="frame" x="7" y="313" width="20" height="20"/>
+                        </activityIndicatorView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZg-3t-8Wu">
+                            <rect key="frame" x="34" y="313" width="182" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
@@ -113,7 +130,7 @@
                 <constraint firstAttribute="trailing" secondItem="MEe-oq-7bO" secondAttribute="trailing" constant="32" id="hRR-mx-yvf"/>
                 <constraint firstItem="MEe-oq-7bO" firstAttribute="top" secondItem="yjw-tY-7Nk" secondAttribute="top" constant="110" id="hbO-3l-yOw"/>
                 <constraint firstItem="MEe-oq-7bO" firstAttribute="leading" secondItem="yjw-tY-7Nk" secondAttribute="leading" constant="31" id="qrg-6n-TdV"/>
-                <constraint firstAttribute="bottom" secondItem="MEe-oq-7bO" secondAttribute="bottom" constant="109" id="r2e-j9-ggT"/>
+                <constraint firstAttribute="bottom" secondItem="MEe-oq-7bO" secondAttribute="bottom" constant="74" id="u2G-74-KKA"/>
             </constraints>
             <point key="canvasLocation" x="147" y="223"/>
         </view>

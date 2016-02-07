@@ -339,7 +339,7 @@ class PerfilViewController: UIViewController {
                     self.imageViewBarCode.image = UIImage(data: data!)
                     self.loadingAction.stopAnimating()
                     self.loadingAction.hidden = true
-                    self.lMensaje.hidden=false
+                    self.lMensaje.hidden=true
                     
                 }
                 
@@ -358,7 +358,7 @@ class PerfilViewController: UIViewController {
         query.whereKey("cliente", equalTo: cliente)
         query.findObjectsInBackgroundWithBlock {
             (results: [PFObject]?, error: NSError?) -> Void in
-            self.lMensaje.hidden = false
+            self.lMensaje.hidden = true
             self.loadingAction.hidden = true
             self.loadingAction.stopAnimating()
             
