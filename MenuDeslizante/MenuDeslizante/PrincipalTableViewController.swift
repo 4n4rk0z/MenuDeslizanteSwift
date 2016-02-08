@@ -20,7 +20,6 @@ class PrincipalTableViewController: UITableViewController {
     
     
     
-    
     override func viewWillAppear(animated: Bool) {
        
         // cargamos las imagenes
@@ -117,11 +116,10 @@ class PrincipalTableViewController: UITableViewController {
         {
             self.performSegueWithIdentifier("recetarios", sender: nil)
         }
-       
-       /* else if goto=="viralizacion"
+        else if goto=="viral"
         {
             self.performSegueWithIdentifier("viralizacion", sender: nil)
-        }*/
+        }
 
     }
 
@@ -134,6 +132,11 @@ class PrincipalTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PrincipalTableViewCell
 
         let item = self.itemsMenu[indexPath.row]
+        //ocultamos si es tipo menu viral el icono de postit
+        if ((item["TipoMenu"] as? String)?.lowercaseString) == "viral"{
+            cell.numeroBtnView.hidden = true
+        }
+        //se carga la informacion del menu
         self.loadCellInformation(cell.postImageView!, numeroBtnView: cell.numeroBtnView, urlString: (item["Url_Imagen"] as? String)!, numeroRedecetas:  self.numeroDeRecetasPorMenu[item]!, tipoMenuLabel: cell.nombreLabelMenu, nombreMenu: (item["NombreMenu"] as? String)!)
         
       

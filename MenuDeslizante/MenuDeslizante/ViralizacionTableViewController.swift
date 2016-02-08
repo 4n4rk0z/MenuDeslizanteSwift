@@ -10,10 +10,18 @@ import UIKit
 
 class ViralizacionTableViewController: UITableViewController {
     
+    var popViewController : PopUpViewControllerViral!
+    
+    var tipoViralizacion: Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.popViewController = storyboard!.instantiateViewControllerWithIdentifier("compartirpop") as! PopUpViewControllerViral
+        self.popViewController.showInView( self.view, animated: true, scaleX: 0.72, scaleY: 0.72)
         
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,7 +42,7 @@ class ViralizacionTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("viralizar", sender: nil)
+        //self.performSegueWithIdentifier("viralizar", sender: nil)
         
     }
     

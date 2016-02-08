@@ -227,7 +227,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncr-Hy-hi8">
+                                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncr-Hy-hi8">
                                             <rect key="frame" x="8" y="8" width="584" height="141"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjg-6j-L8t">
@@ -485,11 +485,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yhr-IS-QV9">
+                            <imageView alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yhr-IS-QV9">
                                 <rect key="frame" x="28" y="72" width="543" height="172"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gt8-kQ-xuV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gt8-kQ-xuV">
                                 <rect key="frame" x="28" y="532" width="72" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gt8-kQ-xuV" secondAttribute="height" multiplier="36:29" id="8G1-hA-ESB"/>
@@ -509,11 +509,6 @@
                                     <action selector="bCompartir:" destination="TqI-jn-NKe" eventType="touchUpInside" id="2ir-L7-3c8"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="RpQ-Oq-RFH">
-                                <rect key="frame" x="28" y="346" width="543" height="166"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foG-qv-JPQ">
                                 <rect key="frame" x="320" y="252" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -538,6 +533,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="RpQ-Oq-RFH">
+                                <rect key="frame" x="28" y="330" width="543" height="166"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -740,7 +740,7 @@
                             <rect key="frame" x="0.0" y="64" width="600" height="169"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen700x300" translatesAutoresizingMaskIntoConstraints="NO" id="b5J-po-PXo">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen700x300" translatesAutoresizingMaskIntoConstraints="NO" id="b5J-po-PXo">
                                     <rect key="frame" x="8" y="8" width="584" height="141"/>
                                     <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 </imageView>
@@ -777,7 +777,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="208"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hk9-iC-k7z">
+                                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hk9-iC-k7z">
                                             <rect key="frame" x="8" y="14" width="584" height="172"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqb-iQ-7ZP">
@@ -1111,38 +1111,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="viralizacion" id="i7f-aa-YVo">
-                            <rect key="frame" x="0.0" y="64" width="600" height="128"/>
+                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen700x300" id="EUx-jQ-hvs">
+                            <rect key="frame" x="0.0" y="64" width="600" height="161"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                         </imageView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="202" id="ggt-tu-2At" customClass="ViralizacionTableCell" customModule="MenuDeslizante" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="220" width="600" height="202"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="201" id="ggt-tu-2At" customClass="ViralizacionTableCell" customModule="MenuDeslizante" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="253" width="600" height="201"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ggt-tu-2At" id="5wz-33-5Kw">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="201"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carne" translatesAutoresizingMaskIntoConstraints="NO" id="BzC-tg-KqY">
-                                            <rect key="frame" x="8" y="40" width="583" height="122"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="thl-en-zrk">
+                                            <rect key="frame" x="8" y="14" width="584" height="172"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="leadingMargin" secondItem="BzC-tg-KqY" secondAttribute="leading" id="9ME-8N-A1L"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="BzC-tg-KqY" secondAttribute="bottom" constant="31" id="isd-S6-q5z"/>
-                                        <constraint firstItem="BzC-tg-KqY" firstAttribute="top" secondItem="5wz-33-5Kw" secondAttribute="topMargin" constant="32" id="qOC-bH-KOJ"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="BzC-tg-KqY" secondAttribute="trailing" constant="1" id="uEw-Hl-UMY"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="thl-en-zrk" secondAttribute="bottom" constant="6" id="DRP-gY-pLI"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="thl-en-zrk" secondAttribute="leading" id="Vx7-lF-qrT"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="thl-en-zrk" secondAttribute="trailing" id="caG-uf-CST"/>
+                                        <constraint firstItem="thl-en-zrk" firstAttribute="top" secondItem="5wz-33-5Kw" secondAttribute="topMargin" constant="6" id="yre-6Z-Oc2"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="viralizacionImageView1" destination="BzC-tg-KqY" id="Nyj-SQ-bSB"/>
+                                    <outlet property="viralizacionImageView1" destination="thl-en-zrk" id="eBz-qu-g46"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
                     <connections>
                         <outlet property="view" destination="95G-gE-Hr2" id="q38-ZA-XcT"/>
-                        <segue destination="sBL-Hz-WAH" kind="show" identifier="viralizar" id="BYM-AS-4lU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u76-u2-7p7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1339,7 +1339,7 @@
                 <pageViewController storyboardIdentifier="CompartirPageController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="1dA-ls-0va" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZ3-iu-bD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5404" y="-1399"/>
+            <point key="canvasLocation" x="3056" y="-2189"/>
         </scene>
         <!--Compartir Page Item Controller-->
         <scene sceneID="0MD-i9-gB9">
@@ -1353,52 +1353,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oks-lx-44Q">
-                                <rect key="frame" x="140" y="28" width="320" height="320"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="320" id="VZG-Aa-aPa"/>
-                                    <constraint firstAttribute="width" constant="320" id="vks-Lj-mle"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oks-lx-44Q">
+                                <rect key="frame" x="20" y="20" width="560" height="560"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dv0-Tg-nZX">
-                                <rect key="frame" x="227" y="407" width="90" height="88"/>
-                                <state key="normal" backgroundImage="pinterest"/>
-                                <connections>
-                                    <action selector="bPrinteres:" destination="R0g-dP-eNm" eventType="touchUpInside" id="xTl-Ho-4R4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGR-Q0-5SZ">
-                                <rect key="frame" x="135" y="398" width="90" height="97"/>
-                                <state key="normal" backgroundImage="fb"/>
-                                <connections>
-                                    <action selector="bFaceBook:" destination="R0g-dP-eNm" eventType="touchUpInside" id="Sxg-RJ-EL2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdw-Qi-FQo">
-                                <rect key="frame" x="45" y="407" width="90" height="88"/>
-                                <state key="normal" backgroundImage="tw"/>
-                                <connections>
-                                    <action selector="bTwitter:" destination="R0g-dP-eNm" eventType="touchUpInside" id="vUt-Ig-Rof"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQo-G8-Hbg">
-                                <rect key="frame" x="20" y="512" width="322" height="68"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Comparte a 5 amigos y gana este paquete">
-                                        <attributes>
-                                            <color key="NSColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="clipping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.89512310610000001" green="0.89512310610000001" blue="0.89512310610000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.94308895420769234" green="0.94308895420769234" blue="0.94308895420769234" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Oks-lx-44Q" firstAttribute="centerX" secondItem="e7Z-Qu-NRY" secondAttribute="centerX" id="FAl-2u-Tui"/>
-                            <constraint firstItem="Oks-lx-44Q" firstAttribute="top" secondItem="6fb-65-mlG" secondAttribute="bottom" constant="8" symbolic="YES" id="IwO-hi-kZA"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Oks-lx-44Q" secondAttribute="leading" id="7eE-gW-LTg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Oks-lx-44Q" secondAttribute="trailing" id="HCt-eH-m7Y"/>
+                            <constraint firstItem="Oks-lx-44Q" firstAttribute="top" secondItem="6fb-65-mlG" secondAttribute="bottom" id="nUH-ft-rs7"/>
+                            <constraint firstItem="jyq-bI-QbE" firstAttribute="top" secondItem="Oks-lx-44Q" secondAttribute="bottom" constant="20" id="who-Ia-Igw"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1408,12 +1372,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0K-Fh-dfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4390" y="-1483"/>
+            <point key="canvasLocation" x="2146" y="-2209"/>
         </scene>
-        <!--Viralizacion-->
+        <!--Pop Up View Controller Viral-->
         <scene sceneID="g3j-vA-0ai">
             <objects>
-                <viewController id="sBL-Hz-WAH" customClass="ViralizacionViewController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="compartirpop" id="sBL-Hz-WAH" customClass="PopUpViewControllerViral" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GJI-ck-DIy"/>
                         <viewControllerLayoutGuide type="bottom" id="umQ-NK-cJL"/>
@@ -1422,14 +1386,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Viralizacion" id="Tvf-sL-UIK"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rs4-5J-WOt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3760" y="-1405"/>
+            <point key="canvasLocation" x="2836" y="-1437"/>
         </scene>
         <!--Consejos-->
         <scene sceneID="jbb-rk-yC2">
@@ -1618,21 +1582,16 @@
     </scenes>
     <resources>
         <image name="avion" width="66" height="62"/>
-        <image name="carne" width="500" height="400"/>
         <image name="copa" width="66" height="62"/>
-        <image name="fb" width="1024" height="1024"/>
         <image name="hot_dog" width="479" height="254"/>
         <image name="imagen700x300" width="700" height="300"/>
         <image name="like" width="500" height="449"/>
         <image name="menu" width="22" height="22"/>
         <image name="nivel" width="535" height="110"/>
-        <image name="pinterest" width="300" height="300"/>
         <image name="porciones" width="2400" height="2242"/>
         <image name="postIt" width="400" height="300"/>
         <image name="share" width="256" height="256"/>
         <image name="tarjeta" width="5000" height="3500"/>
-        <image name="tw" width="512" height="512"/>
-        <image name="viralizacion" width="693" height="440"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NZW-hL-axY"/>
@@ -1641,6 +1600,6 @@
         <segue reference="edY-XV-IE3"/>
         <segue reference="LJk-td-MH3"/>
         <segue reference="DW0-ra-R3Q"/>
-        <segue reference="k4D-lb-d9j"/>
+        <segue reference="e4b-gO-dZb"/>
     </inferredMetricsTieBreakers>
 </document>
