@@ -1,27 +1,27 @@
 //
-//  FavoritosTableViewController.swift
+//  RegalosTableViewController.swift
 //  MenuDeslizante
 //
-//  Created by sergio ivan lopez monzon on 21/11/15.
-//  Copyright © 2015 sergio ivan lopez monzon. All rights reserved.
+//  Created by sergio ivan lopez monzon on 08/02/16.
+//  Copyright © 2016 sergio ivan lopez monzon. All rights reserved.
 //
 
 import UIKit
 import Parse
 
-class FavoritosTableViewController: UITableViewController {
+class RegalosTableViewController: UITableViewController {
     
     @IBOutlet weak var menuButton:UIBarButtonItem!
     var favoritos = [PFObject]()
     var recetaSeleccionada:PFObject!
-    var nombreTabla:String = "Favoritos"
+    var nombreTabla:String = "Regalos"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-       // self.tableView.editing = true
-
+        // self.tableView.editing = true
+        
         if revealViewController() != nil {
             //            revealViewController().rearViewRevealWidth = 62
             menuButton.target = revealViewController()
@@ -42,7 +42,7 @@ class FavoritosTableViewController: UITableViewController {
     
     func consultarFavoritos(){
         let query = PFQuery(className: nombreTabla)
-    //    query.cachePolicy = .CacheElseNetwork
+        //    query.cachePolicy = .CacheElseNetwork
         query.whereKey("username", equalTo: PFUser.currentUser()!)
         query.includeKey("Receta")
         query.findObjectsInBackgroundWithBlock {
@@ -68,7 +68,7 @@ class FavoritosTableViewController: UITableViewController {
                 print(error)
             }
         }
-
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -184,7 +184,7 @@ class FavoritosTableViewController: UITableViewController {
             let receta = segue.destinationViewController as!  PlatillosViewController
             receta.objReceta = self.recetaSeleccionada
         }
-
+        
         
     }
     
