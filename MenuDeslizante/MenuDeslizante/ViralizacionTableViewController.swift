@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Parse
 
 class ViralizacionTableViewController: UITableViewController {
     
     var popViewController : PopUpViewControllerViral!
     
     var tipoViralizacion: Int = 0
+    
+    @IBOutlet weak var labelViralizacionSeleccionada: UILabel!
+    var viralizacionSeleccionada: PFObject!
+    
+    @IBOutlet weak var imageViewViralizacionSeleccionada: UIImageView!
     
     
     override func viewDidLoad() {
@@ -21,8 +27,48 @@ class ViralizacionTableViewController: UITableViewController {
         self.popViewController = storyboard!.instantiateViewControllerWithIdentifier("compartirpop") as! PopUpViewControllerViral
         self.popViewController.showInView( self.view, animated: true, scaleX: 0.72, scaleY: 0.72)
         
+        self.loadViralizacionInformation(imageViewViralizacionSeleccionada, urlString: viralizacionSeleccionada["Url_Imagen"] as! String, tipoMenuLabel: labelViralizacionSeleccionada, nombreMenu: viralizacionSeleccionada["NombreMenu"] as! String)
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+
     }
+    
+    func loadViralizacionInformation(imagenCell:UIImageView, urlString:String, tipoMenuLabel:UILabel, nombreMenu:String)
+    {
+        
+        
+        let imgURL: NSURL = NSURL(string: urlString)!
+        let request: NSURLRequest = NSURLRequest(URL: imgURL)
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request){
+            (data, response, error) -> Void in
+            
+            if (error == nil && data != nil)
+            {
+                func display_image()
+                {
+                    imagenCell.image = UIImage(data: data!)
+                    tipoMenuLabel.text = nombreMenu
+                    
+                    UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                        
+                        imagenCell.alpha = 100
+                        
+                        
+                        }, completion: nil)
+                    
+                    
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), display_image)
+            }
+            
+        }
+        
+        task.resume()
+    }
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

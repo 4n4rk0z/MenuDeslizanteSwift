@@ -151,6 +151,10 @@ class PrincipalTableViewController: UITableViewController {
             let menu = segue.destinationViewController as!  MenuPlatillos
             menu.menuSeleccionado = self.menuSeleccionado
         }
+        else if segue.identifier == "viralizacion"{
+            let viral = segue.destinationViewController as!  ViralizacionTableViewController
+            viral.viralizacionSeleccionada = self.menuSeleccionado
+        }
     }
     
     

@@ -211,8 +211,9 @@ class PerfilViewController: UIViewController {
     
     func getParseUserData(){
         
-        //self.lNombreUsuario.text = PFUser.currentUser()?.username
+       // self.lNombreUsuario.text = PFUser.currentUser()?.username
         self.lCorreoElectronico.text = PFUser.currentUser()?.email
+
         self.imageViewProfile.image = UIImage(named: ("photo"))
         
         
@@ -222,7 +223,7 @@ class PerfilViewController: UIViewController {
             UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
                 
                 self.imageViewProfile.alpha = 100
-               // self.lNombreUsuario.alpha = 100
+                //self.lNombreUsuario.alpha = 100
                 self.bCerrarSesion.alpha = 100
                 self.lCorreoElectronico.alpha = 100
                 self.consultarCliente()

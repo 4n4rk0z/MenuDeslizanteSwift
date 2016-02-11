@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qEa-es-q8U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qEa-es-q8U">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -227,7 +227,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncr-Hy-hi8">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncr-Hy-hi8">
                                             <rect key="frame" x="8" y="8" width="584" height="141"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjg-6j-L8t">
@@ -1020,8 +1020,8 @@
                                     <constraint firstItem="ZeT-dX-Lyc" firstAttribute="top" secondItem="xjV-EM-ReT" secondAttribute="bottom" id="zLd-1h-6VF"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAG-re-VDs">
-                                <rect key="frame" x="326" y="271" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sin inscripción actual" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAG-re-VDs">
+                                <rect key="frame" x="224" y="266" width="152" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1111,14 +1111,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen700x300" id="EUx-jQ-hvs">
-                            <rect key="frame" x="0.0" y="64" width="600" height="161"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="CPx-om-GFs">
+                            <rect key="frame" x="0.0" y="64" width="600" height="177"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                        </imageView>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen700x300" translatesAutoresizingMaskIntoConstraints="NO" id="FDW-rP-z8j">
+                                    <rect key="frame" x="8" y="8" width="584" height="161"/>
+                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyh-of-Uga">
+                                    <rect key="frame" x="412" y="135" width="168" height="22"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Nombre  viralizacion">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="oyh-of-Uga" secondAttribute="trailing" constant="20" id="AaN-iE-weL"/>
+                                <constraint firstItem="FDW-rP-z8j" firstAttribute="leading" secondItem="CPx-om-GFs" secondAttribute="leading" constant="8" id="OKj-T9-L9C"/>
+                                <constraint firstAttribute="trailing" secondItem="FDW-rP-z8j" secondAttribute="trailing" constant="8" id="RKO-Vc-RIE"/>
+                                <constraint firstAttribute="bottom" secondItem="oyh-of-Uga" secondAttribute="bottom" constant="21" id="WK2-7P-H64"/>
+                                <constraint firstAttribute="bottom" secondItem="FDW-rP-z8j" secondAttribute="bottom" constant="8" id="dDD-l6-dfV"/>
+                                <constraint firstItem="FDW-rP-z8j" firstAttribute="top" secondItem="CPx-om-GFs" secondAttribute="top" constant="8" id="t54-Pl-yiS"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="201" id="ggt-tu-2At" customClass="ViralizacionTableCell" customModule="MenuDeslizante" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="253" width="600" height="201"/>
+                                <rect key="frame" x="0.0" y="269" width="600" height="201"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ggt-tu-2At" id="5wz-33-5Kw">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
@@ -1142,6 +1170,8 @@
                         </prototypes>
                     </tableView>
                     <connections>
+                        <outlet property="imageViewViralizacionSeleccionada" destination="FDW-rP-z8j" id="VHn-0M-Fwa"/>
+                        <outlet property="labelViralizacionSeleccionada" destination="oyh-of-Uga" id="d4r-yP-Zp4"/>
                         <outlet property="view" destination="95G-gE-Hr2" id="q38-ZA-XcT"/>
                     </connections>
                 </tableViewController>
@@ -1532,7 +1562,6 @@
         <!--Regalos-->
         <scene sceneID="Oin-Eh-xgm">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PRO-YR-n4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="DEv-nf-ehO" customClass="RegalosTableViewController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="209" sectionHeaderHeight="28" sectionFooterHeight="28" id="MrD-58-ny1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -1677,6 +1706,7 @@
                         <outlet property="view" destination="MrD-58-ny1" id="DkM-NH-kMI"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRO-YR-n4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1518" y="2269"/>
         </scene>
@@ -1714,12 +1744,12 @@
         <image name="tarjeta" width="5000" height="3500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5V6-UQ-NDg"/>
-        <segue reference="LJk-td-MH3"/>
-        <segue reference="DW0-ra-R3Q"/>
         <segue reference="tFz-XZ-mag"/>
+        <segue reference="5V6-UQ-NDg"/>
+        <segue reference="DW0-ra-R3Q"/>
         <segue reference="edY-XV-IE3"/>
-        <segue reference="k4D-lb-d9j"/>
+        <segue reference="LJk-td-MH3"/>
+        <segue reference="e4b-gO-dZb"/>
         <segue reference="NZW-hL-axY"/>
     </inferredMetricsTieBreakers>
 </document>
