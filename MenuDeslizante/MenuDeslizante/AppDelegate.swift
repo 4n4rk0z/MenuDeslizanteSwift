@@ -98,8 +98,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         //Pinterest
-        PDKClient.configureSharedInstanceWithAppId("f95644039222a683e01cca72063f4154ab71b16683f5b8046f52d33847fb997d")
-
+        
+        PDKClient.configureSharedInstanceWithAppId("4759388231231868449")
         
         return true
     }
@@ -182,6 +182,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         
         
+    }
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        return PDKClient.sharedInstance().handleCallbackURL(url)
+    }
+    
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        return PDKClient.sharedInstance().handleCallbackURL(url)
     }
 
 

@@ -10,7 +10,7 @@
 import UIKit
 import QuartzCore
 import Parse
-
+import PinterestSDK
 import FBSDKShareKit
 
 import TwitterKit
@@ -18,9 +18,11 @@ import TwitterKit
 @objc public class PopUpViewControllerCompartir : UIViewController, FBSDKSharingDelegate{
     
     var mainViewController: UIView!
+
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var imageViewReceta: UIImageView!
     @IBOutlet weak var labelTitulo: UILabel!
+
     
     var tituloEmpresa:String = "Toukanmango"
     var receta:PFObject!
@@ -49,7 +51,7 @@ import TwitterKit
         mainViewController = aView
         aView.addSubview(self.view)
         self.showAnimate()
-        
+
         
         self.imageViewReceta.image = imagenReceta
         self.receta = receta
@@ -145,6 +147,23 @@ import TwitterKit
     }
     
     @IBAction func btnPinteres(sender: AnyObject) {
+        
+        var url : NSString = receta["Url_Imagen"] as! String
+        var urlStr = url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        let imgURL : NSURL = NSURL(string: urlStr as String)!
+        url = "http://www.toukanmango.com"
+        urlStr = url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        let direccion : NSURL = NSURL(string: urlStr as String)!
+        
+        PDKPin.pinWithImageURL(imgURL, link: direccion, suggestedBoardName: "ToukanMango", note: "Me encanta esta receta", withSuccess: { () -> Void in
+            
+            //print("successfully pinned pin")
+            self.removeAnimate()
+
+            }) { (NSError) -> Void in
+                print("pin it failed")
+        }
+
     }
     
     @IBAction func tapView(sender: AnyObject) {
