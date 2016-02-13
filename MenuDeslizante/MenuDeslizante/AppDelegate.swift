@@ -99,7 +99,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Pinterest
         
-        PDKClient.configureSharedInstanceWithAppId("4759388231231868449")
+        PDKClient.configureSharedInstanceWithAppId("4815040272566075428")
         
         return true
     }
