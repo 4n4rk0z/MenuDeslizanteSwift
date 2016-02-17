@@ -184,13 +184,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+    /*func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
         return PDKClient.sharedInstance().handleCallbackURL(url)
     }
     
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
         return PDKClient.sharedInstance().handleCallbackURL(url)
-    }
+    }*/
 
 
 }

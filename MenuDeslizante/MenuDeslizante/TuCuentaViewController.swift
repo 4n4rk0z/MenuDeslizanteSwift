@@ -136,6 +136,26 @@ class TuCuentaView: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginTwitter(sender: AnyObject) {
         
+        PFTwitterUtils.logInWithBlock {
+            (user: PFUser?, error: NSError?) -> Void in
+            
+            let user = user
+            
+            if (user != nil) {
+                if user!.isNew {
+                    print("User signed up and logged in with Twitter!")
+                } else {
+                    print("User logged in with Twitter! " )
+                }
+                
+                self.performSegueWithIdentifier("cerrarsesion", sender: nil)
+                
+            } else {
+                print("Uh oh. The user cancelled the Twitter login.")
+            }
+        }
+/*//nativa
+        
         Twitter.sharedInstance().logInWithCompletion { session, error in
             if (session != nil) {
                 print("signed in as \(session!.userName)");
@@ -148,6 +168,7 @@ class TuCuentaView: UIViewController, UITextFieldDelegate {
                 print("error: \(error!.localizedDescription)");
             }
         }
+  */
         
         
     }

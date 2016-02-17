@@ -73,15 +73,20 @@ class PerfilViewController: UIViewController {
             */
             
             if PFUser.currentUser() != nil {
-                let inicioSesion = PFFacebookUtils.isLinkedWithUser(PFUser.currentUser()!)
-                if inicioSesion{
+                
+                if PFFacebookUtils.isLinkedWithUser(PFUser.currentUser()!){
                     getFBUserData()
                 }
+                else if PFTwitterUtils.isLinkedWithUser(PFUser.currentUser()!) {
+                    getTWUserData()
+
+                }
                 else{
-                    getParseUserData()
+                     getParseUserData()
+                    
                 }
             }
-            else {
+            /*else {
                 
                 let sesion = Twitter.sharedInstance().session()
                 if sesion != nil{
@@ -93,7 +98,7 @@ class PerfilViewController: UIViewController {
                 else{
                     self.performSegueWithIdentifier("login", sender: nil)
                 }
-            }
+            }*/
             
         }
         
@@ -153,9 +158,20 @@ class PerfilViewController: UIViewController {
             task.resume()
     }
     
-    func getTWUserData(sesion:TWTRSession){
-       
-        Twitter.sharedInstance().APIClient.loadUserWithID( sesion.userID )
+    func getTWUserData(){
+        
+        /*ParseUser parseUser = ParseUser.getCurrentUser()
+        
+        
+        Map<String,Map> authObject = parseUser.getMap("authData");
+        Map<String,String> fbParseLoginData =  (Map<String,String>)    authObject.get("facebook");
+        
+        String parseFacebookId = (String)fbParseLoginData.get("id");
+        
+        String parseFacebookAuthData = (String)fbParseLoginData.get("access_token");
+       */
+        
+        Twitter.sharedInstance().APIClient.loadUserWithID("369477836")
             {
                 (user, error) -> Void in
                 
@@ -164,8 +180,9 @@ class PerfilViewController: UIViewController {
                     
                     print( user!.profileImageURL )
                     self.lNombreUsuario.text = user?.name
-                    self.lCorreoElectronico.text = "@" + sesion.userName
-                    self.loadTwProfileImage(user!.profileImageURL)
+                   // self.lCorreoElectronico.text = "@" + user?.profileImageLargeURL
+                    self.lCorreoElectronico.hidden = true
+                    self.loadTwProfileImage((user?.profileImageLargeURL)!)
                     self.consultarCliente()
                 }
         }

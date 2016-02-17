@@ -126,7 +126,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginTwitter(sender: AnyObject) {
        
-        Twitter.sharedInstance().logInWithCompletion { session, error in
+        PFTwitterUtils.logInWithBlock {
+            (user: PFUser?, error: NSError?) -> Void in
+            
+            let user = user
+            
+            if (user != nil) {
+                if user!.isNew {
+                    print("User signed up and logged in with Twitter!")
+                } else {
+                    print("User logged in with Twitter! " )
+                }
+                
+                self.performSegueWithIdentifier("Home", sender: nil)
+                
+            } else {
+                print("Uh oh. The user cancelled the Twitter login.")
+            }
+        }
+
+        
+        //Login nativo
+      /*  Twitter.sharedInstance().logInWithCompletion { session, error in
             if (session != nil) {
                 print("signed in as \(session!.userName)");
                 
@@ -137,7 +158,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             } else {
                 print("error: \(error!.localizedDescription)");
             }
-        }
+        }*/
        
         
     }
