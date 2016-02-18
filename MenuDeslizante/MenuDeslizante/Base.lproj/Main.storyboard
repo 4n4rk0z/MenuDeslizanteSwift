@@ -228,7 +228,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncr-Hy-hi8">
-                                            <rect key="frame" x="8" y="8" width="584" height="141"/>
+                                            <rect key="frame" x="8" y="8" width="584" height="264"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjg-6j-L8t">
                                             <rect key="frame" x="534" y="8" width="66" height="52"/>
@@ -1744,17 +1744,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="MCw-D1-WMX">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="169"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="258"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen700x300" translatesAutoresizingMaskIntoConstraints="NO" id="f1o-l9-cAn">
-                                    <rect key="frame" x="8" y="8" width="584" height="161"/>
+                                    <rect key="frame" x="8" y="8" width="584" height="250"/>
                                     <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMH-fp-8nY">
-                                    <rect key="frame" x="404" y="122" width="180" height="21"/>
+                                    <rect key="frame" x="406" y="210" width="180" height="22"/>
                                     <attributedString key="attributedText">
-                                        <fragment content="Nombre del menu">
+                                        <fragment content="Resultados">
                                             <attributes>
                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
@@ -1777,18 +1777,18 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlatilloCell" rowHeight="201" id="ywX-5W-uSe" customClass="MenuPlatillosTableViewCell" customModule="MenuDeslizante" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="197" width="600" height="201"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="281" id="ywX-5W-uSe" customClass="MenuPlatillosTableViewCell" customModule="MenuDeslizante" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="286" width="600" height="281"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ywX-5W-uSe" id="lCw-oM-b4L">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="280"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9wU-68-hDM">
-                                            <rect key="frame" x="8" y="8" width="584" height="172"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9wU-68-hDM">
+                                            <rect key="frame" x="8" y="8" width="584" height="264"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzl-b2-c0h">
-                                            <rect key="frame" x="407" y="28" width="167" height="22"/>
+                                            <rect key="frame" x="407" y="37" width="167" height="22"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Nombre receta">
                                                     <attributes>
@@ -1874,14 +1874,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Recetas" id="dYw-MW-zdi"/>
-                    <connections>
-                        <outlet property="imagenViewMenuSeleccionado" destination="f1o-l9-cAn" id="kkk-hi-LfO"/>
-                        <outlet property="labelMenuSeleccionado" destination="BMH-fp-8nY" id="7kK-vT-zcB"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQD-EP-g1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1380" y="-2209"/>
+            <point key="canvasLocation" x="1412" y="-2283"/>
         </scene>
     </scenes>
     <resources>

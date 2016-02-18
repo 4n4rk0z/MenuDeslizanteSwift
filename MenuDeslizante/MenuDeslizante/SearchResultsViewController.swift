@@ -30,6 +30,6 @@ class SearchResultsViewController: SearchControllerBaseViewController, UISearchR
         */
         guard searchController.active else { return }
         
-       // filterString = searchController.searchBar.text
+        filterString = searchController.searchBar.text
     }
 }
