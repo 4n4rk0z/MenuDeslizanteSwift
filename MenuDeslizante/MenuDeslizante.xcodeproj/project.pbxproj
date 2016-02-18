@@ -31,6 +31,8 @@
 		491576791BFBCAFC00EE641D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491576771BFBCAFC00EE641D /* LaunchScreen.xib */; };
 		491576851BFBCAFC00EE641D /* MenuDeslizanteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491576841BFBCAFC00EE641D /* MenuDeslizanteTests.swift */; };
 		495947B91C06A7FB0025AE1F /* PageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495947B81C06A7FB0025AE1F /* PageItemController.swift */; };
+		497480891C7576A700B35DDE /* SearchControllerBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497480871C7576A700B35DDE /* SearchControllerBaseViewController.swift */; };
+		4974808A1C7576A700B35DDE /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497480881C7576A700B35DDE /* SearchResultsViewController.swift */; };
 		497B73B61C5597810009E15C /* PopUpViewControllerRegistro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B73B51C5597810009E15C /* PopUpViewControllerRegistro.swift */; };
 		497B73B81C5597D30009E15C /* PopUpViewControllerRegistro_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497B73B71C5597D30009E15C /* PopUpViewControllerRegistro_iPhone6.xib */; };
 		497B73C01C55A8530009E15C /* PopUpViewControllerRegistro_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497B73BF1C55A8530009E15C /* PopUpViewControllerRegistro_iPad.xib */; };
@@ -142,6 +144,8 @@
 		491576831BFBCAFC00EE641D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		491576841BFBCAFC00EE641D /* MenuDeslizanteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDeslizanteTests.swift; sourceTree = "<group>"; };
 		495947B81C06A7FB0025AE1F /* PageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItemController.swift; sourceTree = "<group>"; };
+		497480871C7576A700B35DDE /* SearchControllerBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchControllerBaseViewController.swift; sourceTree = "<group>"; };
+		497480881C7576A700B35DDE /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		497B73B51C5597810009E15C /* PopUpViewControllerRegistro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewControllerRegistro.swift; sourceTree = "<group>"; };
 		497B73B71C5597D30009E15C /* PopUpViewControllerRegistro_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerRegistro_iPhone6.xib; sourceTree = "<group>"; };
 		497B73BF1C55A8530009E15C /* PopUpViewControllerRegistro_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerRegistro_iPad.xib; sourceTree = "<group>"; };
@@ -310,6 +314,7 @@
 		4915766B1BFBCAFB00EE641D /* MenuDeslizante */ = {
 			isa = PBXGroup;
 			children = (
+				497480861C75768E00B35DDE /* Buscador */,
 				49A7088A1C3AF21200483CF0 /* PopUp */,
 				4905926C1C00DFE1006DDDD0 /* Main */,
 				4905926B1C00DFBC006DDDD0 /* Views */,
@@ -357,6 +362,15 @@
 				49000FA41C59DEF40075F6B1 /* PopUpViewControllerCompartir.swift */,
 			);
 			name = Compartir;
+			sourceTree = "<group>";
+		};
+		497480861C75768E00B35DDE /* Buscador */ = {
+			isa = PBXGroup;
+			children = (
+				497480871C7576A700B35DDE /* SearchControllerBaseViewController.swift */,
+				497480881C7576A700B35DDE /* SearchResultsViewController.swift */,
+			);
+			name = Buscador;
 			sourceTree = "<group>";
 		};
 		497B73B41C55974B0009E15C /* NuevoUsuario */ = {
@@ -792,6 +806,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49A708BA1C3AF25200483CF0 /* PopUpViewControllerPagoTienda.swift in Sources */,
+				4974808A1C7576A700B35DDE /* SearchResultsViewController.swift in Sources */,
 				490592761C00F72D006DDDD0 /* ConsejosTableViewController.swift in Sources */,
 				490592781C00F742006DDDD0 /* TuCuentaViewController.swift in Sources */,
 				498E91E51C67F8020012327E /* PopUpViewControllerViral.swift in Sources */,
@@ -809,6 +824,7 @@
 				495947B91C06A7FB0025AE1F /* PageItemController.swift in Sources */,
 				49A708BC1C3AF25200483CF0 /* PopUpViewControllerWallet.swift in Sources */,
 				490592801C0131EE006DDDD0 /* ViralizacionTableCell.swift in Sources */,
+				497480891C7576A700B35DDE /* SearchControllerBaseViewController.swift in Sources */,
 				497B73CC1C55AEAC0009E15C /* PopUpViewControllerRecuperar.swift in Sources */,
 				49A708C81C3AF26B00483CF0 /* PopUpViewControllerSwift.swift in Sources */,
 				49C3D3651BFC0542003B2344 /* PrincipalTableViewCell.swift in Sources */,

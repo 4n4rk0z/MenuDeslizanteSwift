@@ -278,6 +278,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Principal" id="JbS-M5-LW7">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="Hao-8k-QeB"/>
+                        <barButtonItem key="rightBarButtonItem" image="Lupa180x180px" id="kq9-Ca-mja">
+                            <connections>
+                                <action selector="searchButtonClicked:" destination="N7q-0M-nBh" id="UHA-Cs-Ujd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="Hao-8k-QeB" id="tC9-7V-ado"/>
@@ -1730,8 +1735,157 @@
             </objects>
             <point key="canvasLocation" x="706" y="2269"/>
         </scene>
+        <!--Recetas-->
+        <scene sceneID="xt9-2m-AbW">
+            <objects>
+                <tableViewController storyboardIdentifier="SearchResultsViewControllerStoryboardIdentifier" id="SpD-Ss-Wa4" customClass="SearchResultsViewController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="201" sectionHeaderHeight="28" sectionFooterHeight="28" id="jgz-bp-OWw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="MCw-D1-WMX">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="169"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen700x300" translatesAutoresizingMaskIntoConstraints="NO" id="f1o-l9-cAn">
+                                    <rect key="frame" x="8" y="8" width="584" height="161"/>
+                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMH-fp-8nY">
+                                    <rect key="frame" x="404" y="122" width="180" height="21"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Nombre del menu">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="BMH-fp-8nY" secondAttribute="trailing" constant="16" id="3J9-XW-Zhk"/>
+                                <constraint firstAttribute="bottom" secondItem="BMH-fp-8nY" secondAttribute="bottom" constant="26" id="9R1-3U-px6"/>
+                                <constraint firstItem="f1o-l9-cAn" firstAttribute="leading" secondItem="MCw-D1-WMX" secondAttribute="leading" constant="8" id="Hyq-fM-eAh"/>
+                                <constraint firstAttribute="bottom" secondItem="f1o-l9-cAn" secondAttribute="bottom" id="YJU-PV-XY1"/>
+                                <constraint firstItem="f1o-l9-cAn" firstAttribute="top" secondItem="MCw-D1-WMX" secondAttribute="top" constant="8" id="qrj-9m-Pgh"/>
+                                <constraint firstAttribute="trailing" secondItem="f1o-l9-cAn" secondAttribute="trailing" constant="8" id="xrk-YJ-xss"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlatilloCell" rowHeight="201" id="ywX-5W-uSe" customClass="MenuPlatillosTableViewCell" customModule="MenuDeslizante" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="197" width="600" height="201"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ywX-5W-uSe" id="lCw-oM-b4L">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9wU-68-hDM">
+                                            <rect key="frame" x="8" y="8" width="584" height="172"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzl-b2-c0h">
+                                            <rect key="frame" x="407" y="28" width="167" height="22"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Nombre receta">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJI-N1-G5g">
+                                            <rect key="frame" x="407" y="98" width="167" height="22"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Porciones">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qx5-7H-FPS">
+                                            <rect key="frame" x="407" y="138" width="167" height="22"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Tiempo">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS2-B8-R50">
+                                            <rect key="frame" x="407" y="63" width="167" height="22"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Nivel">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Mzl-b2-c0h" secondAttribute="bottom" constant="142" id="8Qa-ml-XQc"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="DS2-B8-R50" secondAttribute="trailing" constant="18" id="HMx-kg-jt0"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="9wU-68-hDM" secondAttribute="trailing" id="HVx-q0-wL2"/>
+                                        <constraint firstAttribute="topMargin" secondItem="9wU-68-hDM" secondAttribute="top" id="MSo-Ah-GTA"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="sJI-N1-G5g" secondAttribute="bottom" constant="72" id="Nd8-Q8-WNn"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="9wU-68-hDM" secondAttribute="bottom" constant="12" id="TeU-hG-oJe"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="DS2-B8-R50" secondAttribute="bottom" constant="107" id="WGM-A7-oc1"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="sJI-N1-G5g" secondAttribute="trailing" constant="18" id="X9V-aq-2Pv"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="qx5-7H-FPS" secondAttribute="bottom" constant="32" id="bBY-1r-Y4B"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Mzl-b2-c0h" secondAttribute="trailing" constant="18" id="h1C-BU-JcY"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="9wU-68-hDM" secondAttribute="leading" id="qev-z6-xqG"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="qx5-7H-FPS" secondAttribute="trailing" constant="18" id="yYY-Af-EIG"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imagenRecetaView" destination="9wU-68-hDM" id="eRr-bt-j2U"/>
+                                    <outlet property="nivelRecetaLabel" destination="DS2-B8-R50" id="49V-Vl-VPM"/>
+                                    <outlet property="nombreRecetaLabel" destination="Mzl-b2-c0h" id="fYY-6a-a68"/>
+                                    <outlet property="porcionesRecetaLabel" destination="sJI-N1-G5g" id="lZa-0r-CbF"/>
+                                    <outlet property="tiempoRecetaLabel" destination="qx5-7H-FPS" id="5Mw-kd-RRf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SpD-Ss-Wa4" id="9VM-Wn-O8J"/>
+                            <outlet property="delegate" destination="SpD-Ss-Wa4" id="UFc-O8-5zx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Recetas" id="dYw-MW-zdi"/>
+                    <connections>
+                        <outlet property="imagenViewMenuSeleccionado" destination="f1o-l9-cAn" id="kkk-hi-LfO"/>
+                        <outlet property="labelMenuSeleccionado" destination="BMH-fp-8nY" id="7kK-vT-zcB"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tQD-EP-g1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1380" y="-2209"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Lupa180x180px" width="36" height="36"/>
         <image name="avion" width="66" height="62"/>
         <image name="copa" width="66" height="62"/>
         <image name="hot_dog" width="479" height="254"/>
@@ -1745,12 +1899,12 @@
         <image name="tarjeta" width="5000" height="3500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="edY-XV-IE3"/>
-        <segue reference="tFz-XZ-mag"/>
+        <segue reference="NZW-hL-axY"/>
+        <segue reference="DW0-ra-R3Q"/>
         <segue reference="5V6-UQ-NDg"/>
         <segue reference="LJk-td-MH3"/>
-        <segue reference="DW0-ra-R3Q"/>
-        <segue reference="k4D-lb-d9j"/>
-        <segue reference="NZW-hL-axY"/>
+        <segue reference="edY-XV-IE3"/>
+        <segue reference="tFz-XZ-mag"/>
+        <segue reference="e4b-gO-dZb"/>
     </inferredMetricsTieBreakers>
 </document>

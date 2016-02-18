@@ -9,14 +9,19 @@
 import UIKit
 import Parse
 
-class PrincipalTableViewController: UITableViewController {
+class PrincipalTableViewController: SearchControllerBaseViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
     
     //Para decirnos cual es la opcion que corresponde a cada posicion del menu
     var itemsMenu = [PFObject]()
+    var imagesArray = [Int:UIImage]()
     var menuSeleccionado:PFObject!
     //Para almacenar el numero de recetas de ese menú
     var numeroDeRecetasPorMenu = [PFObject:Int]()
+    
+    // `searchController` cuando el boton de busqueda es presionado
+    var searchController: UISearchController!
+
     
     
     
@@ -24,6 +29,7 @@ class PrincipalTableViewController: UITableViewController {
        
         // cargamos las imagenes
             let query = PFQuery(className: "Menus")
+            query.whereKey("Activo", equalTo: true)
             //query.cachePolicy = .CacheElseNetwork
             query.orderByAscending("Orden")
             query.findObjectsInBackgroundWithBlock {
@@ -34,6 +40,7 @@ class PrincipalTableViewController: UITableViewController {
                     //Si hay un cliente recupera su clientID y sale del metodo
                     if let _ = items as [PFObject]? {
                         self.itemsMenu = items!
+                        
                         for item in items! {
                             //Contar elementos de recetas en el menu principal
                             let queryReceta = PFQuery(className:"Recetas")
@@ -137,7 +144,14 @@ class PrincipalTableViewController: UITableViewController {
             cell.numeroBtnView.hidden = true
         }
         //se carga la informacion del menu
-        self.loadCellInformation(cell.postImageView!, numeroBtnView: cell.numeroBtnView, urlString: (item["Url_Imagen"] as? String)!, numeroRedecetas:  self.numeroDeRecetasPorMenu[item]!, tipoMenuLabel: cell.nombreLabelMenu, nombreMenu: (item["NombreMenu"] as? String)!)
+        
+        
+
+        let urlImagen = item["Url_Imagen"] as? String!
+        let numeroRecetas = self.numeroDeRecetasPorMenu[item]!
+        let nombre = (item["NombreMenu"] as? String)!
+        
+        self.loadCellInformation(cell.postImageView!, numeroBtnView: cell.numeroBtnView, urlString:urlImagen!, numeroRedecetas: numeroRecetas , tipoMenuLabel: cell.nombreLabelMenu, nombreMenu: nombre, rowIndex:  indexPath.row)
         
       
         return cell
@@ -158,9 +172,43 @@ class PrincipalTableViewController: UITableViewController {
     }
     
     
-    func loadCellInformation(imagenCell:UIImageView, numeroBtnView:UIButton, urlString:String, numeroRedecetas:Int, tipoMenuLabel:UILabel, nombreMenu:String)
+    func loadCellInformation(imagenCell:UIImageView, numeroBtnView:UIButton, urlString:String, numeroRedecetas:Int, tipoMenuLabel:UILabel, nombreMenu:String, rowIndex:Int)
     {
         
+        if self.imagesArray.count <= rowIndex {
+            
+            self.cargarImagenInternet(imagenCell, numeroBtnView: numeroBtnView, urlString:urlString, numeroRedecetas: numeroRedecetas , tipoMenuLabel: tipoMenuLabel, nombreMenu: nombreMenu, rowIndex:  rowIndex)
+        }
+        else{
+        
+            self.cargarImagenesMemoria(imagenCell, numeroBtnView: numeroBtnView, urlString:urlString, numeroRedecetas: numeroRedecetas , tipoMenuLabel: tipoMenuLabel, nombreMenu: nombreMenu, rowIndex:  rowIndex)
+        }
+
+        
+    }
+    
+    func cargarImagenesMemoria(imagenCell:UIImageView, numeroBtnView:UIButton, urlString:String, numeroRedecetas:Int, tipoMenuLabel:UILabel, nombreMenu:String, rowIndex:Int){
+        func display_image()
+        {
+            imagenCell.image = self.imagesArray[rowIndex]
+            numeroBtnView.setTitle(String(numeroRedecetas), forState: UIControlState.Normal)
+            tipoMenuLabel.text = nombreMenu
+            
+            UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                
+                imagenCell.alpha = 100
+                
+                
+                }, completion: nil)
+            
+            
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), display_image)
+
+    }
+    
+    func cargarImagenInternet(imagenCell:UIImageView, numeroBtnView:UIButton, urlString:String, numeroRedecetas:Int, tipoMenuLabel:UILabel, nombreMenu:String, rowIndex:Int){
         
         let imgURL: NSURL = NSURL(string: urlString)!
         let request: NSURLRequest = NSURLRequest(URL: imgURL)
@@ -174,28 +222,41 @@ class PrincipalTableViewController: UITableViewController {
                 func display_image()
                 {
                     imagenCell.image = UIImage(data: data!)
+                    self.imagesArray[rowIndex]=imagenCell.image
                     numeroBtnView.setTitle(String(numeroRedecetas), forState: UIControlState.Normal)
                     tipoMenuLabel.text = nombreMenu
                     
                     UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
                         
-                            imagenCell.alpha = 100
+                        imagenCell.alpha = 100
                         
                         
                         }, completion: nil)
-
-
+                    
+                    
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), display_image)
             }
-            
         }
-        
         task.resume()
+
     }
     
+    @IBAction func searchButtonClicked(button: UIBarButtonItem) {
+        // Create the search results view controller and use it for the `UISearchController`.
+        let searchResultsController = storyboard!.instantiateViewControllerWithIdentifier(SearchResultsViewController.StoryboardConstants.identifier) as! SearchResultsViewController
         
+        // Create the search controller and make it perform the results updating.
+        searchController = UISearchController(searchResultsController: searchResultsController)
+        searchController.searchResultsUpdater = searchResultsController
+        searchController.hidesNavigationBarDuringPresentation = false
+        
+        // Present the view controller.
+        presentViewController(searchController, animated: true, completion: nil)
+    }
+
+    
 
 }
 
