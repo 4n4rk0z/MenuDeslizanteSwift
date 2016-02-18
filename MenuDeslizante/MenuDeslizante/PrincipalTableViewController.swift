@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class PrincipalTableViewController: SearchControllerBaseViewController {
+class PrincipalTableViewController: UITableViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
     
     //Para decirnos cual es la opcion que corresponde a cada posicion del menu
