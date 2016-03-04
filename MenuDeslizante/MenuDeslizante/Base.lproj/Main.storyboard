@@ -215,20 +215,20 @@
         <scene sceneID="hJp-th-m0J">
             <objects>
                 <tableViewController storyboardIdentifier="ViralizacionControlerID" id="N7q-0M-nBh" customClass="PrincipalTableViewController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="281" sectionHeaderHeight="28" sectionFooterHeight="28" id="dqs-0e-yto">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="640" sectionHeaderHeight="28" sectionFooterHeight="28" id="dqs-0e-yto">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="281" id="Daj-Hh-cCT" customClass="PrincipalTableViewCell" customModule="MenuDeslizante" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="281"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="640" id="Daj-Hh-cCT" customClass="PrincipalTableViewCell" customModule="MenuDeslizante" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="640"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalCompressionResistancePriority="749" tableViewCell="Daj-Hh-cCT" id="L98-rM-vr4">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="280"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="639"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncr-Hy-hi8">
-                                            <rect key="frame" x="8" y="8" width="584" height="264"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="menuReal" translatesAutoresizingMaskIntoConstraints="NO" id="ncr-Hy-hi8">
+                                            <rect key="frame" x="8" y="8" width="584" height="375"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjg-6j-L8t">
                                             <rect key="frame" x="534" y="8" width="66" height="52"/>
@@ -1888,6 +1888,7 @@
         <image name="imagen700x300" width="700" height="300"/>
         <image name="like" width="500" height="449"/>
         <image name="menu" width="22" height="22"/>
+        <image name="menuReal" width="640" height="427"/>
         <image name="nivel" width="535" height="110"/>
         <image name="porciones" width="2400" height="2242"/>
         <image name="postIt" width="400" height="300"/>

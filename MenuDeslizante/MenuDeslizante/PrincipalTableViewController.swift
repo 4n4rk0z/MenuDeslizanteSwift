@@ -243,6 +243,36 @@ class PrincipalTableViewController: UITableViewController {
 
     }
     
+    // para cuadrar las imagenes
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return pantallaSizeHeight();//Choose your custom row height
+    }
+    
+    func pantallaSizeHeight()->CGFloat!
+    {
+        var strPantalla = 224.0
+        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
+        {
+            strPantalla = 640
+        }
+        else
+        {
+            
+            if UIScreen.mainScreen().bounds.size.width > 320 {
+                if UIScreen.mainScreen().scale == 3 {
+                    strPantalla = 286.0
+                }
+                else{
+                    strPantalla = 266.0
+                }
+            }
+        }
+        return CGFloat(strPantalla)
+    }
+    
+    
+    
     @IBAction func searchButtonClicked(button: UIBarButtonItem) {
         // Create the search results view controller and use it for the `UISearchController`.
         let searchResultsController = storyboard!.instantiateViewControllerWithIdentifier(SearchResultsViewController.StoryboardConstants.identifier) as! SearchResultsViewController
