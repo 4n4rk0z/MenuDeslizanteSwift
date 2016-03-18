@@ -169,9 +169,9 @@ class PerfilViewController: UIViewController {
         String parseFacebookId = (String)fbParseLoginData.get("id");
         
         String parseFacebookAuthData = (String)fbParseLoginData.get("access_token");
-       */
+       *///"369477"
         
-        Twitter.sharedInstance().APIClient.loadUserWithID("369477836")
+        Twitter.sharedInstance().APIClient.loadUserWithID((PFTwitterUtils.twitter()?.userId)!)
             {
                 (user, error) -> Void in
                 

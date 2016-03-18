@@ -64,7 +64,6 @@ class PrincipalTableViewController: UITableViewController {
                     }
                     else{
                         
-                        
                     }
                 }
                 else
