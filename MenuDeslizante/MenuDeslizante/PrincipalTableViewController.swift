@@ -92,6 +92,7 @@ class PrincipalTableViewController: UITableViewController {
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
             
+            
         }
     }
     
@@ -255,7 +256,7 @@ class PrincipalTableViewController: UITableViewController {
         var strPantalla = 224.0
         if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
         {
-            strPantalla = 640
+            strPantalla = 640.0
         }
         else
         {
