@@ -136,6 +136,8 @@ class PrincipalTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PrincipalTableViewCell
+        
+        
 
         let item = self.itemsMenu[indexPath.row]
         //ocultamos si es tipo menu viral el icono de postit
