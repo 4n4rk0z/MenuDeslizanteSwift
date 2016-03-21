@@ -26,6 +26,30 @@ class PrincipalTableViewController: UITableViewController {
     
     
     override func viewWillAppear(animated: Bool) {
+        
+        
+        //Image Background Navigation Bar
+        
+        let navBackgroundImage:UIImage! = UIImage(named: "fondonav")
+        
+        let nav = self.navigationController?.navigationBar
+        
+        nav?.tintColor = UIColor.grayColor()
+        
+        nav!.setBackgroundImage(navBackgroundImage, forBarMetrics:.Default)
+        
+        
+        let font = UIFont(name: "Avenir Next Demi Bold", size: 12)
+        if let font = font {
+            nav!.titleTextAttributes = [NSFontAttributeName : font, NSForegroundColorAttributeName:UIColor.redColor()]
+        }
+        
+        
+        tableView.backgroundView = UIImageView(image: UIImage(named: "fondo"))
+        
+
+        
+        
        
         // cargamos las imagenes
             let query = PFQuery(className: "Menus")
@@ -53,6 +77,7 @@ class PrincipalTableViewController: UITableViewController {
                                     self.numeroDeRecetasPorMenu[item]=Int(count)
                                     if self.numeroDeRecetasPorMenu.count == self.itemsMenu.count{
                                         dispatch_async(dispatch_get_main_queue()) {
+                                            
                                             self.tableView.reloadData()
                                         }
                                     }
@@ -93,6 +118,11 @@ class PrincipalTableViewController: UITableViewController {
             self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
             
             
+            
+                      
+            
+            
+         
         }
     }
     
@@ -139,21 +169,29 @@ class PrincipalTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PrincipalTableViewCell
         
         
-
+        cell.lNumeroRecetas.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2*0.475))
+        
         let item = self.itemsMenu[indexPath.row]
         //ocultamos si es tipo menu viral el icono de postit
         if ((item["TipoMenu"] as? String)?.lowercaseString) == "viral"{
-            cell.numeroBtnView.hidden = true
+            cell.lNumeroRecetas.hidden = true
         }
         //se carga la informacion del menu
         
         
-
+        if(indexPath.row == 0){
+            cell.imgBottomDevider.hidden = true;
+        }
+        
+        if(indexPath.row == self.itemsMenu.count-1){
+            cell.imgTopDevider.hidden = true;
+        }
+        
         let urlImagen = item["Url_Imagen"] as? String!
         let numeroRecetas = self.numeroDeRecetasPorMenu[item]!
         let nombre = (item["NombreMenu"] as? String)!
         
-        self.loadCellInformation(cell.postImageView!, numeroBtnView: cell.numeroBtnView, urlString:urlImagen!, numeroRedecetas: numeroRecetas , tipoMenuLabel: cell.nombreLabelMenu, nombreMenu: nombre, rowIndex:  indexPath.row)
+        self.loadCellInformation(cell.postImageView!, numeroLabelView:  cell.lNumeroRecetas, urlString:urlImagen!, numeroRedecetas: numeroRecetas , tipoMenuLabel: cell.nombreLabelMenu, nombreMenu: nombre, rowIndex:  indexPath.row)
         
       
         return cell
@@ -174,26 +212,26 @@ class PrincipalTableViewController: UITableViewController {
     }
     
     
-    func loadCellInformation(imagenCell:UIImageView, numeroBtnView:UIButton, urlString:String, numeroRedecetas:Int, tipoMenuLabel:UILabel, nombreMenu:String, rowIndex:Int)
+    func loadCellInformation(imagenCell:UIImageView, numeroLabelView:UILabel, urlString:String, numeroRedecetas:Int, tipoMenuLabel:UILabel, nombreMenu:String, rowIndex:Int)
     {
         
         if self.imagesArray.count <= rowIndex {
             
-            self.cargarImagenInternet(imagenCell, numeroBtnView: numeroBtnView, urlString:urlString, numeroRedecetas: numeroRedecetas , tipoMenuLabel: tipoMenuLabel, nombreMenu: nombreMenu, rowIndex:  rowIndex)
+            self.cargarImagenInternet(imagenCell, numeroLabelView: numeroLabelView, urlString:urlString, numeroRedecetas: numeroRedecetas , tipoMenuLabel: tipoMenuLabel, nombreMenu: nombreMenu, rowIndex:  rowIndex)
         }
         else{
         
-            self.cargarImagenesMemoria(imagenCell, numeroBtnView: numeroBtnView, urlString:urlString, numeroRedecetas: numeroRedecetas , tipoMenuLabel: tipoMenuLabel, nombreMenu: nombreMenu, rowIndex:  rowIndex)
+            self.cargarImagenesMemoria(imagenCell, numeroLabelView: numeroLabelView, urlString:urlString, numeroRedecetas: numeroRedecetas , tipoMenuLabel: tipoMenuLabel, nombreMenu: nombreMenu, rowIndex:  rowIndex)
         }
 
         
     }
     
-    func cargarImagenesMemoria(imagenCell:UIImageView, numeroBtnView:UIButton, urlString:String, numeroRedecetas:Int, tipoMenuLabel:UILabel, nombreMenu:String, rowIndex:Int){
+    func cargarImagenesMemoria(imagenCell:UIImageView, numeroLabelView:UILabel, urlString:String, numeroRedecetas:Int, tipoMenuLabel:UILabel, nombreMenu:String, rowIndex:Int){
         func display_image()
         {
             imagenCell.image = self.imagesArray[rowIndex]
-            numeroBtnView.setTitle(String(numeroRedecetas), forState: UIControlState.Normal)
+            numeroLabelView.text = String(numeroRedecetas)+" recetas";
             tipoMenuLabel.text = nombreMenu
             
             UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
@@ -210,7 +248,7 @@ class PrincipalTableViewController: UITableViewController {
 
     }
     
-    func cargarImagenInternet(imagenCell:UIImageView, numeroBtnView:UIButton, urlString:String, numeroRedecetas:Int, tipoMenuLabel:UILabel, nombreMenu:String, rowIndex:Int){
+    func cargarImagenInternet(imagenCell:UIImageView, numeroLabelView:UILabel, urlString:String, numeroRedecetas:Int, tipoMenuLabel:UILabel, nombreMenu:String, rowIndex:Int){
         
         let imgURL: NSURL = NSURL(string: urlString)!
         let request: NSURLRequest = NSURLRequest(URL: imgURL)
@@ -225,7 +263,7 @@ class PrincipalTableViewController: UITableViewController {
                 {
                     imagenCell.image = UIImage(data: data!)
                     self.imagesArray[rowIndex]=imagenCell.image
-                    numeroBtnView.setTitle(String(numeroRedecetas), forState: UIControlState.Normal)
+                    numeroLabelView.text = String(numeroRedecetas)+" recetas";
                     tipoMenuLabel.text = nombreMenu
                     
                     UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
@@ -256,7 +294,7 @@ class PrincipalTableViewController: UITableViewController {
         var strPantalla = 224.0
         if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
         {
-            strPantalla = 640.0
+            strPantalla = 500.0
         }
         else
         {

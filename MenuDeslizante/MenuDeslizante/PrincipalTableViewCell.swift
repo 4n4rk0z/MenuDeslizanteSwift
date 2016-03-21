@@ -12,9 +12,12 @@ import UIKit
 class PrincipalTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postImageView:UIImageView!
-    @IBOutlet weak var numeroBtnView: UIButton!
+
+    @IBOutlet weak var lNumeroRecetas: UILabel!
     @IBOutlet weak var nombreLabelMenu: UILabel!
 
+    @IBOutlet weak var imgTopDevider: UIImageView!
+    @IBOutlet weak var imgBottomDevider: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

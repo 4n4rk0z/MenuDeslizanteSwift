@@ -18,18 +18,31 @@ class MenuPlatillos: UITableViewController {
     var recetas = [PFObject]()
     var planId = "prhhst3k5uucmunpl9fr"
     var precioPlan = 5.0
-    @IBOutlet weak var imagenViewMenuSeleccionado: UIImageView!
     
     @IBOutlet weak var labelMenuSeleccionado: UILabel!
     var popViewController : PopUpViewControllerSwift!
     
     override func viewWillAppear(animated: Bool) {
+        //Image Background Navigation Bar
+        
+        let navBackgroundImage:UIImage! = UIImage(named: "bandasuperior")
+        
+        let nav = self.navigationController?.navigationBar
+        
+        nav?.tintColor = UIColor.whiteColor()
+        
+        nav!.setBackgroundImage(navBackgroundImage, forBarMetrics:.Default)
+        
+        
+    
+        tableView.backgroundView = UIImageView(image: UIImage(named: "fondorecetario"))
+        
         consultarRecetasDeMenu()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.loadMenuInformation(imagenViewMenuSeleccionado, urlString: menuSeleccionado["Url_Imagen"] as! String, tipoMenuLabel: labelMenuSeleccionado, nombreMenu: menuSeleccionado["NombreMenu"] as! String)
+        self.loadMenuInformation(labelMenuSeleccionado, nombreMenu: menuSeleccionado["NombreMenu"] as! String)
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
@@ -62,6 +75,8 @@ class MenuPlatillos: UITableViewController {
         }
     }
     
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -87,7 +102,8 @@ class MenuPlatillos: UITableViewController {
         if (!(urlImagen).isEmpty) {
         self.loadCellInformation(cell.imagenRecetaView, urlString: receta["Url_Imagen"] as! String, nombreRecetaLabel: cell.nombreRecetaLabel, nombreRecetaStr: receta["Nombre"] as! String, nivelRecetaLabel: cell.nivelRecetaLabel, nivelRecetaStr:  receta["Nivel"] as! String, porcionesRecetaLabel: cell.porcionesRecetaLabel, porcionesRecetaStr: receta["Porciones"] as! String, tiempoRecetaLabel: cell.tiempoRecetaLabel, tiempoRecetaStr:receta["Tiempo"] as! String)
         }
-
+        
+        
         return cell
         
     }
@@ -214,40 +230,10 @@ class MenuPlatillos: UITableViewController {
     }
 
     
-    func loadMenuInformation(imagenCell:UIImageView, urlString:String, tipoMenuLabel:UILabel, nombreMenu:String)
+    func loadMenuInformation(tipoMenuLabel:UILabel, nombreMenu:String)
     {
-        
-        
-        let imgURL: NSURL = NSURL(string: urlString)!
-        let request: NSURLRequest = NSURLRequest(URL: imgURL)
-        
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request){
-            (data, response, error) -> Void in
-            
-            if (error == nil && data != nil)
-            {
-                func display_image()
-                {
-                    imagenCell.image = UIImage(data: data!)
+    
                     tipoMenuLabel.text = nombreMenu
-                    
-                    UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                        
-                        imagenCell.alpha = 100
-                        
-                        
-                        }, completion: nil)
-
-                    
-                }
-                
-                dispatch_async(dispatch_get_main_queue(), display_image)
-            }
-            
-        }
-        
-        task.resume()
     }
 
     
