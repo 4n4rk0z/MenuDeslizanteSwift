@@ -69,9 +69,21 @@ class PlatillosViewController: UIViewController{
                     self.labelNivel.text = (self.objReceta["Nivel"] as! String)
                     self.labelPorciones.text = (self.objReceta["Porciones"] as! String)
                     self.labelTiempo.text = (self.objReceta["Tiempo"] as! String)
-                    self.textAreaReceta.text = "Ingredientes \n" + (self.objReceta["Ingredientes"] as! String)
                     
-                    self.textAreaReceta.text = self.textAreaReceta.text + ("\n\nProcedimiento\n" + (self.objReceta["Procedimiento"] as! String))
+                    var text: String = "Ingredientes \n" + (self.objReceta["Ingredientes"] as! String)
+                    text = text + ("\n\nProcedimiento\n" + (self.objReceta["Procedimiento"] as! String))
+                    var attributedText: NSMutableAttributedString = NSMutableAttributedString(string: text)
+                    
+                    var range: Range<String.Index> = text.rangeOfString("Ingredientes")!
+                    let indexIngredientes: Int = text.startIndex.distanceTo(range.startIndex)
+
+                    range = text.rangeOfString("Procedimiento")!
+                    let indexProcedimiento: Int = text.startIndex.distanceTo(range.startIndex) + 5
+                    
+                    attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(24)], range: NSRange(location: indexIngredientes, length: 12))
+                    attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(24)], range: NSRange(location: indexProcedimiento, length: 13))
+                    
+                    self.textAreaReceta.attributedText = attributedText
                     
                     UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
                         
