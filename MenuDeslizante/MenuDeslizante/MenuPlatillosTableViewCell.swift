@@ -13,8 +13,8 @@ class MenuPlatillosTableViewCell: UITableViewCell {
     @IBOutlet weak var nombreRecetaLabel: UILabel!
     @IBOutlet weak var porcionesRecetaLabel: UILabel!
     @IBOutlet weak var tiempoRecetaLabel: UILabel!
-    
     @IBOutlet weak var imgDificultad: UIImageView!
+    
     
     
     override func awakeFromNib() {

@@ -19,7 +19,7 @@ class PlatillosViewController: UIViewController{
     @IBOutlet weak var labelNivel: UILabel!
     @IBOutlet weak var labelPorciones: UILabel!
     @IBOutlet weak var labelTiempo: UILabel!
-    var objReceta:PFObject!
+    var objReceta = PFObject()
     
     var popViewController: PopUpViewControllerCompartir!
 
