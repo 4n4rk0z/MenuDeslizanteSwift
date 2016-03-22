@@ -8,6 +8,8 @@
 
 import UIKit
 import Parse
+import ParseTwitterUtils
+import ParseFacebookUtilsV4
 
 class SearchResultsViewController: SearchControllerBaseViewController, UISearchResultsUpdating {
     // MARK: Types
@@ -215,8 +217,39 @@ class SearchResultsViewController: SearchControllerBaseViewController, UISearchR
                     for menu in lstMenus! {
                         
                         if menu["TipoMenu"].lowercaseString == "pago"{
+                            var usuario = false
+                            if PFUser.currentUser() != nil {
+                                
+                                if PFFacebookUtils.isLinkedWithUser(PFUser.currentUser()!){
+                                    usuario = true
+                                }
+                                else if PFTwitterUtils.isLinkedWithUser(PFUser.currentUser()!) {
+                                    usuario = true
+                                    
+                                }
+                                else if PFUser.currentUser() != nil{
+                                    usuario = true
+                                    
+                                }
+                            }
                             
-                            self.consultarSuscripcion()
+                            
+                            if (usuario == false){
+                                
+                                let alertController = UIAlertController(title: "Debe iniciar sesión",
+                                    message: "Para poder acceder al contenido de pago debe iniciar sesión",
+                                    preferredStyle: UIAlertControllerStyle.Alert)
+                                
+                                alertController.addAction(UIAlertAction(title: "OK",
+                                    style: UIAlertActionStyle.Default,
+                                    handler: nil))
+                                // Display alert
+                                self.presentViewController(alertController, animated: true, completion: nil)
+                                
+                            }
+                            else{
+                                self.consultarSuscripcion()
+                            }
                         }
                         else
                         {
@@ -265,7 +298,9 @@ class SearchResultsViewController: SearchControllerBaseViewController, UISearchR
                             //let sepagoEnTienda = cliente["codigobarras"] as? String
                             //if sepagoEnTienda != ""{
                             
-                            self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
+                          
+                                self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
+                            
                             //}
                         }
                         
@@ -275,7 +310,9 @@ class SearchResultsViewController: SearchControllerBaseViewController, UISearchR
                     if (clientes?.count==0)
                     {
                         //Si no se fue a la ventana que sigue quiere decir o que no esta suscrito
-                        self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
+                       
+                            self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
+                        
                     }
                 }
                 else{

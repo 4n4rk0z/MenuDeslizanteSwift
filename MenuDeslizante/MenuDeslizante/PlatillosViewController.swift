@@ -9,6 +9,8 @@
 
 import UIKit
 import Parse
+import ParseTwitterUtils
+import ParseFacebookUtilsV4
 
 class PlatillosViewController: UIViewController{
     @IBOutlet weak var imageViewReceta: UIImageView!
@@ -137,29 +139,61 @@ class PlatillosViewController: UIViewController{
     
     @IBAction func bLike(sender: AnyObject) {
         
-        let query = PFQuery(className: "Favoritos")
-        query.cachePolicy = .CacheElseNetwork
-        query.whereKey("username", equalTo: PFUser.currentUser()!)
-        query.whereKey("Receta", equalTo: self.objReceta)
-        query.findObjectsInBackgroundWithBlock {
-            (recetas: [PFObject]?, error: NSError?) -> Void in
-            // comments now contains the comments for myPost
+        
+        var usuario = false
+        if PFUser.currentUser() != nil {
             
-            if error == nil {
+            if PFFacebookUtils.isLinkedWithUser(PFUser.currentUser()!){
+                usuario = true
+            }
+            else if PFTwitterUtils.isLinkedWithUser(PFUser.currentUser()!) {
+                usuario = true
                 
-                //Revisa si ese cliente tiene esa receta para mandar un mensaje de error al tratar de añadirla de nuevo
-                if recetas != nil && recetas?.count>0 {
+            }
+            else if PFUser.currentUser() != nil{
+                usuario = true
+                
+            }
+        }
+        
+        
+        if (usuario == false){
+            
+            let alertController = UIAlertController(title: "Iniciar sesión obligatorio",
+                message: "Para poder añadir esta reseta a favoritos es necesario iniciar sesión",
+                preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alertController.addAction(UIAlertAction(title: "OK",
+                style: UIAlertActionStyle.Default,
+                handler: nil))
+            // Display alert
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
+        }
+        else{
+            let query = PFQuery(className: "Favoritos")
+            query.cachePolicy = .CacheElseNetwork
+            query.whereKey("username", equalTo: PFUser.currentUser()!)
+            query.whereKey("Receta", equalTo: self.objReceta)
+            query.findObjectsInBackgroundWithBlock {
+                (recetas: [PFObject]?, error: NSError?) -> Void in
+                // comments now contains the comments for myPost
+            
+                if error == nil {
+                
+                    //Revisa si ese cliente tiene esa receta para mandar un mensaje de error al tratar de añadirla de nuevo
+                    if recetas != nil && recetas?.count>0 {
                  
-                    // The object has been saved.
-                    let alertController = UIAlertController(title: "¡Esta receta ya fue añadida!",
+                        // The object has been saved.
+                        let alertController = UIAlertController(title: "¡Esta receta ya fue añadida!",
                         message: "Tu receta ya esta en la seccion de favoritos",
                         preferredStyle: UIAlertControllerStyle.Alert)
                     
-                    alertController.addAction(UIAlertAction(title: "OK",
+                        alertController.addAction(UIAlertAction(title: "OK",
                         style: UIAlertActionStyle.Default,
                         handler: nil))
-                    // Display alert
-                    self.presentViewController(alertController, animated: true, completion: nil)
+                        // Display alert
+                        self.presentViewController(alertController, animated: true, completion: nil)
                 }
                     //Añade la receta a favoritos
                 else{
@@ -189,20 +223,21 @@ class PlatillosViewController: UIViewController{
                                 message: "¡Tu receta ya esta disponible en la seccion de favoritos!",
                                 preferredStyle: UIAlertControllerStyle.Alert)
                             
-                            alertController.addAction(UIAlertAction(title: "OK",
+                                alertController.addAction(UIAlertAction(title: "OK",
                                 style: UIAlertActionStyle.Default,
                                 handler: nil))
-                            // Display alert
-                            self.presentViewController(alertController, animated: true, completion: nil)
-                        } else {
-                            // There was a problem, check error.description
+                                // Display alert
+                                self.presentViewController(alertController, animated: true, completion: nil)
+                            } else {
+                                // There was a problem, check error.description
+                            }
                         }
                     }
                 }
-            }
-            else
-            {
-                print(error)
+                else
+                {
+                    print(error)
+                }
             }
         }
     }

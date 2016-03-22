@@ -957,7 +957,7 @@
             </objects>
             <point key="canvasLocation" x="2128" y="-689"/>
         </scene>
-        <!--Favoritos-->
+        <!--Favoritos Table View Controller-->
         <scene sceneID="8NB-Ki-2h1">
             <objects>
                 <tableViewController id="Dcd-l9-ZlZ" customClass="FavoritosTableViewController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
@@ -965,6 +965,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="6X0-xD-1J0">
                             <rect key="frame" x="0.0" y="64" width="600" height="88"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -975,7 +977,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAH-IE-HtE">
                                     <rect key="frame" x="139" y="59" width="322" height="51"/>
                                     <attributedString key="attributedText">
-                                        <fragment content="cargando contenido...">
+                                        <fragment content="Favoritos">
                                             <attributes>
                                                 <color key="NSColor" red="1" green="0.98731276803602219" blue="0.95566570478069679" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="31" name="AvenirNextCondensed-Bold"/>
@@ -1009,6 +1011,9 @@
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparencia" translatesAutoresizingMaskIntoConstraints="NO" id="1uP-7U-kNw">
                                             <rect key="frame" x="8" y="172" width="584" height="73"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="73" id="FLr-ep-h6u"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vH-D8-GDl">
                                             <rect key="frame" x="408" y="220" width="61" height="24"/>
@@ -1125,6 +1130,7 @@
                                         <constraint firstAttribute="leadingMargin" secondItem="1uP-7U-kNw" secondAttribute="leading" id="sLa-fS-sYM"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="imagenRecetaView" destination="Cyi-gt-3VJ" id="efb-KI-DWA"/>
                                     <outlet property="imgDificultad" destination="2aL-c4-lfx" id="tbZ-Cu-gc5"/>
@@ -1138,7 +1144,7 @@
                             <outlet property="delegate" destination="fdC-L9-fpe" id="udk-b2-TQt"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Favoritos" id="cVG-5E-bOR">
+                    <navigationItem key="navigationItem" id="cVG-5E-bOR">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="fdC-L9-fpe"/>
                     </navigationItem>
                     <connections>
@@ -2000,11 +2006,11 @@
             </objects>
             <point key="canvasLocation" x="706" y="2269"/>
         </scene>
-        <!--Recetas-->
+        <!--Search Results View Controller-->
         <scene sceneID="xt9-2m-AbW">
             <objects>
                 <tableViewController storyboardIdentifier="SearchResultsViewControllerStoryboardIdentifier" id="SpD-Ss-Wa4" customClass="SearchResultsViewController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="201" sectionHeaderHeight="28" sectionFooterHeight="28" id="jgz-bp-OWw">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="201" sectionHeaderHeight="28" sectionFooterHeight="28" id="jgz-bp-OWw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2020,7 +2026,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifQ-Xa-KN9">
                                     <rect key="frame" x="197" y="80" width="322" height="51"/>
                                     <attributedString key="attributedText">
-                                        <fragment content="Buscando...">
+                                        <fragment content="Resultados">
                                             <attributes>
                                                 <color key="NSColor" red="1" green="0.98731276803602219" blue="0.95566570478069679" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="31" name="AvenirNextCondensed-Bold"/>
@@ -2047,13 +2053,13 @@
                                 <rect key="frame" x="0.0" y="180" width="600" height="255"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ywX-5W-uSe" id="lCw-oM-b4L">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="254"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="255"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="47X-TY-3I2">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="47X-TY-3I2">
                                             <rect key="frame" x="8" y="9" width="584" height="237"/>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparencia" translatesAutoresizingMaskIntoConstraints="NO" id="Xfy-cJ-9g5">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="transparencia" translatesAutoresizingMaskIntoConstraints="NO" id="Xfy-cJ-9g5">
                                             <rect key="frame" x="7" y="173" width="584" height="73"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wk-St-Akw">
@@ -2140,7 +2146,7 @@
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cHc-Kg-wKe">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHc-Kg-wKe">
                                             <rect key="frame" x="504" y="218" width="82" height="28"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="82" id="U29-35-tDg"/>
@@ -2174,6 +2180,7 @@
                                         <constraint firstItem="47X-TY-3I2" firstAttribute="top" secondItem="lCw-oM-b4L" secondAttribute="topMargin" constant="1" id="vjc-Iy-Csu"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Xfy-cJ-9g5" secondAttribute="bottom" constant="9" id="20G-63-nbM"/>
                                     <constraint firstAttribute="bottom" secondItem="vWD-a5-Q9K" secondAttribute="bottom" constant="19" id="9oW-5x-SVV"/>
@@ -2192,7 +2199,7 @@
                             <outlet property="delegate" destination="SpD-Ss-Wa4" id="UFc-O8-5zx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recetas" id="dYw-MW-zdi"/>
+                    <navigationItem key="navigationItem" id="dYw-MW-zdi"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQD-EP-g1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2241,7 +2248,7 @@
         <segue reference="5V6-UQ-NDg"/>
         <segue reference="edY-XV-IE3"/>
         <segue reference="tFz-XZ-mag"/>
-        <segue reference="f3o-7v-28v"/>
+        <segue reference="e4b-gO-dZb"/>
         <segue reference="NZW-hL-axY"/>
     </inferredMetricsTieBreakers>
 </document>

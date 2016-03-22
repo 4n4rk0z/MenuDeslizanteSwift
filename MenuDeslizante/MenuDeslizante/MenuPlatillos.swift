@@ -7,6 +7,8 @@
 //
 import UIKit
 import Parse
+import ParseTwitterUtils
+import ParseFacebookUtilsV4
 
 class MenuPlatillos: UITableViewController {
     
@@ -96,21 +98,25 @@ class MenuPlatillos: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("PlatilloCell", forIndexPath: indexPath) as! MenuPlatillosTableViewCell
         
-        let receta = self.recetas[indexPath.row]
-        let num = self.imagenes.count
-        let imgReceta = self.imagenes[receta]
-        
-            if (imgReceta == nil){
-            self.loadCellInformation(cell.imagenRecetaView, urlString: receta["Url_Imagen"] as! String, nombreRecetaLabel: cell.nombreRecetaLabel, nombreRecetaStr: receta["Nombre"] as! String, nivelRecetaImagen: cell.imgDificultad, nivelRecetaStr:  receta["Nivel"] as! String, porcionesRecetaLabel: cell.porcionesRecetaLabel, porcionesRecetaStr: receta["Porciones"] as! String, tiempoRecetaLabel: cell.tiempoRecetaLabel, tiempoRecetaStr:receta["Tiempo"] as! String, objReceta:receta)
-            }
-            else{
-                loadCellInformationCache(cell.imagenRecetaView, urlString: receta["Url_Imagen"] as! String, nombreRecetaLabel: cell.nombreRecetaLabel, nombreRecetaStr: receta["Nombre"] as! String, nivelRecetaImagen: cell.imgDificultad, nivelRecetaStr:  receta["Nivel"] as! String, porcionesRecetaLabel: cell.porcionesRecetaLabel, porcionesRecetaStr: receta["Porciones"] as! String, tiempoRecetaLabel: cell.tiempoRecetaLabel, tiempoRecetaStr:receta["Tiempo"] as! String, imgReceta:imgReceta!)
-            }
-        
-        
+        cargarContenido(cell, indexPath: indexPath)
         
         return cell
         
+    }
+    
+    func cargarContenido(cell: MenuPlatillosTableViewCell, indexPath:NSIndexPath ){
+        let receta = self.recetas[indexPath.row]
+        
+        let imgReceta = self.imagenes[receta]
+        
+        if (imgReceta == nil){
+            self.loadCellInformation(cell.imagenRecetaView, urlString: receta["Url_Imagen"] as! String, nombreRecetaLabel: cell.nombreRecetaLabel, nombreRecetaStr: receta["Nombre"] as! String, nivelRecetaImagen: cell.imgDificultad, nivelRecetaStr:  receta["Nivel"] as! String, porcionesRecetaLabel: cell.porcionesRecetaLabel, porcionesRecetaStr: receta["Porciones"] as! String, tiempoRecetaLabel: cell.tiempoRecetaLabel, tiempoRecetaStr:receta["Tiempo"] as! String, objReceta:receta)
+        }
+        else{
+            loadCellInformationCache(cell.imagenRecetaView, urlString: receta["Url_Imagen"] as! String, nombreRecetaLabel: cell.nombreRecetaLabel, nombreRecetaStr: receta["Nombre"] as! String, nivelRecetaImagen: cell.imgDificultad, nivelRecetaStr:  receta["Nivel"] as! String, porcionesRecetaLabel: cell.porcionesRecetaLabel, porcionesRecetaStr: receta["Porciones"] as! String, tiempoRecetaLabel: cell.tiempoRecetaLabel, tiempoRecetaStr:receta["Tiempo"] as! String, imgReceta:imgReceta!)
+        }
+        
+
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -123,14 +129,45 @@ class MenuPlatillos: UITableViewController {
         
         self.recetaSeleccionada = self.recetas[indexPath.row]
         imagenRecetaSeleccionada = imagenes[recetaSeleccionada];
-        abrirReceta()
+        abrirReceta(cell, indexPath:indexPath)
     }
     
-    func abrirReceta(){
+    func abrirReceta(cell: MenuPlatillosTableViewCell, indexPath:NSIndexPath ){
         
         if self.menuSeleccionado["TipoMenu"].lowercaseString == "pago"{
+            var usuario = false
+            if PFUser.currentUser() != nil {
+                
+                if PFFacebookUtils.isLinkedWithUser(PFUser.currentUser()!){
+                    usuario = true
+                }
+                else if PFTwitterUtils.isLinkedWithUser(PFUser.currentUser()!) {
+                    usuario = true
+                    
+                }
+                else if PFUser.currentUser() != nil{
+                    usuario = true
+                    
+                }
+            }
             
-            consultarSuscripcion()
+            
+            if (usuario == false){
+                
+                let alertController = UIAlertController(title: "Debe iniciar sesión",
+                    message: "Para poder acceder al contenido de pago debe iniciar sesión",
+                    preferredStyle: UIAlertControllerStyle.Alert)
+                
+                alertController.addAction(UIAlertAction(title: "OK",
+                    style: UIAlertActionStyle.Default,
+                    handler: nil))
+                // Display alert
+                self.presentViewController(alertController, animated: true, completion: {self.cargarContenido(cell, indexPath: indexPath)})
+                
+            }
+            else{
+                consultarSuscripcion()
+            }
         }
         else
         {
@@ -165,8 +202,14 @@ class MenuPlatillos: UITableViewController {
                             
                             //let sepagoEnTienda = cliente["codigobarras"] as? String
                             //if sepagoEnTienda != ""{
-                                
+                            
+                            
                                 self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
+                            
+                            
+                                
+                                
+                                
                             //}
                         }
                        
@@ -177,6 +220,7 @@ class MenuPlatillos: UITableViewController {
                     {
                         //Si no se fue a la ventana que sigue quiere decir o que no esta suscrito
                         self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
+                        
                     }
                 }
                 else{

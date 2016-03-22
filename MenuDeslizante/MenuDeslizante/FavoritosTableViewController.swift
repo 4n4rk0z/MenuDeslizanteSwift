@@ -8,6 +8,9 @@
 
 import UIKit
 import Parse
+import ParseTwitterUtils
+import ParseFacebookUtilsV4
+
 
 class FavoritosTableViewController: UITableViewController {
     
@@ -33,11 +36,59 @@ class FavoritosTableViewController: UITableViewController {
             
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-            if PFUser.currentUser() != nil{
+            
+            //Si no se fue a la ventana que sigue quiere decir o que no esta suscrito
+            var usuario = false
+            if PFUser.currentUser() != nil {
+                
+                if PFFacebookUtils.isLinkedWithUser(PFUser.currentUser()!){
+                    usuario = true
+                }
+                else if PFTwitterUtils.isLinkedWithUser(PFUser.currentUser()!) {
+                    usuario = true
+                    
+                }
+                else if PFUser.currentUser() != nil{
+                    usuario = true
+                    
+                }
+            }
+            
+            
+            if (usuario == false){
+                
+                let alertController = UIAlertController(title: "Debe iniciar sesión",
+                    message: "Para poder acceder a tu sección de favoritos debe iniciar sesión",
+                    preferredStyle: UIAlertControllerStyle.Alert)
+                
+                alertController.addAction(UIAlertAction(title: "OK",
+                    style: UIAlertActionStyle.Default,
+                    handler: nil))
+                // Display alert
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
+            }
+
+            else{
                 consultarFavoritos()
             }
             
+            
         }
+        
+        
+        let navBackgroundImage:UIImage! = UIImage(named: "bandasuperior")
+        
+        let nav = self.navigationController?.navigationBar
+        
+        nav?.tintColor = UIColor.whiteColor()
+        
+        nav!.setBackgroundImage(navBackgroundImage, forBarMetrics:.Default)
+        
+        
+        
+        tableView.backgroundView = UIImageView(image: UIImage(named: "fondorecetario"))
+        
     }
     
     func consultarFavoritos(){
