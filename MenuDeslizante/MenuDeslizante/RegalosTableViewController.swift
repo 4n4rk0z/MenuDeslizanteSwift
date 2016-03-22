@@ -120,7 +120,7 @@ class RegalosTableViewController: UITableViewController {
         
     }
     
-    func loadCellInformation(imagenCell:UIImageView, urlString:String, nombreRecetaLabel:UILabel, nombreRecetaStr:String,  nivelRecetaLabel:UILabel, nivelRecetaStr:String,  porcionesRecetaLabel:UILabel, porcionesRecetaStr:String,  tiempoRecetaLabel:UILabel, tiempoRecetaStr:String)
+    func loadCellInformation(imagenCell:UIImageView, urlString:String, nombreRecetaLabel:UILabel, nombreRecetaStr:String,  nivelRecetaImagen:UIImageView, nivelRecetaStr:String,  porcionesRecetaLabel:UILabel, porcionesRecetaStr:String,  tiempoRecetaLabel:UILabel, tiempoRecetaStr:String)
     {
         
         
@@ -137,7 +137,15 @@ class RegalosTableViewController: UITableViewController {
                 {
                     imagenCell.image = UIImage(data: data!)
                     nombreRecetaLabel.text = nombreRecetaStr
-                    nivelRecetaLabel.text = nivelRecetaStr
+                    if (nivelRecetaStr.lowercaseString == "Principiante"){
+                        nivelRecetaImagen.image = UIImage(named: "dificultadprincipiante")
+                    }else if(nivelRecetaStr.lowercaseString == "intermedio"){
+                        nivelRecetaImagen.image = UIImage(named: "dificultadmedia")
+                    }
+                    else{
+                        nivelRecetaImagen.image = UIImage(named: "dificultadavanzado")
+                    }
+
                     porcionesRecetaLabel.text = porcionesRecetaStr
                     tiempoRecetaLabel.text = tiempoRecetaStr
                     
@@ -145,7 +153,7 @@ class RegalosTableViewController: UITableViewController {
                         
                         imagenCell.alpha = 100
                         nombreRecetaLabel.alpha = 100
-                        nivelRecetaLabel.alpha = 100
+                        nivelRecetaImagen.alpha = 100
                         porcionesRecetaLabel.alpha = 100
                         tiempoRecetaLabel.alpha = 100
                         
@@ -163,11 +171,11 @@ class RegalosTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! FavoritosTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MenuPlatillosTableViewCell
         
         let receta =  self.favoritos[indexPath.row].objectForKey("Receta") as? NSArray
         
-        self.loadCellInformation(cell.imageViewFavoritos, urlString: receta![0]["Url_Imagen"] as! String, nombreRecetaLabel: cell.labelNombre, nombreRecetaStr: receta![0]["Nombre"] as! String, nivelRecetaLabel: cell.labelNivel, nivelRecetaStr:  receta![0]["Nivel"] as! String, porcionesRecetaLabel: cell.labelPorciones, porcionesRecetaStr: receta![0]["Porciones"] as! String, tiempoRecetaLabel: cell.labelTiempo, tiempoRecetaStr:receta![0]["Tiempo"] as! String)
+        self.loadCellInformation(cell.imagenRecetaView, urlString: receta![0]["Url_Imagen"] as! String, nombreRecetaLabel: cell.nombreRecetaLabel, nombreRecetaStr: receta![0]["Nombre"] as! String, nivelRecetaImagen: cell.imgDificultad, nivelRecetaStr:  receta![0]["Nivel"] as! String, porcionesRecetaLabel: cell.porcionesRecetaLabel, porcionesRecetaStr: receta![0]["Porciones"] as! String, tiempoRecetaLabel: cell.tiempoRecetaLabel, tiempoRecetaStr:receta![0]["Tiempo"] as! String)
         
         
         return cell

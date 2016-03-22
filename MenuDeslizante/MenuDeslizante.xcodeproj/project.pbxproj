@@ -16,7 +16,6 @@
 		4905926E1C00E3A1006DDDD0 /* MenuPlatillos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905926D1C00E3A1006DDDD0 /* MenuPlatillos.swift */; };
 		490592701C00E431006DDDD0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905926F1C00E431006DDDD0 /* TableViewCell.swift */; };
 		490592721C00F70D006DDDD0 /* FavoritosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490592711C00F70D006DDDD0 /* FavoritosTableViewController.swift */; };
-		490592741C00F71C006DDDD0 /* FavoritosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490592731C00F71C006DDDD0 /* FavoritosTableViewCell.swift */; };
 		490592761C00F72D006DDDD0 /* ConsejosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490592751C00F72D006DDDD0 /* ConsejosTableViewController.swift */; };
 		490592781C00F742006DDDD0 /* TuCuentaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490592771C00F742006DDDD0 /* TuCuentaViewController.swift */; };
 		4905927C1C00FE50006DDDD0 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905927B1C00FE50006DDDD0 /* PerfilViewController.swift */; };
@@ -125,7 +124,6 @@
 		4905926D1C00E3A1006DDDD0 /* MenuPlatillos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPlatillos.swift; sourceTree = "<group>"; };
 		4905926F1C00E431006DDDD0 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		490592711C00F70D006DDDD0 /* FavoritosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritosTableViewController.swift; sourceTree = "<group>"; };
-		490592731C00F71C006DDDD0 /* FavoritosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritosTableViewCell.swift; sourceTree = "<group>"; };
 		490592751C00F72D006DDDD0 /* ConsejosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsejosTableViewController.swift; sourceTree = "<group>"; };
 		490592771C00F742006DDDD0 /* TuCuentaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuCuentaViewController.swift; sourceTree = "<group>"; };
 		4905927B1C00FE50006DDDD0 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
@@ -435,7 +433,6 @@
 			children = (
 				49C3D3641BFC0542003B2344 /* PrincipalTableViewCell.swift */,
 				4905926F1C00E431006DDDD0 /* TableViewCell.swift */,
-				490592731C00F71C006DDDD0 /* FavoritosTableViewCell.swift */,
 				4982994C1C462BB9003F293C /* ConsejosTableViewCell.swift */,
 				4905927F1C0131EE006DDDD0 /* ViralizacionTableCell.swift */,
 				4910CA8E1C586F3000EB32C5 /* MenuPlatillosTableViewCell.swift */,
@@ -814,7 +811,6 @@
 				49BB0E1F1C1517920079E96D /* PlatillosViewController.swift in Sources */,
 				490592701C00E431006DDDD0 /* TableViewCell.swift in Sources */,
 				49C3D3631BFBF9AF003B2344 /* PrincipalTableViewController.swift in Sources */,
-				490592741C00F71C006DDDD0 /* FavoritosTableViewCell.swift in Sources */,
 				4982994D1C462BB9003F293C /* ConsejosTableViewCell.swift in Sources */,
 				49A708B91C3AF25200483CF0 /* PopUpViewControllerFormasPago.swift in Sources */,
 				4905926E1C00E3A1006DDDD0 /* MenuPlatillos.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SearchResultsViewController: SearchControllerBaseViewController, UISearchResultsUpdating {
     // MARK: Types
@@ -17,6 +18,9 @@ class SearchResultsViewController: SearchControllerBaseViewController, UISearchR
          view controller defined in the main storyboard.
          */
         static let identifier = "SearchResultsViewControllerStoryboardIdentifier"
+        
+        
+        
     }
     
     // MARK: UISearchResultsUpdating
@@ -30,6 +34,13 @@ class SearchResultsViewController: SearchControllerBaseViewController, UISearchR
         */
         guard searchController.active else { return }
         
-        filterString = searchController.searchBar.text
+         filterString = searchController.searchBar.text
+         //busqueda = searchController.searchBar.text
+        
     }
+    
+    
+    
+    
+
 }

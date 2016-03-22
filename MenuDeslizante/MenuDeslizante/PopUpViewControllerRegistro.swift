@@ -95,14 +95,27 @@ import Parse
             (succeeded: Bool, error: NSError?) -> Void in
             if let error = error {
                 let errorString = error.userInfo["error"] as? NSString
+                
+                if (error.code == 125){
+                    // User needs to verify email address before continuing
+                    let alertController = UIAlertController(title: "Error",
+                        message: "Correo electronico inválido",
+                        preferredStyle: UIAlertControllerStyle.Alert)
+                    
+                    alertController.addAction(UIAlertAction(title: "OK",
+                        style: UIAlertActionStyle.Default,
+                        handler: nil))
+                    // Display alert
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
                 print(errorString)
                 // Show the errorString somewhere and let the user try again.
             } else {
                 
                 
                 // User needs to verify email address before continuing
-                let alertController = UIAlertController(title: "Verificación por correo electrónico",
-                    message: "Hemos mandado un correo electrónico, debes de confirmarlo para continuar",
+                let alertController = UIAlertController(title: "Bienvenido",
+                    message: "usuario registrado",
                     preferredStyle: UIAlertControllerStyle.Alert)
                 
                     alertController.addAction(UIAlertAction(title: "OK",

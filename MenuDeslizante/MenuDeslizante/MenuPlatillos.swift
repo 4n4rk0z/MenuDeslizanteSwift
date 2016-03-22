@@ -100,7 +100,7 @@ class MenuPlatillos: UITableViewController {
         let urlImagen = receta["Url_Imagen"] as! String
         
         if (!(urlImagen).isEmpty) {
-        self.loadCellInformation(cell.imagenRecetaView, urlString: receta["Url_Imagen"] as! String, nombreRecetaLabel: cell.nombreRecetaLabel, nombreRecetaStr: receta["Nombre"] as! String, nivelRecetaLabel: cell.nivelRecetaLabel, nivelRecetaStr:  receta["Nivel"] as! String, porcionesRecetaLabel: cell.porcionesRecetaLabel, porcionesRecetaStr: receta["Porciones"] as! String, tiempoRecetaLabel: cell.tiempoRecetaLabel, tiempoRecetaStr:receta["Tiempo"] as! String)
+        self.loadCellInformation(cell.imagenRecetaView, urlString: receta["Url_Imagen"] as! String, nombreRecetaLabel: cell.nombreRecetaLabel, nombreRecetaStr: receta["Nombre"] as! String, nivelRecetaImagen: cell.imgDificultad, nivelRecetaStr:  receta["Nivel"] as! String, porcionesRecetaLabel: cell.porcionesRecetaLabel, porcionesRecetaStr: receta["Porciones"] as! String, tiempoRecetaLabel: cell.tiempoRecetaLabel, tiempoRecetaStr:receta["Tiempo"] as! String)
         }
         
         
@@ -187,7 +187,7 @@ class MenuPlatillos: UITableViewController {
         
     }
     
-    func loadCellInformation(imagenCell:UIImageView, urlString:String, nombreRecetaLabel:UILabel, nombreRecetaStr:String,  nivelRecetaLabel:UILabel, nivelRecetaStr:String,  porcionesRecetaLabel:UILabel, porcionesRecetaStr:String,  tiempoRecetaLabel:UILabel, tiempoRecetaStr:String)
+    func loadCellInformation(imagenCell:UIImageView, urlString:String, nombreRecetaLabel:UILabel, nombreRecetaStr:String,  nivelRecetaImagen:UIImageView, nivelRecetaStr:String,  porcionesRecetaLabel:UILabel, porcionesRecetaStr:String,  tiempoRecetaLabel:UILabel, tiempoRecetaStr:String)
     {
         
         
@@ -204,7 +204,16 @@ class MenuPlatillos: UITableViewController {
                 {
                     imagenCell.image = UIImage(data: data!)
                     nombreRecetaLabel.text = nombreRecetaStr
-                    nivelRecetaLabel.text = nivelRecetaStr
+                    if (nivelRecetaStr.lowercaseString == "Principiante"){
+                        nivelRecetaImagen.image = UIImage(named: "dificultadprincipiante")
+                    }else if(nivelRecetaStr.lowercaseString == "intermedio"){
+                        nivelRecetaImagen.image = UIImage(named: "dificultadmedia")
+                    }
+                    else{
+                        nivelRecetaImagen.image = UIImage(named: "dificultadavanzado")
+                    }
+                    
+
                     porcionesRecetaLabel.text = porcionesRecetaStr
                     tiempoRecetaLabel.text = tiempoRecetaStr
                     
@@ -212,7 +221,7 @@ class MenuPlatillos: UITableViewController {
                         
                         imagenCell.alpha = 100
                         nombreRecetaLabel.alpha = 100
-                        nivelRecetaLabel.alpha = 100
+                        nivelRecetaImagen.alpha = 100
                         porcionesRecetaLabel.alpha = 100
                         tiempoRecetaLabel.alpha = 100
                         

@@ -169,7 +169,7 @@ class PrincipalTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PrincipalTableViewCell
         
         
-        cell.lNumeroRecetas.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2*0.475))
+        cell.lNumeroRecetas.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2*0.44))
         
         let item = self.itemsMenu[indexPath.row]
         //ocultamos si es tipo menu viral el icono de postit
@@ -312,8 +312,11 @@ class PrincipalTableViewController: UITableViewController {
     }
     
     
+    // buscador
     
-    @IBAction func searchButtonClicked(button: UIBarButtonItem) {
+    
+    
+    func abrirBuscador(){
         // Create the search results view controller and use it for the `UISearchController`.
         let searchResultsController = storyboard!.instantiateViewControllerWithIdentifier(SearchResultsViewController.StoryboardConstants.identifier) as! SearchResultsViewController
         
@@ -324,6 +327,15 @@ class PrincipalTableViewController: UITableViewController {
         
         // Present the view controller.
         presentViewController(searchController, animated: true, completion: nil)
+
+    }
+    
+    
+    
+    
+    @IBAction func searchButtonClicked(button: UIBarButtonItem) {
+
+        abrirBuscador()
     }
 
     
