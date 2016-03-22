@@ -81,10 +81,13 @@ class PerfilViewController: UIViewController {
                     getTWUserData()
 
                 }
-                else{
+                else if(PFUser.currentUser() != nil){
                      getParseUserData()
                     
                 }
+            }
+            else{
+                self.performSegueWithIdentifier("login", sender: nil)
             }
             /*else {
                 

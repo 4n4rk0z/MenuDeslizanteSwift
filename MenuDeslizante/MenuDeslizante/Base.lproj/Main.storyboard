@@ -771,13 +771,13 @@
                             <rect key="frame" x="0.0" y="64" width="600" height="88"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bandatitulopaquete" translatesAutoresizingMaskIntoConstraints="NO" id="ad2-sh-9bO">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bandatitulopaquete" translatesAutoresizingMaskIntoConstraints="NO" id="ad2-sh-9bO">
                                     <rect key="frame" x="81" y="8" width="466" height="131"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGX-wb-yGO">
                                     <rect key="frame" x="139" y="59" width="322" height="51"/>
                                     <attributedString key="attributedText">
-                                        <fragment content="cargando contenido...">
+                                        <fragment content="Favoritos">
                                             <attributes>
                                                 <color key="NSColor" red="1" green="0.98731276803602219" blue="0.95566570478069679" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="31" name="AvenirNextCondensed-Bold"/>
@@ -794,6 +794,7 @@
                                 <constraint firstItem="ad2-sh-9bO" firstAttribute="centerX" secondItem="SZs-6k-cNx" secondAttribute="centerX" id="29W-zm-TZc"/>
                                 <constraint firstItem="eGX-wb-yGO" firstAttribute="centerY" secondItem="SZs-6k-cNx" secondAttribute="centerY" id="7F9-pD-JeO"/>
                                 <constraint firstItem="ad2-sh-9bO" firstAttribute="width" secondItem="SZs-6k-cNx" secondAttribute="width" id="8J2-RG-90v"/>
+                                <constraint firstItem="ad2-sh-9bO" firstAttribute="centerY" secondItem="SZs-6k-cNx" secondAttribute="centerY" id="GdD-Gq-9aQ"/>
                                 <constraint firstItem="ad2-sh-9bO" firstAttribute="height" secondItem="SZs-6k-cNx" secondAttribute="height" id="f1g-eR-yV8"/>
                                 <constraint firstItem="eGX-wb-yGO" firstAttribute="centerX" secondItem="SZs-6k-cNx" secondAttribute="centerX" id="rLd-37-wwk"/>
                             </constraints>
@@ -811,6 +812,9 @@
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparencia" translatesAutoresizingMaskIntoConstraints="NO" id="OCb-m4-UZQ">
                                             <rect key="frame" x="8" y="163" width="584" height="73"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="73" id="1qh-mR-gPz"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0U-11-n8d">
                                             <rect key="frame" x="473" y="191" width="108" height="22"/>
@@ -921,7 +925,6 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="LBJ-fe-KMv" secondAttribute="bottom" constant="31" id="ZCg-oa-dQt"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="auc-Dg-CBq" secondAttribute="bottom" constant="56" id="dA9-tZ-nUv"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ut6-vY-vRi" secondAttribute="trailing" constant="11" id="e0G-AG-tB0"/>
-                                        <constraint firstItem="OCb-m4-UZQ" firstAttribute="top" secondItem="rhj-tQ-ZOQ" secondAttribute="topMargin" constant="155" id="g9j-ph-QT2"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Bhw-eA-8Lq" secondAttribute="bottom" constant="17" id="kOg-TP-gdW"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Rht-Dr-sIm" secondAttribute="bottom" constant="11" id="ndd-yf-r2N"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="a6y-cQ-INm" secondAttribute="trailing" id="q9b-c9-vex"/>
@@ -1116,7 +1119,6 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="Cyi-gt-3VJ" secondAttribute="bottom" constant="1" id="6DM-r9-7IH"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="KlA-1T-JJ5" secondAttribute="bottom" constant="49" id="6eQ-5g-yUB"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="2aL-c4-lfx" secondAttribute="bottom" constant="1" id="Flv-Aa-kL3"/>
-                                        <constraint firstItem="1uP-7U-kNw" firstAttribute="top" secondItem="Pk6-lg-BGi" secondAttribute="topMargin" constant="164" id="K4y-zV-GsE"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="2vH-D8-GDl" secondAttribute="bottom" constant="2" id="KiU-jX-GO1"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="2aL-c4-lfx" secondAttribute="trailing" constant="13" id="Lga-Ej-UP5"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="BWX-7y-vfu" secondAttribute="bottom" constant="27" id="PoF-H4-81k"/>
@@ -1187,7 +1189,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0bT-mB-227">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frida" translatesAutoresizingMaskIntoConstraints="NO" id="0bT-mB-227">
                                 <rect key="frame" x="222" y="46" width="155" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0bT-mB-227" secondAttribute="height" multiplier="155:128" id="F1B-gg-gUb"/>
@@ -1516,7 +1518,7 @@
                                     <action selector="loginTwitter:" destination="BtO-tl-NVf" eventType="touchUpInside" id="gLy-fV-JK5"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="copa" translatesAutoresizingMaskIntoConstraints="NO" id="ywy-Bw-Eu2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="frida" translatesAutoresizingMaskIntoConstraints="NO" id="ywy-Bw-Eu2">
                                 <rect key="frame" x="248" y="33" width="103" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ywy-Bw-Eu2" secondAttribute="height" multiplier="103:98" id="MU2-A5-OaN"/>
@@ -2211,7 +2213,6 @@
         <image name="Lupa180x180px" width="36" height="36"/>
         <image name="bandapaquete" width="576" height="563"/>
         <image name="bandatitulopaquete" width="1242" height="253"/>
-        <image name="copa" width="66" height="62"/>
         <image name="deviderbottom" width="1242" height="70"/>
         <image name="deviderreceta" width="1242" height="139"/>
         <image name="devidertop" width="1242" height="66"/>
@@ -2248,7 +2249,7 @@
         <segue reference="5V6-UQ-NDg"/>
         <segue reference="edY-XV-IE3"/>
         <segue reference="tFz-XZ-mag"/>
-        <segue reference="e4b-gO-dZb"/>
+        <segue reference="k4D-lb-d9j"/>
         <segue reference="NZW-hL-axY"/>
     </inferredMetricsTieBreakers>
 </document>

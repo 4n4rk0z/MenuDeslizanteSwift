@@ -173,8 +173,9 @@ class PlatillosViewController: UIViewController{
         else{
             let query = PFQuery(className: "Favoritos")
             query.cachePolicy = .CacheElseNetwork
+            query.includeKey("Recetas")
             query.whereKey("username", equalTo: PFUser.currentUser()!)
-            query.whereKey("Receta", equalTo: self.objReceta)
+            query.whereKey("Recetas", equalTo: self.objReceta)
             query.findObjectsInBackgroundWithBlock {
                 (recetas: [PFObject]?, error: NSError?) -> Void in
                 // comments now contains the comments for myPost
@@ -212,8 +213,7 @@ class PlatillosViewController: UIViewController{
                     favorito["Anio"] = year
                     favorito["Mes"] = month
                     favorito["Trimestre"] = trimestre
-                    favorito.relationForKey("authors")
-                    favorito.addObject(self.objReceta, forKey: "Receta")
+                    favorito["Recetas"] = self.objReceta
                     
                     favorito.saveInBackgroundWithBlock {
                         (success: Bool, error: NSError?) -> Void in

@@ -83,17 +83,42 @@ import Parse
             self.presentViewController(alertController, animated: true, completion: nil)
         }
         else{
-            PFUser.requestPasswordResetForEmailInBackground(textfMail.text!)
-            // User needs to verify email address before continuing
-            let alertController = UIAlertController(title: "Reestablecer cuenta",
-                message: "Le hemos mandado un correo electronico",
-                preferredStyle: UIAlertControllerStyle.Alert)
+            PFUser.requestPasswordResetForEmailInBackground(textfMail.text!, block: { (sucess, error) -> Void in
+                if error == nil{
+                    // User needs to verify email address before continuing
+                    let alertController = UIAlertController(title: "Reestablecer cuenta",
+                        message: "Le hemos mandado un correo electronico",
+                        preferredStyle: UIAlertControllerStyle.Alert)
+                    
+                    alertController.addAction(UIAlertAction(title: "OK",
+                        style: UIAlertActionStyle.Default,
+                        handler: { alertController in self.processSignOut()}))
+                    // Display alert
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
+                else{
+                    
+                    var mensaje = ""
+                    if (error?.code == 125){
+                        mensaje = "Correo inválido"
+                    }else{
+                        mensaje = "Ha ocurrido un error, revise sus datos o su conexión a internet"
+                    }
+                    
+                    // User needs to verify email address before continuing
+                    let alertController = UIAlertController(title: "Reestablecer cuenta",
+                        message: mensaje,
+                        preferredStyle: UIAlertControllerStyle.Alert)
+                    
+                    alertController.addAction(UIAlertAction(title: "OK",
+                        style: UIAlertActionStyle.Default,
+                        handler: { alertController in self.processSignOut()}))
+                    // Display alert
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                    
+                }
+            })
             
-            alertController.addAction(UIAlertAction(title: "OK",
-                style: UIAlertActionStyle.Default,
-                handler: { alertController in self.processSignOut()}))
-            // Display alert
-            self.presentViewController(alertController, animated: true, completion: nil)
         }
         
     }

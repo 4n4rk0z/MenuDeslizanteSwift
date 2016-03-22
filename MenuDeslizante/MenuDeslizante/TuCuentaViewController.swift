@@ -51,51 +51,69 @@ class TuCuentaView: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func loginMail(sender: AnyObject) {
-        let mail = textfMail.text?.lowercaseString
-        let pass = textfPassword.text
-        PFUser.logInWithUsernameInBackground(mail!, password:pass!) {
-            (user: PFUser?, error: NSError?) -> Void in
-            if user != nil {
-                
-                if user!["emailVerified"] as! Bool == true {
-                    dispatch_async(dispatch_get_main_queue()) {
-                        // Do stuff after successful login.
-                        self.performSegueWithIdentifier("cerrarsesion", sender: nil)
-                    }
-                } else {
-                    // User needs to verify email address before continuing
-                    let alertController = UIAlertController(
-                        title: "Verificación de correo electrónico",
-                        message: "Hemos mandado un correo que contiene un enlace - debes de precionarlo para poder iniciar sesión.",
-                        preferredStyle: UIAlertControllerStyle.Alert
-                    )
-                    alertController.addAction(UIAlertAction(title: "Ok",
-                        style: UIAlertActionStyle.Default,
-                        handler: { alertController in self.processSignOut()})
-                    )
-                    // Display alert
-                    self.presentViewController(
-                        alertController,
-                        animated: true,
-                        completion: nil
-                    )
-                }
-                
-            } else {
-                // The login failed. Check error to see why.
-            }
+        if  (textfMail.text == nil || textfMail.text == "") || (textfPassword.text == nil || textfPassword.text == "") {
+            // User needs to verify email address before continuing
+            let alertController = UIAlertController(title: "Favor de ingresar correo y contraseña",
+                message: "Ingrese sus datos para poder ingresar\nSi aun no estas registrado selecciona el boton de nuevo usuario",
+                preferredStyle: UIAlertControllerStyle.Alert)
+    
+            alertController.addAction(UIAlertAction(title: "OK",
+                style: UIAlertActionStyle.Default,
+                handler: nil))
+            // Display alert
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
-        
+        else{
+    
+            self.logueoMail()
+        }
+}
+
+
+func logueoMail(){
+    
+    let mail = textfMail.text?.lowercaseString
+    let pass = textfPassword.text
+    
+    
+    PFUser.logInWithUsernameInBackground(mail!, password:pass!) {
+        (user: PFUser?, error: NSError?) -> Void in
+        if user != nil {
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                // Do stuff after successful login.
+                self.performSegueWithIdentifier("cerrarsesion", sender: nil)
+                
+            }
+            
+        } else {
+            // The login failed. Check error to see why.
+            
+            let alertController = UIAlertController(title: "Error al iniciar sesión",
+                message: "correo o usuario incorrectos",
+                preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alertController.addAction(UIAlertAction(title: "OK",
+                style: UIAlertActionStyle.Default,
+                handler: nil))
+            // Display alert
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
+        }
     }
     
+}
+
+
+
     func processSignOut() {
         
         // // Sign out
         PFUser.logOut()
         
     }
-    
-    
+
+
     func ligarFb(user: PFUser)
     {
         if !PFFacebookUtils.isLinkedWithUser(user) {
