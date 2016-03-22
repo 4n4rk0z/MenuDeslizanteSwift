@@ -291,11 +291,13 @@
                         <outlet property="view" destination="dqs-0e-yto" id="Icu-Ou-auW"/>
                         <segue destination="dpj-0A-Gen" kind="show" identifier="viralizacion" id="lib-Gk-biC"/>
                         <segue destination="x4J-z2-Zet" kind="show" identifier="recetarios" id="ReD-sJ-kvu"/>
+                        <segue destination="SpD-Ss-Wa4" kind="show" identifier="buscador" id="1Ue-dI-UdY"/>
+                        <segue destination="TqI-jn-NKe" kind="show" identifier="PlatilloSegueBuscador" id="f3o-7v-28v"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8b3-cr-Ghh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1424" y="-689"/>
+            <point key="canvasLocation" x="1502" y="-655"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1vv-Wu-Not">
@@ -725,6 +727,7 @@
                             <constraint firstItem="EJE-1g-AHZ" firstAttribute="top" secondItem="XW1-a6-3hO" secondAttribute="bottom" constant="207" id="jGa-3s-9wQ"/>
                             <constraint firstItem="d7a-FA-y9T" firstAttribute="centerX" secondItem="M9B-PA-0t4" secondAttribute="centerX" id="jn5-2r-7O0"/>
                             <constraint firstItem="11T-o8-dfS" firstAttribute="centerX" secondItem="M9B-PA-0t4" secondAttribute="centerX" id="ngZ-h0-dtc"/>
+                            <constraint firstItem="d7a-FA-y9T" firstAttribute="width" secondItem="M9B-PA-0t4" secondAttribute="width" id="obN-xh-KzD"/>
                             <constraint firstItem="RpQ-Oq-RFH" firstAttribute="centerX" secondItem="M9B-PA-0t4" secondAttribute="centerX" id="qKR-mm-fo4"/>
                             <constraint firstItem="t2q-rl-JVZ" firstAttribute="top" secondItem="spG-Ud-X9o" secondAttribute="bottom" constant="-48" id="qjG-qC-QvS"/>
                             <constraint firstItem="EJE-1g-AHZ" firstAttribute="centerX" secondItem="M9B-PA-0t4" secondAttribute="centerX" id="r5k-XY-6je"/>
@@ -752,7 +755,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7t0-GJ-q0K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3048" y="-129"/>
+            <point key="canvasLocation" x="2938" y="-155"/>
         </scene>
         <!--Menu Platillos-->
         <scene sceneID="Ydc-ip-8o2">
@@ -1445,7 +1448,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u76-u2-7p7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2152" y="-1437"/>
+            <point key="canvasLocation" x="2964" y="-1437"/>
         </scene>
         <!--Iniciar sesión-->
         <scene sceneID="XLv-nB-JEY">
@@ -1641,7 +1644,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rs4-5J-WOt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2836" y="-1437"/>
+            <point key="canvasLocation" x="3648" y="-1437"/>
         </scene>
         <!--Consejos-->
         <scene sceneID="jbb-rk-yC2">
@@ -2008,7 +2011,7 @@
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="MCw-D1-WMX">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
+                            <rect key="frame" x="0.0" y="64" width="600" height="88"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bandatitulopaquete" translatesAutoresizingMaskIntoConstraints="NO" id="jpo-E0-VYv">
@@ -2041,7 +2044,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="255" id="ywX-5W-uSe" customClass="MenuPlatillosTableViewCell" customModule="MenuDeslizante" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="116" width="600" height="255"/>
+                                <rect key="frame" x="0.0" y="180" width="600" height="255"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ywX-5W-uSe" id="lCw-oM-b4L">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="254"/>
@@ -2193,7 +2196,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQD-EP-g1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1424" y="-1395"/>
+            <point key="canvasLocation" x="1416" y="-29"/>
         </scene>
     </scenes>
     <resources>
@@ -2238,7 +2241,7 @@
         <segue reference="5V6-UQ-NDg"/>
         <segue reference="edY-XV-IE3"/>
         <segue reference="tFz-XZ-mag"/>
-        <segue reference="k4D-lb-d9j"/>
+        <segue reference="f3o-7v-28v"/>
         <segue reference="NZW-hL-axY"/>
     </inferredMetricsTieBreakers>
 </document>

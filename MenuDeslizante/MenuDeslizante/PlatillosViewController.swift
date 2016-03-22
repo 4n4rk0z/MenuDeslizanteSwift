@@ -19,13 +19,19 @@ class PlatillosViewController: UIViewController{
     @IBOutlet weak var labelNivel: UILabel!
     @IBOutlet weak var labelPorciones: UILabel!
     @IBOutlet weak var labelTiempo: UILabel!
-    var objReceta = PFObject()
+    var objReceta:PFObject!
+    var imagenReceta:UIImage!
     
     var popViewController: PopUpViewControllerCompartir!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let navBackgroundImage:UIImage! = UIImage(named: "bandasuperior")
+        let nav = self.navigationController?.navigationBar
+        nav?.tintColor = UIColor.whiteColor()
+        nav!.setBackgroundImage(navBackgroundImage, forBarMetrics:.Default)
         self.loadRecetaInformation()
       
     }
@@ -52,55 +58,72 @@ class PlatillosViewController: UIViewController{
 
     func loadRecetaInformation()
     {
+        func display_image()
+        {
+            
+            if (self.imagenReceta == nil){
+                cargarImagen(self.objReceta["Url_Imagen"] as! String)
+            }
+            else{
+                self.imageViewReceta.image = self.imagenReceta
+            }
+
+            self.labelTitulo.text = (self.objReceta["Nombre"] as! String)
+            self.labelNivel.text = (self.objReceta["Nivel"] as! String)
+            self.labelPorciones.text = (self.objReceta["Porciones"] as! String)
+            self.labelTiempo.text = (self.objReceta["Tiempo"] as! String)
+            
+            var text: String = "Ingredientes \n" + (self.objReceta["Ingredientes"] as! String)
+            text = text + ("\n\nProcedimiento\n" + (self.objReceta["Procedimiento"] as! String))
+            let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: text)
+            
+            let range1: Range<String.Index> = text.rangeOfString("Ingredientes")!
+            let indexIngredientes: Int = text.startIndex.distanceTo(range1.startIndex)
+            
+            let range2: Range<String.Index> = text.rangeOfString("\n\nProcedimiento\n")!
+            let indexProcedimiento: Int = text.startIndex.distanceTo(range2.startIndex)
+            
+            attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(24)], range: NSRange(location: indexIngredientes, length: 12))
+            attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(24)], range: NSRange(location: indexProcedimiento, length: 16))
+            
+            self.textAreaReceta.attributedText = attributedText
+            
+            UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                
+                self.imageViewReceta.alpha = 100
+                
+                
+                }, completion: nil)
+            
+        }
         
-        let imgURL: NSURL = NSURL(string: (self.objReceta["Url_Imagen"] as! String))!
+        dispatch_async(dispatch_get_main_queue(), display_image)
+
+        
+        
+       
+    }
+    
+    func cargarImagen(url:String){
+        
+        let imgURL: NSURL = NSURL(string: url)!
         let request: NSURLRequest = NSURLRequest(URL: imgURL)
         
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request){
-            (data, response, error) -> Void in
-            
-            if (error == nil && data != nil)
-            {
-                func display_image()
-                {
-                    self.imageViewReceta.image = UIImage(data: data!)
-                    self.labelTitulo.text = (self.objReceta["Nombre"] as! String)
-                    self.labelNivel.text = (self.objReceta["Nivel"] as! String)
-                    self.labelPorciones.text = (self.objReceta["Porciones"] as! String)
-                    self.labelTiempo.text = (self.objReceta["Tiempo"] as! String)
-                    
-                    var text: String = "Ingredientes \n" + (self.objReceta["Ingredientes"] as! String)
-                    text = text + ("\n\nProcedimiento\n" + (self.objReceta["Procedimiento"] as! String))
-                    var attributedText: NSMutableAttributedString = NSMutableAttributedString(string: text)
-                    
-                    var range: Range<String.Index> = text.rangeOfString("Ingredientes")!
-                    let indexIngredientes: Int = text.startIndex.distanceTo(range.startIndex)
-
-                    range = text.rangeOfString("Procedimiento")!
-                    let indexProcedimiento: Int = text.startIndex.distanceTo(range.startIndex) + 5
-                    
-                    attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(24)], range: NSRange(location: indexIngredientes, length: 12))
-                    attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(24)], range: NSRange(location: indexProcedimiento, length: 13))
-                    
-                    self.textAreaReceta.attributedText = attributedText
-                    
-                    UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                        
-                        self.imageViewReceta.alpha = 100
-                        
-                       
-                        }, completion: nil)
-                
-                }
-                
-                dispatch_async(dispatch_get_main_queue(), display_image)
-            }
-            
+        (data, response, error) -> Void in
+        
+        if (error == nil && data != nil)
+        {
+             self.imageViewReceta.image = UIImage(data: data!)
+        }
+        
         }
         
         task.resume()
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

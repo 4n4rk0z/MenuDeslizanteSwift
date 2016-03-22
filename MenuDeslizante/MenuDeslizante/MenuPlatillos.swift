@@ -14,8 +14,9 @@ class MenuPlatillos: UITableViewController {
     
     var menuSeleccionado:PFObject!
     var recetaSeleccionada:PFObject!
-
+    var imagenRecetaSeleccionada:UIImage!
     var recetas = [PFObject]()
+    var imagenes = [PFObject:UIImage]()
     var planId = "prhhst3k5uucmunpl9fr"
     var precioPlan = 5.0
     
@@ -96,12 +97,16 @@ class MenuPlatillos: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("PlatilloCell", forIndexPath: indexPath) as! MenuPlatillosTableViewCell
         
         let receta = self.recetas[indexPath.row]
+        let num = self.imagenes.count
+        let imgReceta = self.imagenes[receta]
         
-        let urlImagen = receta["Url_Imagen"] as! String
+            if (imgReceta == nil){
+            self.loadCellInformation(cell.imagenRecetaView, urlString: receta["Url_Imagen"] as! String, nombreRecetaLabel: cell.nombreRecetaLabel, nombreRecetaStr: receta["Nombre"] as! String, nivelRecetaImagen: cell.imgDificultad, nivelRecetaStr:  receta["Nivel"] as! String, porcionesRecetaLabel: cell.porcionesRecetaLabel, porcionesRecetaStr: receta["Porciones"] as! String, tiempoRecetaLabel: cell.tiempoRecetaLabel, tiempoRecetaStr:receta["Tiempo"] as! String, objReceta:receta)
+            }
+            else{
+                loadCellInformationCache(cell.imagenRecetaView, urlString: receta["Url_Imagen"] as! String, nombreRecetaLabel: cell.nombreRecetaLabel, nombreRecetaStr: receta["Nombre"] as! String, nivelRecetaImagen: cell.imgDificultad, nivelRecetaStr:  receta["Nivel"] as! String, porcionesRecetaLabel: cell.porcionesRecetaLabel, porcionesRecetaStr: receta["Porciones"] as! String, tiempoRecetaLabel: cell.tiempoRecetaLabel, tiempoRecetaStr:receta["Tiempo"] as! String, imgReceta:imgReceta!)
+            }
         
-        if (!(urlImagen).isEmpty) {
-        self.loadCellInformation(cell.imagenRecetaView, urlString: receta["Url_Imagen"] as! String, nombreRecetaLabel: cell.nombreRecetaLabel, nombreRecetaStr: receta["Nombre"] as! String, nivelRecetaImagen: cell.imgDificultad, nivelRecetaStr:  receta["Nivel"] as! String, porcionesRecetaLabel: cell.porcionesRecetaLabel, porcionesRecetaStr: receta["Porciones"] as! String, tiempoRecetaLabel: cell.tiempoRecetaLabel, tiempoRecetaStr:receta["Tiempo"] as! String)
-        }
         
         
         return cell
@@ -113,7 +118,11 @@ class MenuPlatillos: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("PlatilloCell", forIndexPath: indexPath) as! MenuPlatillosTableViewCell
+        
         self.recetaSeleccionada = self.recetas[indexPath.row]
+        imagenRecetaSeleccionada = imagenes[recetaSeleccionada];
         abrirReceta()
     }
     
@@ -187,22 +196,13 @@ class MenuPlatillos: UITableViewController {
         
     }
     
-    func loadCellInformation(imagenCell:UIImageView, urlString:String, nombreRecetaLabel:UILabel, nombreRecetaStr:String,  nivelRecetaImagen:UIImageView, nivelRecetaStr:String,  porcionesRecetaLabel:UILabel, porcionesRecetaStr:String,  tiempoRecetaLabel:UILabel, tiempoRecetaStr:String)
+    func loadCellInformationCache(imagenCell:UIImageView, urlString:String, nombreRecetaLabel:UILabel, nombreRecetaStr:String,  nivelRecetaImagen:UIImageView, nivelRecetaStr:String,  porcionesRecetaLabel:UILabel, porcionesRecetaStr:String,  tiempoRecetaLabel:UILabel, tiempoRecetaStr:String, imgReceta: UIImage)
     {
         
         
-        let imgURL: NSURL = NSURL(string: urlString)!
-        let request: NSURLRequest = NSURLRequest(URL: imgURL)
-        
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request){
-            (data, response, error) -> Void in
-            
-            if (error == nil && data != nil)
-            {
-                func display_image()
+            func display_image()
                 {
-                    imagenCell.image = UIImage(data: data!)
+                    imagenCell.image = imgReceta
                     nombreRecetaLabel.text = nombreRecetaStr
                     if (nivelRecetaStr.lowercaseString == "Principiante"){
                         nivelRecetaImagen.image = UIImage(named: "dificultadprincipiante")
@@ -213,7 +213,7 @@ class MenuPlatillos: UITableViewController {
                         nivelRecetaImagen.image = UIImage(named: "dificultadavanzado")
                     }
                     
-
+                    
                     porcionesRecetaLabel.text = porcionesRecetaStr
                     tiempoRecetaLabel.text = tiempoRecetaStr
                     
@@ -224,6 +224,72 @@ class MenuPlatillos: UITableViewController {
                         nivelRecetaImagen.alpha = 100
                         porcionesRecetaLabel.alpha = 100
                         tiempoRecetaLabel.alpha = 100
+                        
+                        
+                        }, completion: nil)
+                    
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), display_image)
+        
+    }
+    
+    func loadCellInformation(imagenCell:UIImageView, urlString:String, nombreRecetaLabel:UILabel, nombreRecetaStr:String,  nivelRecetaImagen:UIImageView, nivelRecetaStr:String,  porcionesRecetaLabel:UILabel, porcionesRecetaStr:String,  tiempoRecetaLabel:UILabel, tiempoRecetaStr:String, objReceta: PFObject)
+    {
+        
+        func display_image()
+        {
+        nombreRecetaLabel.text = nombreRecetaStr
+        if (nivelRecetaStr.lowercaseString == "Principiante"){
+            nivelRecetaImagen.image = UIImage(named: "dificultadprincipiante")
+        }else if(nivelRecetaStr.lowercaseString == "intermedio"){
+            nivelRecetaImagen.image = UIImage(named: "dificultadmedia")
+        }
+        else{
+            nivelRecetaImagen.image = UIImage(named: "dificultadavanzado")
+        }
+        
+        
+        
+        porcionesRecetaLabel.text = porcionesRecetaStr
+        tiempoRecetaLabel.text = tiempoRecetaStr
+
+        
+        UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            
+            nombreRecetaLabel.alpha = 100
+            nivelRecetaImagen.alpha = 100
+            porcionesRecetaLabel.alpha = 100
+        
+            tiempoRecetaLabel.alpha = 100
+            
+            
+            }, completion: nil)
+        
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), display_image)
+
+        
+        let imgURL: NSURL = NSURL(string: urlString)!
+        let request: NSURLRequest = NSURLRequest(URL: imgURL)
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request){
+            (data, response, error) -> Void in
+            
+            if (error == nil && data != nil)
+            {
+                self.imagenes[objReceta] = UIImage(data: data!)
+
+                func display_image()
+                {
+                    imagenCell.image = self.imagenes[objReceta]
+                    
+                    
+                    UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                        
+                        imagenCell.alpha = 100
                         
                         
                         }, completion: nil)
@@ -242,7 +308,7 @@ class MenuPlatillos: UITableViewController {
     func loadMenuInformation(tipoMenuLabel:UILabel, nombreMenu:String)
     {
     
-                    tipoMenuLabel.text = nombreMenu
+        tipoMenuLabel.text = nombreMenu
     }
 
     
@@ -256,6 +322,7 @@ class MenuPlatillos: UITableViewController {
             let receta = segue.destinationViewController as!  PlatillosViewController
           
             receta.objReceta = self.recetaSeleccionada
+            receta.imagenReceta = imagenes[self.recetaSeleccionada]
         }
         
     }

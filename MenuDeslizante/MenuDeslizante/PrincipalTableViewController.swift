@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class PrincipalTableViewController: UITableViewController {
+class PrincipalTableViewController: ModeloTableViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
     
     //Para decirnos cual es la opcion que corresponde a cada posicion del menu
@@ -22,7 +22,8 @@ class PrincipalTableViewController: UITableViewController {
     // `searchController` cuando el boton de busqueda es presionado
     var searchController: UISearchController!
 
-    
+    var objBusqueda:PFObject!
+    var imagenBusqueda:UIImage!
     
     
     override func viewWillAppear(animated: Bool) {
@@ -208,7 +209,34 @@ class PrincipalTableViewController: UITableViewController {
         else if segue.identifier == "viralizacion"{
             let viral = segue.destinationViewController as!  ViralizacionTableViewController
             viral.viralizacionSeleccionada = self.menuSeleccionado
+        }else if segue.identifier == "buscador"{
+            
+            
+            // Create the search results view controller and use it for the `UISearchController`.
+            //let destinationNavigationController = segue.destinationViewController as! UINavigationController
+            //let searchResultsController = destinationNavigationController.topViewController as!  SearchResultsViewController
+            
+            let searchResultsController = segue.destinationViewController as!  SearchResultsViewController
+            searchResultsController.parent = self
+            // Create the search controller and make it perform the results updating.
+            searchController = UISearchController(searchResultsController: searchResultsController)
+            searchController.searchResultsUpdater = searchResultsController
+            searchController.hidesNavigationBarDuringPresentation = false
+            
+            
+            // Present the view controller.
+            presentViewController(searchController, animated: true, completion: nil)
+
+        }else if segue.identifier == "PlatilloSegueBuscador"{
+            
+            let receta = segue.destinationViewController as!  PlatillosViewController
+            receta.imagenReceta = self.imagenBusqueda
+            receta.objReceta = self.objBusqueda
+            
+          
         }
+        
+        
     }
     
     
@@ -317,17 +345,9 @@ class PrincipalTableViewController: UITableViewController {
     
     
     func abrirBuscador(){
-        // Create the search results view controller and use it for the `UISearchController`.
-        let searchResultsController = storyboard!.instantiateViewControllerWithIdentifier(SearchResultsViewController.StoryboardConstants.identifier) as! SearchResultsViewController
+    
+        self.performSegueWithIdentifier("buscador", sender: nil)
         
-        // Create the search controller and make it perform the results updating.
-        searchController = UISearchController(searchResultsController: searchResultsController)
-        searchController.searchResultsUpdater = searchResultsController
-        searchController.hidesNavigationBarDuringPresentation = false
-        
-        // Present the view controller.
-        presentViewController(searchController, animated: true, completion: nil)
-
     }
     
     

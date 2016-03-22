@@ -99,6 +99,7 @@
 		49C3D3611BFBF6DA003B2344 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3D3601BFBF6DA003B2344 /* SWRevealViewController.m */; };
 		49C3D3631BFBF9AF003B2344 /* PrincipalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3D3621BFBF9AF003B2344 /* PrincipalTableViewController.swift */; };
 		49C3D3651BFC0542003B2344 /* PrincipalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3D3641BFC0542003B2344 /* PrincipalTableViewCell.swift */; };
+		49D01F8C1CA1134000237ED1 /* ModeloTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D01F8B1CA1134000237ED1 /* ModeloTableViewController.swift */; };
 		49ED44AC1C15382C00BF4D77 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49ED44A81C15382C00BF4D77 /* Fabric.framework */; };
 		49ED44AD1C15382C00BF4D77 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49ED44A91C15382C00BF4D77 /* TwitterKit.framework */; };
 		49ED44AE1C15382C00BF4D77 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49ED44AA1C15382C00BF4D77 /* TwitterKitResources.bundle */; };
@@ -218,6 +219,7 @@
 		49C3D3601BFBF6DA003B2344 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		49C3D3621BFBF9AF003B2344 /* PrincipalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipalTableViewController.swift; sourceTree = "<group>"; };
 		49C3D3641BFC0542003B2344 /* PrincipalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipalTableViewCell.swift; sourceTree = "<group>"; };
+		49D01F8B1CA1134000237ED1 /* ModeloTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeloTableViewController.swift; sourceTree = "<group>"; };
 		49ED44A81C15382C00BF4D77 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		49ED44A91C15382C00BF4D77 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		49ED44AA1C15382C00BF4D77 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 				490592751C00F72D006DDDD0 /* ConsejosTableViewController.swift */,
 				4905927D1C0131E0006DDDD0 /* ViralizacionTableViewController.swift */,
 				4910CA901C69461C00EB32C5 /* RegalosTableViewController.swift */,
+				49D01F8B1CA1134000237ED1 /* ModeloTableViewController.swift */,
 			);
 			name = TableViews;
 			sourceTree = "<group>";
@@ -829,6 +832,7 @@
 				4905927E1C0131E0006DDDD0 /* ViralizacionTableViewController.swift in Sources */,
 				4915766F1BFBCAFB00EE641D /* AppDelegate.swift in Sources */,
 				49000FA51C59DEF40075F6B1 /* PopUpViewControllerCompartir.swift in Sources */,
+				49D01F8C1CA1134000237ED1 /* ModeloTableViewController.swift in Sources */,
 				49BB0E251C151A580079E96D /* CompartirPageItemController.swift in Sources */,
 				4910CA8F1C586F3000EB32C5 /* MenuPlatillosTableViewCell.swift in Sources */,
 				49C3D3611BFBF6DA003B2344 /* SWRevealViewController.m in Sources */,
