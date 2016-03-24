@@ -103,15 +103,12 @@ class PlatillosViewController: UIViewController{
             var text: String = "Ingredientes \n" + (self.objReceta["Ingredientes"] as! String)
             text = text + ("\n\nProcedimiento\n" + (self.objReceta["Procedimiento"] as! String))
             let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: text)
-            
-            let range1: Range<String.Index> = text.rangeOfString("Ingredientes")!
-            let indexIngredientes: Int = text.startIndex.distanceTo(range1.startIndex)
-            
-            let range2: Range<String.Index> = text.rangeOfString("\n\nProcedimiento\n")!
-            let indexProcedimiento: Int = text.startIndex.distanceTo(range2.startIndex)
-            
-            attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(24)], range: NSRange(location: indexIngredientes, length: 12))
-            attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(24)], range: NSRange(location: indexProcedimiento, length: 16))
+            let str = NSString(string: text)
+        
+            let theRange1 = str.rangeOfString("Ingredientes")
+            attributedText.addAttribute(NSFontAttributeName, value:UIFont.boldSystemFontOfSize(24), range: theRange1)
+            let theRange2 = str.rangeOfString("Procedimiento")
+            attributedText.addAttribute(NSFontAttributeName, value:UIFont.boldSystemFontOfSize(24), range: theRange2)
             
             self.textAreaReceta.attributedText = attributedText
             
