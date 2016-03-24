@@ -191,26 +191,34 @@ class MenuPlatillos: UITableViewController {
                         // This does not require a network access.
                         if ((cliente["Suscrito"] as? Bool) != nil && (cliente["Suscrito"] as? Bool)==true){
                             
-                           /* cliente["codigobarras"] = ""
-                            cliente["referenciaentienda"] = ""
-                            cliente.saveInBackground()
-                            */
+                            // se consulta si se pago en la tienda
+                            let today = NSDate()
                             
-                            self.performSegueWithIdentifier("PlatilloSegue", sender: nil)
+                            let dateFormatter = NSDateFormatter()
+                            dateFormatter.dateFormat = "yyyy-MM-dd"
+                            
+                            let date = dateFormatter.dateFromString((cliente["Caducidad"] as? String)!)
+                            
+                            if today.compare(date!) != NSComparisonResult.OrderedDescending
+                            {
+                                self.performSegueWithIdentifier("PlatilloSegue", sender: nil)
+                            }
+                            else{
+
+                                OpenPayRestApi.consultarSuscripcion(cliente["clientID"] as? String, callBack: { (mensaje) -> Void in
+                                    
+                                    if(mensaje == "cancelled" || mensaje == "unpaid" || mensaje == "1005"){
+                                        cliente["Suscrito"] = false
+                                        cliente.saveInBackground()
+                                        self.abrirVentana(cliente)
+                                    }
+  
+                                })
+                            }
                         }
                         else{
+                            self.abrirVentana(cliente)
                             
-                            //let sepagoEnTienda = cliente["codigobarras"] as? String
-                            //if sepagoEnTienda != ""{
-                            
-                            
-                                self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
-                            
-                            
-                                
-                                
-                                
-                            //}
                         }
                        
                         break
@@ -235,10 +243,27 @@ class MenuPlatillos: UITableViewController {
 
     }
     
-    func consultarLaTienda()
-    {
+    func abrirVentana(cliente: PFObject){
+        let clienteId = cliente["clientID"]
+        let transaccionId = cliente["transaction_id_tienda"]
+        let barras = cliente["codigobarras"]
         
+        if clienteId != nil && transaccionId != nil && barras != nil && (barras as? String) != ""   {
+            OpenPayRestApi.consultarPagoReailzadoenTienda(cliente["clientID"] as? String, chargeId:     (cliente["transaction_id_tienda"] as? String)!, callBack: { (exito, mensaje) -> Void in
+                
+                if exito {
+                    self.performSegueWithIdentifier("PlatilloSegue", sender: nil)
+                }
+                else{
+                    self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
+                }
+            })
+        }else{
+            self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
+        }
+
     }
+    
     
     func loadCellInformationCache(imagenCell:UIImageView, urlString:String, nombreRecetaLabel:UILabel, nombreRecetaStr:String,  nivelRecetaImagen:UIImageView, nivelRecetaStr:String,  porcionesRecetaLabel:UILabel, porcionesRecetaStr:String,  tiempoRecetaLabel:UILabel, tiempoRecetaStr:String, imgReceta: UIImage)
     {

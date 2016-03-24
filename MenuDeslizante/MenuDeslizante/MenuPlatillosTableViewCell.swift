@@ -15,11 +15,14 @@ class MenuPlatillosTableViewCell: UITableViewCell {
     @IBOutlet weak var tiempoRecetaLabel: UILabel!
     @IBOutlet weak var imgDificultad: UIImageView!
     
+    @IBOutlet weak var activityLoader: UIActivityIndicatorView!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        activityLoader.hidden = false
+        activityLoader.startAnimating()
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

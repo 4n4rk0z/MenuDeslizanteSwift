@@ -55,12 +55,13 @@ import Parse
     {
         aView.addSubview(self.view)
         
-        buscarClientes()
         mainViewController = aView
         self.showAnimate()
         self.precio=precioProducto
         self.isSuscripcion = suscripcion
         self.planId = planId
+        buscarClientes()
+        
     }
     
     func buscarClientes(){
@@ -154,7 +155,7 @@ import Parse
                     self.popViewController = PopUpViewControllerDescripcion(nibName: "PopUpViewControllerDescripcion"+strPantalla, bundle: bundle)
                     
                     self.popViewController.showInView(self.mainViewController, suscripcion: self.isSuscripcion,planId:self.planId ,animated: true, precio:  self.precio)
-                    self.view.removeFromSuperview()
+                        self.removeAnimate()
                 }
         });
     }
@@ -173,6 +174,7 @@ import Parse
                     let strPantalla = self.pantallaSize()
                     self.popViewControllerWallet = PopUpViewControllerWallet(nibName:"PopUpViewControllerWallet"+strPantalla, bundle: bundle)
                     self.popViewControllerWallet.showInView(self.mainViewController, suscripcion: self.isSuscripcion, planID:  self.planId,animated: true, precio: self.precio)
+                    self.removeAnimate()
                     
                 }
         });

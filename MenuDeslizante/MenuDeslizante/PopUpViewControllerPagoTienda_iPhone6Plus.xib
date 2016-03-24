@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpViewControllerPagoTienda" customModule="MenuDeslizante" customModuleProvider="target">
@@ -10,6 +10,7 @@
                 <outlet property="btnRegresar" destination="u4f-O6-90l" id="ghb-Iv-glV"/>
                 <outlet property="gActivity" destination="EPQ-MO-clD" id="Oym-gy-AnZ"/>
                 <outlet property="ivBarras" destination="6cJ-RZ-SiH" id="Obj-Kb-DHQ"/>
+                <outlet property="lReferencia" destination="yC2-64-rcZ" id="gYh-sR-q1Y"/>
                 <outlet property="labelTexto" destination="0eD-aH-cpQ" id="Nlv-x5-afK"/>
                 <outlet property="popUpView" destination="2oS-8q-EhY" id="61Z-mD-blp"/>
                 <outlet property="txtEmail" destination="hvr-cK-gxP" id="uHk-q0-Ge6"/>
@@ -57,7 +58,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6cJ-RZ-SiH">
-                            <rect key="frame" x="20" y="236" width="279" height="91"/>
+                            <rect key="frame" x="20" y="216" width="279" height="91"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eD-aH-cpQ">
                             <rect key="frame" x="12" y="335" width="294" height="81"/>
@@ -102,12 +103,17 @@ Este código puede ser consultado en la sección "Tu cuenta"</string>
                             </connections>
                         </button>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EPQ-MO-clD">
-                            <rect key="frame" x="150" y="275" width="20" height="20"/>
+                            <rect key="frame" x="150" y="251" width="20" height="20"/>
                         </activityIndicatorView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Introducir datos del cliente" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMp-QY-iRP">
                             <rect key="frame" x="4" y="6" width="302" height="39"/>
                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yC2-64-rcZ">
+                            <rect key="frame" x="20" y="311" width="278" height="21"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>

@@ -22,6 +22,7 @@ import Parse
     var planId:String?
     var precioProducto:Double!
     var objCliente:PFObject!
+    var NUMERO_DIAS = 30
     
     @IBOutlet weak var lEmail: UILabel!
     @IBOutlet weak var popUpView: UIView!
@@ -206,28 +207,50 @@ import Parse
                     let httpResponse = response as? NSHTTPURLResponse
                     print(httpResponse)
                     
-                    let query = PFQuery(className:"Clientes")
-                    query.getObjectInBackgroundWithId(self.objCliente.objectId!) {
-                        (clienteUpdate: PFObject?, error: NSError?) -> Void in
-                        if error != nil {
-                            print(error)
-                        } else if let clientUpdate = clienteUpdate {
-                            clientUpdate["Suscrito"] = true
-                            clientUpdate.saveInBackground()
+                    do {
+                        let respuesta = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! [String:AnyObject]
+                        
+                        let error = (respuesta["error_code"])
+                        
+                        if (error == nil){
+                            let query = PFQuery(className:"Clientes")
+                            query.getObjectInBackgroundWithId(self.objCliente.objectId!) {
+                            (clienteUpdate: PFObject?, error: NSError?) -> Void in
+                                if error != nil {
+                                    print(error)
+                                } else if let clientUpdate = clienteUpdate {
+                                    clientUpdate["Suscrito"] = true
+                                    clientUpdate["Caducidad"] = respuesta["period_end_date"] as? String
+                                    clientUpdate.saveInBackground()
+                                    func actualizarPantalla()
+                                    {
+                                        self.btnPagar.setTitle("Aceptar", forState: UIControlState.Normal)
+                                        self.btnCancelar.hidden = true
+                                        self.loadingAction.hidden = true
+                                        self.loadingAction.stopAnimating()
+                                        self.btnPagar.hidden = false
+                                        self.lmensaje.text = "¡Te has suscrito!"
+                                    }//Actualiza mas rapido los elementos
+                                    dispatch_async(dispatch_get_main_queue(), actualizarPantalla)
+                                }
+                            }
+                        }else{
+                            func mostrarAlerta(){
+                                let alertController = UIAlertController(title: "Error",
+                                    message: "su pago no fue recibido, intente más tarde",
+                                    preferredStyle: UIAlertControllerStyle.Alert)
                             
+                                    alertController.addAction(UIAlertAction(title: "OK",
+                                        style: UIAlertActionStyle.Default,
+                                        handler: nil))
+                                // Display alert
+                                self.presentViewController(alertController, animated: true, completion:nil)
+                            }
 
-                            func actualizarPantalla()
-                            {
-                    
-                                self.btnPagar.setTitle("Aceptar", forState: UIControlState.Normal)
-                                self.btnCancelar.hidden = true
-                                self.loadingAction.hidden = true
-                                self.loadingAction.stopAnimating()
-                                self.btnPagar.hidden = false
-                                self.lmensaje.text = "¡Te has suscrito!"
-                            }//Actualiza mas rapido los elementos
-                            dispatch_async(dispatch_get_main_queue(), actualizarPantalla)
+                            dispatch_async(dispatch_get_main_queue(), mostrarAlerta)
                         }
+                    } catch {
+                        
                     }
                 }
             })

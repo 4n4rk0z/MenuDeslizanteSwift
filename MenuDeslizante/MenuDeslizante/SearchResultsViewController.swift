@@ -282,26 +282,34 @@ class SearchResultsViewController: SearchControllerBaseViewController, UISearchR
                         // This does not require a network access.
                         if ((cliente["Suscrito"] as? Bool) != nil && (cliente["Suscrito"] as? Bool)==true){
                             
-                            /* cliente["codigobarras"] = ""
-                            cliente["referenciaentienda"] = ""
-                            cliente.saveInBackground()
-                            */
+                            // se consulta si se pago en la tienda
+                            let today = NSDate()
                             
+                            let dateFormatter = NSDateFormatter()
+                            dateFormatter.dateFormat = "yyyy-MM-dd"
                             
-                            self.parent.objBusqueda = self.recetaSeleccionada
-                            self.parent.imagenBusqueda = self.imagenRecetaSeleccionada
-                            self.searchController.active = false
-                            self.parent.performSegueWithIdentifier("PlatilloSegueBuscador", sender: nil)
+                            let date = dateFormatter.dateFromString((cliente["Caducidad"] as? String)!)
+                            
+                            if today.compare(date!) != NSComparisonResult.OrderedDescending
+                            {
+                                self.performSegueWithIdentifier("PlatilloSegueBuscador", sender: nil)
+                            }
+                            else{
+                                
+                                OpenPayRestApi.consultarSuscripcion(cliente["clientID"] as? String, callBack: { (mensaje) -> Void in
+                                    
+                                    if(mensaje == "cancelled" || mensaje == "unpaid" || mensaje == "1005"){
+                                        cliente["Suscrito"] = false
+                                        cliente.saveInBackground()
+                                        self.abrirVentana(cliente)
+                                    }
+                                    
+                                })
+                            }
                         }
                         else{
+                            self.abrirVentana(cliente)
                             
-                            //let sepagoEnTienda = cliente["codigobarras"] as? String
-                            //if sepagoEnTienda != ""{
-                            
-                          
-                                self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
-                            
-                            //}
                         }
                         
                         break
@@ -310,8 +318,7 @@ class SearchResultsViewController: SearchControllerBaseViewController, UISearchR
                     if (clientes?.count==0)
                     {
                         //Si no se fue a la ventana que sigue quiere decir o que no esta suscrito
-                       
-                            self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
+                        self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
                         
                     }
                 }
@@ -323,6 +330,27 @@ class SearchResultsViewController: SearchControllerBaseViewController, UISearchR
             {
                 print(error)
             }
+        }
+        
+    }
+    
+    func abrirVentana(cliente: PFObject){
+        let clienteId = cliente["clientID"]
+        let transaccionId = cliente["transaction_id_tienda"]
+        let barras = cliente["codigobarras"]
+        
+        if clienteId != nil && transaccionId != nil && barras != nil && (barras as? String) != ""   {
+            OpenPayRestApi.consultarPagoReailzadoenTienda(cliente["clientID"] as? String, chargeId:     (cliente["transaction_id_tienda"] as? String)!, callBack: { (exito, mensaje) -> Void in
+                
+                if exito {
+                    self.performSegueWithIdentifier("PlatilloSegueBuscador", sender: nil)
+                }
+                else{
+                    self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
+                }
+            })
+        }else{
+            self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
         }
         
     }

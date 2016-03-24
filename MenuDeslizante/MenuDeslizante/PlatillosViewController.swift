@@ -18,23 +18,36 @@ class PlatillosViewController: UIViewController{
     @IBOutlet weak var labelTitulo: UILabel!
     @IBOutlet weak var textAreaReceta: UITextView!
     
-    @IBOutlet weak var labelNivel: UILabel!
     @IBOutlet weak var labelPorciones: UILabel!
     @IBOutlet weak var labelTiempo: UILabel!
     var objReceta:PFObject!
     var imagenReceta:UIImage!
     
+    @IBOutlet weak var imagenDificultad: UIImageView!
+
+    
+    
     var popViewController: PopUpViewControllerCompartir!
 
+    @IBOutlet weak var activityLoader: UIActivityIndicatorView!
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         let navBackgroundImage:UIImage! = UIImage(named: "bandasuperior")
         let nav = self.navigationController?.navigationBar
         nav?.tintColor = UIColor.whiteColor()
         nav!.setBackgroundImage(navBackgroundImage, forBarMetrics:.Default)
+        
+        activityLoader.hidden = false
+        activityLoader.startAnimating()
+        
         self.loadRecetaInformation()
+        
       
     }
 
@@ -42,7 +55,7 @@ class PlatillosViewController: UIViewController{
         func display_image()
         {
                 self.labelTitulo.text = ""
-                self.labelNivel.text = ""
+                self.imagenDificultad.image = nil
                 self.labelPorciones.text = ""
                 self.labelTiempo.text = ""
                 self.textAreaReceta.text = ""
@@ -71,7 +84,19 @@ class PlatillosViewController: UIViewController{
             }
 
             self.labelTitulo.text = (self.objReceta["Nombre"] as! String)
-            self.labelNivel.text = (self.objReceta["Nivel"] as! String)
+            let nivelRecetaStr = (self.objReceta["Nivel"] as! String)
+            
+            if (nivelRecetaStr.lowercaseString == "Principiante"){
+                self.imagenDificultad.image = UIImage(named: "dificultadprincipiante")
+            }else if(nivelRecetaStr.lowercaseString == "intermedio"){
+                self.imagenDificultad.image = UIImage(named: "dificultadmedia")
+            }
+            else{
+                self.imagenDificultad.image = UIImage(named: "dificultadavanzado")
+            }
+            
+            
+            
             self.labelPorciones.text = (self.objReceta["Porciones"] as! String)
             self.labelTiempo.text = (self.objReceta["Tiempo"] as! String)
             

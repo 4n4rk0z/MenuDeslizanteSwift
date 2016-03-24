@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpViewControllerTarjetas" customModule="MenuDeslizante" customModuleProvider="target">
@@ -26,8 +26,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEe-oq-7bO">
-                    <rect key="frame" x="31" y="110" width="257" height="384"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEe-oq-7bO">
+                    <rect key="frame" x="31" y="92" width="257" height="384"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Introducir datos de la tarjeta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKu-qU-4AM">
                             <rect key="frame" x="7" y="8" width="237" height="21"/>
@@ -126,12 +126,6 @@
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="MEe-oq-7bO" secondAttribute="trailing" constant="32" id="hRR-mx-yvf"/>
-                <constraint firstItem="MEe-oq-7bO" firstAttribute="top" secondItem="yjw-tY-7Nk" secondAttribute="top" constant="110" id="hbO-3l-yOw"/>
-                <constraint firstItem="MEe-oq-7bO" firstAttribute="leading" secondItem="yjw-tY-7Nk" secondAttribute="leading" constant="31" id="qrg-6n-TdV"/>
-                <constraint firstAttribute="bottom" secondItem="MEe-oq-7bO" secondAttribute="bottom" constant="74" id="u2G-74-KKA"/>
-            </constraints>
             <point key="canvasLocation" x="147" y="223"/>
         </view>
     </objects>

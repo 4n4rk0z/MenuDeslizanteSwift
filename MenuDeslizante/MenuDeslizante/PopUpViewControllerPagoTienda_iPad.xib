@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpViewControllerPagoTienda" customModule="MenuDeslizante" customModuleProvider="target">
@@ -10,6 +10,7 @@
                 <outlet property="btnRegresar" destination="0y2-wc-p4R" id="dBl-FP-tkY"/>
                 <outlet property="gActivity" destination="1Pw-vf-zcd" id="8H0-H6-I3I"/>
                 <outlet property="ivBarras" destination="jaZ-9q-Bly" id="N42-Qt-kP6"/>
+                <outlet property="lReferencia" destination="aso-b6-Bzh" id="IJ6-iC-hMf"/>
                 <outlet property="labelTexto" destination="nXc-ju-qCS" id="TPf-eb-vEK"/>
                 <outlet property="popUpView" destination="R2Y-as-6QP" id="p4e-Ja-5bf"/>
                 <outlet property="txtEmail" destination="kdy-Rg-CMe" id="VxL-FX-i0G"/>
@@ -66,7 +67,7 @@
                             <rect key="frame" x="22" y="242" width="406" height="128"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXc-ju-qCS">
-                            <rect key="frame" x="82" y="378" width="315" height="79"/>
+                            <rect key="frame" x="82" y="395" width="315" height="79"/>
                             <attributedString key="attributedText">
                                 <fragment>
                                     <string key="content">Presente este código de barras
@@ -82,7 +83,7 @@ Este código puede ser consultado en la sección "Tu cuenta"</string>
                             <nil key="highlightedColor"/>
                         </label>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1Pw-vf-zcd">
-                            <rect key="frame" x="215" y="369" width="20" height="20"/>
+                            <rect key="frame" x="215" y="296" width="20" height="20"/>
                         </activityIndicatorView>
                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOL-hb-TYK">
                             <rect key="frame" x="374" y="482" width="53" height="30"/>
@@ -110,6 +111,11 @@ Este código puede ser consultado en la sección "Tu cuenta"</string>
                                 <action selector="btnCancelar:" destination="-1" eventType="touchUpInside" id="rBh-Zk-jUc"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aso-b6-Bzh">
+                            <rect key="frame" x="23" y="370" width="405" height="27"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>

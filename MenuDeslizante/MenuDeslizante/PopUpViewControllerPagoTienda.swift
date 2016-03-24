@@ -26,6 +26,8 @@ import Parse
     var clientID:String!
     var precioProducto:Double!
     
+    var NUMERO_DIAS = 7  // se tiene una semana para efectuar el pago
+    
     @IBOutlet weak var gActivity: UIActivityIndicatorView!
     @IBOutlet weak var txtNombre: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
@@ -35,6 +37,7 @@ import Parse
     @IBOutlet weak var btnRegresar: UIButton!
     @IBOutlet weak var btnPagar: UIButton!
     
+    @IBOutlet weak var lReferencia: UILabel!
     //OpenPay variables
     let MERCHANT_ID:String =  "mom7qomx3rv93zcwv2vk"
     let API_KEY:String = "pk_f492b71637e247e4b5a314a1f9366ec9"
@@ -185,25 +188,34 @@ import Parse
                     print(httpResponse)
                     _ = httpResponse?.allHeaderFields
                     
-                    self.clientID = httpResponse!.allHeaderFields["Resource-ID"] as! String!
+                    let error = httpResponse!.allHeaderFields["OP-Error-Code"] as! String!
                     
-                    let clientes = PFObject(className:"Clientes")
-                    clientes["username"] = PFUser.currentUser()
-                    clientes["clientID"] = self.clientID!
-                    clientes["nombre"] = self.txtNombre.text!
-                    clientes["email"] = self.txtEmail.text!
-                    clientes["numero"] = self.txtNumero.text!
+                    if error == nil{
+                        
+                        self.clientID = httpResponse!.allHeaderFields["Resource-ID"] as! String!
+                        let clientes = PFObject(className:"Clientes")
+                        clientes["username"] = PFUser.currentUser()
+                        clientes["clientID"] = self.clientID!
+                        clientes["nombre"] = self.txtNombre.text!
+                        clientes["email"] = self.txtEmail.text!
+                        clientes["numero"] = self.txtNumero.text!
+                        clientes["Suscrito"] = false
                     
-                    clientes.saveInBackgroundWithBlock {
-                        (success: Bool, error: NSError?) -> Void in
-                        if (success) {
-                            // The object has been saved.
-                            self.pagarTienda()
-                            self.boolBanderaExisteClienteAsociado = true
+                        clientes.saveInBackgroundWithBlock {
+                            (success: Bool, error: NSError?) -> Void in
+                            if (success) {
+                                // The object has been saved.
+                                self.pagarTienda()
+                                self.boolBanderaExisteClienteAsociado = true
                             
-                        } else {
-                            print(error)
+                            } else {
+                                print(error)
+                            }
                         }
+                    }
+                    else{
+                        
+                        dispatch_async(dispatch_get_main_queue(),self.mostraralerta);
                     }
                 }
             })
@@ -216,6 +228,27 @@ import Parse
             
         }
     }
+    
+    
+    func mostraralerta(){
+        
+        self.gActivity.hidden = true
+        self.gActivity.stopAnimating()
+        
+
+        let alertController = UIAlertController(title: "Datos incorrectos",
+            message: "Los datos no corresponden con el formato correcto, revise la forma en la que llenó los campos e intente de nuevo",
+            preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alertController.addAction(UIAlertAction(title: "OK",
+            style: UIAlertActionStyle.Default,
+            handler: nil))
+        // Display alert
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+
+    }
+    
     
     func buscarClientes(){
         
@@ -259,8 +292,21 @@ import Parse
     {
        
         
+
+        
         if (self.clientID != "") {
             
+            let today = NSDate()
+            let caducidad = NSCalendar.currentCalendar().dateByAddingUnit(
+                .Day,
+                value: NUMERO_DIAS,
+                toDate: today,
+                options: NSCalendarOptions(rawValue: 0))
+            
+            let dateFormater : NSDateFormatter = NSDateFormatter()
+            dateFormater.dateFormat = "yyyy-MM-dd"
+
+            let fecha = dateFormater.stringFromDate(caducidad!)+"T12:00:00"
             
             let headers = [
                 "authorization": "Basic c2tfNzUwNmI4MTgzYmMzNGUwMzhlZTllODQ5ZTJlNTI5OTQ6Og==",
@@ -272,7 +318,8 @@ import Parse
             let parameters = [
                 "method": "store",
                 "amount": self.precioProducto!,
-                "description": "Cargo con tienda"
+                "description": "Cargo con tienda",
+                "due_date" :fecha
             ]
         
             do
@@ -293,12 +340,37 @@ import Parse
                         print(error)
                     } else {
                         do{
+                            let httpResponse = response as? NSHTTPURLResponse
+                            print(httpResponse)
+                            
+                            let error = httpResponse!.allHeaderFields["OP-Error-Code"] as! String!
+                            
+                        
+                                
                             let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as? [String:AnyObject]
-                            let pago = json!["payment_method"]
-                            let barcode = pago!["barcode_url"] as? String!
-                            let referencia = pago!["reference"] as? String!
-                            let transaction_id = json!["id"] as? String!
-                            self.load_image(barcode!, transaction_id_tienda: transaction_id!, numeroReferencia: referencia!)
+                            if (error == nil){
+                                let pago = json!["payment_method"]
+                                let barcode = pago!["barcode_url"] as? String!
+                                let referencia = pago!["reference"] as? String!
+                                let transaction_id = json!["id"] as? String!
+                                self.load_image(barcode!, transaction_id_tienda: transaction_id!, numeroReferencia: referencia!)
+                            }else{
+                                
+                                func display_alert()
+                                {
+                                    
+                                    let alertController = UIAlertController(title: "Error",
+                                        message: "Ocurrio un error al procesar su pago, revise su conexión a internet",
+                                        preferredStyle: UIAlertControllerStyle.Alert)
+                                
+                                    alertController.addAction(UIAlertAction(title: "OK",
+                                        style: UIAlertActionStyle.Default,
+                                        handler: nil))
+
+                                    self.presentViewController(alertController, animated: true, completion: nil)
+                                }
+                                dispatch_async(dispatch_get_main_queue(), display_alert)
+                            }
                         }
                         catch{
                         
@@ -356,8 +428,37 @@ import Parse
                                             clientUpdate["codigobarras"] = urlString
                                             clientUpdate["referenciaentienda"] = numeroReferencia
                                             clientUpdate["transaction_id_tienda"] = transaction_id_tienda
-                                            
+                                            clientUpdate["Suscrito"] = false
                                             clientUpdate.saveInBackground()
+                                            
+                                            let today = NSDate()
+                                            let caducidad = NSCalendar.currentCalendar().dateByAddingUnit(
+                                                .Day,
+                                                value: self.NUMERO_DIAS,
+                                                toDate: today,
+                                                options: NSCalendarOptions(rawValue: 0))
+                                            
+                                            let dateFormater : NSDateFormatter = NSDateFormatter()
+                                            dateFormater.dateFormat = "dd-MM-yyyy"
+                                            
+                                            
+                                            let alertController = UIAlertController(title: "Canjea este codigo antes del",
+                                                message: dateFormater.stringFromDate(caducidad!),
+                                                preferredStyle: UIAlertControllerStyle.Alert)
+                                            
+                                            alertController.addAction(UIAlertAction(title: "OK",
+                                                style: UIAlertActionStyle.Default,
+                                                handler: nil))
+                                            // Display alert
+                                            self.presentViewController(alertController, animated: true, completion: nil)
+                                            
+                                            
+
+
+                                            
+                                            
+                                            
+                                            self.lReferencia.text = numeroReferencia
                                             self.btnRegresar.hidden=true
                                             self.btnPagar.setTitle("Aceptar", forState: UIControlState.Normal)
                                         }
@@ -384,17 +485,34 @@ import Parse
         }
         else
         {
-            gActivity.hidden = false
-            gActivity.startAnimating()
-            ivBarras.image = nil
-            self.labelTexto.hidden = true
-        
-            if (boolBanderaExisteClienteAsociado){
-                self.pagarTienda()
+            if (self.txtEmail.text == nil || self.txtEmail.text == "") || (self.txtNombre.text == nil || self.txtNombre.text == "") || (self.txtNumero.text == nil || self.txtNumero.text == "") {
+                
+                // The login failed. Check error to see why.
+                
+                let alertController = UIAlertController(title: "Debe llenar todos los campos",
+                    message: "Ingrese los datos faltantes",
+                    preferredStyle: UIAlertControllerStyle.Alert)
+                
+                alertController.addAction(UIAlertAction(title: "OK",
+                    style: UIAlertActionStyle.Default,
+                    handler: nil))
+                // Display alert
+                self.presentViewController(alertController, animated: true, completion: nil)
+
+                
             }
             else{
-                self.crearClienteyPagar()
+                gActivity.hidden = false
+                gActivity.startAnimating()
+                ivBarras.image = nil
+                self.labelTexto.hidden = true
+                if (boolBanderaExisteClienteAsociado){
+                    self.pagarTienda()
                 }
+                else{
+                    self.crearClienteyPagar()
+                }
+            }
         }
     }
     @IBAction func btnCancelar(sender: AnyObject) {

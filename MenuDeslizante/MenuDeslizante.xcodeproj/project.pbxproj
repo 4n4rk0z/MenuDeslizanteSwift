@@ -76,6 +76,8 @@
 		49A708C71C3AF26B00483CF0 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A708C11C3AF26B00483CF0 /* PopUpViewController.xib */; };
 		49A708C81C3AF26B00483CF0 /* PopUpViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A708C21C3AF26B00483CF0 /* PopUpViewControllerSwift.swift */; };
 		49A708D11C3AF44F00483CF0 /* openpay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A708D01C3AF44F00483CF0 /* openpay.a */; };
+		49B498B91CA337BC000E7973 /* OpenPayRestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B498B81CA337BC000E7973 /* OpenPayRestApi.swift */; };
+		49B498BB1CA3980A000E7973 /* QuienesSomosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B498BA1CA3980A000E7973 /* QuienesSomosViewController.swift */; };
 		49BB0E1F1C1517920079E96D /* PlatillosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BB0E1E1C1517920079E96D /* PlatillosViewController.swift */; };
 		49BB0E251C151A580079E96D /* CompartirPageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BB0E241C151A580079E96D /* CompartirPageItemController.swift */; };
 		49BB0E291C152B000079E96D /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BB0E281C152B000079E96D /* FBSDKShareKit.framework */; };
@@ -194,6 +196,8 @@
 		49A708CC1C3AF31400483CF0 /* Openpay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Openpay.h; sourceTree = "<group>"; };
 		49A708CD1C3AF31400483CF0 /* OPToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPToken.h; sourceTree = "<group>"; };
 		49A708D01C3AF44F00483CF0 /* openpay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = openpay.a; sourceTree = "<group>"; };
+		49B498B81CA337BC000E7973 /* OpenPayRestApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPayRestApi.swift; sourceTree = "<group>"; };
+		49B498BA1CA3980A000E7973 /* QuienesSomosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuienesSomosViewController.swift; sourceTree = "<group>"; };
 		49BB0E1E1C1517920079E96D /* PlatillosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatillosViewController.swift; sourceTree = "<group>"; };
 		49BB0E241C151A580079E96D /* CompartirPageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompartirPageItemController.swift; sourceTree = "<group>"; };
 		49BB0E281C152B000079E96D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -314,6 +318,7 @@
 		4915766B1BFBCAFB00EE641D /* MenuDeslizante */ = {
 			isa = PBXGroup;
 			children = (
+				49B498B71CA337A8000E7973 /* Objetos */,
 				497480861C75768E00B35DDE /* Buscador */,
 				49A7088A1C3AF21200483CF0 /* PopUp */,
 				4905926C1C00DFE1006DDDD0 /* Main */,
@@ -427,6 +432,7 @@
 				4905927B1C00FE50006DDDD0 /* PerfilViewController.swift */,
 				49BB0E1E1C1517920079E96D /* PlatillosViewController.swift */,
 				4982994E1C465584003F293C /* PasosConsejosViewController.swift */,
+				49B498BA1CA3980A000E7973 /* QuienesSomosViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -545,6 +551,14 @@
 				49A708C21C3AF26B00483CF0 /* PopUpViewControllerSwift.swift */,
 			);
 			name = PopUpPrincipal;
+			sourceTree = "<group>";
+		};
+		49B498B71CA337A8000E7973 /* Objetos */ = {
+			isa = PBXGroup;
+			children = (
+				49B498B81CA337BC000E7973 /* OpenPayRestApi.swift */,
+			);
+			name = Objetos;
 			sourceTree = "<group>";
 		};
 		49BB51861BFFD535004E002A /* Frameworks */ = {
@@ -835,8 +849,10 @@
 				49D01F8C1CA1134000237ED1 /* ModeloTableViewController.swift in Sources */,
 				49BB0E251C151A580079E96D /* CompartirPageItemController.swift in Sources */,
 				4910CA8F1C586F3000EB32C5 /* MenuPlatillosTableViewCell.swift in Sources */,
+				49B498BB1CA3980A000E7973 /* QuienesSomosViewController.swift in Sources */,
 				49C3D3611BFBF6DA003B2344 /* SWRevealViewController.m in Sources */,
 				4905927C1C00FE50006DDDD0 /* PerfilViewController.swift in Sources */,
+				49B498B91CA337BC000E7973 /* OpenPayRestApi.swift in Sources */,
 				4910CA911C69461C00EB32C5 /* RegalosTableViewController.swift in Sources */,
 				490592721C00F70D006DDDD0 /* FavoritosTableViewController.swift in Sources */,
 			);

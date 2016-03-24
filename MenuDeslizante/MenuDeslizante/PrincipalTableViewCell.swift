@@ -16,12 +16,19 @@ class PrincipalTableViewCell: UITableViewCell {
     @IBOutlet weak var lNumeroRecetas: UILabel!
     @IBOutlet weak var nombreLabelMenu: UILabel!
 
+    
+    @IBOutlet weak var activityLoader: UIActivityIndicatorView!
+    
+    
     @IBOutlet weak var imgTopDevider: UIImageView!
     @IBOutlet weak var imgBottomDevider: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        activityLoader.startAnimating()
+        activityLoader.hidden =  false
         
         
     }

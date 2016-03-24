@@ -318,7 +318,7 @@ class PerfilViewController: UIViewController {
                             else{
                                 self.imageViewBarCode.hidden = false
                                 self.lNumeroReferencia.hidden = false
-    
+                                self.lNumeroReferencia.text = cliente["referenciaentienda"] as? String
                                 self.load_image(codigo!)
                             }
                             self.consultarWallet(cliente)
@@ -430,6 +430,11 @@ class PerfilViewController: UIViewController {
                 let httpResponse = response as? NSHTTPURLResponse
                 print(httpResponse)
                 self.clienteObjeto["Suscrito"] = false
+                self.clienteObjeto["codigobarras"] = ""
+                self.clienteObjeto["idsuscripcion"] = ""
+                self.clienteObjeto["caducidad"] = ""
+                self.clienteObjeto["transaction_id_tienda"] = ""
+                
                 self.clienteObjeto.saveInBackgroundWithBlock({ (sucess, error) -> Void in
                     self.consultarCliente()
                     self.bCancelarSuscripcion.hidden = true
