@@ -292,7 +292,10 @@ class SearchResultsViewController: SearchControllerBaseViewController, UISearchR
                             
                             if today.compare(date!) != NSComparisonResult.OrderedDescending
                             {
-                                self.performSegueWithIdentifier("PlatilloSegueBuscador", sender: nil)
+                                self.parent.objBusqueda = self.recetaSeleccionada
+                                self.parent.imagenBusqueda = self.imagenRecetaSeleccionada
+                                self.searchController.active = false
+                                self.parent.performSegueWithIdentifier("PlatilloSegueBuscador", sender: nil)
                             }
                             else{
                                 
@@ -343,7 +346,10 @@ class SearchResultsViewController: SearchControllerBaseViewController, UISearchR
             OpenPayRestApi.consultarPagoReailzadoenTienda(cliente["clientID"] as? String, chargeId:     (cliente["transaction_id_tienda"] as? String)!, callBack: { (exito, mensaje) -> Void in
                 
                 if exito {
-                    self.performSegueWithIdentifier("PlatilloSegueBuscador", sender: nil)
+                    self.parent.objBusqueda = self.recetaSeleccionada
+                    self.parent.imagenBusqueda = self.imagenRecetaSeleccionada
+                    self.searchController.active = false
+                    self.parent.performSegueWithIdentifier("PlatilloSegueBuscador", sender: nil)
                 }
                 else{
                     self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
