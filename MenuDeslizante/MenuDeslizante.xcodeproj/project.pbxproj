@@ -28,7 +28,6 @@
 		491576741BFBCAFB00EE641D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 491576721BFBCAFB00EE641D /* Main.storyboard */; };
 		491576761BFBCAFC00EE641D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 491576751BFBCAFC00EE641D /* Images.xcassets */; };
 		491576791BFBCAFC00EE641D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491576771BFBCAFC00EE641D /* LaunchScreen.xib */; };
-		491576851BFBCAFC00EE641D /* MenuDeslizanteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491576841BFBCAFC00EE641D /* MenuDeslizanteTests.swift */; };
 		495947B91C06A7FB0025AE1F /* PageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495947B81C06A7FB0025AE1F /* PageItemController.swift */; };
 		497480891C7576A700B35DDE /* SearchControllerBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497480871C7576A700B35DDE /* SearchControllerBaseViewController.swift */; };
 		4974808A1C7576A700B35DDE /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497480881C7576A700B35DDE /* SearchResultsViewController.swift */; };
@@ -91,7 +90,6 @@
 		49BB51941BFFD5E6004E002A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BB51931BFFD5E6004E002A /* Accounts.framework */; };
 		49BB51961BFFD5EE004E002A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BB51951BFFD5EE004E002A /* Social.framework */; };
 		49BB51981BFFD612004E002A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BB51971BFFD612004E002A /* SystemConfiguration.framework */; };
-		49BB519A1BFFD61C004E002A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BB51991BFFD61C004E002A /* StoreKit.framework */; };
 		49BB519C1BFFD625004E002A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BB519B1BFFD625004E002A /* CoreLocation.framework */; };
 		49BB519E1BFFD62D004E002A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BB519D1BFFD62D004E002A /* QuartzCore.framework */; };
 		49BB51A01BFFD643004E002A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BB519F1BFFD643004E002A /* Security.framework */; };
@@ -107,16 +105,6 @@
 		49ED44AE1C15382C00BF4D77 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49ED44AA1C15382C00BF4D77 /* TwitterKitResources.bundle */; };
 		49ED44AF1C15382C00BF4D77 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49ED44AB1C15382C00BF4D77 /* TwitterCore.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4915767F1BFBCAFC00EE641D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 491576611BFBCAFB00EE641D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 491576681BFBCAFB00EE641D;
-			remoteInfo = MenuDeslizante;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		49000FA41C59DEF40075F6B1 /* PopUpViewControllerCompartir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewControllerCompartir.swift; sourceTree = "<group>"; };
@@ -141,7 +129,6 @@
 		491576731BFBCAFB00EE641D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		491576751BFBCAFC00EE641D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		491576781BFBCAFC00EE641D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		4915767E1BFBCAFC00EE641D /* MenuDeslizanteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuDeslizanteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		491576831BFBCAFC00EE641D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		491576841BFBCAFC00EE641D /* MenuDeslizanteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDeslizanteTests.swift; sourceTree = "<group>"; };
 		495947B81C06A7FB0025AE1F /* PageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItemController.swift; sourceTree = "<group>"; };
@@ -211,7 +198,6 @@
 		49BB51931BFFD5E6004E002A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		49BB51951BFFD5EE004E002A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		49BB51971BFFD612004E002A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		49BB51991BFFD61C004E002A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		49BB519B1BFFD625004E002A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		49BB519D1BFFD62D004E002A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		49BB519F1BFFD643004E002A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -249,7 +235,6 @@
 				49ED44AC1C15382C00BF4D77 /* Fabric.framework in Frameworks */,
 				49BB51A01BFFD643004E002A /* Security.framework in Frameworks */,
 				49BB519E1BFFD62D004E002A /* QuartzCore.framework in Frameworks */,
-				49BB519A1BFFD61C004E002A /* StoreKit.framework in Frameworks */,
 				49BB51981BFFD612004E002A /* SystemConfiguration.framework in Frameworks */,
 				49BB51961BFFD5EE004E002A /* Social.framework in Frameworks */,
 				49BB51941BFFD5E6004E002A /* Accounts.framework in Frameworks */,
@@ -260,13 +245,6 @@
 				49BB51841BFFD529004E002A /* ParseFacebookUtilsV4.framework in Frameworks */,
 				49BB51851BFFD529004E002A /* ParseTwitterUtils.framework in Frameworks */,
 				025DE2001FEB546CD483091B /* Pods.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4915767B1BFBCAFC00EE641D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				491576691BFBCAFB00EE641D /* MenuDeslizante.app */,
-				4915767E1BFBCAFC00EE641D /* MenuDeslizanteTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -576,7 +553,6 @@
 				49BB519F1BFFD643004E002A /* Security.framework */,
 				49BB519D1BFFD62D004E002A /* QuartzCore.framework */,
 				49BB519B1BFFD625004E002A /* CoreLocation.framework */,
-				49BB51991BFFD61C004E002A /* StoreKit.framework */,
 				49BB51971BFFD612004E002A /* SystemConfiguration.framework */,
 				49BB51951BFFD5EE004E002A /* Social.framework */,
 				49BB51931BFFD5E6004E002A /* Accounts.framework */,
@@ -639,24 +615,6 @@
 			productReference = 491576691BFBCAFB00EE641D /* MenuDeslizante.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4915767D1BFBCAFC00EE641D /* MenuDeslizanteTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4915768B1BFBCAFC00EE641D /* Build configuration list for PBXNativeTarget "MenuDeslizanteTests" */;
-			buildPhases = (
-				4915767A1BFBCAFC00EE641D /* Sources */,
-				4915767B1BFBCAFC00EE641D /* Frameworks */,
-				4915767C1BFBCAFC00EE641D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				491576801BFBCAFC00EE641D /* PBXTargetDependency */,
-			);
-			name = MenuDeslizanteTests;
-			productName = MenuDeslizanteTests;
-			productReference = 4915767E1BFBCAFC00EE641D /* MenuDeslizanteTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -670,10 +628,11 @@
 					491576681BFBCAFB00EE641D = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = FN75477QMR;
-					};
-					4915767D1BFBCAFC00EE641D = {
-						CreatedOnToolsVersion = 6.3;
-						TestTargetID = 491576681BFBCAFB00EE641D;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -691,7 +650,6 @@
 			projectRoot = "";
 			targets = (
 				491576681BFBCAFB00EE641D /* MenuDeslizante */,
-				4915767D1BFBCAFC00EE641D /* MenuDeslizanteTests */,
 			);
 		};
 /* End PBXProject section */
@@ -741,13 +699,6 @@
 				49A708A91C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPhone6.xib in Resources */,
 				49A708A51C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6.xib in Resources */,
 				49A708AD1C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPhone6.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4915767C1BFBCAFC00EE641D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -858,23 +809,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4915767A1BFBCAFC00EE641D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				491576851BFBCAFC00EE641D /* MenuDeslizanteTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		491576801BFBCAFC00EE641D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 491576681BFBCAFB00EE641D /* MenuDeslizante */;
-			targetProxy = 4915767F1BFBCAFC00EE641D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		491576721BFBCAFB00EE641D /* Main.storyboard */ = {
@@ -985,7 +920,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1020,7 +954,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1045,42 +979,6 @@
 			};
 			name = Release;
 		};
-		4915768C1BFBCAFC00EE641D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MenuDeslizanteTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ejemplo.DevWorms.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MenuDeslizante.app/MenuDeslizante";
-			};
-			name = Debug;
-		};
-		4915768D1BFBCAFC00EE641D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MenuDeslizanteTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ejemplo.DevWorms.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MenuDeslizante.app/MenuDeslizante";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1098,15 +996,6 @@
 			buildConfigurations = (
 				491576891BFBCAFC00EE641D /* Debug */,
 				4915768A1BFBCAFC00EE641D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4915768B1BFBCAFC00EE641D /* Build configuration list for PBXNativeTarget "MenuDeslizanteTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4915768C1BFBCAFC00EE641D /* Debug */,
-				4915768D1BFBCAFC00EE641D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -349,7 +349,7 @@ import Parse
                                 
                             let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as? [String:AnyObject]
                             if (error == nil){
-                                let pago = json!["payment_method"]
+                                let pago = json!["payment_method"] as? [String: AnyObject]!
                                 let barcode = pago!["barcode_url"] as? String!
                                 let referencia = pago!["reference"] as? String!
                                 let transaction_id = json!["id"] as? String!

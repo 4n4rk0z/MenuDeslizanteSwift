@@ -9,11 +9,17 @@
 import UIKit
 import Parse
 
+import ParseTwitterUtils
+import ParseFacebookUtilsV4
+
+
 class RegalosTableViewController: UITableViewController {
     
     @IBOutlet weak var menuButton:UIBarButtonItem!
     var favoritos = [PFObject]()
     var recetaSeleccionada:PFObject!
+    var imagenReceta:UIImage!
+    var imagenes = [PFObject:UIImage]()
     var nombreTabla:String = "Regalos"
     
     override func viewDidLoad() {
@@ -33,18 +39,66 @@ class RegalosTableViewController: UITableViewController {
             
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-            if PFUser.currentUser() != nil{
+            
+            //Si no se fue a la ventana que sigue quiere decir o que no esta suscrito
+            var usuario = false
+            if PFUser.currentUser() != nil {
+                
+                if PFFacebookUtils.isLinkedWithUser(PFUser.currentUser()!){
+                    usuario = true
+                }
+                else if PFTwitterUtils.isLinkedWithUser(PFUser.currentUser()!) {
+                    usuario = true
+                    
+                }
+                else if PFUser.currentUser() != nil{
+                    usuario = true
+                    
+                }
+            }
+            
+            
+            if (usuario == false){
+                
+                let alertController = UIAlertController(title: "Debe iniciar sesión",
+                                                        message: "Para poder acceder a tu sección de favoritos debe iniciar sesión",
+                                                        preferredStyle: UIAlertControllerStyle.Alert)
+                
+                alertController.addAction(UIAlertAction(title: "OK",
+                    style: UIAlertActionStyle.Default,
+                    handler: nil))
+                // Display alert
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
+            }
+                
+            else{
                 consultarFavoritos()
             }
             
+            
         }
+        
+        
+        let navBackgroundImage:UIImage! = UIImage(named: "bandasuperior")
+        
+        let nav = self.navigationController?.navigationBar
+        
+        nav?.tintColor = UIColor.whiteColor()
+        
+        nav!.setBackgroundImage(navBackgroundImage, forBarMetrics:.Default)
+        
+        
+        
+        tableView.backgroundView = UIImageView(image: UIImage(named: "fondorecetario"))
+        
     }
     
     func consultarFavoritos(){
         let query = PFQuery(className: nombreTabla)
         //    query.cachePolicy = .CacheElseNetwork
         query.whereKey("username", equalTo: PFUser.currentUser()!)
-        query.includeKey("Receta")
+        query.includeKey("Recetas")
         query.findObjectsInBackgroundWithBlock {
             (favoritos: [PFObject]?, error: NSError?) -> Void in
             // comments now contains the comments for myPost
@@ -94,8 +148,8 @@ class RegalosTableViewController: UITableViewController {
             consultarFavoritos()
             // The object has been saved.
             let alertController = UIAlertController(title: "Receta Borrada",
-                message: "¡Esta receta ya no forma parte de tus " + nombreTabla.lowercaseString,
-                preferredStyle: UIAlertControllerStyle.Alert)
+                                                    message: "¡Esta receta ya no forma parte de tus " + nombreTabla.lowercaseString,
+                                                    preferredStyle: UIAlertControllerStyle.Alert)
             
             alertController.addAction(UIAlertAction(title: "OK",
                 style: UIAlertActionStyle.Default,
@@ -115,67 +169,85 @@ class RegalosTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.recetaSeleccionada = (self.favoritos[indexPath.row].objectForKey("Receta") as? NSArray)![0] as! PFObject
+        self.recetaSeleccionada = self.favoritos[indexPath.row].objectForKey("Recetas") as! PFObject
+        self.imagenReceta = self.imagenes[self.recetaSeleccionada]
+        
         self.performSegueWithIdentifier("PlatilloSegueFavoritos", sender: nil)
         
     }
     
-    func loadCellInformation(imagenCell:UIImageView, urlString:String, nombreRecetaLabel:UILabel, nombreRecetaStr:String,  nivelRecetaImagen:UIImageView, nivelRecetaStr:String,  porcionesRecetaLabel:UILabel, porcionesRecetaStr:String,  tiempoRecetaLabel:UILabel, tiempoRecetaStr:String)
+    func loadCellInformation(imagenCell:UIImageView, urlString:String, nombreRecetaLabel:UILabel, nombreRecetaStr:String,  nivelRecetaImagen:UIImageView, nivelRecetaStr:String,  porcionesRecetaLabel:UILabel, porcionesRecetaStr:String,  tiempoRecetaLabel:UILabel, tiempoRecetaStr:String, receta:PFObject)
     {
         
-        
-        let imgURL: NSURL = NSURL(string: urlString)!
-        let request: NSURLRequest = NSURLRequest(URL: imgURL)
-        
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request){
-            (data, response, error) -> Void in
-            
-            if (error == nil && data != nil)
-            {
-                func display_image()
-                {
-                    imagenCell.image = UIImage(data: data!)
-                    nombreRecetaLabel.text = nombreRecetaStr
-                    if (nivelRecetaStr.lowercaseString == "Principiante"){
-                        nivelRecetaImagen.image = UIImage(named: "dificultadprincipiante")
-                    }else if(nivelRecetaStr.lowercaseString == "intermedio"){
-                        nivelRecetaImagen.image = UIImage(named: "dificultadmedia")
-                    }
-                    else{
-                        nivelRecetaImagen.image = UIImage(named: "dificultadavanzado")
-                    }
-
-                    porcionesRecetaLabel.text = porcionesRecetaStr
-                    tiempoRecetaLabel.text = tiempoRecetaStr
-                    
-                    UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                        
-                        imagenCell.alpha = 100
-                        nombreRecetaLabel.alpha = 100
-                        nivelRecetaImagen.alpha = 100
-                        porcionesRecetaLabel.alpha = 100
-                        tiempoRecetaLabel.alpha = 100
-                        
-                        
-                        }, completion: nil)
-                    
-                }
-                
-                dispatch_async(dispatch_get_main_queue(), display_image)
-            }
-            
+        nombreRecetaLabel.text = nombreRecetaStr
+        if (nivelRecetaStr.lowercaseString == "Principiante"){
+            nivelRecetaImagen.image = UIImage(named: "dificultadprincipiante")
+        }else if(nivelRecetaStr.lowercaseString == "intermedio"){
+            nivelRecetaImagen.image = UIImage(named: "dificultadmedia")
+        }
+        else{
+            nivelRecetaImagen.image = UIImage(named: "dificultadavanzado")
         }
         
-        task.resume()
+        porcionesRecetaLabel.text = porcionesRecetaStr
+        tiempoRecetaLabel.text = tiempoRecetaStr
+        
+        UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            
+            nombreRecetaLabel.alpha = 100
+            nivelRecetaImagen.alpha = 100
+            porcionesRecetaLabel.alpha = 100
+            tiempoRecetaLabel.alpha = 100
+            
+            
+            }, completion: nil)
+        
+        
+        if(self.imagenes[receta] == nil) {
+            
+            let imgURL: NSURL = NSURL(string: urlString)!
+            let request: NSURLRequest = NSURLRequest(URL: imgURL)
+            
+            let session = NSURLSession.sharedSession()
+            let task = session.dataTaskWithRequest(request){
+                (data, response, error) -> Void in
+                
+                if (error == nil && data != nil)
+                {
+                    func display_image()
+                    {
+                        imagenCell.image = UIImage(data: data!)
+                        
+                        self.imagenes[receta] = UIImage(data: data!)
+                        
+                        UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                            
+                            imagenCell.alpha = 100
+                            
+                            
+                            }, completion: nil)
+                        
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue(), display_image)
+                }
+                
+            }
+            
+            task.resume()
+            
+        }
+        else{
+            imagenCell.image = self.imagenes[receta]
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MenuPlatillosTableViewCell
         
-        let receta =  self.favoritos[indexPath.row].objectForKey("Receta") as? NSArray
+        let receta =  self.favoritos[indexPath.row].objectForKey("Recetas") as! PFObject
         
-        self.loadCellInformation(cell.imagenRecetaView, urlString: receta![0]["Url_Imagen"] as! String, nombreRecetaLabel: cell.nombreRecetaLabel, nombreRecetaStr: receta![0]["Nombre"] as! String, nivelRecetaImagen: cell.imgDificultad, nivelRecetaStr:  receta![0]["Nivel"] as! String, porcionesRecetaLabel: cell.porcionesRecetaLabel, porcionesRecetaStr: receta![0]["Porciones"] as! String, tiempoRecetaLabel: cell.tiempoRecetaLabel, tiempoRecetaStr:receta![0]["Tiempo"] as! String)
+        self.loadCellInformation(cell.imagenRecetaView, urlString: receta["Url_Imagen"] as! String, nombreRecetaLabel: cell.nombreRecetaLabel, nombreRecetaStr: receta["Nombre"] as! String, nivelRecetaImagen: cell.imgDificultad, nivelRecetaStr:  receta["Nivel"] as! String, porcionesRecetaLabel: cell.porcionesRecetaLabel, porcionesRecetaStr: receta["Porciones"] as! String, tiempoRecetaLabel: cell.tiempoRecetaLabel, tiempoRecetaStr:receta["Tiempo"] as! String, receta: receta)
         
         
         return cell
@@ -195,6 +267,7 @@ class RegalosTableViewController: UITableViewController {
         
         
     }
+    
     
     
 }
