@@ -22,8 +22,11 @@ import TwitterKit
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var imageViewReceta: UIImageView!
     @IBOutlet weak var labelTitulo: UILabel!
-
     
+    
+
+    var context:PrincipalTableViewController!
+    var opcion:String!
     var tituloEmpresa:String = "Toukanmango"
     var receta:PFObject!
     
@@ -56,7 +59,6 @@ import TwitterKit
         self.imageViewReceta.image = imagenReceta
         self.receta = receta
     }
-    
     
     func showAnimate()
     {
@@ -107,7 +109,18 @@ import TwitterKit
     }
     
     public func sharer(sharer: FBSDKSharing!, didCompleteWithResults results: [NSObject : AnyObject]!) {
+       
+        
+        if self.opcion != nil && self.opcion == "viral" {
+            
+            self.context.objBusqueda = self.receta
+            self.context.imagenBusqueda = self.imageViewReceta.image
+            
+            self.context.performSegueWithIdentifier("PlatilloSegueBuscador", sender: nil)
+        }
+        
         print(results.description)
+       
         self.removeAnimate()
         
     }
@@ -138,6 +151,15 @@ import TwitterKit
         composer.showFromViewController(self) { result in
             if result == .Done {
                 //print("Tweet composition completed.")
+                if self.opcion != nil && self.opcion == "viral" {
+                    
+                    self.context.objBusqueda = self.receta
+                    self.context.imagenBusqueda = self.imageViewReceta.image
+                    
+                    self.context.performSegueWithIdentifier("PlatilloSegueBuscador", sender: nil)
+                }
+                
+
                 self.removeAnimate()
                 
             } else if result == .Cancelled {
@@ -158,6 +180,14 @@ import TwitterKit
         PDKPin.pinWithImageURL(imgURL, link: direccion, suggestedBoardName: "ToukanMango", note: "Me encanta esta receta", withSuccess: { () -> Void in
             
             //print("successfully pinned pin")
+            if self.opcion != nil && self.opcion == "viral" {
+                
+                self.context.objBusqueda = self.receta
+                self.context.imagenBusqueda = self.imageViewReceta.image
+                
+                self.context.performSegueWithIdentifier("PlatilloSegueBuscador", sender: nil)
+            }
+
             self.removeAnimate()
 
             }) { (NSError) -> Void in

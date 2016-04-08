@@ -25,6 +25,9 @@ class PrincipalTableViewController: ModeloTableViewController {
     var objBusqueda:PFObject!
     var imagenBusqueda:UIImage!
     
+    var popViewController: PopUpViewControllerCompartir!
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         
@@ -120,8 +123,6 @@ class PrincipalTableViewController: ModeloTableViewController {
             
             
             
-                      
-            
             
          
         }
@@ -146,6 +147,8 @@ class PrincipalTableViewController: ModeloTableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PrincipalTableViewCell
+        
         self.menuSeleccionado = itemsMenu[indexPath.row]
         
         let goto=self.menuSeleccionado["TipoMenu"].lowercaseString
@@ -154,12 +157,78 @@ class PrincipalTableViewController: ModeloTableViewController {
         {
             self.performSegueWithIdentifier("recetarios", sender: nil)
         }
-        else if goto=="viral"
+        else if goto=="viral" && imagesArray.count > 0
         {
-            self.performSegueWithIdentifier("viralizacion", sender: nil)
+            
+           
+            let imagen =   self.imagesArray[indexPath.row]
+            abrirVentanaPop(self.menuSeleccionado, imageViewReceta: imagen)
+            //   self.performSegueWithIdentifier("viralizacion", sender: nil)
+            
         }
-
+        
+        
     }
+
+    func abrirVentanaPop(objMenu:PFObject!, imageViewReceta: UIImage!){
+        
+        let bundle = NSBundle(forClass: PopUpViewControllerSwift.self)
+        
+        let strPantalla = pantallaSize()
+        
+        
+        self.popViewController = PopUpViewControllerCompartir(nibName: "PopUpViewControllerCompartir"+strPantalla, bundle: bundle)
+        
+        let query = PFQuery(className:"Recetas")
+        query.whereKey("Menu", equalTo:objMenu)
+        query.findObjectsInBackgroundWithBlock {
+            (objRecetas: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                // Do something with the found objects
+                if let _ = objRecetas {
+                    for objReceta in objRecetas! {
+                        self.popViewController.context = self
+                        self.popViewController.opcion = "viral"
+                        
+                        let imagen = imageViewReceta
+                        self.popViewController.showInView(self.view, animated: true, receta: objReceta, imagenReceta: imagen)
+                        break
+                    }
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+        
+        
+    }
+    
+    func pantallaSize()->String!
+    {
+        var strPantalla = ""
+        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
+        {
+            strPantalla = "_iPad"
+        }
+        else
+        {
+            
+            if UIScreen.mainScreen().bounds.size.width > 320 {
+                if UIScreen.mainScreen().scale == 3 {
+                    strPantalla = "_iPhone6Plus"
+                }
+                else{
+                    strPantalla = "_iPhone6"
+                }
+            }
+        }
+        return strPantalla
+    }
+    
+
 
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -170,7 +239,7 @@ class PrincipalTableViewController: ModeloTableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PrincipalTableViewCell
         
         
-        cell.lNumeroRecetas.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2*0.44))
+        cell.lNumeroRecetas.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2*0.45))
         
         let item = self.itemsMenu[indexPath.row]
         //ocultamos si es tipo menu viral el icono de postit
@@ -319,7 +388,7 @@ class PrincipalTableViewController: ModeloTableViewController {
     
     func pantallaSizeHeight()->CGFloat!
     {
-        var strPantalla = 224.0
+        var strPantalla = 224.0 //iphone 5
         if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
         {
             strPantalla = 500.0
@@ -328,11 +397,11 @@ class PrincipalTableViewController: ModeloTableViewController {
         {
             
             if UIScreen.mainScreen().bounds.size.width > 320 {
-                if UIScreen.mainScreen().scale == 3 {
+                if UIScreen.mainScreen().scale == 3 { //iphone 6 plus
                     strPantalla = 286.0
                 }
                 else{
-                    strPantalla = 266.0
+                    strPantalla = 266.0 //iphone 6
                 }
             }
         }

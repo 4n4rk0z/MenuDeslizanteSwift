@@ -175,6 +175,35 @@ class FavoritosTableViewController: UITableViewController {
         
     }
     
+    // para cuadrar las imagenes
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return pantallaSizeHeight();//Choose your custom row height
+    }
+    
+    func pantallaSizeHeight()->CGFloat!
+    {
+        var strPantalla = 224.0 //iphone 5
+        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
+        {
+            strPantalla = 500.0
+        }
+        else
+        {
+            
+            if UIScreen.mainScreen().bounds.size.width > 320 {
+                if UIScreen.mainScreen().scale == 3 { //iphone 6 plus
+                    strPantalla = 286.0
+                }
+                else{
+                    strPantalla = 266.0 //iphone 6
+                }
+            }
+        }
+        return CGFloat(strPantalla)
+    }
+
+    
     func loadCellInformation(imagenCell:UIImageView, urlString:String, nombreRecetaLabel:UILabel, nombreRecetaStr:String,  nivelRecetaImagen:UIImageView, nivelRecetaStr:String,  porcionesRecetaLabel:UILabel, porcionesRecetaStr:String,  tiempoRecetaLabel:UILabel, tiempoRecetaStr:String, receta:PFObject)
     {
         
