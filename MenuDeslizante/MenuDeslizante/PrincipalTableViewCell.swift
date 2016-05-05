@@ -19,7 +19,12 @@ class PrincipalTableViewCell: UITableViewCell {
     
     @IBOutlet weak var activityLoader: UIActivityIndicatorView!
     
+    @IBOutlet weak var imgPaquete: UIImageView!
     
+    @IBOutlet weak var imgCinta: UIImageView!
+    
+    
+    @IBOutlet weak var imgPagoGratis: UIImageView!
     @IBOutlet weak var imgTopDevider: UIImageView!
     @IBOutlet weak var imgBottomDevider: UIImageView!
     

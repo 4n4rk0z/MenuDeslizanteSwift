@@ -38,12 +38,12 @@ class PrincipalTableViewController: ModeloTableViewController {
         
         let nav = self.navigationController?.navigationBar
         
-        nav?.tintColor = UIColor.grayColor()
+        nav?.tintColor = UIColor.blackColor()
         
         nav!.setBackgroundImage(navBackgroundImage, forBarMetrics:.Default)
         
         
-        let font = UIFont(name: "Avenir Next Demi Bold", size: 12)
+        let font = UIFont(name: "Avenir Next Demi Bold", size: (nav?.bounds.size.width)! * 0.04)
         if let font = font {
             nav!.titleTextAttributes = [NSFontAttributeName : font, NSForegroundColorAttributeName:UIColor.redColor()]
         }
@@ -259,12 +259,16 @@ class PrincipalTableViewController: ModeloTableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PrincipalTableViewCell
         
         
-        cell.lNumeroRecetas.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2*0.45))
+        cell.lNumeroRecetas.transform = CGAffineTransformMakeRotation(CGFloat(-0.76))
         
         let item = self.itemsMenu[indexPath.row]
         //ocultamos si es tipo menu viral el icono de postit
         if ((item["TipoMenu"] as? String)?.lowercaseString) == "viral"{
             cell.lNumeroRecetas.hidden = true
+            cell.imgCinta.hidden = true
+            cell.imgPaquete.hidden = true
+            cell.imgPagoGratis.hidden = true
+            
         }
         //se carga la informacion del menu
         

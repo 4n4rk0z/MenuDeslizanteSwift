@@ -50,7 +50,7 @@ import TwitterKit
     
     public func showInView(aView: UIView!, animated: Bool, receta:PFObject!, imagenReceta:UIImage){
         
-
+        
         mainViewController = aView
         aView.addSubview(self.view)
         self.showAnimate()
