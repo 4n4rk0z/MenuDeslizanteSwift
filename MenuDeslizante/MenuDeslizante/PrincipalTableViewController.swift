@@ -49,9 +49,29 @@ class PrincipalTableViewController: ModeloTableViewController {
         }
         
         
-        tableView.backgroundView = UIImageView(image: UIImage(named: "fondo"))
+        //Create the UIImage
+        let image = UIImage(named: "fondo")
         
-
+        //Create a container view that will take all of the tableView space and contain the imageView on top
+        let containerView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width , height: UIScreen.mainScreen().bounds.size.height))
+        
+        //Create the UIImageView that will be on top of our table
+        let imageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width , height: UIScreen.mainScreen().bounds.size.height))
+        
+        //Set the image
+        imageView.image = image
+        
+        //Clips to bounds so the image doesnt go over the image size
+        imageView.clipsToBounds = true
+        
+        //Scale aspect fill so the image doesn't break the aspect ratio to fill in the header (it will zoom)
+        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        
+        containerView.addSubview(imageView)
+        
+        self.tableView.backgroundView = containerView
+        
+        
         
         
        
@@ -388,10 +408,10 @@ class PrincipalTableViewController: ModeloTableViewController {
     
     func pantallaSizeHeight()->CGFloat!
     {
-        var strPantalla = 224.0 //iphone 5
+        var strPantalla = CGFloat(224.0) //iphone 5
         if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
         {
-            strPantalla = 500.0
+            strPantalla = UIScreen.mainScreen().bounds.size.height * CGFloat(0.47)
         }
         else
         {
