@@ -518,18 +518,15 @@
                                 <rect key="frame" x="290" y="181" width="20" height="20"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
-                            <imageView clipsSubviews="YES" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhr-IS-QV9">
-                                <rect key="frame" x="-1" y="66" width="601" height="256"/>
+                            <imageView clipsSubviews="YES" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yhr-IS-QV9">
+                                <rect key="frame" x="-1" y="64" width="601" height="274"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="256" id="Byg-ZG-2b0"/>
-                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MMx-fF-m75">
-                                <rect key="frame" x="-1" y="320" width="601" height="510"/>
+                                <rect key="frame" x="-1" y="303" width="601" height="425"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="fondoreceta" translatesAutoresizingMaskIntoConstraints="NO" id="11T-o8-dfS">
-                                        <rect key="frame" x="5" y="195" width="584" height="137"/>
+                                        <rect key="frame" x="5" y="195" width="584" height="222"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bandatitulopaquete" translatesAutoresizingMaskIntoConstraints="NO" id="QDR-l5-VCY">
                                         <rect key="frame" x="0.0" y="0.0" width="601" height="63"/>
@@ -549,7 +546,7 @@
                                             <fragment content="DIFICULTAD">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="AvenirNextCondensed-Regular"/>
+                                                    <font key="NSFont" size="15" name="AvenirNextCondensed-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -561,6 +558,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="72" id="IAY-H3-sCW"/>
                                         </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="deviderreceta" translatesAutoresizingMaskIntoConstraints="NO" id="6eZ-Bq-IsW">
+                                        <rect key="frame" x="9" y="33" width="583" height="53"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qum-jJ-qbe">
                                         <rect key="frame" x="441" y="133" width="132" height="58"/>
@@ -577,12 +577,12 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fe-2T-vjm">
-                                        <rect key="frame" x="77" y="79" width="51" height="29"/>
+                                        <rect key="frame" x="77" y="80" width="51" height="29"/>
                                         <attributedString key="attributedText">
                                             <fragment content="TIEMPO">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="AvenirNextCondensed-Regular"/>
+                                                    <font key="NSFont" size="15" name="AvenirNextCondensed-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -624,7 +624,7 @@
                                             <fragment content="1 hora 30 minutos">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="AvenirNextCondensed-DemiBold"/>
+                                                    <font key="NSFont" size="15" name="AvenirNextCondensed-DemiBold"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -644,7 +644,7 @@
                                             <fragment content="PORCIONES">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="AvenirNextCondensed-Regular"/>
+                                                    <font key="NSFont" size="15" name="AvenirNextCondensed-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -709,31 +709,25 @@
                                             <constraint firstAttribute="width" constant="61" id="hDt-Aw-reY"/>
                                         </constraints>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RpQ-Oq-RFH">
-                                        <rect key="frame" x="60" y="199" width="520" height="279"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="279" id="tlV-Ko-unp"/>
-                                        </constraints>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RpQ-Oq-RFH">
+                                        <rect key="frame" x="60" y="199" width="522" height="397"/>
                                         <attributedString key="attributedText">
                                             <fragment content="  ">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="AvenirNextCondensed-Regular"/>
+                                                    <font key="NSFont" size="24" name="AvenirNextCondensed-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="deviderreceta" translatesAutoresizingMaskIntoConstraints="NO" id="6eZ-Bq-IsW">
-                                        <rect key="frame" x="9" y="33" width="583" height="53"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="d7a-FA-y9T" firstAttribute="top" secondItem="6fe-2T-vjm" secondAttribute="bottom" constant="-48" id="0YM-XV-xQq"/>
+                                    <constraint firstItem="6fe-2T-vjm" firstAttribute="top" secondItem="d7a-FA-y9T" secondAttribute="bottom" constant="-44" id="1QS-An-aIE"/>
                                     <constraint firstItem="RpQ-Oq-RFH" firstAttribute="centerX" secondItem="MMx-fF-m75" secondAttribute="centerX" id="1Y7-z3-w9y"/>
-                                    <constraint firstItem="EJE-1g-AHZ" firstAttribute="leading" secondItem="5b9-hC-G32" secondAttribute="trailing" constant="3" id="4O7-So-Sq7"/>
+                                    <constraint firstItem="EJE-1g-AHZ" firstAttribute="leading" secondItem="5b9-hC-G32" secondAttribute="trailing" id="4O7-So-Sq7"/>
                                     <constraint firstItem="mVZ-Me-auL" firstAttribute="leading" secondItem="snc-iF-2Dj" secondAttribute="trailing" constant="-99" id="4q1-Ac-Co8"/>
                                     <constraint firstItem="snc-iF-2Dj" firstAttribute="centerX" secondItem="MMx-fF-m75" secondAttribute="centerX" id="51i-j3-cFB"/>
                                     <constraint firstItem="d7a-FA-y9T" firstAttribute="width" secondItem="MMx-fF-m75" secondAttribute="width" id="5Cg-UU-qLR"/>
@@ -781,14 +775,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="MMx-fF-m75" firstAttribute="top" secondItem="yhr-IS-QV9" secondAttribute="bottom" constant="1" id="2ZG-vo-aBA"/>
-                            <constraint firstItem="yhr-IS-QV9" firstAttribute="leading" secondItem="MMx-fF-m75" secondAttribute="leading" id="3f6-Kh-icb"/>
-                            <constraint firstItem="yhr-IS-QV9" firstAttribute="trailing" secondItem="MMx-fF-m75" secondAttribute="trailing" id="AoQ-vg-X6u"/>
-                            <constraint firstItem="yhr-IS-QV9" firstAttribute="top" secondItem="XW1-a6-3hO" secondAttribute="bottom" id="K78-S6-gxe"/>
+                            <constraint firstItem="MMx-fF-m75" firstAttribute="width" secondItem="M9B-PA-0t4" secondAttribute="width" id="1Sn-js-BJk"/>
+                            <constraint firstItem="MMx-fF-m75" firstAttribute="centerX" secondItem="M9B-PA-0t4" secondAttribute="centerX" id="4XF-CE-VdL"/>
+                            <constraint firstItem="MMx-fF-m75" firstAttribute="top" secondItem="XW1-a6-3hO" secondAttribute="bottom" constant="239" id="E2g-c2-2nq"/>
+                            <constraint firstItem="yhr-IS-QV9" firstAttribute="centerX" secondItem="M9B-PA-0t4" secondAttribute="centerX" id="KhR-A8-Yak"/>
                             <constraint firstItem="hh4-j9-hmd" firstAttribute="top" secondItem="XW1-a6-3hO" secondAttribute="bottom" constant="117" id="ZVg-iR-KbQ"/>
                             <constraint firstItem="hh4-j9-hmd" firstAttribute="centerX" secondItem="M9B-PA-0t4" secondAttribute="centerX" id="ijS-pL-LoU"/>
-                            <constraint firstItem="yhr-IS-QV9" firstAttribute="width" secondItem="M9B-PA-0t4" secondAttribute="width" id="mCc-Kw-KCM"/>
-                            <constraint firstItem="MMx-fF-m75" firstAttribute="centerX" secondItem="M9B-PA-0t4" secondAttribute="centerX" id="nAT-ZK-fo2"/>
+                            <constraint firstItem="MMx-fF-m75" firstAttribute="top" secondItem="yhr-IS-QV9" secondAttribute="bottom" constant="-35" id="kkn-TU-COw"/>
+                            <constraint firstItem="yhr-IS-QV9" firstAttribute="width" secondItem="M9B-PA-0t4" secondAttribute="width" id="sQa-fC-z1u"/>
+                            <constraint firstItem="yhr-IS-QV9" firstAttribute="top" secondItem="XW1-a6-3hO" secondAttribute="bottom" id="yS3-Wd-Wmd"/>
                         </constraints>
                     </view>
                     <connections>

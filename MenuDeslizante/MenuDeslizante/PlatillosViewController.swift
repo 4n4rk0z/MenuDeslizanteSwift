@@ -52,7 +52,7 @@ class PlatillosViewController: UIViewController{
         
         let pangesture = UIPanGestureRecognizer(target: self, action: "dragview:")
         contenidoDeLaRecetaView.addGestureRecognizer(pangesture)
-        self.posicionInicialContenedor = contenidoDeLaRecetaView.center.y
+        self.posicionInicialContenedor = CGFloat(0.0)
 
        
     }
@@ -61,12 +61,18 @@ class PlatillosViewController: UIViewController{
     {
         let touchlocation = panGestureRecognizer.velocityInView(self.view)
         
+        if  self.posicionInicialContenedor == CGFloat(0){
+            self.posicionInicialContenedor = contenidoDeLaRecetaView.center.y
+        }
+        
         let delta = touchlocation.y * 0.03
         let limiteInferior = posicionInicialContenedor
         let limiteSuperior = CGFloat(1)
         let posicionActual = contenidoDeLaRecetaView.center.y
         
-        if ((posicionActual - contenidoDeLaRecetaView.bounds.size.height/2.5 > limiteSuperior) &&  delta < 0) || ((posicionActual < limiteInferior) &&  delta > 0 ){
+        
+        
+        if ((posicionActual - contenidoDeLaRecetaView.bounds.size.height/2 > limiteSuperior) &&  delta < 0) || ((posicionActual < limiteInferior) &&  delta > 0 ){
             contenidoDeLaRecetaView.center.y += delta
             print(touchlocation.y * 0.03)
         }
@@ -129,9 +135,9 @@ class PlatillosViewController: UIViewController{
             let str = NSString(string: text)
         
             let theRange1 = str.rangeOfString("Ingredientes")
-            attributedText.addAttribute(NSFontAttributeName, value:UIFont.boldSystemFontOfSize(24), range: theRange1)
+            attributedText.addAttribute(NSFontAttributeName, value:UIFont.boldSystemFontOfSize(30), range: theRange1)
             let theRange2 = str.rangeOfString("Procedimiento")
-            attributedText.addAttribute(NSFontAttributeName, value:UIFont.boldSystemFontOfSize(24), range: theRange2)
+            attributedText.addAttribute(NSFontAttributeName, value:UIFont.boldSystemFontOfSize(30), range: theRange2)
             
             self.textAreaReceta.attributedText = attributedText
             
