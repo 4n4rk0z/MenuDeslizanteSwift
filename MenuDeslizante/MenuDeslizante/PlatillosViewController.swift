@@ -26,11 +26,13 @@ class PlatillosViewController: UIViewController{
     @IBOutlet weak var imagenDificultad: UIImageView!
 
     
+    @IBOutlet weak var contenidoDeLaRecetaView: UIView!
     
     var popViewController: PopUpViewControllerCompartir!
 
     @IBOutlet weak var activityLoader: UIActivityIndicatorView!
     
+    var posicionInicialContenedor:CGFloat!
     
     
     
@@ -48,9 +50,29 @@ class PlatillosViewController: UIViewController{
         
         self.loadRecetaInformation()
         
-      
+        let pangesture = UIPanGestureRecognizer(target: self, action: "dragview:")
+        contenidoDeLaRecetaView.addGestureRecognizer(pangesture)
+        self.posicionInicialContenedor = contenidoDeLaRecetaView.center.y
+
+       
     }
 
+    func dragview(panGestureRecognizer:UIPanGestureRecognizer)
+    {
+        let touchlocation = panGestureRecognizer.velocityInView(self.view)
+        
+        let delta = touchlocation.y * 0.03
+        let limiteInferior = posicionInicialContenedor
+        let limiteSuperior = CGFloat(1)
+        let posicionActual = contenidoDeLaRecetaView.center.y
+        
+        if ((posicionActual - contenidoDeLaRecetaView.bounds.size.height/2.5 > limiteSuperior) &&  delta < 0) || ((posicionActual < limiteInferior) &&  delta > 0 ){
+            contenidoDeLaRecetaView.center.y += delta
+            print(touchlocation.y * 0.03)
+        }
+        
+    }
+    
     override func viewWillDisappear(animated: Bool) {
         func display_image()
         {
@@ -70,7 +92,8 @@ class PlatillosViewController: UIViewController{
 
     }
 
-
+    
+    
     func loadRecetaInformation()
     {
         func display_image()
