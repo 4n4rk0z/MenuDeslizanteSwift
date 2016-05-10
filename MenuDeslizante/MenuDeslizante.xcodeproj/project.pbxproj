@@ -923,7 +923,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: DevWorms S.A. de C.V. (FN75477QMR)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -944,7 +944,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.devworms.toukanmango;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "aa067cda-2528-478d-be2e-1fe790d799a6";
 				SWIFT_OBJC_BRIDGING_HEADER = "MenuDeslizante/MenuDeslizante-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -957,7 +957,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: DevWorms S.A. de C.V. (FN75477QMR)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -977,7 +977,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.devworms.toukanmango;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "aa067cda-2528-478d-be2e-1fe790d799a6";
 				SWIFT_OBJC_BRIDGING_HEADER = "MenuDeslizante/MenuDeslizante-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
