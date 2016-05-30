@@ -23,7 +23,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        //Image Background Navigation Bar
+        
+        let navBackgroundImage:UIImage! = UIImage(named: "bienvenidois")
+        
+        let nav = self.navigationController?.navigationBar
+        
+        nav?.tintColor = UIColor.whiteColor()
+        
+        nav!.setBackgroundImage(navBackgroundImage, forBarMetrics:.Default)
+
+        
+        
         let user = PFUser.currentUser()
 
         let sesion = Twitter.sharedInstance().sessionStore
