@@ -26,12 +26,12 @@
                   moduleName = "MenuDeslizante"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sergio/Proyectos%20DevWorms/Moviles/iOS/MenuDeslizanteSwift/MenuDeslizante/MenuDeslizante/PopUpViewControllerRegistro.swift"
-                  timestampString = "484212894.475094"
+                  timestampString = "486317578.900804"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "48">
+                  offsetFromSymbolStart = "35">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "MenuDeslizante"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sergio/Proyectos%20DevWorms/Moviles/iOS/MenuDeslizanteSwift/MenuDeslizante/MenuDeslizante/PopUpViewControllerRegistro.swift"
-                  timestampString = "484212894.475207"
+                  timestampString = "486317578.901202"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "76">
+                  offsetFromSymbolStart = "65">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -56,12 +56,12 @@
                   moduleName = "MenuDeslizante"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sergio/Proyectos%20DevWorms/Moviles/iOS/MenuDeslizanteSwift/MenuDeslizante/MenuDeslizante/PopUpViewControllerRegistro.swift"
-                  timestampString = "484212894.475316"
+                  timestampString = "486317578.901505"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "44">
+                  offsetFromSymbolStart = "31">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -71,12 +71,12 @@
                   moduleName = "MenuDeslizante"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sergio/Proyectos%20DevWorms/Moviles/iOS/MenuDeslizanteSwift/MenuDeslizante/MenuDeslizante/PopUpViewControllerRegistro.swift"
-                  timestampString = "484212894.475427"
+                  timestampString = "486317578.901806"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "88">
+                  offsetFromSymbolStart = "70">
                </Location>
             </Locations>
          </BreakpointContent>

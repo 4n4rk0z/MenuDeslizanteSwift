@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
       
-    
+    /*
         // Register for Push Notitications
         if application.applicationState != UIApplicationState.Background {
             // Track an app open here if we launch with a push, unless
@@ -97,6 +97,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         
+        */
+        
+        
+        
+        let userNotificationTypes: UIUserNotificationType = [.Alert, .Badge, .Sound]
+        
+        let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
+        
+        
         
         //Pinterest
         
@@ -120,6 +131,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         let installation = PFInstallation.currentInstallation()
+        print(installation.objectId)
         installation.setDeviceTokenFromData(deviceToken)
         installation.saveInBackground()
     }

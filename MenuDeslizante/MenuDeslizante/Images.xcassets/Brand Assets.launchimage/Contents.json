@@ -3,6 +3,7 @@
     {
       "orientation" : "portrait",
       "idiom" : "iphone",
+      "filename" : "PantallaSplash iPhone6(750 x 1334).png",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
       "scale" : "2x"
@@ -11,7 +12,7 @@
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "retina4",
-      "filename" : "superlogo-1-1.png",
+      "filename" : "PantallaSplash iPhone6+(1080 x 1920).png",
       "minimum-system-version" : "7.0",
       "orientation" : "portrait",
       "scale" : "2x"
@@ -19,13 +20,7 @@
     {
       "orientation" : "portrait",
       "idiom" : "ipad",
-      "extent" : "full-screen",
-      "minimum-system-version" : "7.0",
-      "scale" : "1x"
-    },
-    {
-      "orientation" : "landscape",
-      "idiom" : "ipad",
+      "filename" : "PantallaSplash iPad(768 x 1024).png",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
       "scale" : "1x"
@@ -33,13 +28,7 @@
     {
       "orientation" : "portrait",
       "idiom" : "ipad",
-      "extent" : "full-screen",
-      "minimum-system-version" : "7.0",
-      "scale" : "2x"
-    },
-    {
-      "orientation" : "landscape",
-      "idiom" : "ipad",
+      "filename" : "PantallaSplash iPadPro(2048 x 2732).png",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
       "scale" : "2x"
@@ -47,15 +36,14 @@
     {
       "orientation" : "portrait",
       "idiom" : "iphone",
-      "filename" : "cmmsplash4-1.png",
-      "extent" : "full-screen",
-      "scale" : "1x"
+      "minimum-system-version" : "7.0",
+      "scale" : "2x"
     },
     {
       "orientation" : "portrait",
       "idiom" : "iphone",
-      "filename" : "cmmsplash4-2.png",
-      "extent" : "full-screen",
+      "minimum-system-version" : "7.0",
+      "subtype" : "retina4",
       "scale" : "2x"
     }
   ],

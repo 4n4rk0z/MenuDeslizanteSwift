@@ -828,6 +828,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 037968A5DC17B8CF6567845E55BB89B7 /* SSKeychain.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1041,6 +1042,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 037968A5DC17B8CF6567845E55BB89B7 /* SSKeychain.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

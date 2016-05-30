@@ -34,19 +34,13 @@ class PrincipalTableViewController: ModeloTableViewController {
         
         //Image Background Navigation Bar
         
-        let navBackgroundImage:UIImage! = UIImage(named: "fondonav")
+        let img = UIImage(named: "fondoflores")?.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 15, 0, 15), resizingMode: UIImageResizingMode.Stretch)
         
-        let nav = self.navigationController?.navigationBar
+        navigationController?.navigationBar.setBackgroundImage(img, forBarMetrics: .Default)
         
-        nav?.tintColor = UIColor.blackColor()
+        navigationController?.navigationBar.tintColor = UIColor.blackColor()
         
-        nav!.setBackgroundImage(navBackgroundImage, forBarMetrics:.Default)
-        
-        
-        let font = UIFont(name: "Avenir Next Demi Bold", size: (nav?.bounds.size.width)! * 0.04)
-        if let font = font {
-            nav!.titleTextAttributes = [NSFontAttributeName : font, NSForegroundColorAttributeName:UIColor.redColor()]
-        }
+        navigationController?.navigationBar.barStyle = UIBarStyle.Default
         
         
         //Create the UIImage
