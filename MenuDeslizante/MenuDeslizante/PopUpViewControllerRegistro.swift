@@ -9,6 +9,7 @@
 import UIKit
 import QuartzCore
 import Parse
+import ParseFacebookUtilsV4
 
 @objc public class PopUpViewControllerRegistro : UIViewController {
 
@@ -144,6 +145,42 @@ import Parse
 
         }
 
+    }
+    
+    func ligarFb(user: PFUser)
+    {
+        if !PFFacebookUtils.isLinkedWithUser(user) {
+            PFFacebookUtils.linkUserInBackground(user, withReadPermissions: nil, block: {
+                (succeeded: Bool?, error: NSError?) -> Void in
+                if (succeeded != nil) {
+                    print("Woohoo, the user is linked with Facebook!")
+                }
+            })
+        }
+    }
+    
+    @IBAction func loginFacebook(sender: AnyObject) {
+        
+        //let publishPermissions : [String]? = ["publish_actions"]
+        let readPermissions : [String]? = ["email", "user_likes", "user_photos", "user_posts", "user_friends"]
+        
+        // Log In with Read Permissions
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(readPermissions, block: { (user: PFUser?, error: NSError?) -> Void in
+            if let user = user {
+                if user.isNew {
+                    print("User signed up and logged in through Facebook!")
+                } else {
+                    print("User logged in through Facebook!")
+                }
+                
+                self.ligarFb(user)
+                self.performSegueWithIdentifier("Home", sender: nil)
+                
+            } else {
+                print("Uh oh. The user cancelled the Facebook login.")
+            }
+        })
+        
     }
     
     

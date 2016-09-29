@@ -50,6 +50,9 @@
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hQ-fY-ugd">
                             <rect key="frame" x="49" y="0.0" width="265" height="62"/>
                             <state key="normal" title="Button" image="face_02"/>
+                            <connections>
+                                <action selector="loginFacebook:" destination="-1" eventType="touchUpInside" id="quI-wS-LeE"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="o con tu correo electrónico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwl-F5-HEt">
                             <rect key="frame" x="78" y="70" width="206" height="21"/>

@@ -287,6 +287,7 @@
                                     <outlet property="imgTopDevider" destination="xOP-EC-XI8" id="2cv-Bc-uz1"/>
                                     <outlet property="lNumeroRecetas" destination="kDf-7c-gPo" id="QsB-t0-A1f"/>
                                     <outlet property="nombreLabelMenu" destination="i9q-Jg-jZT" id="U60-td-OFN"/>
+                                    <outlet property="postImageView" destination="OEd-wY-zuZ" id="Z1D-N2-HB1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -2558,7 +2559,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQD-EP-g1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1416" y="-29"/>
+            <point key="canvasLocation" x="1383" y="167"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2x1-bw-WZk">
