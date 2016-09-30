@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -10,16 +10,16 @@
             <rect key="frame" x="0.0" y="0.0" width="357" height="598"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bienvenido" translatesAutoresizingMaskIntoConstraints="NO" id="7BW-9n-JwE">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bienvenido" translatesAutoresizingMaskIntoConstraints="NO" id="7BW-9n-JwE">
                     <rect key="frame" x="51" y="185" width="267" height="169"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="7BW-9n-JwE" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="2GW-xp-GtT"/>
-                <constraint firstItem="7BW-9n-JwE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="K3L-ev-O7f"/>
-                <constraint firstItem="7BW-9n-JwE" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="dZZ-QI-stY"/>
-                <constraint firstItem="7BW-9n-JwE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hpQ-3c-JBw"/>
+                <constraint firstItem="7BW-9n-JwE" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" constant="-429" id="2GW-xp-GtT"/>
+                <constraint firstItem="7BW-9n-JwE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="6" id="K3L-ev-O7f"/>
+                <constraint firstItem="7BW-9n-JwE" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" constant="-90" id="dZZ-QI-stY"/>
+                <constraint firstItem="7BW-9n-JwE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-29.5" id="hpQ-3c-JBw"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
