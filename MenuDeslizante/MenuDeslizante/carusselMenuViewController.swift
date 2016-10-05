@@ -60,6 +60,11 @@ class carusselMenuViewController: UIViewController {
     
     @IBAction func registroAction(sender: AnyObject) {
         
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc: UINavigationController = storyboard.instantiateViewControllerWithIdentifier("Login") as! UINavigationController
+        
+        self.presentViewController(vc, animated: true, completion: nil)
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn")
         NSUserDefaults.standardUserDefaults().synchronize()
     }
