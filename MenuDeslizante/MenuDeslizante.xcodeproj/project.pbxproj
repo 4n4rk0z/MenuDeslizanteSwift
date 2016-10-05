@@ -7,7 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		025DE2001FEB546CD483091B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A93F7BF429B4DC18AEBC9B /* Pods.framework */; };
+		06D5FDE390E25FA4701CB42A /* Pods_MenuDeslizante.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5234C9D047B34C25C3C690D8 /* Pods_MenuDeslizante.framework */; };
+		1DAF53F91DA4D8FC00DE88B4 /* carusselMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF53F81DA4D8FC00DE88B4 /* carusselMenuViewController.swift */; };
+		1DAF53FC1DA4F61200DE88B4 /* imagenGrande_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF53FB1DA4F61200DE88B4 /* imagenGrande_2.png */; };
+		1DAF54021DA4F61E00DE88B4 /* comienza_trans.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF53FD1DA4F61E00DE88B4 /* comienza_trans.png */; };
+		1DAF54031DA4F61E00DE88B4 /* dot_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF53FE1DA4F61E00DE88B4 /* dot_2.png */; };
+		1DAF54041DA4F61E00DE88B4 /* text2_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF53FF1DA4F61E00DE88B4 /* text2_2.png */; };
+		1DAF54051DA4F61E00DE88B4 /* textUno_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF54001DA4F61E00DE88B4 /* textUno_2.png */; };
+		1DAF54061DA4F61E00DE88B4 /* ya_tienes.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF54011DA4F61E00DE88B4 /* ya_tienes.png */; };
+		1DAF540B1DA4F62F00DE88B4 /* dot_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF54071DA4F62F00DE88B4 /* dot_1.png */; };
+		1DAF540C1DA4F62F00DE88B4 /* imagenGrande_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF54081DA4F62F00DE88B4 /* imagenGrande_1.png */; };
+		1DAF540D1DA4F62F00DE88B4 /* text2_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF54091DA4F62F00DE88B4 /* text2_1.png */; };
+		1DAF540E1DA4F62F00DE88B4 /* textUno_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF540A1DA4F62F00DE88B4 /* textUno_1.png */; };
+		1DAF54141DA4F63A00DE88B4 /* dot_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF540F1DA4F63A00DE88B4 /* dot_3.png */; };
+		1DAF54151DA4F63A00DE88B4 /* flor_trans.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF54101DA4F63A00DE88B4 /* flor_trans.png */; };
+		1DAF54161DA4F63A00DE88B4 /* imagenGrande_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF54111DA4F63A00DE88B4 /* imagenGrande_3.png */; };
+		1DAF54171DA4F63A00DE88B4 /* text2-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF54121DA4F63A00DE88B4 /* text2-3.png */; };
+		1DAF54181DA4F63A00DE88B4 /* textUno_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF54131DA4F63A00DE88B4 /* textUno_3.png */; };
 		49000FA51C59DEF40075F6B1 /* PopUpViewControllerCompartir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49000FA41C59DEF40075F6B1 /* PopUpViewControllerCompartir.swift */; };
 		49000FA71C59DF9C0075F6B1 /* PopUpViewControllerCompartir_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49000FA61C59DF9C0075F6B1 /* PopUpViewControllerCompartir_iPhone6.xib */; };
 		49000FA91C59E0EB0075F6B1 /* PopUpViewControllerCompartir_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49000FA81C59E0EB0075F6B1 /* PopUpViewControllerCompartir_iPhone6Plus.xib */; };
@@ -108,6 +124,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DAF53F81DA4D8FC00DE88B4 /* carusselMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = carusselMenuViewController.swift; sourceTree = "<group>"; };
+		1DAF53FB1DA4F61200DE88B4 /* imagenGrande_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagenGrande_2.png; sourceTree = "<group>"; };
+		1DAF53FD1DA4F61E00DE88B4 /* comienza_trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comienza_trans.png; sourceTree = "<group>"; };
+		1DAF53FE1DA4F61E00DE88B4 /* dot_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot_2.png; sourceTree = "<group>"; };
+		1DAF53FF1DA4F61E00DE88B4 /* text2_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text2_2.png; sourceTree = "<group>"; };
+		1DAF54001DA4F61E00DE88B4 /* textUno_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textUno_2.png; sourceTree = "<group>"; };
+		1DAF54011DA4F61E00DE88B4 /* ya_tienes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ya_tienes.png; sourceTree = "<group>"; };
+		1DAF54071DA4F62F00DE88B4 /* dot_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot_1.png; sourceTree = "<group>"; };
+		1DAF54081DA4F62F00DE88B4 /* imagenGrande_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagenGrande_1.png; sourceTree = "<group>"; };
+		1DAF54091DA4F62F00DE88B4 /* text2_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text2_1.png; sourceTree = "<group>"; };
+		1DAF540A1DA4F62F00DE88B4 /* textUno_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textUno_1.png; sourceTree = "<group>"; };
+		1DAF540F1DA4F63A00DE88B4 /* dot_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot_3.png; sourceTree = "<group>"; };
+		1DAF54101DA4F63A00DE88B4 /* flor_trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flor_trans.png; sourceTree = "<group>"; };
+		1DAF54111DA4F63A00DE88B4 /* imagenGrande_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagenGrande_3.png; sourceTree = "<group>"; };
+		1DAF54121DA4F63A00DE88B4 /* text2-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text2-3.png"; sourceTree = "<group>"; };
+		1DAF54131DA4F63A00DE88B4 /* textUno_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textUno_3.png; sourceTree = "<group>"; };
+		1E10CEB42CED06CD4BFE0C72 /* Pods-MenuDeslizante.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenuDeslizante.release.xcconfig"; path = "Pods/Target Support Files/Pods-MenuDeslizante/Pods-MenuDeslizante.release.xcconfig"; sourceTree = "<group>"; };
+		3AB66520A639989CBCDDCAD4 /* Pods-MenuDeslizante.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenuDeslizante.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MenuDeslizante/Pods-MenuDeslizante.debug.xcconfig"; sourceTree = "<group>"; };
 		49000FA41C59DEF40075F6B1 /* PopUpViewControllerCompartir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewControllerCompartir.swift; sourceTree = "<group>"; };
 		49000FA61C59DF9C0075F6B1 /* PopUpViewControllerCompartir_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerCompartir_iPhone6.xib; sourceTree = "<group>"; };
 		49000FA81C59E0EB0075F6B1 /* PopUpViewControllerCompartir_iPhone6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewControllerCompartir_iPhone6Plus.xib; sourceTree = "<group>"; };
@@ -216,9 +250,8 @@
 		49ED44A91C15382C00BF4D77 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		49ED44AA1C15382C00BF4D77 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		49ED44AB1C15382C00BF4D77 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
-		5BEA89E15BD88CC6203F403D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5234C9D047B34C25C3C690D8 /* Pods_MenuDeslizante.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenuDeslizante.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A93F7BF429B4DC18AEBC9B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CE5C88EDA204E6217BFF680 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,13 +279,35 @@
 				49BB51831BFFD529004E002A /* Parse.framework in Frameworks */,
 				49BB51841BFFD529004E002A /* ParseFacebookUtilsV4.framework in Frameworks */,
 				49BB51851BFFD529004E002A /* ParseTwitterUtils.framework in Frameworks */,
-				025DE2001FEB546CD483091B /* Pods.framework in Frameworks */,
+				06D5FDE390E25FA4701CB42A /* Pods_MenuDeslizante.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DAF53FA1DA4F5EF00DE88B4 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				1DAF540F1DA4F63A00DE88B4 /* dot_3.png */,
+				1DAF54101DA4F63A00DE88B4 /* flor_trans.png */,
+				1DAF54111DA4F63A00DE88B4 /* imagenGrande_3.png */,
+				1DAF54121DA4F63A00DE88B4 /* text2-3.png */,
+				1DAF54131DA4F63A00DE88B4 /* textUno_3.png */,
+				1DAF54071DA4F62F00DE88B4 /* dot_1.png */,
+				1DAF54081DA4F62F00DE88B4 /* imagenGrande_1.png */,
+				1DAF54091DA4F62F00DE88B4 /* text2_1.png */,
+				1DAF540A1DA4F62F00DE88B4 /* textUno_1.png */,
+				1DAF53FD1DA4F61E00DE88B4 /* comienza_trans.png */,
+				1DAF53FE1DA4F61E00DE88B4 /* dot_2.png */,
+				1DAF53FF1DA4F61E00DE88B4 /* text2_2.png */,
+				1DAF54001DA4F61E00DE88B4 /* textUno_2.png */,
+				1DAF54011DA4F61E00DE88B4 /* ya_tienes.png */,
+				1DAF53FB1DA4F61200DE88B4 /* imagenGrande_2.png */,
+			);
+			name = img;
+			sourceTree = "<group>";
+		};
 		4905926B1C00DFBC006DDDD0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,7 +337,7 @@
 				491576811BFBCAFC00EE641D /* MenuDeslizanteTests */,
 				4915766A1BFBCAFB00EE641D /* Products */,
 				49BB51861BFFD535004E002A /* Frameworks */,
-				98EFDBAA1DEB32A689999890 /* Pods */,
+				F8AA908C891953ED0286DE4B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -408,11 +463,13 @@
 		497B73D41C55E7960009E15C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1DAF53FA1DA4F5EF00DE88B4 /* img */,
 				490592771C00F742006DDDD0 /* TuCuentaViewController.swift */,
 				4905927B1C00FE50006DDDD0 /* PerfilViewController.swift */,
 				49BB0E1E1C1517920079E96D /* PlatillosViewController.swift */,
 				4982994E1C465584003F293C /* PasosConsejosViewController.swift */,
 				49B498BA1CA3980A000E7973 /* QuienesSomosViewController.swift */,
+				1DAF53F81DA4D8FC00DE88B4 /* carusselMenuViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -566,6 +623,7 @@
 				49BB517E1BFFD529004E002A /* ParseFacebookUtilsV4.framework */,
 				49BB517F1BFFD529004E002A /* ParseTwitterUtils.framework */,
 				64A93F7BF429B4DC18AEBC9B /* Pods.framework */,
+				5234C9D047B34C25C3C690D8 /* Pods_MenuDeslizante.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -585,11 +643,11 @@
 			name = bibliotecas;
 			sourceTree = "<group>";
 		};
-		98EFDBAA1DEB32A689999890 /* Pods */ = {
+		F8AA908C891953ED0286DE4B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6CE5C88EDA204E6217BFF680 /* Pods.debug.xcconfig */,
-				5BEA89E15BD88CC6203F403D /* Pods.release.xcconfig */,
+				3AB66520A639989CBCDDCAD4 /* Pods-MenuDeslizante.debug.xcconfig */,
+				1E10CEB42CED06CD4BFE0C72 /* Pods-MenuDeslizante.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -601,13 +659,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 491576881BFBCAFC00EE641D /* Build configuration list for PBXNativeTarget "MenuDeslizante" */;
 			buildPhases = (
-				6256B5C055FC524CC6DD7B44 /* Check Pods Manifest.lock */,
+				DABA52E5681AE4A781BA539D /* [CP] Check Pods Manifest.lock */,
 				491576651BFBCAFB00EE641D /* Sources */,
 				491576661BFBCAFB00EE641D /* Frameworks */,
 				491576671BFBCAFB00EE641D /* Resources */,
 				49ED44A71C15377B00BF4D77 /* ShellScript */,
-				4C444DC6A65E12C796FBD8CA /* Embed Pods Frameworks */,
-				74C5E8B54517B2509464B34E /* Copy Pods Resources */,
+				782FF6A1AAD49EBB676E6C0D /* [CP] Embed Pods Frameworks */,
+				B818D063ADE164005EE01DC2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -662,6 +720,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DAF54031DA4F61E00DE88B4 /* dot_2.png in Resources */,
 				49000FAD1C59E1C80075F6B1 /* PopUpViewControllerCompartir_iPad.xib in Resources */,
 				49A708AB1C3AF25200483CF0 /* PopUpViewControllerFormasPago.xib in Resources */,
 				49A708B31C3AF25200483CF0 /* PopUpViewControllerTarjetas.xib in Resources */,
@@ -671,6 +730,7 @@
 				49A708B51C3AF25200483CF0 /* PopUpViewControllerWallet_iPhone6.xib in Resources */,
 				49A708AF1C3AF25200483CF0 /* PopUpViewControllerPagoTienda.xib in Resources */,
 				49A708B01C3AF25200483CF0 /* PopUpViewControllerTarjetas_iPad.xib in Resources */,
+				1DAF54041DA4F61E00DE88B4 /* text2_2.png in Resources */,
 				497B73C01C55A8530009E15C /* PopUpViewControllerRegistro_iPad.xib in Resources */,
 				49A708A61C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6Plus.xib in Resources */,
 				49000FA91C59E0EB0075F6B1 /* PopUpViewControllerCompartir_iPhone6Plus.xib in Resources */,
@@ -684,22 +744,35 @@
 				49000FA71C59DF9C0075F6B1 /* PopUpViewControllerCompartir_iPhone6.xib in Resources */,
 				491576761BFBCAFC00EE641D /* Images.xcassets in Resources */,
 				497B73D21C55B0510009E15C /* PopUpViewControllerRecuperar_iPhone6Plus.xib in Resources */,
+				1DAF54181DA4F63A00DE88B4 /* textUno_3.png in Resources */,
 				49A708AC1C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPad.xib in Resources */,
+				1DAF540B1DA4F62F00DE88B4 /* dot_1.png in Resources */,
+				1DAF54161DA4F63A00DE88B4 /* imagenGrande_3.png in Resources */,
 				49A708AE1C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPhone6Plus.xib in Resources */,
+				1DAF540D1DA4F62F00DE88B4 /* text2_1.png in Resources */,
 				49A708A71C3AF25200483CF0 /* PopUpViewControllerDescripcion.xib in Resources */,
 				49A708C51C3AF26B00483CF0 /* PopUpViewController_iPhone6.xib in Resources */,
 				497B73CE1C55AF430009E15C /* PopUpViewControllerRecuperar_iPad.xib in Resources */,
 				497B73C81C55AD7A0009E15C /* PopUpViewControllerRecuperar.xib in Resources */,
 				497B73D01C55AFFE0009E15C /* PopUpViewControllerRecuperar_iPhone6.xib in Resources */,
+				1DAF540E1DA4F62F00DE88B4 /* textUno_1.png in Resources */,
+				1DAF54171DA4F63A00DE88B4 /* text2-3.png in Resources */,
 				49A708A81C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPad.xib in Resources */,
+				1DAF53FC1DA4F61200DE88B4 /* imagenGrande_2.png in Resources */,
 				49A708B41C3AF25200483CF0 /* PopUpViewControllerWallet_iPad.xib in Resources */,
+				1DAF54141DA4F63A00DE88B4 /* dot_3.png in Resources */,
 				49A708B71C3AF25200483CF0 /* PopUpViewControllerWallet.xib in Resources */,
 				49A708A41C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPad.xib in Resources */,
 				497B73C21C55A90A0009E15C /* PopUpViewControllerRegistro_iPhone6Plus.xib in Resources */,
 				497B73CA1C55AE5B0009E15C /* PopUpViewControllerRegistro.xib in Resources */,
+				1DAF540C1DA4F62F00DE88B4 /* imagenGrande_1.png in Resources */,
+				1DAF54151DA4F63A00DE88B4 /* flor_trans.png in Resources */,
+				1DAF54021DA4F61E00DE88B4 /* comienza_trans.png in Resources */,
 				49A708C41C3AF26B00483CF0 /* PopUpViewController_iPad.xib in Resources */,
 				49A708B61C3AF25200483CF0 /* PopUpViewControllerWallet_iPhone6Plus.xib in Resources */,
+				1DAF54051DA4F61E00DE88B4 /* textUno_2.png in Resources */,
 				49A708A91C3AF25200483CF0 /* PopUpViewControllerFormasPago_iPhone6.xib in Resources */,
+				1DAF54061DA4F61E00DE88B4 /* ya_tienes.png in Resources */,
 				49A708A51C3AF25200483CF0 /* PopUpViewControllerDescripcion_iPhone6.xib in Resources */,
 				49A708AD1C3AF25200483CF0 /* PopUpViewControllerPagoTienda_iPhone6.xib in Resources */,
 			);
@@ -721,49 +794,49 @@
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run 61e0d9761208fae8cf2b241b23eb83a6ef7d1528 9571d3ac0b1b75bbe58cbed8fe1f7f67d5fc81b7b51eb03abe1060af9c9165c4";
 		};
-		4C444DC6A65E12C796FBD8CA /* Embed Pods Frameworks */ = {
+		782FF6A1AAD49EBB676E6C0D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MenuDeslizante/Pods-MenuDeslizante-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6256B5C055FC524CC6DD7B44 /* Check Pods Manifest.lock */ = {
+		B818D063ADE164005EE01DC2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MenuDeslizante/Pods-MenuDeslizante-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DABA52E5681AE4A781BA539D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		74C5E8B54517B2509464B34E /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -793,6 +866,7 @@
 				49A708BC1C3AF25200483CF0 /* PopUpViewControllerWallet.swift in Sources */,
 				490592801C0131EE006DDDD0 /* ViralizacionTableCell.swift in Sources */,
 				497480891C7576A700B35DDE /* SearchControllerBaseViewController.swift in Sources */,
+				1DAF53F91DA4D8FC00DE88B4 /* carusselMenuViewController.swift in Sources */,
 				497B73CC1C55AEAC0009E15C /* PopUpViewControllerRecuperar.swift in Sources */,
 				49A708C81C3AF26B00483CF0 /* PopUpViewControllerSwift.swift in Sources */,
 				49C3D3651BFC0542003B2344 /* PrincipalTableViewCell.swift in Sources */,
@@ -921,7 +995,7 @@
 		};
 		491576891BFBCAFC00EE641D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CE5C88EDA204E6217BFF680 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 3AB66520A639989CBCDDCAD4 /* Pods-MenuDeslizante.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -956,7 +1030,7 @@
 		};
 		4915768A1BFBCAFC00EE641D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BEA89E15BD88CC6203F403D /* Pods.release.xcconfig */;
+			baseConfigurationReference = 1E10CEB42CED06CD4BFE0C72 /* Pods-MenuDeslizante.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";

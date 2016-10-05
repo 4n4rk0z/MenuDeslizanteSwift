@@ -265,6 +265,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //make something with the letters that being typed
     }
     
+    override func viewDidAppear(animated: Bool) {
+        
+        let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
+        if(!isUserLoggedIn){
+            self.performSegueWithIdentifier("loginView", sender: self)
+        }
+    }
     
 
 }

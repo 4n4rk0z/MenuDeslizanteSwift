@@ -1,4 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
+target 'MenuDeslizante' do
+#pod “PinterestSDK”, :git => “git@github.com:pinterest/ios-pdk.git”
 
-pod “PinterestSDK”, :git => “git@github.com:pinterest/ios-pdk.git”
+pod 'ImageSlideshow', '~> 0.6'
+end

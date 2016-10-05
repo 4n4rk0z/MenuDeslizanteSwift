@@ -481,6 +481,7 @@
                         <outlet property="textfMail" destination="1Sj-MV-Yxm" id="Rkc-zB-1GH"/>
                         <outlet property="textfPassword" destination="OEx-uy-jzO" id="sbI-UA-AaY"/>
                         <segue destination="vXZ-lx-hvc" kind="presentation" identifier="Home" modalTransitionStyle="crossDissolve" id="yMt-me-2gP"/>
+                        <segue destination="8Ra-El-HuW" kind="presentation" identifier="loginView" id="WxW-zd-mN5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwu-1i-Gmc" sceneMemberID="firstResponder"/>
@@ -504,6 +505,102 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYb-mi-z43" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2107" y="-689"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="77G-tW-5p6">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="hOy-Qs-nrV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h9N-FY-x4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2722" y="33"/>
+        </scene>
+        <!--Carussel Menu View Controller-->
+        <scene sceneID="3H3-bT-dbZ">
+            <objects>
+                <viewController storyboardIdentifier="usselMenuViewController" id="8Ra-El-HuW" customClass="carusselMenuViewController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mEM-WJ-7Ec"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tev-9S-UQ9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aIs-qX-4W3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQg-AG-eN5" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                <rect key="frame" x="198" y="20" width="204" height="157"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="157" id="P4O-Ek-D6H"/>
+                                    <constraint firstAttribute="width" constant="204" id="ros-dl-RJT"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h93-Mm-s19" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                <rect key="frame" x="198" y="199" width="204" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="1TL-3f-n9E"/>
+                                    <constraint firstAttribute="width" constant="204" id="QdI-Wv-Go2"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTJ-AM-i1H" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                <rect key="frame" x="198" y="364" width="204" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Vq7-K0-gIW"/>
+                                    <constraint firstAttribute="width" constant="204" id="xDf-i2-kvJ"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGb-AX-b33">
+                                <rect key="frame" x="207" y="523" width="186" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="D60-tr-roZ"/>
+                                    <constraint firstAttribute="height" constant="36" id="zgV-k6-9bN"/>
+                                </constraints>
+                                <state key="normal" image="ya_tienes"/>
+                                <connections>
+                                    <action selector="registroAction:" destination="8Ra-El-HuW" eventType="touchUpInside" id="f0Q-tO-RBo"/>
+                                    <segue destination="ios-mF-Phh" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="ynC-AI-RTd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4c-fx-5kg">
+                                <rect key="frame" x="207" y="463" width="186" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="Rpb-nc-PpL"/>
+                                    <constraint firstAttribute="height" constant="52" id="m3Q-uJ-TBe"/>
+                                </constraints>
+                                <state key="normal" image="comienza_trans"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vD1-zx-b31" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                <rect key="frame" x="264" y="292" width="73" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="ieO-oy-Bq6"/>
+                                    <constraint firstAttribute="width" constant="73" id="xxA-sc-ift"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="R4c-fx-5kg" firstAttribute="centerX" secondItem="aIs-qX-4W3" secondAttribute="centerX" id="0xX-wZ-XCf"/>
+                            <constraint firstItem="UTJ-AM-i1H" firstAttribute="centerX" secondItem="aIs-qX-4W3" secondAttribute="centerX" id="5J4-5D-G1e"/>
+                            <constraint firstItem="bGb-AX-b33" firstAttribute="centerX" secondItem="aIs-qX-4W3" secondAttribute="centerX" id="5r8-U0-fhv"/>
+                            <constraint firstItem="UTJ-AM-i1H" firstAttribute="top" secondItem="vD1-zx-b31" secondAttribute="bottom" constant="8" id="7Ew-7Q-OIh"/>
+                            <constraint firstItem="OQg-AG-eN5" firstAttribute="top" secondItem="mEM-WJ-7Ec" secondAttribute="bottom" id="8AO-ee-NQM"/>
+                            <constraint firstItem="vD1-zx-b31" firstAttribute="centerX" secondItem="aIs-qX-4W3" secondAttribute="centerX" id="RC5-k0-IRS"/>
+                            <constraint firstItem="vD1-zx-b31" firstAttribute="top" secondItem="h93-Mm-s19" secondAttribute="bottom" constant="16" id="eX6-RZ-ZGh"/>
+                            <constraint firstItem="h93-Mm-s19" firstAttribute="centerX" secondItem="aIs-qX-4W3" secondAttribute="centerX" id="gdU-el-CVb"/>
+                            <constraint firstItem="R4c-fx-5kg" firstAttribute="top" secondItem="UTJ-AM-i1H" secondAttribute="bottom" constant="35" id="hDM-QS-5Pt"/>
+                            <constraint firstItem="OQg-AG-eN5" firstAttribute="centerX" secondItem="aIs-qX-4W3" secondAttribute="centerX" id="idi-fh-I5I"/>
+                            <constraint firstItem="h93-Mm-s19" firstAttribute="top" secondItem="OQg-AG-eN5" secondAttribute="bottom" constant="22" id="qnU-9Q-K8x"/>
+                            <constraint firstItem="bGb-AX-b33" firstAttribute="top" secondItem="R4c-fx-5kg" secondAttribute="bottom" constant="8" id="rmc-e1-Mu4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="flor" destination="vD1-zx-b31" id="S2D-ZG-yGv"/>
+                        <outlet property="imagenGrande" destination="OQg-AG-eN5" id="Pus-w7-leP"/>
+                        <outlet property="textDos" destination="UTJ-AM-i1H" id="RVo-ve-zwP"/>
+                        <outlet property="textoUno" destination="h93-Mm-s19" id="6Se-Vj-Vkd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PEv-Ik-eDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1850" y="84"/>
         </scene>
         <!--Platillos View Controller-->
         <scene sceneID="R4r-Ha-jeD">
@@ -2593,6 +2690,7 @@
         <image name="bienv" width="2046" height="118"/>
         <image name="califica" width="1242" height="2208"/>
         <image name="cance" width="361" height="124"/>
+        <image name="comienza_trans" width="832" height="175"/>
         <image name="conti" width="391" height="112"/>
         <image name="cuent" width="628" height="76"/>
         <image name="despues_de" width="1450" height="190"/>
@@ -2634,12 +2732,14 @@
         <image name="textoUsuario" width="355" height="164"/>
         <image name="textomegusta" width="508" height="190"/>
         <image name="transparencia" width="1118" height="152"/>
+        <image name="ya_tienes" width="837" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="edY-XV-IE3"/>
+        <segue reference="ynC-AI-RTd"/>
+        <segue reference="gnG-4k-EhQ"/>
         <segue reference="5V6-UQ-NDg"/>
         <segue reference="M4B-81-CS0"/>
-        <segue reference="edY-XV-IE3"/>
-        <segue reference="gnG-4k-EhQ"/>
         <segue reference="f3o-7v-28v"/>
         <segue reference="NZW-hL-axY"/>
     </inferredMetricsTieBreakers>

@@ -4,45 +4,35 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AFNetworking.xcscheme</key>
+		<key>ImageSlideshow-ImageSlideshow.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>PinterestSDK.xcscheme</key>
+		<key>ImageSlideshow.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-MenuDeslizante.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
-		<key>SSKeychain.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>23D25E8CDC70941E7D548483A99BE2D2</key>
+		<key>6CCC1A55C0B1AA4A1803A6DEC5449B22</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4878C70B21CA37D7CB8A476BF986741B</key>
+		<key>C15C986904B4FDA1D278FECFB1CFF1FE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5A43FAD7E985FF723794AD1C5753BDFD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A3C9E41E63EA5A7E2CF43B0CA85B51C1</key>
+		<key>E7BEAF4DCE4B39E319ED8628F0399557</key>
 		<dict>
 			<key>primary</key>
 			<true/>
