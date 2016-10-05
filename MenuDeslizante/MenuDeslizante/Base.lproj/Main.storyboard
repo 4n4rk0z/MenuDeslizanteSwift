@@ -540,11 +540,11 @@
                                     <constraint firstAttribute="width" constant="204" id="QdI-Wv-Go2"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTJ-AM-i1H" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                <rect key="frame" x="198" y="364" width="204" height="64"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vD1-zx-b31" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                <rect key="frame" x="264" y="292" width="73" height="73"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="Vq7-K0-gIW"/>
-                                    <constraint firstAttribute="width" constant="204" id="xDf-i2-kvJ"/>
+                                    <constraint firstAttribute="height" constant="73" id="ieO-oy-Bq6"/>
+                                    <constraint firstAttribute="width" constant="73" id="xxA-sc-ift"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGb-AX-b33">
@@ -567,25 +567,25 @@
                                 </constraints>
                                 <state key="normal" image="comienza_trans"/>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vD1-zx-b31" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                <rect key="frame" x="264" y="292" width="73" height="64"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTJ-AM-i1H" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                <rect key="frame" x="158" y="373" width="295" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="ieO-oy-Bq6"/>
-                                    <constraint firstAttribute="width" constant="73" id="xxA-sc-ift"/>
+                                    <constraint firstAttribute="height" constant="64" id="Vq7-K0-gIW"/>
+                                    <constraint firstAttribute="width" constant="295" id="xDf-i2-kvJ"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="R4c-fx-5kg" firstAttribute="centerX" secondItem="aIs-qX-4W3" secondAttribute="centerX" id="0xX-wZ-XCf"/>
-                            <constraint firstItem="UTJ-AM-i1H" firstAttribute="centerX" secondItem="aIs-qX-4W3" secondAttribute="centerX" id="5J4-5D-G1e"/>
+                            <constraint firstItem="UTJ-AM-i1H" firstAttribute="centerX" secondItem="aIs-qX-4W3" secondAttribute="centerX" constant="5.5" id="5J4-5D-G1e"/>
                             <constraint firstItem="bGb-AX-b33" firstAttribute="centerX" secondItem="aIs-qX-4W3" secondAttribute="centerX" id="5r8-U0-fhv"/>
                             <constraint firstItem="UTJ-AM-i1H" firstAttribute="top" secondItem="vD1-zx-b31" secondAttribute="bottom" constant="8" id="7Ew-7Q-OIh"/>
                             <constraint firstItem="OQg-AG-eN5" firstAttribute="top" secondItem="mEM-WJ-7Ec" secondAttribute="bottom" id="8AO-ee-NQM"/>
                             <constraint firstItem="vD1-zx-b31" firstAttribute="centerX" secondItem="aIs-qX-4W3" secondAttribute="centerX" id="RC5-k0-IRS"/>
                             <constraint firstItem="vD1-zx-b31" firstAttribute="top" secondItem="h93-Mm-s19" secondAttribute="bottom" constant="16" id="eX6-RZ-ZGh"/>
                             <constraint firstItem="h93-Mm-s19" firstAttribute="centerX" secondItem="aIs-qX-4W3" secondAttribute="centerX" id="gdU-el-CVb"/>
-                            <constraint firstItem="R4c-fx-5kg" firstAttribute="top" secondItem="UTJ-AM-i1H" secondAttribute="bottom" constant="35" id="hDM-QS-5Pt"/>
+                            <constraint firstItem="R4c-fx-5kg" firstAttribute="top" secondItem="UTJ-AM-i1H" secondAttribute="bottom" constant="26" id="hDM-QS-5Pt"/>
                             <constraint firstItem="OQg-AG-eN5" firstAttribute="centerX" secondItem="aIs-qX-4W3" secondAttribute="centerX" id="idi-fh-I5I"/>
                             <constraint firstItem="h93-Mm-s19" firstAttribute="top" secondItem="OQg-AG-eN5" secondAttribute="bottom" constant="22" id="qnU-9Q-K8x"/>
                             <constraint firstItem="bGb-AX-b33" firstAttribute="top" secondItem="R4c-fx-5kg" secondAttribute="bottom" constant="8" id="rmc-e1-Mu4"/>
