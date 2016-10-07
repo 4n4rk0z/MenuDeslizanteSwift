@@ -641,6 +641,10 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJE-1g-AHZ">
                                         <rect key="frame" x="261" y="79" width="83" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="83" id="7Q2-nf-SVV"/>
+                                            <constraint firstAttribute="height" constant="29" id="t9G-j6-ujE"/>
+                                        </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="DIFICULTAD">
                                                 <attributes>
@@ -706,6 +710,10 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHF-i5-V7w">
                                         <rect key="frame" x="480" y="79" width="34" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="8uu-Zp-kTV"/>
+                                            <constraint firstAttribute="width" constant="34" id="JtV-yA-C0p"/>
+                                        </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="6">
                                                 <attributes>
@@ -719,6 +727,10 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5b9-hC-G32">
                                         <rect key="frame" x="133" y="79" width="123" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="Ltl-2t-KvV"/>
+                                            <constraint firstAttribute="width" constant="123" id="QGG-en-UDj"/>
+                                        </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="1 hora 30 minutos">
                                                 <attributes>
@@ -739,6 +751,10 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvu-pr-nYT">
                                         <rect key="frame" x="401" y="79" width="73" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="6oa-78-sNX"/>
+                                            <constraint firstAttribute="width" constant="73" id="DVd-9g-xuR"/>
+                                        </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="PORCIONES">
                                                 <attributes>
@@ -861,6 +877,7 @@
                                     <constraint firstItem="apD-MI-5Zx" firstAttribute="leading" secondItem="spG-Ud-X9o" secondAttribute="trailing" constant="119" id="j7N-hk-tp6"/>
                                     <constraint firstItem="d7a-FA-y9T" firstAttribute="top" secondItem="LHF-i5-V7w" secondAttribute="bottom" constant="-48" id="jNT-oY-jna"/>
                                     <constraint firstItem="d7a-FA-y9T" firstAttribute="top" secondItem="6eZ-Bq-IsW" secondAttribute="bottom" constant="-26" id="kxJ-tS-UKZ"/>
+                                    <constraint firstItem="6fe-2T-vjm" firstAttribute="top" secondItem="QDR-l5-VCY" secondAttribute="bottom" constant="17" id="lIx-bX-UA0"/>
                                     <constraint firstItem="snc-iF-2Dj" firstAttribute="top" secondItem="mVZ-Me-auL" secondAttribute="bottom" constant="-50" id="m1X-fX-1wO"/>
                                     <constraint firstItem="11T-o8-dfS" firstAttribute="height" secondItem="MMx-fF-m75" secondAttribute="height" id="nbi-lM-96T"/>
                                     <constraint firstItem="foG-qv-JPQ" firstAttribute="centerX" secondItem="MMx-fF-m75" secondAttribute="centerX" id="nzX-lt-Avg"/>
@@ -898,7 +915,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7t0-GJ-q0K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2938" y="-155"/>
+            <point key="canvasLocation" x="3514" y="-175"/>
         </scene>
         <!--Menu Platillos-->
         <scene sceneID="Ydc-ip-8o2">
@@ -977,13 +994,17 @@
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhw-eA-8Lq">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhw-eA-8Lq">
                                             <rect key="frame" x="17" y="192" width="213" height="38"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="38" id="ktA-h8-OuB"/>
+                                                <constraint firstAttribute="width" constant="213" id="utH-Oo-5Kn"/>
+                                            </constraints>
                                             <attributedString key="attributedText">
                                                 <fragment content="Nombre receta">
                                                     <attributes>
                                                         <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="24" name="AvenirNextCondensed-Bold"/>
+                                                        <font key="NSFont" size="14" name="AvenirNextCondensed-Bold"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -1108,7 +1129,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOC-jp-9n6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2278" y="-1053"/>
+            <point key="canvasLocation" x="2146" y="-1521"/>
         </scene>
         <!--Favoritos Table View Controller-->
         <scene sceneID="8NB-Ki-2h1">
@@ -1215,8 +1236,12 @@
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bep-3M-E73">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bep-3M-E73">
                                             <rect key="frame" x="15" y="203" width="213" height="38"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="38" id="ZeT-y2-T9D"/>
+                                                <constraint firstAttribute="width" constant="213" id="zpx-n6-0fV"/>
+                                            </constraints>
                                             <attributedString key="attributedText">
                                                 <fragment content="Nombre receta">
                                                     <attributes>
@@ -1317,7 +1342,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhk-12-smZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2096" y="362"/>
+            <point key="canvasLocation" x="1760" y="554"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AGq-Yy-FWC">
@@ -1614,7 +1639,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u76-u2-7p7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2964" y="-1437"/>
+            <point key="canvasLocation" x="2960" y="-1429"/>
         </scene>
         <!--Iniciar sesión-->
         <scene sceneID="XLv-nB-JEY">
@@ -2539,8 +2564,12 @@
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWD-a5-Q9K">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWD-a5-Q9K">
                                             <rect key="frame" x="17" y="198" width="213" height="38"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="38" id="Fny-31-Kg0"/>
+                                                <constraint firstAttribute="width" constant="213" id="iCZ-9o-bXo"/>
+                                            </constraints>
                                             <attributedString key="attributedText">
                                                 <fragment content="Nombre receta">
                                                     <attributes>
@@ -2655,7 +2684,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQD-EP-g1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1383" y="167"/>
+            <point key="canvasLocation" x="2363" y="-111"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2x1-bw-WZk">
@@ -2734,11 +2763,11 @@
         <image name="ya_tienes" width="837" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="edY-XV-IE3"/>
         <segue reference="gnG-4k-EhQ"/>
         <segue reference="5V6-UQ-NDg"/>
         <segue reference="M4B-81-CS0"/>
-        <segue reference="f3o-7v-28v"/>
+        <segue reference="edY-XV-IE3"/>
+        <segue reference="e4b-gO-dZb"/>
         <segue reference="NZW-hL-axY"/>
     </inferredMetricsTieBreakers>
 </document>
