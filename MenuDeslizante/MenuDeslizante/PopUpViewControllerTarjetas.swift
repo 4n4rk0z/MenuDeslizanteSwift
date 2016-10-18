@@ -23,20 +23,20 @@ import Parse
     
     var clientID:String!
  
-    @IBOutlet weak var btnRegresar: UIButton!
-    @IBOutlet weak var btnAction: UIButton!
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    //@IBOutlet weak var btnRegresar: UIButton!
+    //@IBOutlet weak var btnAction: UIButton!
+    //@IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var txtNumeroTarjeta: UITextField!
-    @IBOutlet weak var popUpView: UIView!
+    //@IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var txtMes: UITextField!
     @IBOutlet weak var txtAnio: UITextField!
     @IBOutlet weak var txtCvc: UITextField!
     @IBOutlet weak var txtNombre: UITextField!
-    @IBOutlet weak var txtEmail: UITextField!
-    @IBOutlet weak var txtTelefono: UITextField!
+    //@IBOutlet weak var txtEmail: UITextField!
+    //@IBOutlet weak var txtTelefono: UITextField!
     
-    @IBOutlet weak var txtMensajes: UILabel!
+    //@IBOutlet weak var txtMensajes: UILabel!
     
     //OpenPay variables
     let MERCHANT_ID:String =  "mom7qomx3rv93zcwv2vk"
@@ -56,10 +56,15 @@ import Parse
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.6)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "fondo_pago")!.drawInRect(self.view.bounds)
+        var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
+        /*self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.6)
         self.popUpView.layer.cornerRadius = 5
         self.popUpView.layer.shadowOpacity = 0.8
-        self.popUpView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+        self.popUpView.layer.shadowOffset = CGSizeMake(0.0, 0.0)*/
         openpayAPI = Openpay(merchantId: MERCHANT_ID, apyKey: API_KEY, isProductionMode: false, isDebug: true)
         sessionId = openpayAPI.createDeviceSessionId()
 
@@ -77,7 +82,7 @@ import Parse
         if animated{
             self.showAnimate()
         }
-        setActivityIndicatorEnabled(false)
+        //setActivityIndicatorEnabled(false)
         precioProducto = precio
     }
     
@@ -132,7 +137,7 @@ import Parse
 
         let session = NSURLSession.sharedSession()
         let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-            self.setActivityIndicatorEnabled(false)
+            //self.setActivityIndicatorEnabled(false)
             if (error != nil) {
                 print(error)
             } else {
@@ -234,8 +239,8 @@ import Parse
                         // This does not require a network access.
                         self.clientID = (cliente["clientID"] as? String)!
                         self.txtNombre.text = (cliente["nombre"] as? String)!
-                        self.txtEmail.text = (cliente["email"] as? String)!
-                        self.txtTelefono.text = (cliente["numero"] as? String)!
+                        //self.txtEmail.text = (cliente["email"] as? String)!
+                        //self.txtTelefono.text = (cliente["numero"] as? String)!
                         self.boolBanderaExisteClienteAsociado = true
                         self.parseClient = cliente
                         break
@@ -302,8 +307,8 @@ import Parse
         
         let parameters = [
             "name" : self.txtNombre.text!,
-            "phone_number" : self.txtTelefono.text!,
-            "email" : self.txtEmail.text!,
+            //"phone_number" : self.txtTelefono.text!,
+            //"email" : self.txtEmail.text!,
             "requires_account" : "true"
         ]
         
@@ -333,8 +338,8 @@ import Parse
                     clientes["username"] = PFUser.currentUser()
                     clientes["clientID"] = self.clientID!
                     clientes["nombre"] = self.txtNombre.text!
-                    clientes["email"] = self.txtEmail.text!
-                    clientes["numero"] = self.txtTelefono.text!
+                    //clientes["email"] = self.txtEmail.text!
+                    //clientes["numero"] = self.txtTelefono.text!
                     clientes["codigobarras"] = ""
                     clientes["referenciaentienda"] = ""
                     
@@ -364,7 +369,7 @@ import Parse
         }
     }
     
-    func setActivityIndicatorEnabled(enabled:Bool) {
+    /*func setActivityIndicatorEnabled(enabled:Bool) {
         if (enabled){
             btnAction.hidden = true
             btnRegresar.hidden = true
@@ -382,7 +387,7 @@ import Parse
             self.txtMensajes.text = "Guardando tarjeta"
         }
         
-    }
+    }*/
 
     
     func submitCardInfo()
@@ -410,7 +415,7 @@ import Parse
           
             
             }, failure: { (error:NSError!) -> Void in
-                self.setActivityIndicatorEnabled(false)
+                //self.setActivityIndicatorEnabled(false)
                 var dictionary: [String:AnyObject] = Dictionary()
                 dictionary["code"] = error.code
                 dictionary["info"] = error.userInfo
@@ -424,7 +429,7 @@ import Parse
     
     @IBAction func btnGuardar(sender: AnyObject) {
         
-        self.setActivityIndicatorEnabled(true)
+        //self.setActivityIndicatorEnabled(true)
         if (boolBanderaExisteClienteAsociado){
             
             self.submitCardInfo()
@@ -435,7 +440,15 @@ import Parse
 
     }
     @IBAction func btnCancelar(sender: AnyObject) {
-        self.regresar()
+        //self.regresar()
         
+    }
+    
+    override public func viewDidAppear(animated: Bool) {
+        
+        let popPago = NSUserDefaults.standardUserDefaults().boolForKey("popPago")
+        if(!popPago){
+            self.performSegueWithIdentifier("pagoVC", sender: self)
+        }
     }
 }

@@ -201,7 +201,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="491" id="Daj-Hh-cCT" customClass="PrincipalTableViewCell" customModule="MenuDeslizante" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="491"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="491"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalCompressionResistancePriority="749" tableViewCell="Daj-Hh-cCT" id="L98-rM-vr4">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="490"/>
@@ -317,7 +317,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8b3-cr-Ghh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1502" y="-655"/>
+            <point key="canvasLocation" x="1518" y="-689"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1vv-Wu-Not">
@@ -928,7 +928,7 @@
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="SZs-6k-cNx">
-                            <rect key="frame" x="0.0" y="64" width="600" height="88"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bandatitulopaquete" translatesAutoresizingMaskIntoConstraints="NO" id="ad2-sh-9bO">
@@ -940,7 +940,7 @@
                                         <fragment content="Recetas">
                                             <attributes>
                                                 <color key="NSColor" red="1" green="0.98731276803602219" blue="0.95566570478069679" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="31" name="AvenirNextCondensed-Bold"/>
+                                                <font key="NSFont" size="25" name="AvenirNextCondensed-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -961,7 +961,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlatilloCell" rowHeight="255" id="enf-hW-tdW" customClass="MenuPlatillosTableViewCell" customModule="MenuDeslizante" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="180" width="600" height="255"/>
+                                <rect key="frame" x="0.0" y="116" width="600" height="255"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="enf-hW-tdW" id="rhj-tQ-ZOQ">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="255"/>
@@ -1574,7 +1574,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="CPx-om-GFs">
-                            <rect key="frame" x="0.0" y="64" width="600" height="177"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="177"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen700x300" translatesAutoresizingMaskIntoConstraints="NO" id="FDW-rP-z8j">
@@ -1608,7 +1608,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="201" id="ggt-tu-2At" customClass="ViralizacionTableCell" customModule="MenuDeslizante" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="269" width="600" height="201"/>
+                                <rect key="frame" x="0.0" y="205" width="600" height="201"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ggt-tu-2At" id="5wz-33-5Kw">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
@@ -1802,6 +1802,13 @@
                                     <constraint firstAttribute="height" constant="69" id="xXL-wV-jil"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frid" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-TR-geT">
+                                <rect key="frame" x="265" y="142" width="70" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="L8R-zc-0F5"/>
+                                    <constraint firstAttribute="height" constant="110" id="eQl-3e-gG1"/>
+                                </constraints>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="acced" translatesAutoresizingMaskIntoConstraints="NO" id="T0a-AZ-XYF">
                                 <rect key="frame" x="193" y="260" width="214" height="96"/>
                                 <constraints>
@@ -1816,6 +1823,13 @@
                                     <constraint firstAttribute="width" constant="267" id="gIW-Qj-ShO"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="florb" translatesAutoresizingMaskIntoConstraints="NO" id="Jhs-lK-kfO">
+                                <rect key="frame" x="280" y="436" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="PuZ-rs-RyY"/>
+                                    <constraint firstAttribute="width" constant="40" id="fHL-Gh-VPB"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZm-j2-O6A">
                                 <rect key="frame" x="180" y="494" width="240" height="40"/>
                                 <subviews>
@@ -1825,6 +1839,10 @@
                                             <constraint firstAttribute="width" constant="120" id="j9q-js-UbP"/>
                                         </constraints>
                                         <state key="normal" image="cance"/>
+                                        <connections>
+                                            <action selector="cancelar:" destination="sFV-ZT-aVc" eventType="touchUpInside" id="crG-An-m1t"/>
+                                            <segue destination="N7q-0M-nBh" kind="presentation" id="acZ-C2-LUQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH3-Jz-RSi">
                                         <rect key="frame" x="120" y="0.0" width="120" height="40"/>
@@ -1833,7 +1851,8 @@
                                         </constraints>
                                         <state key="normal" image="conti"/>
                                         <connections>
-                                            <segue destination="c4d-wk-rwj" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="te6-T4-91h"/>
+                                            <action selector="continuarPago:" destination="sFV-ZT-aVc" eventType="touchUpInside" id="5tz-XA-2Es"/>
+                                            <segue destination="Kvd-WT-OFP" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="te6-T4-91h"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1842,20 +1861,6 @@
                                     <constraint firstAttribute="height" constant="40" id="Mnn-k8-tda"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frid" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-TR-geT">
-                                <rect key="frame" x="265" y="142" width="70" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="L8R-zc-0F5"/>
-                                    <constraint firstAttribute="height" constant="110" id="eQl-3e-gG1"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="florb" translatesAutoresizingMaskIntoConstraints="NO" id="Jhs-lK-kfO">
-                                <rect key="frame" x="280" y="436" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="PuZ-rs-RyY"/>
-                                    <constraint firstAttribute="width" constant="40" id="fHL-Gh-VPB"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1873,17 +1878,18 @@
                             <constraint firstItem="Jhs-lK-kfO" firstAttribute="centerX" secondItem="g1H-Cw-Tsc" secondAttribute="centerX" id="z1e-p9-cBL"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="lZV-Vs-idH"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lAQ-wu-ay9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3829" y="-2232"/>
+            <point key="canvasLocation" x="4743" y="-2232"/>
         </scene>
-        <!--Forma Pago View Controller-->
+        <!--Pop Up View Controller Tarjetas-->
         <scene sceneID="2Zx-zE-KNw">
             <objects>
-                <viewController id="c4d-wk-rwj" customClass="formaPagoViewController" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="c4d-wk-rwj" customClass="PopUpViewControllerTarjetas" customModule="MenuDeslizante" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mcA-Nb-5uY"/>
                         <viewControllerLayoutGuide type="bottom" id="8Lh-Ql-kMD"/>
@@ -1947,13 +1953,18 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Kzk-Os-LqE">
                                 <rect key="frame" x="148" y="320" width="305" height="22"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="MM/AA" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xqg-jp-uit">
-                                        <rect key="frame" x="0.0" y="0.0" width="147" height="22"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="MM" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xqg-jp-uit">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="AA" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Das-x7-fgM">
+                                        <rect key="frame" x="106" y="0.0" width="93" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="CVC" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lla-XL-wHO">
-                                        <rect key="frame" x="159" y="0.0" width="146" height="22"/>
+                                        <rect key="frame" x="211" y="0.0" width="94" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1980,7 +1991,8 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="reg_1"/>
                                         <connections>
-                                            <segue destination="sFV-ZT-aVc" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Obg-je-iWf"/>
+                                            <action selector="btnCancelar:" destination="c4d-wk-rwj" eventType="touchUpInside" id="Zq4-qZ-j7B"/>
+                                            <segue destination="N7q-0M-nBh" kind="presentation" id="64B-en-eBb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoO-DA-RqG">
@@ -1990,6 +2002,9 @@
                                             <constraint firstAttribute="width" constant="120" id="as8-d5-4eo"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="guar"/>
+                                        <connections>
+                                            <action selector="btnGuardar:" destination="c4d-wk-rwj" eventType="touchUpInside" id="uGA-7Z-Klq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -2015,12 +2030,20 @@
                             <constraint firstItem="Moh-MP-pEM" firstAttribute="centerX" secondItem="BJJ-Gx-fVa" secondAttribute="centerX" id="zCG-2W-gKs"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="GJ8-gr-A4e"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="txtAnio" destination="Das-x7-fgM" id="0pE-bA-nh6"/>
+                        <outlet property="txtCvc" destination="lla-XL-wHO" id="5i8-DO-Kg5"/>
+                        <outlet property="txtMes" destination="Xqg-jp-uit" id="wyp-5e-VMP"/>
+                        <outlet property="txtNombre" destination="Moh-MP-pEM" id="dBQ-EF-YgY"/>
+                        <outlet property="txtNumeroTarjeta" destination="s9B-Lw-7y6" id="XGS-Cf-vrb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4DR-NB-BIP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4622" y="-2232"/>
+            <point key="canvasLocation" x="6246" y="-2232"/>
         </scene>
         <!--Compartir Page Item Controller-->
         <scene sceneID="0MD-i9-gB9">
@@ -2487,7 +2510,7 @@
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="MCw-D1-WMX">
-                            <rect key="frame" x="0.0" y="64" width="600" height="88"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bandatitulopaquete" translatesAutoresizingMaskIntoConstraints="NO" id="jpo-E0-VYv">
@@ -2520,7 +2543,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="255" id="ywX-5W-uSe" customClass="MenuPlatillosTableViewCell" customModule="MenuDeslizante" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="180" width="600" height="255"/>
+                                <rect key="frame" x="0.0" y="116" width="600" height="255"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ywX-5W-uSe" id="lCw-oM-b4L">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="255"/>
@@ -2704,6 +2727,42 @@
             </objects>
             <point key="canvasLocation" x="-451" y="2526"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wWE-1D-frT">
+            <objects>
+                <navigationController storyboardIdentifier="pagoVC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Kvd-WT-OFP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PFS-JZ-HFc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="c4d-wk-rwj" kind="relationship" relationship="rootViewController" id="zUb-lU-64O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BGP-w2-AuN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5498" y="-2232"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ouv-wl-RAe">
+            <objects>
+                <navigationController storyboardIdentifier="gratisVC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="1Lj-dx-HqD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KhP-fb-HBU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sFV-ZT-aVc" kind="relationship" relationship="rootViewController" id="3BD-Mc-1Ka"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="840-3D-bMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3923" y="-2530"/>
+        </scene>
     </scenes>
     <resources>
         <image name="7" width="1303" height="256"/>
@@ -2764,10 +2823,11 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gnG-4k-EhQ"/>
+        <segue reference="edY-XV-IE3"/>
         <segue reference="5V6-UQ-NDg"/>
         <segue reference="M4B-81-CS0"/>
-        <segue reference="edY-XV-IE3"/>
-        <segue reference="e4b-gO-dZb"/>
+        <segue reference="acZ-C2-LUQ"/>
+        <segue reference="f3o-7v-28v"/>
         <segue reference="NZW-hL-axY"/>
     </inferredMetricsTieBreakers>
 </document>

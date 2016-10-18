@@ -248,7 +248,12 @@ class MenuPlatillos: UITableViewController {
                     if (clientes?.count==0)
                     {
                         //Si no se fue a la ventana que sigue quiere decir o que no esta suscrito
-                        self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
+                        //self.abrirVentanaPop(self.precioPlan, suscripcion:  true, planId:  self.planId)
+                        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        
+                        let vc: UINavigationController = storyboard.instantiateViewControllerWithIdentifier("gratisVC") as! UINavigationController
+                        
+                        self.presentViewController(vc, animated: true, completion: nil)
                         
                     }
                 }

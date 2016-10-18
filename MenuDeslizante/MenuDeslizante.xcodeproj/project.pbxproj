@@ -24,6 +24,7 @@
 		1DAF54161DA4F63A00DE88B4 /* imagenGrande_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF54111DA4F63A00DE88B4 /* imagenGrande_3.png */; };
 		1DAF54171DA4F63A00DE88B4 /* text2-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF54121DA4F63A00DE88B4 /* text2-3.png */; };
 		1DAF54181DA4F63A00DE88B4 /* textUno_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF54131DA4F63A00DE88B4 /* textUno_3.png */; };
+		1DFEA5171DB68741005905B1 /* gratisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFEA5161DB68740005905B1 /* gratisViewController.swift */; };
 		49000FA51C59DEF40075F6B1 /* PopUpViewControllerCompartir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49000FA41C59DEF40075F6B1 /* PopUpViewControllerCompartir.swift */; };
 		49000FA71C59DF9C0075F6B1 /* PopUpViewControllerCompartir_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49000FA61C59DF9C0075F6B1 /* PopUpViewControllerCompartir_iPhone6.xib */; };
 		49000FA91C59E0EB0075F6B1 /* PopUpViewControllerCompartir_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49000FA81C59E0EB0075F6B1 /* PopUpViewControllerCompartir_iPhone6Plus.xib */; };
@@ -140,6 +141,7 @@
 		1DAF54111DA4F63A00DE88B4 /* imagenGrande_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagenGrande_3.png; sourceTree = "<group>"; };
 		1DAF54121DA4F63A00DE88B4 /* text2-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text2-3.png"; sourceTree = "<group>"; };
 		1DAF54131DA4F63A00DE88B4 /* textUno_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textUno_3.png; sourceTree = "<group>"; };
+		1DFEA5161DB68740005905B1 /* gratisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gratisViewController.swift; sourceTree = "<group>"; };
 		1E10CEB42CED06CD4BFE0C72 /* Pods-MenuDeslizante.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenuDeslizante.release.xcconfig"; path = "Pods/Target Support Files/Pods-MenuDeslizante/Pods-MenuDeslizante.release.xcconfig"; sourceTree = "<group>"; };
 		3AB66520A639989CBCDDCAD4 /* Pods-MenuDeslizante.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenuDeslizante.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MenuDeslizante/Pods-MenuDeslizante.debug.xcconfig"; sourceTree = "<group>"; };
 		49000FA41C59DEF40075F6B1 /* PopUpViewControllerCompartir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewControllerCompartir.swift; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				4982994E1C465584003F293C /* PasosConsejosViewController.swift */,
 				49B498BA1CA3980A000E7973 /* QuienesSomosViewController.swift */,
 				1DAF53F81DA4D8FC00DE88B4 /* carusselMenuViewController.swift */,
+				1DFEA5161DB68740005905B1 /* gratisViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -873,6 +876,7 @@
 				49A708BB1C3AF25200483CF0 /* PopUpViewControllerTarjetas.swift in Sources */,
 				4982994F1C465584003F293C /* PasosConsejosViewController.swift in Sources */,
 				4905927E1C0131E0006DDDD0 /* ViralizacionTableViewController.swift in Sources */,
+				1DFEA5171DB68741005905B1 /* gratisViewController.swift in Sources */,
 				4915766F1BFBCAFB00EE641D /* AppDelegate.swift in Sources */,
 				49000FA51C59DEF40075F6B1 /* PopUpViewControllerCompartir.swift in Sources */,
 				49D01F8C1CA1134000237ED1 /* ModeloTableViewController.swift in Sources */,

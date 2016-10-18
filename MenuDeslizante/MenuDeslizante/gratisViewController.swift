@@ -2,7 +2,7 @@
 //  gratisViewController.swift
 //  MenuDeslizante
 //
-//  Created by Billy Jack Bates Garcia on 9/28/16.
+//  Created by Billy Jack Bates Garcia on 10/18/16.
 //  Copyright © 2016 sergio ivan lopez monzon. All rights reserved.
 //
 
@@ -17,7 +17,6 @@ class gratisViewController: UIViewController {
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-        
 
         // Do any additional setup after loading the view.
     }
@@ -27,7 +26,19 @@ class gratisViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func continuarPago(sender: AnyObject) {
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc: UINavigationController = storyboard.instantiateViewControllerWithIdentifier("pagoVC") as! UINavigationController
+        
+        self.presentViewController(vc, animated: true, completion: nil)
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "popPago")
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
 
+    @IBAction func cancelar(sender: AnyObject) {
+    }
     /*
     // MARK: - Navigation
 
